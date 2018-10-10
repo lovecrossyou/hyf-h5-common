@@ -9,18 +9,44 @@
   <meta name="format-detection" content="email=no"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
   <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-  <title>富腾集团</title>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <title></title>
 </head>
 
+
+<body>
+<div id="root"></div>
+</body>
 <script>
-  wx.miniProgram.getEnv(function (res) {
+  wx.miniProgram.getEnv(function(res) {
     if (res.miniprogram) {
+      //银行卡列表
+      $('#root').on('click', '.page__bank___3wlAE', function() {
+        console.log('银行卡列表')
+        wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
+
+      });
+
+      //提现
+      $('#root').on('click', '.page__wallet_item_top_rmb___aE06c', function() {
+        console.log('提现')
+        wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
+
+      });
+
+      // 账单明细
+      $('#root').on('click', '.page__account_detail___2jBX3', function() {
+        wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+
+      });
+
+      // 账户安全
+      $('#root').on('click', '.page__security___11lED', function() {
+        wx.miniProgram.navigateTo({ url: '/pages/account/security' });
+
+      });
 
     }
   })
 </script>
-<body>
-<div id="root"></div>
-</body>
-
 </html>

@@ -21,6 +21,18 @@
   color:#fff;
   font-size:13px;
 }
+
+.wallet_item_top_rmb{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height:50px;
+  color:#fff;
+  font-size:13px;
+}
+
+
 .wallet_rmb_icon{
   width:29px;
   height:29px;
@@ -43,10 +55,10 @@
   display:flex;
   flex-direction: row;
   flex-wrap:wrap;
-  height:250px;
+  height:372px;
   margin-top:10px;
 }
-.wallet_fun_item{
+.wallet_fun_item, .bank{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,9 +66,10 @@
   height:125px;
   width:33%;
   border-bottom:1px solid #F8F8F8;
-
 }
-.wallet_item_top{
+
+
+.wallet_item_top,.account_detail,.security{
   height:43px;
   display: flex;
   flex-direction: column;

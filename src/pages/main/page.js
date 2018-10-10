@@ -6,7 +6,6 @@ function App(props) {
   return (
     <div className={styles.normal}>
       <br/>
-      <Link to="/login/page">登录</Link>
       <br/>
       <Link to="/member/page"><h1>会员</h1></Link>
       <br/>
