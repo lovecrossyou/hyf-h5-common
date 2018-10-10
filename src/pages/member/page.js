@@ -103,7 +103,7 @@ class Member extends React.Component {
     return () => {
       console.log(vip.title);
       this.props.dispatch({
-        type:'upgrade',
+        type:'member/upgrade',
         payload:{
           vipProductType:'golden_user'
         },
