@@ -1,0 +1,83 @@
+.invite_red_pocket_header{
+  position: relative;
+  background:#FFF;
+  height:110px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.invite_red_top{
+  height:44px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size:12px;
+  color:#333;
+}
+.invite_red_pocket_icon{
+  width:18px;
+  height:21px;
+}
+.invite_total_xb{
+  color:#FF4E4E;
+  font-size:16px;
+}
+.friend_list{
+  position:relative;
+  margin-top:10px;
+  display:flex;
+  flex-direction: column;
+  background:#FFF;
+}
+.diamond_friend_info{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height:60px;
+  border-top:1px solid #e3e3e3;
+}
+.friend_info_left{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left:15px;
+}
+.friend_info_icon{
+  border-radius: 2px;
+  width:40px;
+  height:40px;
+}
+.friend_nick_name{
+  font-size:14px;
+  color:#333;
+}
+.friend_info_right{
+  padding-right:18px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  font-size:14px;
+  color:#333;
+}
+.profit_name_time{
+  margin-left:10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.profit_time{
+  font-size:12px;
+  color:#999;
+}
+.xt_unit_icon{
+  width:12px;
+  height:12px;
+}
+.diamond_friend_item{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,0 +1,97 @@
+.wallet_header{
+  position:relative;
+  display:flex;
+  flex-direction: row;
+  background:#8C8E95;
+  height:130px;
+}
+.wallet_item{
+  display:flex;
+  flex:1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wallet_item_top{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height:50px;
+  color:#fff;
+  font-size:13px;
+}
+.wallet_rmb_icon{
+  width:29px;
+  height:29px;
+}
+.wallet_rmb_icon{
+  width:29px;
+  height:29px;
+}
+.wallet_item_top_title{
+  color:#FFF;
+  padding-top:5px;
+}
+.wallet_money_count{
+  margin-top:12px;
+  color:#FFF;
+}
+.wallet_fun{
+  position:relative;
+  background:#FFF;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  height:250px;
+  margin-top:10px;
+}
+.wallet_fun_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:125px;
+  width:33%;
+  border-bottom:1px solid #F8F8F8;
+
+}
+.wallet_item_top{
+  height:43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size:13px;
+  color:#333;
+}
+.my_friend_item_img{
+  width:25px;
+  height:19px;
+}
+.my_invite_item_img{
+  width:18px;
+  height:21px;
+}
+.my_sale_item_img{
+  width:20px;
+  height:20px;
+}
+.my_water_ticket_item_img{
+  width:19px;
+  height:16px;
+}
+.my_bank_item_img{
+  width:18px;
+  height:16px;
+}
+.wallet_fun_count_item{
+  color:#FF4F4E;
+  font-size:14px;
+  margin-top:20px;
+}
+.wallet_fun_count_item_big{
+  font-size:20px;
+  color:#FF4F4E;
+  margin-top:20px;
+}

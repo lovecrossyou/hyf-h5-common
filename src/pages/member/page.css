@@ -1,0 +1,132 @@
+.header_bg{
+  background: url('../../assets/photo_huiyuan@2x.png') no-repeat center 0;
+  background-size: 100% 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header_bg div{
+  color: #FFFFFF;
+}
+
+.full {
+  justifyContent: center;
+  alignItems: center;
+  display: flex;
+  backgroundColor: '#f5f5f5';
+  padding-bottom: 20px;
+}
+.title{
+  /*position:absolute;*/
+  /*bottom: 100px;*/
+  margin-top: 20px;
+}
+.title_bg{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 19px;
+}
+.tips{
+  margin:-36px 20px;
+  height:135px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:#FFF;
+  box-shadow: 0 3px 1px #e1e1e1;
+}
+.vip{
+  /*position:relative;*/
+  margin-top:50px;
+}
+.vip_title{
+  font-size:18px;
+  color:#333;
+  padding-left:15px;
+  height:41px;
+  line-height: 41px;
+}
+.vip_item{
+  background:#FFF;
+  height:100px;
+  margin-bottom:1px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vip_item_content{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height:64px;
+  padding:0 15px;
+}
+.vip_left{
+  display: flex;
+  flex-direction: row;
+}
+.vip_left_img{
+  width:38px;
+  height:45px;
+}
+.vip_left_text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left:7px;
+}
+.vip_left_text_title{
+  font-size:16px;
+  color:#333;
+}
+.vip_left_text_desc{
+  font-size:14px;
+  color:#999;
+}
+.vip_left_text_price{
+  font-size:16px;
+  color: #cc2636;
+}
+.vip_right{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.vip_right_action{
+  border:1px solid #cc2636;
+  font-size:14px;
+  color:#cc2636;
+  padding:3px 6px;
+  border-radius: 2px;
+}
+.answer{
+  margin-top:18px;
+
+}
+.answer_title{
+  font-size:14px;
+  color:#999;
+  background:url("../../assets/icon_huiyuan_kefu@2x.png") no-repeat left center;
+  background-size: 15px;
+  padding-left:20px;
+  height:41px;
+  line-height: 41px;
+  margin-left:15px;
+}
+.answer_title_text{
+  color:#cc2636;
+}
+.answer_content{
+  margin:0 15px;
+  height:68px;
+  background:#FFF;
+  font-size:14px;
+  color:#999;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 17px;
+}
