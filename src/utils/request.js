@@ -23,7 +23,7 @@ function checkStatus(response) {
 export default async function request(url, options) {
   console.log('request ', url);
   const accessToken = getAccessToken();
-  let body = Object.assign(options || {}, { accessInfo: accessToken });
+  let body = Object.assign(options.body || {}, { accessInfo: accessToken });
   const opt = {
     body: JSON.stringify(body),
     headers: {

@@ -1,9 +1,9 @@
-import { fetchClientAccount, fetchUserProfitInfo } from '../service/wallet';
+import { fetchAccountInfo, fetchClientAccount, fetchUserProfitInfo } from '../service/wallet';
 
 export default {
   namespace: 'wallet',
   state: {
-    clientAccount: {},
+    accountInfo: {},
     userProfitInfo: {},
   },
   subscriptions: {
@@ -24,13 +24,13 @@ export default {
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      const clientAccount = yield call(fetchClientAccount, payload);
-      const userProfitInfo = yield call(fetchUserProfitInfo, payload);
+      // const clientAccount = yield call(fetchClientAccount, payload);
+      // const userProfitInfo = yield call(fetchUserProfitInfo, payload);
+      const accountInfo = yield call(fetchAccountInfo, payload);
 
       yield put({
         type: 'save', payload: {
-          clientAccount,
-          userProfitInfo,
+          accountInfo,
         },
       });
     },
@@ -46,8 +46,7 @@ export default {
   reducers: {
     save(state, action) {
       return { ...state,
-        clientAccount: action.payload.clientAccount,
-        userProfitInfo: action.payload.userProfitInfo,
+        accountInfo: action.payload.accountInfo,
       };
     },
   },

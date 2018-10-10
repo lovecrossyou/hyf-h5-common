@@ -1,9 +1,9 @@
+import { fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
 
 export default {
   namespace: 'member',
   state: {
-    text: 'page work',
-    list: []
+    userVipInfo:null,
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -23,12 +23,17 @@ export default {
   },
   effects: {
     *fetch({ payload }, { call, put }) {
+      const response = yield call(fetchUserVipInfo,payload)
       yield put({
-        type: 'save', payload: {
-          text: 'page init'
-        }
+        type: 'save', payload:response
       });
     },
+
+    *upgrade({ payload,cb }, { call, put }) {
+      const response = yield call(fetchUpdateToVipUser,payload)
+      cb&&cb();
+    },
+
     *delete({ payload }, { call, put }) {
       yield put({
         type: 'save', payload: {
@@ -40,7 +45,7 @@ export default {
   },
   reducers: {
     save(state, action) {
-      return { ...state, ...action.payload };
+      return { ...state, userVipInfo:action.payload };
     },
   },
 };

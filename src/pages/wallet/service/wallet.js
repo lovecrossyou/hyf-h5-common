@@ -11,3 +11,12 @@ export async function fetchUserProfitInfo() {
     method:'post'
   });
 }
+
+
+export async function fetchAccountInfo() {
+  return request('/api/account/info',{
+    method:'post',
+    body:{}
+  });
+}
+

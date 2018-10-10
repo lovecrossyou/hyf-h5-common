@@ -46,6 +46,12 @@
 
       });
 
+
+      //会员升级
+      $('#root').on('click', '.btnUpgrade', function() {
+        wx.miniProgram.navigateTo({ url: '/pages/pay/pay?' });
+      });
+
     }
   })
 </script>

@@ -34,7 +34,7 @@
 
 .inline_text{
   display: inline;
-  color: red;
+  color: #F29A3D;
 }
 .title_bg{
   display:flex;
@@ -55,7 +55,7 @@
 .tips_title{
   font-weight: bold;
   font-size: large;
-  color: #666666;
+  color: #999999;
 }
 
 .tips_desc{
@@ -175,4 +175,8 @@
   border: 1px solid #ccc;
   border-radius: 50%;
   margin-right: 5px;
+}
+
+.btnUpgrade{
+
 }

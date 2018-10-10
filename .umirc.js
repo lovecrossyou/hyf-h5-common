@@ -10,7 +10,7 @@ export default {
   ],
   proxy: {
     "/api": {
-      "target": "http://huipay.com/huibeiwater/",
+      "target": "http://123.57.161.212:9939/xitenggamejar/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }

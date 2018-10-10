@@ -25,7 +25,7 @@ class Wallet extends React.Component {
 
 
   render() {
-    const {clientAccount,userProfitInfo} = this.props.store ;
+    const {accountInfo} = this.props.store ;
     return <div>
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
@@ -33,14 +33,14 @@ class Wallet extends React.Component {
             <img src={my_wallet_rmb_icon} className={styles.wallet_rmb_icon} />
             <div className={styles.wallet_item_top_title}>人民币</div>
           </div>
-          <div className={styles.wallet_money_count}>{clientAccount.rmbMount}</div>
+          <div className={styles.wallet_money_count}>{accountInfo.rmbAmount}</div>
         </div>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top}>
             <img src={my_wallet_xb_icon} className={styles.wallet_rmb_icon} />
             <div className={styles.wallet_item_top_title}>喜币</div>
           </div>
-          <div className={styles.wallet_money_count}>{userProfitInfo.inviteProfitXtbAmount}</div>
+          <div className={styles.wallet_money_count}>{accountInfo.xtbTotalAmount}</div>
         </div>
       </div>
       <div className={styles.wallet_fun}>
@@ -49,28 +49,28 @@ class Wallet extends React.Component {
             <img src={me_icon_shuipiao_haoyou} className={styles.my_friend_item_img} />
             <div>我的好友</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{userProfitInfo.userFriendAmount}人</div>
+          <div className={styles.wallet_fun_count_item}>-人</div>
         </div>
         <div className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top} onClick={this.inviteredPacket.bind(this)}>
             <img src={me_icon_shuipiao_hongbao} className={styles.my_invite_item_img} />
             <div>邀请红包</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{clientAccount.xtbMount}喜币</div>
+          <div className={styles.wallet_fun_count_item}>-喜币</div>
         </div>
         <div  className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top}>
             <img src={me_icon_shuipiao_jiangli} className={styles.my_sale_item_img} />
             <div>会员奖励</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount}元</div>
+          <div className={styles.wallet_fun_count_item}>-元</div>
         </div>
         <div  className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top}>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img} />
             <div>喜币充值</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{clientAccount.totalTicketCount}张</div>
+          <div className={styles.wallet_fun_count_item}>-张</div>
         </div>
         <div className={styles.bank}>
           <div className={styles.wallet_item_top}>
