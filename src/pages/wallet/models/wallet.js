@@ -1,10 +1,15 @@
-import { fetchAccountInfo, fetchClientAccount, fetchUserProfitInfo } from '../service/wallet';
+import {
+  fetchAccountInfo, fetchClientAccount, fetchUserProfitAllFriendInfo,
+  fetchUserProfitInfo,
+} from '../service/wallet';
 
 export default {
   namespace: 'wallet',
   state: {
-    accountInfo: {},
-    userProfitInfo: {},
+    accountInfo: null,
+    userProfitInfo: null,
+    userProfitInfo:null,
+    userProfitAllFriendInfo:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -24,13 +29,15 @@ export default {
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      // const clientAccount = yield call(fetchClientAccount, payload);
-      // const userProfitInfo = yield call(fetchUserProfitInfo, payload);
+      const userProfitInfo = yield call(fetchUserProfitInfo, {});
       const accountInfo = yield call(fetchAccountInfo, payload);
+      const userProfitAllFriendInfo = yield call(fetchUserProfitAllFriendInfo, payload);
 
       yield put({
         type: 'save', payload: {
           accountInfo,
+          userProfitInfo,
+          userProfitAllFriendInfo
         },
       });
     },
@@ -47,6 +54,8 @@ export default {
     save(state, action) {
       return { ...state,
         accountInfo: action.payload.accountInfo,
+        userProfitInfo: action.payload.userProfitInfo,
+        userProfitAllFriendInfo: action.payload.userProfitAllFriendInfo,
       };
     },
   },

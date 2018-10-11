@@ -31,7 +31,7 @@ export default {
 
     *upgrade({ payload,cb }, { call, put }) {
       const response = yield call(fetchUpdateToVipUser,payload)
-      cb&&cb();
+      cb&&cb(response);
     },
 
     *delete({ payload }, { call, put }) {

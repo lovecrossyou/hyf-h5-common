@@ -11,14 +11,14 @@ import vip_putong from '../../assets/vip/icon_huiyuan_putong@2x.png';
 import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
 import vip_zuanshi from '../../assets/vip/icon_huiyuan_zuanshi@2x.png';
 import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
-
+import { getAccessToken } from '../../utils/authority';
 const RadioItem = Radio.RadioItem;
 
 
 const vips = [
-  { title: '黄金会员', img: godImgIcon, desc: '每期赠送1组抽签号码，奖励20喜币', price: '19.8', id: '1' },
-  { title: '铂金会员', img: platinumImgIcon, desc: '每期赠送2组抽签号码，奖励30喜币', price: '29.8', },
-  { title: '钻石会员', img: diamondsImgIcon, desc: '每期赠送10组抽签号码，奖励100喜币', price: '99.8' },
+  { title: '黄金会员', img: godImgIcon, desc: '每期赠送1组抽签号码，奖励20喜币', price: '19.8', id: '1',type:'user_to_golden_vip' },
+  { title: '铂金会员', img: platinumImgIcon, desc: '每期赠送2组抽签号码，奖励30喜币', price: '29.8',type:'user_to_higher_golden_vip' },
+  { title: '钻石会员', img: diamondsImgIcon, desc: '每期赠送10组抽签号码，奖励100喜币', price: '99.8',type:'user_to_diamond_vip' },
 ];
 
 
@@ -105,10 +105,10 @@ class Member extends React.Component {
       this.props.dispatch({
         type:'member/upgrade',
         payload:{
-          vipProductType:'golden_user'
+          vipProductType:'user_to_golden_vip'
         },
-        cb:()=>{
-          console.log('xxxxx');
+        cb:(orderInfo)=>{
+          // console.log('xxxxx');
         }
       })
 
@@ -121,15 +121,18 @@ class Member extends React.Component {
 
   render() {
 
-    const {userVipInfo  ,loading} = this.props.store ;
-    if(userVipInfo == null)return (
-      <ActivityIndicator
-        toast
-        text="加载中"
-        animating={loading}
-      />
-    );
-    console.log(userVipInfo);
+    const userVipInfo = {
+      userIsVip:false
+    }
+    // const {userVipInfo  ,loading} = this.props.store ;
+    // if(userVipInfo == null)return (
+    //   <ActivityIndicator
+    //     toast
+    //     text="加载中"
+    //     animating={loading}
+    //   />
+    // );
+    // console.log(userVipInfo);
     return <div>
       <div className={styles.header_bg}>
         <VIPHeader vipInfo={userVipInfo}/>
@@ -179,7 +182,7 @@ class Member extends React.Component {
 
 const VipItem = ({ vip, action }) => {
   return (
-    <div className={styles.vip_item}>
+    <div className={[styles.vip_item]}>
       <div className={styles.vip_item_content}>
         <div className={styles.vip_left}>
           <img src={vip.img} alt="" className={styles.vip_left_img}/>
@@ -190,7 +193,7 @@ const VipItem = ({ vip, action }) => {
           </div>
         </div>
         <div className={styles.vip_right}>
-          <div className={styles.vip_right_action} onClick={action}>立即购买</div>
+          <div className={styles.vip_right_action} onClick={action} vip_type={vip.type}>立即购买</div>
         </div>
       </div>
     </div>

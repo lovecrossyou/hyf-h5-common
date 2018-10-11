@@ -12,6 +12,12 @@ export async function fetchUserProfitInfo() {
   });
 }
 
+export async function fetchUserProfitAllFriendInfo() {
+  return request('/api/profit/userProfitAllFriendInfo',{
+    method:'post'
+  });
+}
+
 
 export async function fetchAccountInfo() {
   return request('/api/account/info',{
