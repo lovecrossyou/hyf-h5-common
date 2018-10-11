@@ -16,6 +16,9 @@ class FriendList extends React.Component {
     }
   };
   render() {
+
+    const {userProfitAllFriendInfo} = this.props.store ;
+
     return(
       <div>
         <div className={styles.my_friend_header}>
@@ -24,19 +27,19 @@ class FriendList extends React.Component {
               <img src={icon_haoyou_zuanshi} className={styles.diamond_friend_icon} />
               <div>钻石好友</div>
             </div>
-            <div className={styles.friend_count}>123人</div>
+            <div className={styles.friend_count}>{userProfitAllFriendInfo.userProfitDiamondFriendAmount}人</div>
           </div>
           <div className={styles.friend_type}>
             <div className={styles.friend_title}>
               <img src={icon_haoyou_huangjin} className={styles.gold_friend_icon} />
               <div>黄金好友</div>
             </div>
-            <div className={styles.friend_count}>321人</div>
+            <div className={styles.friend_count}>{userProfitAllFriendInfo.userProfitGoldenFriendAmount}人</div>
           </div>
         </div>
         <div className={styles.friend_list}>
           {
-            friends.map((item,index)=>{
+            userProfitAllFriendInfo.userProfitDiamondFriendModelList.map((item,index)=>{
               return (
                 <FriendItem friendInfo={item} key={index} action={this.navigateTo(item)}/>
               )
@@ -51,12 +54,17 @@ class FriendList extends React.Component {
 }
 
 const FriendItem = ({friendInfo,action})=>{
+
+  // diamondFriendAmount (integer, optional): 钻石好友数量 ,
+  //   iconUrl (string, optional): 用户头像 ,
+  //   nickName (string, optional): 昵称 ,
+  //   profitUserId (integer, optional): 用户profitUserId
   return (
     <div onClick={action}>
       <div className={styles.diamond_friend_info}>
         <div className={styles.friend_info_left}>
-          <img alt="touxiang" src={friendInfo.img} className={styles.friend_info_icon} />
-          <div className={styles.friend_nick_name}>{friendInfo.name}</div>
+          <img alt="touxiang" src={friendInfo.iconUrl} className={styles.friend_info_icon} />
+          <div className={styles.friend_nick_name}>{friendInfo.nickName}</div>
         </div>
         <div className={styles.friend_info_right}>
           <div>{friendInfo.diamondFriendAmount}人</div>
@@ -68,7 +76,6 @@ const FriendItem = ({friendInfo,action})=>{
 };
 
 
-export default connect(({shoppingcart}) => ({
-  store: shoppingcart
+export default connect(state => ({
+  store: state.wallet
 }))(FriendList);
-
