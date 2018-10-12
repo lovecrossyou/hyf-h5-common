@@ -1,12 +1,21 @@
 export default {
   namespace: "global",
   state: {
-    text: "Title"
+    text: "",
+    accessInfo:null
   },
 
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query, search }) => {
+        console.log('global accessInfo ',query.accessInfo);
+        const accessInfo = query.accessInfo ;
+        if(accessInfo){
+          dispatch({
+            type:'saveAccessInfo',
+            payload:accessInfo
+          });
+        }
         dispatch({
           type: "fetch"
         });
@@ -17,6 +26,14 @@ export default {
     save(state, action) {
       return { ...state, ...action.payload };
     },
+
+    saveAccessInfo(state,{payload}){
+      return {
+        ...state,
+        accessInfo:payload
+      }
+    },
+
     setText(state, { payload }) {
       return {
         ...state,

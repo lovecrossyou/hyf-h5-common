@@ -22,8 +22,11 @@ function checkStatus(response) {
  */
 export default async function request(url, options) {
   console.log('request ', url);
+  const state = window.g_app._store.getState();
+  const accessInfo = state.global.accessInfo ;
+  console.log('accessInfo ',accessInfo)
   const accessToken = getAccessToken();
-  let body = Object.assign(options.body || {}, { accessInfo: accessToken });
+  let body = Object.assign(options.body || {}, { accessInfo: JSON.parse(accessInfo) });
   const opt = {
     body: JSON.stringify(body),
     headers: {
