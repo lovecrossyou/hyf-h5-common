@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="" />
+    <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -64,13 +66,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="51" />
-          <entry key="js" value="22" />
+          <entry key="js" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="51" />
-          <entry key="JavaScript" value="22" />
+          <entry key="JavaScript" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -113,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="280">
+              <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -131,7 +133,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="326">
@@ -282,10 +284,10 @@
         <option value="$PROJECT_DIR$/src/pages/wallet/page.css" />
         <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" />
         <option value="$PROJECT_DIR$/src/pages/friendlist/page.css" />
-        <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.css" />
+        <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
       </list>
     </option>
   </component>
@@ -358,6 +360,14 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -464,17 +474,18 @@
       <workItem from="1539609013759" duration="74000" />
       <workItem from="1539609198571" duration="107000" />
       <workItem from="1539609337384" duration="55000" />
-      <workItem from="1539609610333" duration="1899000" />
+      <workItem from="1539609610333" duration="2040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94264000" />
+    <option name="totallyTimeSpent" value="94405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44235295" visible="true" weight="0.23749007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44235295" visible="true" weight="0.23749007" />
       <window_info id="Structure" order="1" weight="0.2494043" />
       <window_info id="npm" order="2" sideWeight="0.55764705" side_tool="true" weight="0.12629071" />
       <window_info id="Project Explorer" order="3" />
@@ -483,7 +494,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2966752" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3606789" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3606789" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,7 +502,7 @@
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32956153" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -652,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/member/page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -708,6 +712,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -721,10 +732,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.css">
+    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="280">
+          <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
         </state>
       </provider>
     </entry>

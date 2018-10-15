@@ -27,7 +27,7 @@ function generateBalls(begin, count, color){
 
 
 function generatesFucai() {
-   return generateBalls(1, 33, 'red').concat(generateBalls(1, 16, 'blue'));
+   return generateBalls(1, 33, 'red').concat(generateBalls(0, 16, 'blue'));
 }
 
 function generates3D() {
