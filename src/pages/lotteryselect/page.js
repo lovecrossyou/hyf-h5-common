@@ -44,12 +44,7 @@ const SingleNumberPanel = () => {
 // 已选号码
 const LotteryNos = () => {
   return <div className={styles.no_group}>
-    <SingleNumberPanel/>
-    <SingleNumberPanel/>
-    <SingleNumberPanel/>
-    <SingleNumberPanel/>
-    <SingleNumberPanel/>
-    <SingleNumberPanel/>
+    {/*<SingleNumberPanel/>*/}
   </div>;
 };
 

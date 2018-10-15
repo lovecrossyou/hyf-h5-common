@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" />
       <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/page.css" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/page.css" />
       <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/page.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/page.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -90,26 +88,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="96" column="12" lean-forward="true" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+            <state relative-caret-position="363">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
                 <element signature="e#314#469#0" expanded="false" />
                 <element signature="e#507#681#0" expanded="false" />
-                <element signature="e#1312#1958#0" expanded="false" />
+                <element signature="e#1193#1839#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+            <state relative-caret-position="181">
+              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -118,8 +116,8 @@
       <file leaf-file-name="LotteryBall.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -283,9 +281,9 @@
         <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" />
         <option value="$PROJECT_DIR$/src/pages/friendlist/page.css" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.css" />
+        <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.js" />
-        <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
       </list>
     </option>
   </component>
@@ -365,6 +363,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="h5-umi-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5-umi-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="h5-umi-common" type="b2602c69:ProjectViewProjectNode" />
@@ -491,12 +497,12 @@
       <workItem from="1539178875393" duration="273000" />
       <workItem from="1539220163975" duration="15605000" />
       <workItem from="1539306342378" duration="24519000" />
-      <workItem from="1539598574522" duration="1468000" />
+      <workItem from="1539598574522" duration="1650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91936000" />
+    <option name="totallyTimeSpent" value="92118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1512" y="23" width="1600" height="877" extended-state="0" />
@@ -507,9 +513,9 @@
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22890025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22890025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14122863" sideWeight="0.5545723" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14705883" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19053708" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14122863" sideWeight="0.44542772" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -762,30 +768,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="96" column="12" lean-forward="true" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+        <state relative-caret-position="363">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
             <element signature="e#314#469#0" expanded="false" />
             <element signature="e#507#681#0" expanded="false" />
-            <element signature="e#1312#1958#0" expanded="false" />
+            <element signature="e#1193#1839#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>

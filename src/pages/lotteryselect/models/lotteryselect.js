@@ -64,6 +64,7 @@ export default {
         type: 'save', payload:balls
       });
     },
+
     *delete({ payload }, { call, put }) {
       yield put({
         type: 'save', payload: {
