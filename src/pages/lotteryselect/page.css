@@ -37,6 +37,8 @@
   text-align: center;
   color: #fff;
   background-color: #e64340;
+  margin-right: 4px;
+  margin-bottom: 4px;
 }
 
 .nos_balls{
@@ -88,7 +90,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 85%;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   padding: 10px 0;
 }
 

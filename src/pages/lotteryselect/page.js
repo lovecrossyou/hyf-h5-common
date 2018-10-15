@@ -86,23 +86,16 @@ const SelectPanel3D = ({codes})=>{
 }
 
 // 福彩双色球 选号面板
-const SelectPanelFuCai = ()=>{
+const SelectPanelFuCai = ({codes})=>{
   return <div className={styles.select_panel}>
     <div className={styles.tips}>{TipsDOUBLE}</div>
     <div className={styles.wrapper_3d}>
       <div className={styles.all_ball}>
-        <LotteryBall text='0'/>
-        <LotteryBall text='1'/>
-        <LotteryBall text='2'/>
-        <LotteryBall text='3'/>
-        <LotteryBall text='4'/>
-      </div>
-      <div className={styles.all_ball}>
-        <LotteryBall text='5'/>
-        <LotteryBall text='6'/>
-        <LotteryBall text='7'/>
-        <LotteryBall text='8'/>
-        <LotteryBall text='9'/>
+        {
+          codes.map((c,index)=>{
+            return <LotteryBall code={c} key={index+'#'}/>
+          })
+        }
       </div>
     </div>
 
@@ -113,6 +106,7 @@ const SelectPanelFuCai = ()=>{
 }
 
 const LotterySel = (props)=>{
+  console.log('store ',JSON.stringify(props.store));
   return (
     <div className={styles.container}>
       {/*菜单面板*/}
@@ -121,13 +115,13 @@ const LotterySel = (props)=>{
       <LotteryNos/>
       {/*选号面板*/}
       {/*<SelectPanel3D/>*/}
-      <SelectPanelFuCai/>
+      <SelectPanelFuCai codes={props.store.codes_panel}/>
     </div>
   );
 }
 
 export default connect(state => {
   return {
-    pageData: state.lotteryselect,
+    store: state.lotteryselect,
   };
 })(LotterySel);
