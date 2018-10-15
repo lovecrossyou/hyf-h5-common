@@ -1,9 +1,17 @@
+class Ball{
+  constructor(text='',color='#cc2636'){
+    this.text = text ;
+    this.color = color ;
+  }
+}
+
 
 export default {
   namespace: 'lotteryselect',
   state: {
-    text: 'page work',
-    list: []
+    selectedNos: [],
+    codes_3d:[],
+    codes_fucai:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -23,6 +31,9 @@ export default {
   },
   effects: {
     *fetch({ payload }, { call, put }) {
+      //初始化选号面板
+
+
       yield put({
         type: 'save', payload: {
           text: 'page init'

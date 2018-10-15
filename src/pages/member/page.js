@@ -27,7 +27,7 @@ const VIPHeader = ({vipInfo}) => {
   if(userIsVip===false){
     return (
       <div className={styles.title}>
-        <img width='75px' height='18px' src={vip_putong} alt=""/>
+        <img width='150px' height='36px' src={vip_putong} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>普通会员</div>
           ，仅可每月参与1次0元抢金砖活动
@@ -40,7 +40,7 @@ const VIPHeader = ({vipInfo}) => {
     // 铂金会员
     return (
       <div className={styles.title}>
-        <img width='75px' height='18px' src={vip_bojin} alt=""/>
+        <img width='150px' height='36px' src={vip_bojin} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>铂金会员</div>
           ，每期赠送2组抽签号码 奖励20喜币
@@ -52,7 +52,7 @@ const VIPHeader = ({vipInfo}) => {
     // 黄金会员
     return (
       <div className={styles.title}>
-        <img width='75px' height='18px' src={vip_gold} alt=""/>
+        <img width='150px' height='36px' src={vip_gold} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>黄金会员</div>
           ，每期赠送1组抽签号码 奖励30喜币
@@ -65,7 +65,7 @@ const VIPHeader = ({vipInfo}) => {
     // 钻石会员
     return (
       <div className={styles.title}>
-        <img width='75px' height='18px' src={vip_zuanshi} alt=""/>
+        <img width='150px' height='36px' src={vip_zuanshi} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>钻石会员</div>
           ，每期赠送10组抽签号码 奖励100喜币
