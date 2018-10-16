@@ -2,60 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/BG1_icon_caiyun@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/BG_photo_xingzuo@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg1_icon_jiankang@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg1_icon_lianai@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg1_icon_shiye@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_baiyang@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_chunv@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_jinniu@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_juxie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_mojie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_sheshou@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_shizi@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_shuangyu@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_shuangzi@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_shuiping@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_tianping@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/bg_icon_tianxie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_baiyang@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_baiyang@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_chunv@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_chunv@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_cuowu@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_cuowu@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_jinniu@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_jinniu@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_juxie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_juxie@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_mojie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_mojie@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_sheshou@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_sheshou@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shizi@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shizi@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuangyu@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuangyu@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuangzi@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuangzi@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuiping@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_shuiping@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_tianping@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_tianping@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_tianxie@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/astro/icon_bg_tianxie@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/astro/components/Horoscope.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/astro/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/astro/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.umirc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/friendlist/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/friendlist/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/page.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/page.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -136,6 +83,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/friendlist/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="55" column="38" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -148,8 +107,8 @@
       <file leaf-file-name="AstroItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/components/AstroItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            <state relative-caret-position="197">
+              <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -160,7 +119,7 @@
       <file leaf-file-name="Horoscope.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/components/Horoscope.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
+            <state relative-caret-position="161">
               <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -169,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+            <state relative-caret-position="191">
+              <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -283,9 +242,9 @@
         <option value="$PROJECT_DIR$/.umirc.js" />
         <option value="$PROJECT_DIR$/src/pages/friendlist/page.js" />
         <option value="$PROJECT_DIR$/src/pages/main/page.less" />
-        <option value="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" />
         <option value="$PROJECT_DIR$/src/pages/astro/page.css" />
         <option value="$PROJECT_DIR$/src/pages/astro/components/Horoscope.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" />
       </list>
     </option>
   </component>
@@ -332,6 +291,39 @@
             <path>
               <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="friendlist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -438,15 +430,24 @@
       <workItem from="1539178875393" duration="273000" />
       <workItem from="1539220163975" duration="15605000" />
       <workItem from="1539306342378" duration="9469000" />
-      <workItem from="1539569227377" duration="22794000" />
+      <workItem from="1539569227377" duration="24155000" />
     </task>
+    <task id="LOCAL-00001" summary="星座">
+      <created>1539600446410</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539600446411</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98212000" />
+    <option name="totallyTimeSpent" value="99573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7183735" visible="true" weight="0.19072708" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -479,6 +480,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="星座" />
+    <option name="LAST_COMMIT_MESSAGE" value="星座" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -717,30 +722,10 @@
     <entry file="file://$PROJECT_DIR$/src/assets/astro/icon_bg_juxie@3x.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/friendlist/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="55" column="31" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/astro/components/AstroItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -751,9 +736,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/astro/components/Horoscope.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
+        <state relative-caret-position="161">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -761,10 +753,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/components/AstroItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        <state relative-caret-position="197">
+          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/friendlist/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="55" column="38" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
