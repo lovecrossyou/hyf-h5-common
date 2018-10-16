@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/page.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/page.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -130,7 +127,7 @@
       <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="326">
               <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="19" selection-end-line="187" selection-end-column="29" />
               <folding>
                 <element signature="n#Ball#0" expanded="false" />
@@ -547,7 +544,7 @@
       <workItem from="1539653869930" duration="522000" />
       <workItem from="1539654408464" duration="16612000" />
       <workItem from="1539679657170" duration="952000" />
-      <workItem from="1539681100796" duration="2894000" />
+      <workItem from="1539681100796" duration="3361000" />
     </task>
     <task id="LOCAL-00001" summary="xxxxxx">
       <created>1539679705257</created>
@@ -581,7 +578,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115385000" />
+    <option name="totallyTimeSpent" value="115852000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -594,7 +591,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="23" width="1280" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -602,8 +598,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2359015" sideWeight="0.57929516" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14956012" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52979416" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.73313785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18181819" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2359015" sideWeight="0.42070484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -908,7 +904,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="326">
           <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="19" selection-end-line="187" selection-end-column="29" />
           <folding>
             <element signature="n#Ball#0" expanded="false" />
