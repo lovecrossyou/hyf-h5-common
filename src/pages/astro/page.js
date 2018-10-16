@@ -11,7 +11,6 @@ function Astro(props) {
     <div className={styles.astrology_container}>
       <div className={styles.astrology}>您还没有选择您的星座</div>
       <div className={styles.choose_astrology}>
-
         <Link to="./components/AstroItem"><button>选择星座</button></Link>
       </div>
     </div>
