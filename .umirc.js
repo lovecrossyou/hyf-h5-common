@@ -6,7 +6,11 @@ export default {
       antd: true,
       dva: true,
       immer: true,
+<<<<<<< HEAD
       hd: true
+=======
+      hd:true,
+>>>>>>> 1b9795b60670e37ba28d0d8286edf98878c11de5
     }],
   ],
   proxy: {
