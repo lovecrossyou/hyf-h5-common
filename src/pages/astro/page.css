@@ -1,8 +1,7 @@
 .astrology_container{
   width:100%;
   height:300px;
-  background:pink;
-  background: image('../../assets/vip/BG_photo_xingzuo@2x.png');
+  background: url('../../assets/astro/BG_photo_xingzuo@2x.png');
 }
 .astrology{
   padding-top: 54px;
@@ -58,11 +57,14 @@
   text-align: center;
 }
 /*星座运势*/
-.Horoscope{
+.Horoscopecontainer_tit{
   width:100%;
-  height:300px;
+  height:240px;
+  padding-left:40px;
+  padding-top:60px;
   color:#FFFFFF;
-  background: #9b52e2;
+  background: url("../../assets/astro/BG_photo_xingzuo@2x.png");
+  position:relative;
 }
 .Horoscope_tit{
   padding:0 40px;
@@ -78,3 +80,40 @@
 .Horoscope_tit_left_center{
   padding:22px 0 20px 0;
 }
+.Horoscope_tit_left_center_astro{
+  display: inline-block;
+  width:130px;
+  height:45px;
+  line-height:45px;
+  text-align: center;
+  border-radius: 20px;
+  background:#FFFFFF;
+  color:#8b3be6;
+  font-size: 34px;
+  margin-right:22px;
+}
+.Horoscope_tit_right{
+  position: absolute;
+  top:60px;
+  right:60px;
+}
+.Horoscopecontainer_content{
+  background: #fbf9ff;
+}
+.Horoscopecontainer_content_item{
+  background: #FFFFFF;
+  padding:50px 0 36px 20px;
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px #e8dff5;
+}
+.Horoscopecontainer_content_item_tit{
+  margin-bottom:36px;
+  font-size: 34px;
+  line-height: 34px;
+}
+.Horoscopecontainer_content_item_tit_name{
+  padding-left:20px;
+}
+
