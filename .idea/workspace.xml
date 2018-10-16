@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="" />
+    <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/page.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -124,11 +126,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -282,6 +296,7 @@
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.css" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/page.js" />
       </list>
     </option>
   </component>
@@ -327,6 +342,30 @@
             <path>
               <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -438,7 +477,7 @@
       <workItem from="1539609610333" duration="2040000" />
       <workItem from="1539653869930" duration="522000" />
       <workItem from="1539654408464" duration="16612000" />
-      <workItem from="1539679657170" duration="680000" />
+      <workItem from="1539679657170" duration="952000" />
     </task>
     <task id="LOCAL-00001" summary="xxxxxx">
       <created>1539679705257</created>
@@ -454,11 +493,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539680009427</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="xxxxxx">
+      <created>1539680384666</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539680384666</updated>
+    </task>
+    <task id="LOCAL-00004" summary="xxxxxx">
+      <created>1539680492408</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539680492408</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112219000" />
+    <option name="totallyTimeSpent" value="112491000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -472,7 +525,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4344086" visible="true" weight="0.10590095" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4344086" visible="true" weight="0.10590095" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -481,7 +534,7 @@
       <window_info id="npm" order="2" sideWeight="0.5655914" side_tool="true" weight="0.23749007" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33562586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.52979416" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52979416" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -535,7 +588,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="xxxxxx" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/myfriend.wxss" />
     <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/myfriend.wxml" />
     <entry file="file://$PROJECT_DIR$/src/pages/friendlist/goldfriendlist.js" />
     <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/inviteredpocket.wxml" />
@@ -761,6 +813,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
