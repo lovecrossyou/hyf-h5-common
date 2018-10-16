@@ -7,7 +7,6 @@
   padding-top: 54px;
   text-align: center;
   font-size: 28px;
-  font-family: "PingFang-SC-Regular";
   color: #FFFFFF;
 }
 .choose_astrology{
@@ -23,7 +22,6 @@
   background: #4b3194;
   opacity:0.47;
   font-size: 34px;
-  font-family: "PingFang-SC-Medium";
   color:#FFFFFF;
 }
 /*星座选择*/
@@ -38,7 +36,6 @@
   text-align: center;
   font-size: 40px;
   color:#FFFFFF;
-  font-family: "PingFang-SC-Regular";
 }
 .astroItem_astrology_name{
   width:100%;
