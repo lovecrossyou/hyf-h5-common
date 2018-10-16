@@ -32,13 +32,7 @@ function Horoscope(props) {
           </div>
           <div>受木星支撑，财运大旺。</div>
         </div>
-        <div className={styles.Horoscopecontainer_content_item}>
-          <div className={styles.Horoscopecontainer_content_item_tit}>
-            <img src={BG1_icon_caiyun} alt=""/>
-            <span className={styles.Horoscopecontainer_content_item_tit_name}>财运</span>
-          </div>
-          <div>受木星支撑，财运大旺。</div>
-        </div>
+
       </div>
     </div>
   );
