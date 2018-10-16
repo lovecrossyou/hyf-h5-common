@@ -1,7 +1,8 @@
-.astrology_container{
-  width:100%;
-  height:300px;
-  background: url('../../assets/astro/BG_photo_xingzuo@2x.png');
+.astrology_container {
+  width: 100%;
+  height: 300px;
+  background: url('../../assets/astro/BG_photo_xingzuo@3x.png') no-repeat;
+  background-size: 100% 100%;
 }
 .astrology{
   padding-top: 54px;
@@ -16,11 +17,12 @@
 .choose_astrology button{
   width:278px;
   height:70px;
-  border-radius: 20px;
+  line-height:30px;
+  border-radius: 30px;
   outline: none;
   border:0;
   background: #4b3194;
-  opacity:0.47;
+  background-color:rgba(0,0,0,0.1);
   font-size: 34px;
   color:#FFFFFF;
 }
@@ -47,7 +49,6 @@
 .astroItem_astrology_name_item{
   flex-basis: 33%;
   margin-top: 28px;
-  border-right:2px solid white;
 }
 .astroItem_icon_bg_cuowu{
   padding:70px 0;
@@ -57,10 +58,11 @@
 .Horoscopecontainer_tit{
   width:100%;
   height:240px;
-  padding-left:40px;
+  padding-left:30px;
   padding-top:60px;
   color:#FFFFFF;
-  background: url("../../assets/astro/BG_photo_xingzuo@2x.png");
+  background: url("../../assets/astro/BG_photo_xingzuo@3x.png") no-repeat;
+  background-size: 100% 100%;
   position:relative;
 }
 .Horoscope_tit{
@@ -91,7 +93,7 @@
 }
 .Horoscope_tit_right{
   position: absolute;
-  top:60px;
+  top:90px;
   right:60px;
 }
 .Horoscopecontainer_content{
