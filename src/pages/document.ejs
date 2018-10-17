@@ -18,9 +18,10 @@
 <div id="root"></div>
 </body>
 <script>
+
+
   wx.miniProgram.getEnv(function(res) {
     if (res.miniprogram) {
-
       //银行卡列表
       $('#root').on('click', '.page__bank___3wlAE', function() {
         console.log('银行卡列表')
@@ -50,29 +51,32 @@
 
       //会员升级
       $('#root').on('click', '.page__vip_right_action___2J0qF', function() {
-
-
         // window.g_app._store
-
-
         // wx.miniProgram.postMessage({ type: 'user_to_golden_vip' });
-
         // wx.miniProgram.navigateTo({url: '/path/to/page'})
-
-
-
         const vipType = $(this).attr('vip_type');
-
         wx.miniProgram.redirectTo({ url: '/pages/pay/pay?type='+vipType});
-
-        // $.post('http://123.57.161.212:9939/xitenggamejar/vip/updateToVipUser', JSON.stringify(postInfo), function(res) {
-        //   console.log(res);
-        //   const payOrderNo = res.payOrderNo;
-        //   const totalPayRmb = res.totalPayRmb;
-        //   wx.miniProgram.navigateTo({ url: '/pages/pay/pay?payOrderNo='+payOrderNo+'&totalPayRmb='+totalPayRmb })
-        // })
       });
+
+
+      // 确认选号后 返回
+      $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
+        const state = window.g_app._store.getState() ;
+        const lotteryselect = state.lotteryselect ;
+        wx.miniProgram.postMessage({ data: lotteryselect.selectedBids });
+        console.log(lotteryselect);
+        wx.miniProgram.navigateBack();
+      })
     }
+    else {
+      console.log('script ....')
+    }
+  })
+
+  $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
+    window.postMessage({
+      data:'hello'
+    });
   })
 </script>
 </html>

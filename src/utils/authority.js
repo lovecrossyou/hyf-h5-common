@@ -2,10 +2,11 @@ export function getAccessToken() {
   // const token = localStorage.getItem('accessToken') ;
   // return token===undefined? '' : token ;
 
+
   return {
     "app_key":"b5958b665e0b4d8cae77d28e1ad3f521",
-    "signature":"90D6C00F51006BFCF3B1A02B810C1A22",
-    "access_token":"c9ffec5aad484d86ac73d2268dc0ff7e",
+    "signature":"8200E5F6853A7D633C1F4A1CEC0AC91F",
+    "access_token":"5b27e0a6452b472d91ce6f646064512e",
     "os":"WeixinMiniProgramPay"
   }
 
