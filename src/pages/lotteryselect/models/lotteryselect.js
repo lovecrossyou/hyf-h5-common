@@ -188,13 +188,14 @@ export default {
           // const type = 'fucai' ;
           const type = query.type ;
 
-          const nos = query.nos ;
-          if(nos!==undefined){
-            console.log('nos ',JSON.parse(nos));
+          const selectedBids = query.nos ;
+
+          if(selectedBids!==undefined){
+            console.log('nos ',JSON.parse(selectedBids));
           }
           dispatch({
             type: 'init',
-            payload:{totalCount,type,nos:nos||[]}
+            payload:{totalCount,type,selectedBids:JSON.parse(selectedBids)||[]}
           })
           dispatch({
             type:'global/setTitle',payload:{
@@ -208,7 +209,7 @@ export default {
   effects: {
     *init({ payload }, { call, put }) {
       //初始化选号面板
-      const {totalCount,type} = payload ;
+      const {totalCount,type,selectedBids} = payload ;
       let balls = [] ;
       if(type === '3d'){
         balls = generates3D();
@@ -220,7 +221,8 @@ export default {
         type: 'save', payload:{
           balls:balls,
           totalCount:totalCount,
-          type:type
+          type:type,
+          selectedBids:selectedBids
         }
       });
     },
@@ -236,8 +238,13 @@ export default {
   },
   reducers: {
     save(state, action) {
-      let {totalCount , type} = action.payload;
-      return { ...state, codes_panel:action.payload.balls,totalCount,type, currentBid:new Bid(type)};
+      let {totalCount , type,selectedBids} = action.payload;
+      return { ...state,
+        codes_panel:action.payload.balls,
+        totalCount,type,
+        currentBid:new Bid(type),
+        selectedBids:selectedBids
+      };
     },
 
     saveBids(state, action) {

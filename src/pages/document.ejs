@@ -92,26 +92,26 @@
     }
   })
 
-  $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
-    if($(this).css("opacity")==0.3)return;
-    const state = window.g_app._store.getState() ;
-    const selectBids = state.lotteryselect.selectedBids ;
-    const getBidStr = (total,sum)=>{
-      if(total.length==''){
-        return sum.text ;
-      }
-      return total+','+ sum.text ;
-    }
-
-    let bidsStrGroup = [] ;
-    for(let bid of selectBids){
-      const balls = bid.balls ;
-      const bidStr = balls.reduce(getBidStr,'');
-      bidsStrGroup.push(bidStr);
-    }
-    console.log(bidsStrGroup)
-    window.postMessage(JSON.stringify(selectBids));
-  })
+  // $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
+  //   if($(this).css("opacity")==0.3)return;
+  //   const state = window.g_app._store.getState() ;
+  //   const selectBids = state.lotteryselect.selectedBids ;
+  //   const getBidStr = (total,sum)=>{
+  //     if(total.length==''){
+  //       return sum.text ;
+  //     }
+  //     return total+','+ sum.text ;
+  //   }
+  //
+  //   let bidsStrGroup = [] ;
+  //   for(let bid of selectBids){
+  //     const balls = bid.balls ;
+  //     const bidStr = balls.reduce(getBidStr,'');
+  //     bidsStrGroup.push(bidStr);
+  //   }
+  //   console.log(bidsStrGroup)
+  //   window.postMessage(JSON.stringify(selectBids));
+  // })
 
 </script>
 </html>
