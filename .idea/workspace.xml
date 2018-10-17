@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/pages/document.ejs" afterPath="$PROJECT_DIR$/src/pages/document.ejs" />
       <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
     </list>
@@ -134,9 +133,12 @@
       <file leaf-file-name="document.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="393">
+              <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+              <folding>
+                <element signature="e#741#2231#0#HTML" expanded="false" />
+                <element signature="e#2329#2961#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,10 +146,9 @@
       <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
               <folding>
-                <element signature="n#Ball#0" expanded="false" />
                 <element signature="n#!!block;n#generateBalls#0" expanded="false" />
                 <element signature="n#!!block;n#generatesFucai#0" expanded="false" />
                 <element signature="n#!!block;n#generates3D#0" expanded="false" />
@@ -545,7 +546,7 @@
       <workItem from="1539653869930" duration="522000" />
       <workItem from="1539654408464" duration="16612000" />
       <workItem from="1539679657170" duration="952000" />
-      <workItem from="1539681100796" duration="30800000" />
+      <workItem from="1539681100796" duration="34721000" />
     </task>
     <task id="LOCAL-00001" summary="xxxxxx">
       <created>1539679705257</created>
@@ -579,7 +580,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143291000" />
+    <option name="totallyTimeSpent" value="147212000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -600,8 +601,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2359015" sideWeight="0.57929516" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39769822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.029411765" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12276215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19565217" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22672577" sideWeight="0.42070484" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -937,18 +938,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="393">
+          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+          <folding>
+            <element signature="e#741#2231#0#HTML" expanded="false" />
+            <element signature="e#2329#2961#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
           <folding>
-            <element signature="n#Ball#0" expanded="false" />
             <element signature="n#!!block;n#generateBalls#0" expanded="false" />
             <element signature="n#!!block;n#generatesFucai#0" expanded="false" />
             <element signature="n#!!block;n#generates3D#0" expanded="false" />

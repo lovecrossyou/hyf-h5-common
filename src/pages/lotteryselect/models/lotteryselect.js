@@ -183,13 +183,18 @@ export default {
           //init selectedBids
           console.log('history ',history)
           console.log('history ',query)
-          const totalCount = 2 ;
-          // const totalCount = query.totalCount ;
-          const type = 'fucai' ;
-          // const type = query.type ;
+          // const totalCount = 2 ;
+          const totalCount = query.totalCount ;
+          // const type = 'fucai' ;
+          const type = query.type ;
+
+          const nos = query.nos ;
+          if(nos!==undefined){
+            console.log('nos ',JSON.parse(nos));
+          }
           dispatch({
             type: 'init',
-            payload:{totalCount,type}
+            payload:{totalCount,type,nos:nos||[]}
           })
           dispatch({
             type:'global/setTitle',payload:{
