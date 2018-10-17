@@ -1,7 +1,9 @@
 import styles from '../page.css'
 
 export const LotteryBall = ({ball,onClick})=>{
-  if(ball === undefined)return null;
+  if(ball === undefined)return (
+    <div className={styles.ball} style={{backgroundColor:'#00000000'}}/>
+  )
   return <div onClick={()=>{
     if(ball.active)return;
     onClick && onClick(ball);

@@ -182,13 +182,12 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
           //init selectedBids
-
           console.log('history ',history)
           console.log('history ',query)
-          // const totalCount = 6 ;
-          const totalCount = query.totalCount ;
-          // const type = 'fucai' ;
-          const type = query.type ;
+          const totalCount = 2 ;
+          // const totalCount = query.totalCount ;
+          const type = 'fucai' ;
+          // const type = query.type ;
           dispatch({
             type: 'init',
             payload:{totalCount,type}
@@ -282,13 +281,18 @@ export default {
     },
 
     jiXuan(state,action){
-      let selectedBids = state.selectedBids;
-      selectedBids = [];
+      let selectedBids = [];
+      let currentBid = state.currentBid;
+      currentBid.clear();
+      let code_pannel = resetPannel(state.codes_panel);
+
       let type = state.currentBid.type;
       for (let i = 0; i < state.totalCount; i++){
         selectedBids.push(new Bid(type, true));
       }
-      return {...state, selectedBids}
+
+      console.log('selectedBids ',selectedBids)
+      return {...state, selectedBids, code_pannel, currentBid};
 
     }
   }

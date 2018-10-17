@@ -66,6 +66,9 @@ class Wallet extends React.Component {
           </div>
           <div className={styles.wallet_fun_count_item}>-元</div>
         </div>
+
+        <div className={styles.line}/>
+
         <div  className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top}>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img} />
@@ -73,7 +76,7 @@ class Wallet extends React.Component {
           </div>
           <div className={styles.wallet_fun_count_item}>-张</div>
         </div>
-        <div className={styles.bank}>
+        <div className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top}>
             <img src={me_icon_yinhangka} className={styles.my_bank_item_img} />
             <div>银行卡</div>
@@ -81,21 +84,33 @@ class Wallet extends React.Component {
           <div className={styles.wallet_fun_count_item_big}>+</div>
         </div>
 
-        <div  className={styles.wallet_fun_item}>
+        <div onClick={this.vipClick} className={styles.wallet_fun_item}>
           <div className={styles.account_detail}>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img} />
-            <div>账单明细</div>
+            <div>会员中心</div>
           </div>
         </div>
 
-        <div  className={styles.wallet_fun_item}>
+        <div onClick={this.astroClick} className={styles.wallet_fun_item}>
           <div className={styles.security}>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img} />
-            <div>账户安全</div>
+            <div>星座运势</div>
           </div>
         </div>
       </div>
     </div>
+  }
+
+
+  // 点击运势
+  astroClick = ()=>{
+    this.props.dispatch(routerRedux.push('/astro/page'))
+  }
+
+
+  // 会员中心
+  vipClick = ()=>{
+    this.props.dispatch(routerRedux.push('/member/page'))
   }
 
 }

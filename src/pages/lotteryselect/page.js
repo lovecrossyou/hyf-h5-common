@@ -29,24 +29,29 @@ const NumberGroup = ({ balls, onClick }) => {
 
 // 一组号码
 const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, delClick }) => {
-  // console.log('restCount ', restCount, 'buyCount', bid.buyCount);
+  console.log('SingleNumberPanel bid ',bid);
   return <div className={styles.nos}>
+
     <div className={styles.leftWrapper}>
+
+
       {
-        hideStepper == undefined ? (<div className={styles.delBtn} onClick={delClick}>x</div>) : (
+        hideStepper == undefined ? (<div className={styles.delBtn_wrapper}><div className={styles.delBtn} onClick={delClick}>x</div></div>) : (
           <div className={styles.delBtn}/>)
       }
       <NumberGroup onClick={onClick} balls={bid.balls}/>
     </div>
-    <div>
+
+
+    <div className={styles.stepper}>
       {
         hideStepper == undefined ? (<Stepper
-          style={{ width: '100%', minWidth: '100px' }}
+          style={{ width: '100%', minWidth: '100px',border:'solid 1px #e2e2e2' }}
           onChange={onChange}
           showNumber
           min={1}
           max={bid.buyCount + restCount}
-          defaultValue={bid.buyCount}
+          value={bid.buyCount}
         />) : null
       }
     </div>
@@ -116,37 +121,70 @@ const SelectPanel3D = ({ codes }) => {
   </div>;
 };
 
+const COLUMN = 9 ;
+const calRowCount = (row,totalCount)=>{
+  return (totalCount - row * COLUMN)>COLUMN ? COLUMN :  (totalCount - row * COLUMN) ;
+}
+
+const GeneRowItems = ({rowItems,numsOfRow})=>{
+  if(numsOfRow!=COLUMN){
+    return (<div className={styles.rowWrapper_no_center}>
+      {rowItems}
+
+    </div>)
+  }
+  else {
+    return (<div className={styles.rowWrapper}>
+      {rowItems}
+    </div>)
+  }
+}
+
 // 福彩双色球 选号面板
 const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids }) => {
-  return <div className={styles.select_panel}>
-    <div className={styles.tips}>{TipsDOUBLE}</div>
-    <div className={styles.wrapper_3d}>
-      <div className={styles.all_ball}>
-        {
-          balls.map((c, index) => {
-            return <LotteryBall onClick={() => {
-              if (bidCompleteFlg) return;
-              if (c.color === 'red') {
-                if (currentBid.type === '3d'
-                  && currentBid.red_selectCount === 3) {
-                  return;
-                }
-                if (currentBid.type !== '3d'
-                  && currentBid.red_selectCount === 6) {
-                  return;
-                }
-              } else {
-                if (currentBid.blue_selectCount === 1) {
-                  return;
-                }
-              }
-              onClick(c);
-            }} ball={c} key={index + '#'}/>;
-          })
+  const rows = Math.ceil(balls.length/COLUMN);
+  let allRowItems = [] ;
+  const numsOfRow = 9;
+
+  for(let i = 0;i<rows;i++){
+    // const numsOfRow = calRowCount(i,balls.length) ;
+    let rowItems = [] ;
+    for(let j=0;j<numsOfRow;j++){
+      const ballIndex = i * COLUMN + j ;
+      console.log("ballindex",ballIndex);
+      const c = balls[ballIndex] ;
+      console.log("c",c);
+      rowItems.push(<LotteryBall onClick={() => {
+        if (bidCompleteFlg) return;
+        if (c.color === 'red') {
+          if (currentBid.type === '3d'
+            && currentBid.red_selectCount === 3) {
+            return;
+          }
+          if (currentBid.type !== '3d'
+            && currentBid.red_selectCount === 6) {
+            return;
+          }
+        } else {
+          if (currentBid.blue_selectCount === 1) {
+            return;
+          }
         }
+        onClick(c);
+      }} ball={c} key={i + '#' + j}/>)
+    }
+    allRowItems.push(<GeneRowItems key={'#'+i} rowItems={rowItems} numsOfRow={numsOfRow}/>)
+  }
+
+  return <div className={styles.panel_wrapper}>
+    <div className={styles.sepline}/>
+
+    <div className={styles.select_panel}>
+      <div className={styles.tips}>{TipsDOUBLE}</div>
+      <div className={styles.wrapper_3d}>
+        {allRowItems}
       </div>
     </div>
-
     <div
       onClick={() => {
         if (bidCompleteFlg) {
@@ -156,7 +194,8 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       className={styles.btn_confirm} style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>
-  </div>;
+    </div>
+  ;
 };
 
 function calcBidCount(bids) {
@@ -183,44 +222,48 @@ const LotterySel = (props) => {
         }}
         restCount={restCount}/>
       {/*已选号码*/}
-      <LotteryNos
-        delClick={index => {
-          props.dispatch({
-            type: 'lotteryselect/delBid',
-            payload: index,
-          });
-        }}
-        restCount={restCount}
-        onChange={(count, index) => {
-          props.dispatch({
-            type: 'lotteryselect/setBidCount',
-            payload: { count, index },
-          });
-        }}
-        bidCmpleteFlag={bidCmpleteFlag}
-        onClick={(ball) => {
-          props.dispatch({
-            type: 'lotteryselect/unSelectBall',
-            payload: ball,
-          });
-        }}
-        currentBid={props.store.currentBid}
-        selectedBids={props.store.selectedBids}/>
-      {/*选号面板*/}
-      <SelectPanelFuCai
-        confirmBids={() => {
-          // console.log('xxxxx');
-        }}
-        bidCompleteFlg={bidCmpleteFlag}
-        onClick={(ball) => {
-          // console.log('ball ', ball);
-          props.dispatch({
-            type: 'lotteryselect/selectBall',
-            payload: ball,
-          });
-        }}
-        currentBid={props.store.currentBid}
-        balls={props.store.codes_panel}/>
+
+     <div className={styles.content}>
+       <LotteryNos
+         delClick={index => {
+           props.dispatch({
+             type: 'lotteryselect/delBid',
+             payload: index,
+           });
+         }}
+         restCount={restCount}
+         onChange={(count, index) => {
+           props.dispatch({
+             type: 'lotteryselect/setBidCount',
+             payload: { count, index },
+           });
+         }}
+         bidCmpleteFlag={bidCmpleteFlag}
+         onClick={(ball) => {
+           props.dispatch({
+             type: 'lotteryselect/unSelectBall',
+             payload: ball,
+           });
+         }}
+         currentBid={props.store.currentBid}
+         selectedBids={props.store.selectedBids}/>
+       {/*选号面板*/}
+       <SelectPanelFuCai
+         confirmBids={() => {
+           // console.log('xxxxx');
+         }}
+         bidCompleteFlg={bidCmpleteFlag}
+         onClick={(ball) => {
+           // console.log('ball ', ball);
+           props.dispatch({
+             type: 'lotteryselect/selectBall',
+             payload: ball,
+           });
+         }}
+         currentBid={props.store.currentBid}
+         balls={props.store.codes_panel}/>
+     </div>
+
     </div>
   );
 };

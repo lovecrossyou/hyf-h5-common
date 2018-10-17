@@ -15,5 +15,9 @@
 }
 
 .wrapper{
-  padding-bottom: 50px;
+  /*padding-bottom: 50px;*/
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
