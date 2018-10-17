@@ -132,7 +132,6 @@ class Bid{
   }
 }
 
-
 function generateBalls(begin, count, color){
   let result = [];
   for(let i=begin;i<count+begin;i++){
@@ -140,7 +139,6 @@ function generateBalls(begin, count, color){
   }
   return result;
 }
-
 
 function generatesFucai() {
    return generateBalls(1, 33, 'red').concat(generateBalls(0, 16, 'blue'));
@@ -175,7 +173,8 @@ export default {
     // 初始化数组
     currentBid:new Bid('fucai'),
 
-    totalCount:0
+    totalCount:0,
+
   },
   subscriptions: {
     setup({ dispatch, history }) {
