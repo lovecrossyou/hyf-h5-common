@@ -112,6 +112,9 @@ class Bid{
   }
 
   unSelectBall(ball){
+    if (ball.text === ''){
+      return;
+    }
     if (ball.color === 'red'){
       let redCount = this.aimCount -1;
       for (let i = 0; i < redCount; i++){
@@ -180,10 +183,12 @@ export default {
         if (pathname === '/lotteryselect/page') {
           //init selectedBids
 
-          const totalCount = 6 ;
-          // const totalCount = history.query.totalCount ;
-          const type = 'fucai' ;
-          // const type = history.query.type ;
+          console.log('history ',history)
+          console.log('history ',query)
+          // const totalCount = 6 ;
+          const totalCount = query.totalCount ;
+          // const type = 'fucai' ;
+          const type = query.type ;
           dispatch({
             type: 'init',
             payload:{totalCount,type}
@@ -239,7 +244,7 @@ export default {
     selectBall(state,action){
       const ball = action.payload ;
       ball.active = true;
-      console.log('selectBall ball ',ball)
+      // console.log('selectBall ball ',ball)
       let currentBid = state.currentBid;
       let selectedBids = state.selectedBids;
 

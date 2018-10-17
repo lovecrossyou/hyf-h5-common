@@ -17,7 +17,7 @@ const OptionPanel = ({ restCount, jiXuan }) => {
 };
 
 const NumberGroup = ({ balls, onClick }) => {
-  console.log('balls ###', balls);
+  // console.log('balls ###', balls);
   return <div className={styles.nos_balls}>
     {
       balls.map((ball, index) => {
@@ -29,7 +29,7 @@ const NumberGroup = ({ balls, onClick }) => {
 
 // 一组号码
 const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, delClick }) => {
-  console.log('restCount ', restCount, 'buyCount', bid.buyCount);
+  // console.log('restCount ', restCount, 'buyCount', bid.buyCount);
   return <div className={styles.nos}>
     <div className={styles.leftWrapper}>
       {
@@ -41,7 +41,7 @@ const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, del
     <div>
       {
         hideStepper == undefined ? (<Stepper
-          style={{ width: '300px' }}
+          style={{ width: '100%', minWidth: '100px' }}
           onChange={onChange}
           showNumber
           min={1}
@@ -56,9 +56,8 @@ const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, del
 // 已选号码
 const LotteryNos = ({ bidCmpleteFlag, restCount, selectedBids, currentBid, onClick, onChange, delClick }) => {
 
-  console.log('selectedBids ', selectedBids);
-  console.log('currentBid ', currentBid);
-
+  // console.log('selectedBids ', selectedBids);
+  console.log('currentBid ', currentBid.balls, "red:",currentBid.red_selectCount, 'blue:'+currentBid.blue_selectCount);
 
   return <div className={styles.no_group}>
     {
@@ -169,7 +168,7 @@ function calcBidCount(bids) {
 }
 
 const LotterySel = (props) => {
-  console.log('store ', JSON.stringify(props.store));
+  // console.log('store ', JSON.stringify(props.store));
 
   const restCount = props.store.totalCount - calcBidCount(props.store.selectedBids);
   const bidCmpleteFlag = restCount === 0;
@@ -210,11 +209,11 @@ const LotterySel = (props) => {
       {/*选号面板*/}
       <SelectPanelFuCai
         confirmBids={() => {
-          console.log('xxxxx');
+          // console.log('xxxxx');
         }}
         bidCompleteFlg={bidCmpleteFlag}
         onClick={(ball) => {
-          console.log('ball ', ball);
+          // console.log('ball ', ball);
           props.dispatch({
             type: 'lotteryselect/selectBall',
             payload: ball,
