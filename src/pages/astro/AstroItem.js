@@ -1,22 +1,22 @@
 import React from 'react';
 import Link from 'umi/link';
 import {connect} from 'dva';
-import styles from '../page.css'
+import styles from './page.css'
 import { Flex , WhiteSpace } from 'antd-mobile'
 
-import icon_bg_baiyang from '../../../assets/astro/icon_bg_baiyang@2x.png';
-import icon_bg_chunv from '../../../assets/astro/icon_bg_chunv@2x.png';
-import icon_bg_tianxie from '../../../assets/astro/icon_bg_tianxie@2x.png';
-import icon_bg_jinniu from '../../../assets/astro/icon_bg_jinniu@2x.png';
-import icon_bg_sheshou from '../../../assets/astro/icon_bg_sheshou@2x.png';
-import icon_bg_shuangyu from '../../../assets/astro/icon_bg_shuangyu@2x.png';
-import icon_bg_shuangzi from '../../../assets/astro/icon_bg_shuangzi@2x.png';
-import icon_bg_juxie from '../../../assets/astro/icon_bg_juxie@2x.png';
-import icon_bg_shizi from '../../../assets/astro/icon_bg_shizi@2x.png';
-import icon_bg_tianping from '../../../assets/astro/icon_bg_tianping@2x.png';
-import icon_bg_mojie from '../../../assets/astro/icon_bg_mojie@2x.png';
-import icon_bg_shuiping from '../../../assets/astro/icon_bg_shuiping@2x.png';
-import icon_bg_cuowu from '../../../assets/astro/icon_bg_cuowu@2x.png';
+import icon_bg_baiyang from '../../assets/astro/icon_bg_baiyang@2x.png';
+import icon_bg_chunv from '../../assets/astro/icon_bg_chunv@2x.png';
+import icon_bg_tianxie from '../../assets/astro/icon_bg_tianxie@2x.png';
+import icon_bg_jinniu from '../../assets/astro/icon_bg_jinniu@2x.png';
+import icon_bg_sheshou from '../../assets/astro/icon_bg_sheshou@2x.png';
+import icon_bg_shuangyu from '../../assets/astro/icon_bg_shuangyu@2x.png';
+import icon_bg_shuangzi from '../../assets/astro/icon_bg_shuangzi@2x.png';
+import icon_bg_juxie from '../../assets/astro/icon_bg_juxie@2x.png';
+import icon_bg_shizi from '../../assets/astro/icon_bg_shizi@2x.png';
+import icon_bg_tianping from '../../assets/astro/icon_bg_tianping@2x.png';
+import icon_bg_mojie from '../../assets/astro/icon_bg_mojie@2x.png';
+import icon_bg_shuiping from '../../assets/astro/icon_bg_shuiping@2x.png';
+import icon_bg_cuowu from '../../assets/astro/icon_bg_cuowu@2x.png';
 
 const astrologys = [
   {img:icon_bg_baiyang},
@@ -41,9 +41,15 @@ const astrologys = [
 // };
 
 function AstroItem(props) {
+  const store = props.store ;
   let astrologyItem = astrologys.map((item,i)=>{
     return(
-      <div key={i} className={styles.astroItem_astrology_name_item}>
+      <div onClick={()=>{
+        props.dispatch({
+          type:'astro/saveAstro',
+          payload:item,
+        })
+      }} key={i} className={styles.astroItem_astrology_name_item}>
         {/*<img src={item.img} onClick={} alt=""/>*/}
         <Link to="./Horoscope">
           <img src={item.img} alt=""/>
@@ -66,6 +72,6 @@ function AstroItem(props) {
 
 export default connect(state => {
   return {
-    pageData: state.main
+    store: state.astro
   };
 })(AstroItem);

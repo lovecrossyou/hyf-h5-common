@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'dva';
-import styles from '../page.css';
+import styles from './page.css';
 
-import bg_icon_shuangyu from '../../../assets/astro/bg_icon_shuangyu@2x.png';
-import BG1_icon_caiyun from '../../../assets/astro/BG1_icon_caiyun@2x.png';
+import bg_icon_shuangyu from '../../assets/astro/bg_icon_shuangyu@2x.png';
+import BG1_icon_caiyun from '../../assets/astro/BG1_icon_caiyun@2x.png';
 
 function Horoscope(props) {
   return (

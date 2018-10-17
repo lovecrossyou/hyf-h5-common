@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/astro/models/astro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/astro/service/astro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/components/Horoscope.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/Horoscope.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/astro/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/page.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -93,53 +98,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#2472#3119#0" />
-                <element signature="e#3226#4355#0" />
-                <element signature="e#4771#4933#0" />
-                <element signature="e#5639#6046#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="document.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="51" column="26" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".umirc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.umirc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="405">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -147,47 +109,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LotteryBall.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js">
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/global.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="414">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.css">
+      <file leaf-file-name=".umirc.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.umirc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1794">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="79" />
+            <state relative-caret-position="46">
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/wallet/page.css">
+      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2530">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="-2746">
+              <caret line="115" column="38" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.css">
+      <file leaf-file-name="AstroItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="198">
+              <caret line="48" column="31" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/friendlist/page.css">
+      <file leaf-file-name="astro.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/models/astro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+            <state relative-caret-position="727">
+              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DvaContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/.umi/DvaContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="member.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/member/service/member.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="astro.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/service/astro.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/main/models/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -296,7 +297,12 @@
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/page.css" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/Horoscope.js" />
+        <option value="$PROJECT_DIR$/dist/test-gen.js" />
         <option value="$PROJECT_DIR$/src/pages/astro/page.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/service/astro.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/AstroItem.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/models/astro.js" />
       </list>
     </option>
   </component>
@@ -323,10 +329,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-50" />
-    <option name="y" value="-22" />
-    <option name="width" value="1600" />
-    <option name="height" value="777" />
+    <option name="x" value="476" />
+    <option name="y" value="-20" />
+    <option name="width" value="1311" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -352,7 +358,7 @@
               <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
               <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
@@ -366,6 +372,74 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="astro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="wallet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,17 +471,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ProjectSpace\WebstormProjects\hyf-h5-common\src\pages\astro" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/pages/wallet" />
+      <recent name="$PROJECT_DIR$/src/assets/wallet" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/vip" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/assets/wallet" />
       <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/pages/wallet" />
-      <recent name="$PROJECT_DIR$/src/assets/wallet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -422,7 +497,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Node.js.test-gen.js">
+    <configuration name="test-gen.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="test-gen.js" working-dir="$PROJECT_DIR$/dist" />
     <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -444,9 +520,11 @@
     <list>
       <item itemvalue="npm.start" />
       <item itemvalue="npm.build" />
+      <item itemvalue="Node.js.test-gen.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.test-gen.js" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
       </list>
@@ -477,7 +555,7 @@
       <workItem from="1539609610333" duration="2040000" />
       <workItem from="1539653869930" duration="522000" />
       <workItem from="1539654408464" duration="16612000" />
-      <workItem from="1539679657170" duration="952000" />
+      <workItem from="1539679657170" duration="8993000" />
     </task>
     <task id="LOCAL-00001" summary="xxxxxx">
       <created>1539679705257</created>
@@ -507,11 +585,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539680492408</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ss">
+      <created>1539680633696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539680633696</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ss">
+      <created>1539680803007</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539680803007</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112491000" />
+    <option name="totallyTimeSpent" value="120532000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -523,18 +615,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4344086" visible="true" weight="0.10590095" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4344086" visible="true" weight="0.17966281" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2966752" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.3434453" />
       <window_info id="npm" order="2" sideWeight="0.5655914" side_tool="true" weight="0.23749007" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33562586" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22968581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.52979416" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.2708559" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -580,27 +672,41 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="xxxxxx" />
-    <option name="LAST_COMMIT_MESSAGE" value="xxxxxx" />
+    <MESSAGE value="ss" />
+    <option name="LAST_COMMIT_MESSAGE" value="ss" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/myfriend.wxml" />
-    <entry file="file://$PROJECT_DIR$/src/pages/friendlist/goldfriendlist.js" />
-    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/inviteredpocket.wxml" />
-    <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/50c578618a9296acbd15a7d13cf55cf6/Message/MessageTemp/629e8faaf54c93992ff844d06f3382ca/File/inviteredpocket.wxss" />
-    <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="42" column="46" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/points/models/points.js" />
-    <entry file="file://$PROJECT_DIR$/src/pages/points/services/points.js" />
     <entry file="file://$PROJECT_DIR$/dist/static/banner.5c0e24d8.png" />
     <entry file="file://$PROJECT_DIR$/dist/static/dev-page.6adbee7e.png" />
     <entry file="file://$PROJECT_DIR$/dist/static/haoli.ddc50d34.png" />
@@ -644,24 +750,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/member/memberBridge.js" />
-    <entry file="file://$PROJECT_DIR$/src/pages/member/service/member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/wallet/service/wallet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/wallet/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -700,41 +792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/main/models/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="15" lean-forward="true" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/main/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/member/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
-          <folding>
-            <element signature="e#5684#6179#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/member/page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -756,13 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
           <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.umirc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -798,31 +852,144 @@
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1794">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="79" />
+          <caret line="78" selection-start-line="78" selection-end-line="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/components/LotteryBall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/member/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+        <state relative-caret-position="-184">
+          <caret line="140" column="38" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#5684#6179#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/main/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/wallet/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="22" column="32" selection-start-line="22" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/Horoscope.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/test-gen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/main/models/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/member/service/member.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/service/astro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/initDva.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/DvaContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/models/astro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="405">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2746">
+          <caret line="115" column="38" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.umirc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
