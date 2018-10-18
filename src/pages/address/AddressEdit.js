@@ -3,12 +3,31 @@ import {connect} from 'dva';
 import {List,Button,InputItem,Picker} from 'antd-mobile';
 import { createForm } from 'rc-form';
 import { district } from 'antd-mobile-demo-data';
+import {routerRedux} from 'dva/router';
+
 
 class AddressEdit extends React.Component{
 
   onCreate = ()=>{
     this.props.form.validateFields((error, value) => {
-      console.log(value);
+      // const phoneNum =  value.phoneNum.replace(/\s+/g,' ');
+      const params = {
+        phoneNum: '13220168837',
+        fullAddress: value.detailAddress,
+        recievName: value.recievName,
+        detailAddress: value.detailAddress,
+        districtAddress: '粮科大厦三层',
+        isDefault: 0,
+      }
+      this.props.dispatch({
+        type:'address/create',
+        payload:params,
+        cb:()=>{
+          this.props.dispatch(
+            routerRedux.goBack()
+          )
+        }
+      })
     });
   }
 
@@ -22,8 +41,6 @@ class AddressEdit extends React.Component{
         phoneNum:editAddress.phoneNum,
       })
     }
-
-    console.log('componentDidMount ',store);
   }
 
   render(){
@@ -31,7 +48,7 @@ class AddressEdit extends React.Component{
     const { getFieldProps } = this.props.form;
     return <div>
       <InputItem
-        {...getFieldProps('userName')}
+        {...getFieldProps('recievName')}
         clear
         placeholder="收件人"
         ref={el => this.autoFocusInst = el}
@@ -57,7 +74,7 @@ class AddressEdit extends React.Component{
         <List.Item arrow="horizontal">省市区县</List.Item>
       </Picker>
       <InputItem
-        {...getFieldProps('addrDetail')}
+        {...getFieldProps('detailAddress')}
         clear
         placeholder="详细地址"
         ref={el => this.autoFocusInst = el}

@@ -3,6 +3,8 @@ import { SwipeAction, List,Icon } from 'antd-mobile';
 import styles from './address.css'
 
 export const AddressCell = ({address,del,edit})=>{
+
+  console.log('address ',address)
   return <div style={{margin:'10px 0',backgroundColor:'#fff'}}>
     <List>
       <SwipeAction
@@ -14,14 +16,14 @@ export const AddressCell = ({address,del,edit})=>{
             onPress: () => {
               del(address);
             },
-            style: { backgroundColor: '#ddd', color: 'white',width:'70px' },
+            style: { backgroundColor: '#ddd', color: 'white',width:'140px' },
           },
           {
             text: '编辑',
             onPress: () => {
               edit(address);
             },
-            style: { backgroundColor: '#F4333C', color: 'white',width:'70px' },
+            style: { backgroundColor: '#F4333C', color: 'white',width:'140px' },
           },
         ]}
         onOpen={() => console.log('global open')}

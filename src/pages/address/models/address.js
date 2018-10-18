@@ -1,5 +1,4 @@
-
-import {queryAddress} from "../services/address";
+import { queryAddress, queryCreate } from '../services/address';
 
 export default {
   namespace: 'address',
@@ -10,9 +9,9 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/address'||pathname === '/') {
+        if (pathname === '/address/page') {
           dispatch({
-            type: 'fetch'
+            type: 'fetch',
           })
           dispatch({
             type:'global/setTitle',payload:{
@@ -25,11 +24,21 @@ export default {
   },
   effects: {
     *fetch({ payload }, { call, put }) {
-      const list = yield call(queryAddress,payload);
+      const list = yield call(queryAddress,{
+        pageNo:0,
+        size:10
+      });
       yield put({
-        type: 'save', payload: list.data
+        type: 'save', payload: list.content
       });
     },
+
+    *create({ payload ,cb}, { call, put }) {
+      const res = yield call(queryCreate,payload);
+      cb&&cb();
+    },
+
+
     *delete({ payload }, { call, put }) {
       yield put({
         type: 'save', payload: {

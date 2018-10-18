@@ -1,11 +1,19 @@
 import request from '../../../utils/request';
 import config from '../../../utils/config';
 
-const { api } = config
 export async function queryAddress (params) {
-  return request({
-    url: '/api/addresslist',
+  return request('/api/deliveryAddress/list',{
     method: 'post',
-    data: params,
+    body: params,
   })
 }
+
+
+export async function queryCreate (params) {
+  return request('/api/deliveryAddress/create',{
+    method: 'post',
+    body: params,
+  })
+}
+
+

@@ -35,8 +35,16 @@ export default async function request(url, options) {
     },
     method: options.method,
   };
-  console.log('opt ', opt);
   const response = await fetch(url, opt);
   checkStatus(response);
-  return response.json();
+
+  try {
+    return response.json();
+
+  }
+  catch (e) {
+    console.log(e);
+    return {};
+  }
+
 }
