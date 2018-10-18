@@ -69,7 +69,7 @@
 }
 
 
-.wallet_item_top,.account_detail,.security{
+.wallet_item_top,.vip,.security,.astro{
   height:86px;
   display: flex;
   flex-direction: column;

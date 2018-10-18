@@ -18,7 +18,6 @@
 <div id="root"></div>
 </body>
 <script>
-
   wx.miniProgram.getEnv(function(res) {
     if (res.miniprogram===true) {
       //银行卡列表
@@ -62,6 +61,7 @@
       $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
         const state = window.g_app._store.getState() ;
         const lotteryselect = state.lotteryselect ;
+
         wx.miniProgram.postMessage({ data: lotteryselect.selectedBids });
         console.log(lotteryselect);
         wx.miniProgram.navigateBack();

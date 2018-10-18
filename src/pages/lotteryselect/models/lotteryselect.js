@@ -1,11 +1,64 @@
+function  deepClone(data) {
+  const type = this.judgeType(data);
+  let obj;
+  if (type === 'array') {
+    obj = [];
+  } else if (type === 'object') {
+    obj = {};
+  } else {
+    // 不再具有下一层次
+    return data;
+  }
+  if (type === 'array') {
+    // eslint-disable-next-line
+    for (let i = 0, len = data.length; i < len; i++) {
+      obj.push(this.deepClone(data[i]));
+    }
+  } else if (type === 'object') {
+    // 对原型上的方法也拷贝了....
+    // eslint-disable-next-line
+    for (const key in data) {
+      obj[key] = this.deepClone(data[key]);
+    }
+  }
+  return obj;
+}
+
+
+function  judgeType(obj) {
+  // tostring会返回对应不同的标签的构造函数
+  const toString = Object.prototype.toString;
+  const map = {
+    '[object Boolean]': 'boolean',
+    '[object Number]': 'number',
+    '[object String]': 'string',
+    '[object Function]': 'function',
+    '[object Array]': 'array',
+    '[object Date]': 'date',
+    '[object RegExp]': 'regExp',
+    '[object Undefined]': 'undefined',
+    '[object Null]': 'null',
+    '[object Object]': 'object',
+  };
+  if (obj instanceof Element) {
+    return 'element';
+  }
+  return map[toString.call(obj)];
+}
+
+
+
 class Ball{
-  constructor(text='',color=''){
-    this.text = text ;
+  constructor(text,color){
+    this.text = ''+text ;
     this.color = color ;
     this.active = false;
   }
   equal(ball){
     return this.color === ball.color && this.text === ball.text;
+  }
+  static copy(other){
+     return new Ball(other.text, other.color);
   }
 }
 
@@ -26,9 +79,9 @@ class Bid{
       let randomValue = 0;
       do{
         randomValue = Math.floor(Math.floor(Math.random() * base))+1;
-      }while(this.hasSelect(new Ball(randomValue, color)))
+      }while(this.hasSelect(new Ball(randomValue, color)));
 
-      return new Ball(''+randomValue, color);
+      return new Ball(randomValue, color);
     }
   }
 
@@ -71,15 +124,19 @@ class Bid{
   }
 
   clone(){
-     let bid = new Bid();
-     bid.red_selectCount = this.red_selectCount;
-     bid.blue_selectCount = this.blue_selectCount;
-     bid.aimCount = this.aimCount;
-     bid.type = this.type;
-     bid.balls = this.balls.map(ball=> Object.assign({},ball));
+     return Bid.copy(this);
+
+  }
+  static copy(other){
+    let bid = new Bid();
+    bid.red_selectCount = parseInt(other.red_selectCount);
+    bid.blue_selectCount = parseInt(other.blue_selectCount);
+    bid.aimCount = parseInt(other.aimCount);
+    bid.buyCount = parseInt(other.buyCount);
+    bid.type = other.type;
+    bid.balls = other.balls.map((item)=>Ball.copy(item));
     return bid;
   }
-
   setCount(count){
     this.buyCount = count;
   }
@@ -182,20 +239,21 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
           //init selectedBids
-          console.log('history ',history)
-          console.log('history ',query)
-          const totalCount = 2 ;
-          // const totalCount = query.totalCount ;
-          const type = 'fucai' ;
-          // const type = query.type ;
+          // const totalCount = 6 ;
+          const totalCount = parseInt(query.totalCount );
+          // const type = 'fucai' ;
+          const type = query.type ;
+
+          const nos = query.nos===undefined?[] : query.nos ;
+
           dispatch({
             type: 'init',
             payload:{totalCount,type}
           })
+
           dispatch({
-            type:'global/setTitle',payload:{
-              text:"组件"
-            }
+            type:'saveBids',
+            payload:JSON.parse(nos)
           })
         }
       });
@@ -233,11 +291,23 @@ export default {
   reducers: {
     save(state, action) {
       let {totalCount , type} = action.payload;
-      return { ...state, codes_panel:action.payload.balls,totalCount,type, currentBid:new Bid(type)};
+      return { ...state,
+        codes_panel:action.payload.balls,
+        totalCount,
+        type,
+        currentBid:new Bid(type),
+      };
     },
 
     saveBids(state, action) {
-      return { ...state, selectedBids:action.payload };
+      let bidArray = action.payload;
+      let result = [];
+      for (let i = 0; i < bidArray.length; i++){
+        result.push(Bid.copy(bidArray[i] ));
+      }
+      const state_now = { ...state, selectedBids:result };
+      console.log(state_now);
+      return state_now;
     },
 
     selectBall(state,action){
@@ -290,8 +360,6 @@ export default {
       for (let i = 0; i < state.totalCount; i++){
         selectedBids.push(new Bid(type, true));
       }
-
-      console.log('selectedBids ',selectedBids)
       return {...state, selectedBids, code_pannel, currentBid};
 
     }
