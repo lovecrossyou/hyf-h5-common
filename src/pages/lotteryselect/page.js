@@ -1,8 +1,9 @@
 import { connect } from 'dva';
-import { Stepper, ListView } from 'antd-mobile';
+import { ListView } from 'antd-mobile';
 
 import styles from './page.css';
 import { LotteryBall } from './components/LotteryBall';
+import { Stepper } from './components/Stepper';
 
 const Tips3D = '选号规则与福彩3D相同，选择号码与当期开奖号码对应位置的号码相同，即中签。';
 const TipsDOUBLE = '请选择6个红色球号码，1个蓝色球号码，中签号码以福彩双色球开奖结果为准。';
@@ -29,40 +30,45 @@ const NumberGroup = ({ balls, onClick }) => {
 
 // 一组号码
 const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, delClick }) => {
-  console.log('SingleNumberPanel bid ',bid);
-  return <div className={styles.nos}>
 
-    <div className={styles.leftWrapper}>
+  const leftWrapperStyle = bid.type ==='3d'?styles.leftWrapper45 : styles.leftWrapper ;
 
+  const EmptyNumberPanel = () => {
+    return (<div className={styles.nos}>
+      <div className={leftWrapperStyle}>
+        <div className={styles.delBtn_wrapper}/>
+        <NumberGroup onClick={onClick} balls={bid.balls}/>
+      </div>
+      <div className={styles.stepperClear}/>
+    </div>)
+  };
+  const NormalNumberPanel = ()=>{
+    return (
+      <div className={styles.nos}>
+        <div className={leftWrapperStyle}>
+          <div className={styles.delBtn_wrapper}>
+            <div className={styles.delBtn} onClick={delClick}>x</div>
+          </div>
+          <NumberGroup onClick={onClick} balls={bid.balls}/>
+        </div>
 
-      {
-        hideStepper == undefined ? (<div className={styles.delBtn_wrapper}><div className={styles.delBtn} onClick={delClick}>x</div></div>) : (
-          <div className={styles.delBtn}/>)
-      }
-      <NumberGroup onClick={onClick} balls={bid.balls}/>
-    </div>
-
-
-    <div className={styles.stepper}>
-      {
-        hideStepper == undefined ? (<Stepper
-          style={{ width: '100%', minWidth: '100px',border:'solid 1px #e2e2e2' }}
-          onChange={onChange}
-          showNumber
-          min={1}
-          max={bid.buyCount + restCount}
-          value={bid.buyCount}
-        />) : null
-      }
-    </div>
-  </div>;
+        <div className={styles.stepper}>
+          <Stepper
+            onChange={onChange}
+            min={1}
+            max={bid.buyCount + restCount}
+            value={bid.buyCount}
+          />
+        </div>
+      </div>
+    )
+  }
+  if( hideStepper === undefined)return <NormalNumberPanel/>;
+  return <EmptyNumberPanel/>;
 };
 
 // 已选号码
 const LotteryNos = ({ bidCmpleteFlag, restCount, selectedBids, currentBid, onClick, onChange, delClick }) => {
-
-  // console.log('selectedBids ', selectedBids);
-  console.log('currentBid ', currentBid.balls, "red:",currentBid.red_selectCount, 'blue:'+currentBid.blue_selectCount);
 
   return <div className={styles.no_group}>
     {
@@ -121,39 +127,37 @@ const SelectPanel3D = ({ codes }) => {
   </div>;
 };
 
-const COLUMN = 7 ;
-const calRowCount = (row,totalCount)=>{
-  return (totalCount - row * COLUMN)>COLUMN ? COLUMN :  (totalCount - row * COLUMN) ;
-}
+const COLUMN = 7;
+const calRowCount = (row, totalCount) => {
+  return (totalCount - row * COLUMN) > COLUMN ? COLUMN : (totalCount - row * COLUMN);
+};
 
-const GeneRowItems = ({rowItems,numsOfRow})=>{
-  if(numsOfRow!=COLUMN){
+const GeneRowItems = ({ rowItems, numsOfRow }) => {
+  if (numsOfRow != COLUMN) {
     return (<div className={styles.rowWrapper_no_center}>
       {rowItems}
 
-    </div>)
+    </div>);
   }
   else {
     return (<div className={styles.rowWrapper}>
       {rowItems}
-    </div>)
+    </div>);
   }
-}
+};
 
 // 福彩双色球 选号面板
 const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids }) => {
-  const rows = Math.ceil(balls.length/COLUMN);
-  let allRowItems = [] ;
+  const rows = Math.ceil(balls.length / COLUMN);
+  let allRowItems = [];
   const numsOfRow = COLUMN;
 
-  for(let i = 0;i<rows;i++){
+  for (let i = 0; i < rows; i++) {
     // const numsOfRow = calRowCount(i,balls.length) ;
-    let rowItems = [] ;
-    for(let j=0;j<numsOfRow;j++){
-      const ballIndex = i * COLUMN + j ;
-      console.log("ballindex",ballIndex);
-      const c = balls[ballIndex] ;
-      console.log("c",c);
+    let rowItems = [];
+    for (let j = 0; j < numsOfRow; j++) {
+      const ballIndex = i * COLUMN + j;
+      const c = balls[ballIndex];
       rowItems.push(<LotteryBall onClick={() => {
         if (bidCompleteFlg) return;
         if (c.color === 'red') {
@@ -171,9 +175,9 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
           }
         }
         onClick(c);
-      }} ball={c} key={i + '#' + j}/>)
+      }} ball={c} key={i + '#' + j}/>);
     }
-    allRowItems.push(<GeneRowItems key={'#'+i} rowItems={rowItems} numsOfRow={numsOfRow}/>)
+    allRowItems.push(<GeneRowItems key={'#' + i} rowItems={rowItems} numsOfRow={numsOfRow}/>);
   }
 
   return <div className={styles.panel_wrapper}>
@@ -195,8 +199,8 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       确认
     </div>
 
-    </div>
-  ;
+  </div>
+    ;
 };
 
 function calcBidCount(bids) {
@@ -224,46 +228,46 @@ const LotterySel = (props) => {
         restCount={restCount}/>
       {/*已选号码*/}
 
-     <div className={styles.content}>
-       <LotteryNos
-         delClick={index => {
-           props.dispatch({
-             type: 'lotteryselect/delBid',
-             payload: index,
-           });
-         }}
-         restCount={restCount}
-         onChange={(count, index) => {
-           props.dispatch({
-             type: 'lotteryselect/setBidCount',
-             payload: { count, index },
-           });
-         }}
-         bidCmpleteFlag={bidCmpleteFlag}
-         onClick={(ball) => {
-           props.dispatch({
-             type: 'lotteryselect/unSelectBall',
-             payload: ball,
-           });
-         }}
-         currentBid={props.store.currentBid}
-         selectedBids={props.store.selectedBids}/>
-       {/*选号面板*/}
-       <SelectPanelFuCai
-         confirmBids={() => {
-           // console.log('xxxxx');
-         }}
-         bidCompleteFlg={bidCmpleteFlag}
-         onClick={(ball) => {
-           // console.log('ball ', ball);
-           props.dispatch({
-             type: 'lotteryselect/selectBall',
-             payload: ball,
-           });
-         }}
-         currentBid={props.store.currentBid}
-         balls={props.store.codes_panel}/>
-     </div>
+      <div className={styles.content}>
+        <LotteryNos
+          delClick={index => {
+            props.dispatch({
+              type: 'lotteryselect/delBid',
+              payload: index,
+            });
+          }}
+          restCount={restCount}
+          onChange={(count, index) => {
+            props.dispatch({
+              type: 'lotteryselect/setBidCount',
+              payload: { count, index },
+            });
+          }}
+          bidCmpleteFlag={bidCmpleteFlag}
+          onClick={(ball) => {
+            props.dispatch({
+              type: 'lotteryselect/unSelectBall',
+              payload: ball,
+            });
+          }}
+          currentBid={props.store.currentBid}
+          selectedBids={props.store.selectedBids}/>
+        {/*选号面板*/}
+        <SelectPanelFuCai
+          confirmBids={() => {
+            // console.log('xxxxx');
+          }}
+          bidCompleteFlg={bidCmpleteFlag}
+          onClick={(ball) => {
+            // console.log('ball ', ball);
+            props.dispatch({
+              type: 'lotteryselect/selectBall',
+              payload: ball,
+            });
+          }}
+          currentBid={props.store.currentBid}
+          balls={props.store.codes_panel}/>
+      </div>
 
     </div>
   );

@@ -42,6 +42,15 @@
   flex-direction: row;
   align-items: center;
   flex: 1;
+  /*background-color: yellow;*/
+}
+
+.leftWrapper45{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 45%;
+  /*background-color: yellow;*/
 }
 
 .nos{
@@ -188,10 +197,18 @@
 }
 
 .stepper{
-  width:160px;
-  /*position: absolute;*/
-  /*top: 0px;*/
-  /*right: 5px;*/
+  width:240px;
+  background-color: #fff;
+  border: solid 1px #e1e1e1;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stepperClear{
+  width:240px;
+  background-color: #ffffffff;
 }
 
 .content{
@@ -201,3 +218,26 @@
   justify-content: space-between;
 }
 
+
+.plus{
+  flex: 1;
+  text-align: center;
+  line-height: 60px;
+  border-left: solid 1px #e1e1e1;
+
+}
+
+.minus{
+  flex: 1;
+  text-align: center;
+  border-right: solid 1px #e1e1e1;
+  line-height: 60px;
+}
+
+.stepper_value{
+  flex: 1.5;
+  line-height: 60px;
+  text-align: center;
+  font-size: 24px;
+
+}
