@@ -3,6 +3,7 @@ import Link from 'umi/link';
 import {connect} from 'dva';
 import styles from './page.css'
 import { Flex , WhiteSpace } from 'antd-mobile'
+import {routerRedux} from 'dva/router';
 
 import icon_bg_baiyang from '../../assets/astro/icon_bg_baiyang@2x.png';
 import icon_bg_chunv from '../../assets/astro/icon_bg_chunv@2x.png';
@@ -19,26 +20,19 @@ import icon_bg_shuiping from '../../assets/astro/icon_bg_shuiping@2x.png';
 import icon_bg_cuowu from '../../assets/astro/icon_bg_cuowu@2x.png';
 
 const astrologys = [
-  {img:icon_bg_baiyang},
-  {img:icon_bg_jinniu},
-  {img:icon_bg_shuangzi},
-  {img:icon_bg_juxie},
-  {img:icon_bg_shizi},
-  {img:icon_bg_chunv},
-  {img:icon_bg_tianping},
-  {img:icon_bg_tianxie},
-  {img:icon_bg_sheshou},
-  {img:icon_bg_mojie},
-  {img:icon_bg_shuiping},
-  {img:icon_bg_shuangyu}
+  {name:"Aries",cName:"白羊座",img:icon_bg_baiyang},
+  {name:"Taurus",cName:"金牛座",img:icon_bg_jinniu},
+  {name:"Gemini",cName:"双子座",img:icon_bg_shuangzi},
+  {name:"Cancer",cName:"巨蟹座",img:icon_bg_juxie},
+  {name:"Leo",cName:"狮子座",img:icon_bg_shizi},
+  {name:"Virgo",cName:"处女座",img:icon_bg_chunv},
+  {name:"Libra",cName:"天秤座",img:icon_bg_tianping},
+  {name:"Scorpio",cName:"天蝎座",img:icon_bg_tianxie},
+  {name:"Sagittarius",cName:"射手座",img:icon_bg_sheshou},
+  {name:"Capricorn",cName:"摩羯座",img:icon_bg_mojie},
+  {name:"Aquarius",cName:"水瓶座",img:icon_bg_shuiping},
+  {name:"Pisces",cName:"双鱼座",img:icon_bg_shuangyu}
 ];
-
-// export const AstroItem = ({astro})=>{
-//   const {icon,title,desc,time} = astro ;
-//   return <div>
-//     <div className="aa">xx</div>
-//   </div>
-// };
 
 function AstroItem(props) {
   const store = props.store ;
@@ -47,13 +41,12 @@ function AstroItem(props) {
       <div onClick={()=>{
         props.dispatch({
           type:'astro/saveAstro',
-          payload:item,
-        })
+          payload:item
+        });
+        props.dispatch(routerRedux.push('/astro/ImprovePersonalData'));
+        // props.dispatch(routerRedux.push('/astro/Horoscope'));
       }} key={i} className={styles.astroItem_astrology_name_item}>
-        {/*<img src={item.img} onClick={} alt=""/>*/}
-        <Link to="./Horoscope">
           <img src={item.img} alt=""/>
-        </Link>
       </div>
     )
   });

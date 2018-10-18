@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'umi/link';
 
 import {connect} from 'dva';
 import styles from './page.css';
@@ -34,3 +33,15 @@ export default connect(state => {
     store: state.astro
   };
 })(Astro);
+//   Aquarius(0, "水瓶座"),
+//   Pisces(1, "双鱼座"),
+//   Aries(2, "白羊座"),
+//   Taurus(3, "金牛座"),
+//   Gemini(4, "双子座"),
+//   Cancer(5, "巨蟹座"),
+//   Leo(6, "狮子座"),
+//   Virgo(7, "处女座"),
+//   Libra(8, "天秤座"),
+//   Scorpio(9, "天蝎座"),
+//   Sagittarius(10, "射手座"),
+//   Capricorn(11, "摩羯座"),;

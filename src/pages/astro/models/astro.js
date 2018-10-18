@@ -20,16 +20,18 @@ export default {
       });
     },
   },
+  // 异步
   effects: {
     *fetch({ payload ,cb}, { call, put }) {
       const result = yield call(fetchAstroInfo,payload);
       yield put({
         type:'saveAstro',
         payload:result
-      })
+      });
       cb&&cb();
     }
   },
+  // 同步
   reducers: {
     save(state, action) {
       return { ...state, ...action.payload };
