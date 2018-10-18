@@ -184,7 +184,7 @@ export default {
           //init selectedBids
           console.log('history ',history)
           console.log('history ',query)
-          const totalCount = 20 ;
+          const totalCount = 2 ;
           // const totalCount = query.totalCount ;
           const type = 'fucai' ;
           // const type = query.type ;
