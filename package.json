@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "antd-mobile": "^2.2.5",
-    "antd-mobile-demo-data": "^0.2.0"
+    "antd-mobile-demo-data": "^0.2.0",
+    "react-document-title": "^2.0.3"
   }
 }

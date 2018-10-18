@@ -30,7 +30,7 @@ class Wallet extends React.Component {
     return <div>
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
-          <div className={styles.wallet_item_top_rmb}>
+          <div className='wallet_withdraw'>
             <img src={my_wallet_rmb_icon} className={styles.wallet_rmb_icon} />
             <div className={styles.wallet_item_top_title}>人民币</div>
           </div>
@@ -76,7 +76,7 @@ class Wallet extends React.Component {
           </div>
           <div className={styles.wallet_fun_count_item}>-张</div>
         </div>
-        <div className={styles.bank}>
+        <div className='wallet_bank'>
           <div className={styles.wallet_item_top}>
             <img src={me_icon_yinhangka} className={styles.my_bank_item_img} />
             <div>银行卡</div>

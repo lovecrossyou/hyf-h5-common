@@ -16,6 +16,19 @@ export default {
               console.log('callback.....')
             }
           })
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '星座选择',
+            },
+          });
+        }
+        else if(pathname === '/astro/AstroItem'){
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '12星座选择',
+            },
+          });
         }
       });
     },

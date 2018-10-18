@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'dva';
 import styles from './page.css';
 import {routerRedux} from 'dva/router';
-
+import DocumentTitle from 'react-document-title'
 import BG_photo_xingzuo from '../../assets/astro/BG_photo_xingzuo@2x.png'
 
 function Astro(props) {
@@ -12,6 +12,8 @@ function Astro(props) {
   // const {selectAstro} = props.store ;
   if(selectAstro==null){
     return (
+      <DocumentTitle title={props.title}>
+
       <div className={styles.astrology_container}>
         <div className={styles.astrology}>您还没有选择您的星座</div>
         <div className={styles.choose_astrology}>
@@ -20,6 +22,7 @@ function Astro(props) {
           }}>选择星座</button>
         </div>
       </div>
+      </DocumentTitle>
     );
   }
   return <div>
@@ -28,9 +31,9 @@ function Astro(props) {
 }
 
 export default connect(state => {
-  console.log(state);
   return {
-    store: state.astro
+    store: state.astro,
+    title:state.global.text
   };
 })(Astro);
 //   Aquarius(0, "水瓶座"),

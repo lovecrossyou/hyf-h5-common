@@ -239,12 +239,12 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
           //init selectedBids
-          const totalCount = 6 ;
-          // const totalCount = parseInt(query.totalCount );
-          const type = 'fucai' ;
-          // const type = query.type ;
+          // const totalCount = 6 ;
+          const totalCount = parseInt(query.totalCount );
+          // const type = 'fucai' ;
+          const type = query.type ;
 
-          const nos = query.nos===undefined?[] : query.nos ;
+          const nos = query.nos ;
 
           dispatch({
             type: 'init',
@@ -253,7 +253,7 @@ export default {
 
           dispatch({
             type:'saveBids',
-            payload:JSON.parse(nos)
+            payload:[]
           })
         }
       });
