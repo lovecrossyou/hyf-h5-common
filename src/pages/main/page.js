@@ -14,6 +14,8 @@ function App(props) {
       <Link to="/lotteryselect/page"><h1>双色球&3D选号</h1></Link>
       <br/>
       <Link to="/astro/page"><h1>星座</h1></Link>
+      <br/>
+      <Link to="/address/page"><h1>地址管理</h1></Link>
     </div>
   );
 }
