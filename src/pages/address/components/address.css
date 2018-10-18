@@ -1,0 +1,33 @@
+.left-icon{
+  width: 40px;
+  height: 70px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.flex-r{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999999;
+
+}
+
+.cell-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #fff;
+}

@@ -61,10 +61,14 @@
       $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
         const state = window.g_app._store.getState() ;
         const lotteryselect = state.lotteryselect ;
-
-        wx.miniProgram.postMessage({ data: lotteryselect.selectedBids });
-        console.log(lotteryselect);
-        wx.miniProgram.navigateBack();
+        const type = lotteryselect.type ;
+        if(type === '3d'){
+          wx.miniProgram.postMessage({ data: lotteryselect.selectedBids });
+          wx.miniProgram.navigateBack();
+        }
+        else {
+          wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan'});
+        }
       })
     }
     else {
