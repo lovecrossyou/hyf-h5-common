@@ -67,13 +67,18 @@
 .ball{
   width: 42px;
   height: 42px;
-  border-radius: 50%;
   line-height: 42px;
+  border-radius: 50%;
   text-align: center;
   color: #fff;
   background-color: #e64340;
-  /*margin-right: 17px;*/
-  margin-bottom: 17px;
+  margin-right:10px;
+}
+.wrapper_3d .ball{
+  width: 62px;
+  height: 62px;
+  line-height: 62px;
+  margin-bottom: 30px;
 }
 
 .nos_balls{

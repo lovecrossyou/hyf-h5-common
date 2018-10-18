@@ -115,4 +115,31 @@
 .Horoscopecontainer_content_item_tit_name{
   padding-left:20px;
 }
-
+/* 完善个人资料 */
+.improve_data{
+  width:356px;
+  margin:116px auto;
+  border:2px solid pink;
+}
+.improve_data_tit{
+  font-size: 36px;
+  color:#000000;
+  text-align: center;
+}
+.improve_data_content{
+  font-size: 22px;
+  color:#666666;
+  margin-top: 56px;
+}
+.improve_data_content>span{
+  display: inline-block;
+  width: 150px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 10px;
+  border:1px solid #666666;
+}
+.improve_data_content>span>img{
+  display: inline-block;
+  padding:0 10px;
+}

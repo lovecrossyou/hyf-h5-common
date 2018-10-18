@@ -8,7 +8,9 @@ import {routerRedux} from 'dva/router';
 import BG_photo_xingzuo from '../../assets/astro/BG_photo_xingzuo@2x.png'
 
 function Astro(props) {
-  const {selectAstro} = props.store ;
+  console.log("----------",props.store);
+  const {selectAstro} = '' ;
+  // const {selectAstro} = props.store ;
   if(selectAstro==null){
     return (
       <div className={styles.astrology_container}>
@@ -16,7 +18,6 @@ function Astro(props) {
         <div className={styles.choose_astrology}>
           <button onClick={()=>{
             props.dispatch(routerRedux.push('/astro/AstroItem'))
-
           }}>选择星座</button>
         </div>
       </div>
@@ -25,7 +26,6 @@ function Astro(props) {
   return <div>
     {JSON.stringify(selectAstro)}
   </div>
-
 }
 
 export default connect(state => {

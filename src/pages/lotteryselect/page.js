@@ -121,7 +121,7 @@ const SelectPanel3D = ({ codes }) => {
   </div>;
 };
 
-const COLUMN = 9 ;
+const COLUMN = 7 ;
 const calRowCount = (row,totalCount)=>{
   return (totalCount - row * COLUMN)>COLUMN ? COLUMN :  (totalCount - row * COLUMN) ;
 }
@@ -144,7 +144,7 @@ const GeneRowItems = ({rowItems,numsOfRow})=>{
 const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids }) => {
   const rows = Math.ceil(balls.length/COLUMN);
   let allRowItems = [] ;
-  const numsOfRow = 9;
+  const numsOfRow = COLUMN;
 
   for(let i = 0;i<rows;i++){
     // const numsOfRow = calRowCount(i,balls.length) ;
@@ -194,6 +194,7 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       className={styles.btn_confirm} style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>
+
     </div>
   ;
 };
