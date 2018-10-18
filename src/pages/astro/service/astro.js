@@ -1,7 +1,7 @@
 import request from '../../../utils/request';
 
 export async function fetchAstroInfo() {
-  return request('/api/vip/userVipInfo',{
+  return request('/vip/userVipInfo',{
     method:'post',
     body:{}
   });

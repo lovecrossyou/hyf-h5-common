@@ -1,5 +1,5 @@
 export default {
-  publicPath: '/',
+  publicPath: '/xitenggamejar/dist/',
   history: 'hash',
   plugins: [
     ['umi-plugin-react', {

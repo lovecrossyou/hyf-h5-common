@@ -5,7 +5,7 @@ import { Modal, Button, ActivityIndicator, Radio } from 'antd-mobile';
 import styles from './page.css';
 import diamondsImgIcon from '../../assets/icon_diamonds-vip@2x.png';
 import godImgIcon from '../../assets/icon_goldvip@2x.png';
-import platinumImgIcon from '../../assets/icon_Platinum-vip@2x.png';
+import platinumImgIcon from '../../assets/icon_Platinum_vip@2x.png';
 
 import vip_putong from '../../assets/vip/icon_huiyuan_putong@2x.png';
 import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';

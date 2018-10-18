@@ -1,5 +1,5 @@
 const isMock = true;
-const baseUrlPrefix = isMock?'/api':'';
+const baseUrlPrefix = isMock?'/api':'/xitenggamejar';
 module.exports = {
   name: 'dva-umi-mobile',
   apiPrefix: baseUrlPrefix,

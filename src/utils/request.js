@@ -20,6 +20,13 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
+
+const BaseUrl = (url)=>{
+  return config.apiPrefix + url ;
+}
+
+
+
 export default async function request(url, options) {
   console.log('request ', url);
   // const state = window.g_app._store.getState();
@@ -35,7 +42,7 @@ export default async function request(url, options) {
     },
     method: options.method,
   };
-  const response = await fetch(url, opt);
+  const response = await fetch(BaseUrl(url), opt);
   checkStatus(response);
 
   try {
