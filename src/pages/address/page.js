@@ -45,7 +45,7 @@ class AddressList extends React.Component {
 
   render() {
     const store = this.props.store;
-    return <div style={{paddingBottom:'60px'}}>
+    return <div style={{paddingBottom:'140px'}}>
       {
         store.map((address,index) => {
           return <AddressCell

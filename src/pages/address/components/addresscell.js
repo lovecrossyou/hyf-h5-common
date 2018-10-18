@@ -38,11 +38,11 @@ export const AddressCell = ({address,del,edit})=>{
             </div>
             <div className={styles.right}>
               <div className={styles["flex-r"]}>
-                <div>{address.userName}</div>
+                <div>{address.recievName}</div>
                 <div>{address.phoneNum}</div>
               </div>
               <div className={styles["flex-r"]}>
-                <div>{address.address}</div>
+                <div>{address.districtAddress}</div>
               </div>
             </div>
           </div>
