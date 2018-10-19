@@ -40,10 +40,14 @@ function AstroItem(props) {
     return(
       <div onClick={()=>{
         props.dispatch({
-          type:'astro/saveAstro',
-          payload:item
+          type:'astro/constellation',
+          payload:{
+            constellation:item.name
+          },
+          cb:()=>{
+            props.dispatch(routerRedux.push('/astro/ImprovePersonalData'));
+          }
         });
-        props.dispatch(routerRedux.push('/astro/ImprovePersonalData'));
         // props.dispatch(routerRedux.push('/astro/Horoscope'));
       }} key={i} className={styles.astroItem_astrology_name_item}>
           <img src={item.img} alt=""/>
