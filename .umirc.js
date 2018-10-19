@@ -1,7 +1,8 @@
 export default {
-  publicPath: '/xitenggamejar/dist/',
-  base:'/xitenggamejar/',
   history: 'hash',
+  publicPath:'./',
+  // publicPath:'/xitenggamejar/dist/',
+  // base:'/xitenggamejar/',
   plugins: [
     ['umi-plugin-react', {
       antd: true,
@@ -10,12 +11,4 @@ export default {
       hd: true
     }],
   ],
-  proxy: {
-    "/api": {
-      // "target": "http://192.168.1.83:9939/xitenggamejar/",
-      "target": "http://123.57.161.212:9939/xitenggamejar/",
-      "changeOrigin": true,
-      "pathRewrite": { "^/api" : "" }
-    }
-  },
 }

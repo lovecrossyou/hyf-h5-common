@@ -25,19 +25,10 @@ const BaseUrl = (url)=>{
   return config.apiPrefix + url ;
 }
 
-// const getAccessInfo = ()=>{
-//   const accessToken = getAccessToken();
-//   if(config.isMock)return accessToken ;
-//
-//   const state = window.g_app._store.getState();
-//   const accessInfo = state.global.accessInfo ;
-//   return accessInfo ;
-// }
-
 
 export default async function request(url, options) {
   const accessInfo = getAccessToken();
-  const body = Object.assign(options.body || {}, { accessInfo: JSON.parse(accessInfo) });
+  const body = Object.assign(options.body || {}, { accessInfo: accessInfo });
   console.log('request ', url);
   console.log('request payload ', body);
   const opt = {
