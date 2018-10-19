@@ -48,9 +48,20 @@ function  judgeType(obj) {
 
 
 
+function formatValue(value) {
+  if (value === ''){
+    return value;
+  }
+  if (value < 10){
+    return '0' + value;
+  }else{
+    return value;
+  }
+}
+
 class Ball{
   constructor(text,color){
-    this.text = ''+text ;
+    this.text = ''+text;
     this.color = color ;
     this.active = false;
   }
@@ -61,6 +72,7 @@ class Ball{
      return new Ball(other.text, other.color);
   }
 }
+
 
 class Bid{
 
@@ -78,7 +90,10 @@ class Bid{
 
       let randomValue = 0;
       do{
-        randomValue = Math.floor(Math.floor(Math.random() * base))+1;
+        randomValue = formatValue(Math.floor(Math.floor(Math.random() * base))+1);
+        if (this.type === '3d'){
+          break;
+        }
       }while(this.hasSelect(new Ball(randomValue, color)));
 
       return new Ball(randomValue, color);
@@ -239,10 +254,10 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
           //init selectedBids
-          // const totalCount = 6 ;
-          const totalCount = parseInt(query.totalCount );
-          // const type = 'fucai' ;
-          const type = query.type ;
+          const totalCount = 6 ;
+          // const totalCount = parseInt(query.totalCount );
+          const type = 'fucai' ;
+          // const type = query.type ;
 
           const nos = query.nos ;
 
@@ -312,7 +327,14 @@ export default {
 
     selectBall(state,action){
       const ball = action.payload ;
-      ball.active = true;
+      let type = state.currentBid.type;
+      if (type === 'fucai'){
+        if (ball.active === true){
+           return state;
+        }
+        ball.active = true;
+      }
+
       // console.log('selectBall ball ',ball)
       let currentBid = state.currentBid;
       let selectedBids = state.selectedBids;

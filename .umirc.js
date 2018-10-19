@@ -11,12 +11,12 @@ export default {
       hd: true
     }],
   ],
-  proxy: {
-    "/api": {
-      // "target": "http://192.168.1.83:9939/xitenggamejar/",
-      "target": "http://123.57.161.212:9939/xitenggamejar/",
-      "changeOrigin": true,
-      "pathRewrite": { "^/api" : "" }
-    }
-  },
+  // proxy: {
+  //   "/api": {
+  //     // "target": "http://192.168.1.83:9939/xitenggamejar/",
+  //     "target": "http://123.57.161.212:9939/xitenggamejar/",
+  //     "changeOrigin": true,
+  //     "pathRewrite": { "^/api" : "" }
+  //   }
+  // },
 }

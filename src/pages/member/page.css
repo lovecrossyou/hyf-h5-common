@@ -137,7 +137,7 @@
 }
 
 
-.vip_right_action{
+:global(.vip_right_action){
   border:1px solid #cc2636;
   font-size:28px;
   color:#cc2636;
@@ -145,7 +145,7 @@
   border-radius: 4px;
 }
 
-.vip_right_action_disable{
+:global(.vip_right_action_disable){
   border:1px solid #f5f5f5;
   font-size:28px;
   color:#e1e1e1;
@@ -193,4 +193,10 @@
 
 .btnUpgrade{
 
+}
+
+.vipEndTime{
+  height: 80px;
+  line-height: 80px;
+  color: #ffffff;
 }

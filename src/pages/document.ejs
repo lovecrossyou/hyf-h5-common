@@ -32,6 +32,15 @@
     wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
   });
 
+  // 会员购买以及升级
+  $('#root').on('click', '.vip_right_action', function() {
+    const vip_type = $(this).attr("vip_type");
+    console.log('会员购买以及升级 vip_type ',vip_type);
+    wx.miniProgram.postMessage({ data: vip_type });
+    wx.miniProgram.navigateBack();
+  });
+
+
 
   // 确认选号后 返回
   $('#root').on('click', '.lottery_btn_confirm', function() {

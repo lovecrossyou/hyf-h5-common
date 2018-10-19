@@ -135,28 +135,17 @@ const DiamondVip = [
   },
 ];
 
-
-// user_to_diamond_vip(0, "开通钻石会员"),
-// user_to_higher_golden_vip(1, "开通铂金会员"),
-// user_to_golden_vip(2, "开通黄金会员"),
-
-
-// golden_to_diamond_vip(3, "黄金会员升级为钻石会员"),
-// golden_to_higher_golden_vip(4, "黄金会员升级为铂金会员"),
-// higher_golden_to_diamond_vip(5, "铂金会员升级为钻石会员")
-
-
 const createVipModels = (vipInfo) => {
   const { userIsVip, userVipType } = vipInfo;
   if (userIsVip == false) return VipNormal;
-  else if (userVipType === 'golden_vip') return GoldenVip;
-  else if (userVipType === 'higher_golden_vip') return PlatinumVip;
-  else if (userVipType === 'diamond_vip') return DiamondVip;
+  else if (userVipType === 'golden_user') return GoldenVip;
+  else if (userVipType === 'higher_golden_user') return PlatinumVip;
+  else if (userVipType === 'golden_user') return DiamondVip;
 };
 
 
 const VIPHeader = ({ vipInfo }) => {
-  const { userIsVip, userVipType } = vipInfo;
+  const { userIsVip, userVipType ,vipEndTime} = vipInfo;
   if (userIsVip === false) {
     return (
       <div className={styles.title}>
@@ -178,6 +167,7 @@ const VIPHeader = ({ vipInfo }) => {
           <div className={styles.inline_text}>铂金会员</div>
           ，每期赠送2组抽签号码 奖励20喜币
         </div>
+        <div className={styles.vipEndTime}>{vipEndTime}</div>
       </div>
     );
   }
@@ -190,6 +180,7 @@ const VIPHeader = ({ vipInfo }) => {
           <div className={styles.inline_text}>黄金会员</div>
           ，每期赠送1组抽签号码 奖励30喜币
         </div>
+        <div className={styles.vipEndTime}>{vipEndTime}</div>
       </div>
     );
   }
@@ -229,27 +220,6 @@ class Member extends React.Component {
     });
   };
 
-
-  buyNow = (vip) => {
-    return () => {
-      console.log('vip ',vip);
-      this.props.dispatch({
-        type: 'member/upgrade',
-        payload: {
-          vipProductType: 'user_to_golden_vip',
-        },
-        cb: (orderInfo) => {
-          // console.log('xxxxx');
-        },
-      });
-
-      // this.showModal();
-      // post(vip.id).then((info)=>{
-      //   pay(info)
-      // })
-    };
-  };
-
   render() {
     const { userVipInfo, loading } = this.props.store;
     if (userVipInfo == null) return (
@@ -260,7 +230,6 @@ class Member extends React.Component {
       />
     );
     const currentVips = createVipModels(userVipInfo);
-    console.log(userVipInfo);
     return <div>
       <div className={styles.header_bg}>
         <VIPHeader vipInfo={userVipInfo}/>
@@ -274,7 +243,7 @@ class Member extends React.Component {
         <div className={styles.vip_list}>
           {currentVips.map((vip, index) => {
             return (
-              <VipItem key={index} vip={vip} action={this.buyNow(vip)}/>
+              <VipItem key={index} vip={vip}/>
             );
           })}
         </div>
@@ -292,7 +261,7 @@ class Member extends React.Component {
           <div style={{ color: '#cc2636', fontSize: '18px' }}>我要升级</div>
           {currentVips.map((vip, index) => {
             return (
-              <VipUpgradeItem key={index} vip={vip} action={this.buyNow(vip)}/>
+              <VipUpgradeItem key={index} vip={vip}/>
             );
           })}
           <div style={{ marginTop: '10px' }}>
@@ -321,7 +290,7 @@ const VipItem = ({ vip, action }) => {
           </div>
         </div>
         <div className={styles.vip_right}>
-          <div className={vip.enable!==false?styles.vip_right_action : styles.vip_right_action_disable} onClick={action} vip_type={vip.type}>{vip.action}</div>
+          <div className={vip.enable!==false?'vip_right_action' : 'vip_right_action_disable'} onClick={action} vip_type={vip.type}>{vip.action}</div>
         </div>
       </div>
     </div>

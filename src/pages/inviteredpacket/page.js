@@ -18,20 +18,19 @@ const friends = [
 class InviteRedPacket extends React.Component {
 
   render() {
-    const {inviteProfitXtb } = this.props.store;
-    const {inviteProfitXtbRecordModelList } = inviteProfitXtb;
-    console.log('inviteProfitXtb ',inviteProfitXtb)
+    const { inviteProfitXtb } = this.props.store;
+    const { inviteProfitXtbRecordModelList } = inviteProfitXtb;
+    console.log('inviteProfitXtb ', inviteProfitXtb);
     return (
       <div>
         <div className={styles.invite_red_pocket_header}>
           <div className={styles.invite_red_top}>
             <img src={me_icon_shuipiao_hongbao} className={styles.invite_red_pocket_icon}/>
-            <div>钻石好友（{inviteProfitXtb.diamondUserAmount}人）</div>
+            <div>钻石好友（{inviteProfitXtb.diamondUserAmount || 0}人）</div>
           </div>
-          <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteProfitXtbAmount}喜币</div>
+          <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteProfitXtbAmount || 0}喜币</div>
         </div>
         <div className={styles.friend_list}>
-
           {
             inviteProfitXtbRecordModelList.map((record, index) => {
               return (
@@ -39,6 +38,7 @@ class InviteRedPacket extends React.Component {
               );
             })
           }
+          <div className={styles.emptyTips}>您还没有钻石好友</div>
         </div>
 
       </div>

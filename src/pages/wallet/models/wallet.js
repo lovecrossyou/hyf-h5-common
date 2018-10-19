@@ -12,7 +12,7 @@ export default {
     userProfitInfo: null,
     userProfitInfo: null,
     userProfitAllFriendInfo: null,
-    inviteProfitXtb:null
+    inviteProfitXtb: null,
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -37,14 +37,14 @@ export default {
       const userProfitInfo = yield call(fetchUserProfitInfo, payload);
       const accountInfo = yield call(fetchAccountInfo, payload);
       const userProfitAllFriendInfo = yield call(fetchUserProfitAllFriendInfo, payload);
-      const inviteProfitXtb = yield call(fetchInviteProfitXtb,payload);
+      const inviteProfitXtb = yield call(fetchInviteProfitXtb, payload);
 
       yield put({
         type: 'save', payload: {
           accountInfo,
           userProfitInfo,
           userProfitAllFriendInfo,
-          inviteProfitXtb
+          inviteProfitXtb,
         },
       });
     },

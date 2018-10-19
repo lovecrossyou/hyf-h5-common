@@ -7,9 +7,7 @@ import DocumentTitle from 'react-document-title'
 import BG_photo_xingzuo from '../../assets/astro/BG_photo_xingzuo@2x.png'
 
 function Astro(props) {
-  console.log("----------",props.store);
-  const {selectAstro} = '' ;
-  // const {selectAstro} = props.store ;
+  const {selectAstro} = props.store ;
   if(selectAstro==null){
     return (
       <DocumentTitle title={props.title}>
