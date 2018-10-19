@@ -2,19 +2,22 @@ import request from '../../../utils/request';
 
 export async function fetchClientAccount() {
   return request('/account/clientAccount',{
-    method:'post'
+    method:'post',
+    body:{}
   });
 }
 
 export async function fetchUserProfitInfo() {
   return request('/profit/userProfitInfo',{
-    method:'post'
+    method:'post',
+    body:{}
   });
 }
 
 export async function fetchUserProfitAllFriendInfo() {
   return request('/profit/userProfitAllFriendInfo',{
-    method:'post'
+    method:'post',
+    body:{}
   });
 }
 

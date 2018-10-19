@@ -3,6 +3,8 @@ import {
   fetchUserProfitInfo,
 } from '../service/wallet';
 
+import {setTokenFromQueryString } from '../../../utils/authority';
+
 export default {
   namespace: 'wallet',
   state: {
@@ -15,8 +17,11 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/wallet/page') {
+          setTokenFromQueryString(query);
+
           dispatch({
             type: 'fetch',
+            payload:{}
           });
           dispatch({
             type: 'global/setTitle', payload: {
@@ -29,7 +34,7 @@ export default {
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      const userProfitInfo = yield call(fetchUserProfitInfo, {});
+      const userProfitInfo = yield call(fetchUserProfitInfo, payload);
       const accountInfo = yield call(fetchAccountInfo, payload);
       const userProfitAllFriendInfo = yield call(fetchUserProfitAllFriendInfo, payload);
 

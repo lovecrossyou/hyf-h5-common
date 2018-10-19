@@ -3,7 +3,7 @@ import {connect} from 'dva';
 import styles from './page.css';
 import icon_haoyou_zuanshi from '../../assets/icon_haoyou_zuanshi@2x.png';
 import icon_haoyou_huangjin from '../../assets/icon_haoyou_huangjin@2x.png';
-import me_arrow from '../../assets/me-arrow@2x.png';
+import me_arrow from '../../assets/me_arrow@2x.png';
 
 const friends = [{img:icon_haoyou_huangjin,name:"jyeee",count:123,diamondFriendAmount:1},{img:icon_haoyou_huangjin,name:"skskd",count:122,diamondFriendAmount:2},{img:icon_haoyou_huangjin,name:"221",count:121,diamondFriendAmount:3}];
 

@@ -1,4 +1,5 @@
 import { fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'member',
@@ -9,6 +10,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/member/page') {
+          setTokenFromQueryString(query);
           dispatch({
             type: 'fetch'
           })

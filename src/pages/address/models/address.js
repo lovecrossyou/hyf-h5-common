@@ -1,4 +1,5 @@
 import { queryAddress, queryCreate } from '../services/address';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'address',
@@ -9,6 +10,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/address/page') {
+          setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
           })

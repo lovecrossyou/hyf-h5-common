@@ -25,16 +25,21 @@ const BaseUrl = (url)=>{
   return config.apiPrefix + url ;
 }
 
+const getAccessInfo = ()=>{
+  const accessToken = getAccessToken();
+  const state = window.g_app._store.getState();
+  const accessInfo = state.global.accessInfo ;
+  if(config.isMock)return accessToken ;
+  return accessInfo ;
+}
 
 
 export default async function request(url, options) {
+  const accessInfo = getAccessInfo();
   console.log('request ', url);
-  // const state = window.g_app._store.getState();
-  // const accessInfo = state.global.accessInfo ;
-  // console.log('accessInfo ',accessInfo)
-  const accessToken = getAccessToken();
-  // let body = Object.assign(options.body || {}, { accessInfo: JSON.parse(accessToken) });
-  let body = Object.assign(options.body || {}, { accessInfo: accessToken });
+  console.log('options ', options);
+  let body = Object.assign(options.body || {}, { accessInfo: accessInfo });
+  console.log('body ', body);
   const opt = {
     body: JSON.stringify(body),
     headers: {
@@ -44,14 +49,5 @@ export default async function request(url, options) {
   };
   const response = await fetch(BaseUrl(url), opt);
   checkStatus(response);
-
-  try {
-    return response.json();
-
-  }
-  catch (e) {
-    console.log(e);
-    return {};
-  }
-
+  return response.json();
 }

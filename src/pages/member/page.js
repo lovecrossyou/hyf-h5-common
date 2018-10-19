@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import { Modal, Button, ActivityIndicator, Radio } from 'antd-mobile';
 
 import styles from './page.css';
-import diamondsImgIcon from '../../assets/icon_diamonds-vip@2x.png';
+import diamondsImgIcon from '../../assets/icon_diamonds_vip.png';
 import godImgIcon from '../../assets/icon_goldvip@2x.png';
 import platinumImgIcon from '../../assets/icon_Platinum_vip@2x.png';
 
