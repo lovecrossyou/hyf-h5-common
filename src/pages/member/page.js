@@ -12,19 +12,152 @@ import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
 import vip_zuanshi from '../../assets/vip/icon_huiyuan_zuanshi@2x.png';
 import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
 import { getAccessToken } from '../../utils/authority';
+
 const RadioItem = Radio.RadioItem;
 
 
-const vips = [
-  { title: '黄金会员', img: godImgIcon, desc: '每期赠送1组抽签号码，奖励20喜币', price: '19.8', id: '1',type:'user_to_golden_vip' },
-  { title: '铂金会员', img: platinumImgIcon, desc: '每期赠送2组抽签号码，奖励30喜币', price: '29.8',type:'user_to_higher_golden_vip' },
-  { title: '钻石会员', img: diamondsImgIcon, desc: '每期赠送10组抽签号码，奖励100喜币', price: '99.8',type:'user_to_diamond_vip' },
+const VipNormal = [
+  {
+    title: '黄金会员',
+    img: godImgIcon,
+    desc: '每期赠送1组抽签号码，奖励20喜币',
+    price: '19.8',
+    id: '1',
+    type: 'user_to_golden_vip',
+    action: '立即购买',
+  },
+  {
+    title: '铂金会员',
+    img: platinumImgIcon,
+    desc: '每期赠送2组抽签号码，奖励30喜币',
+    price: '29.8',
+    type: 'user_to_higher_golden_vip',
+    action: '立即购买',
+  },
+  {
+    title: '钻石会员',
+    img: diamondsImgIcon,
+    desc: '每期赠送10组抽签号码，奖励100喜币',
+    price: '99.8',
+    type: 'user_to_diamond_vip',
+    action: '立即购买',
+  },
+];
+
+// 黄金会员
+const GoldenVip = [
+  {
+    title: '黄金会员',
+    img: godImgIcon,
+    desc: '每期赠送1组抽签号码，奖励20喜币',
+    price: '19.8',
+    id: '1',
+    type: 'user_to_golden_vip',
+    action: '立即购买',
+  },
+  {
+    title: '铂金会员',
+    img: platinumImgIcon,
+    desc: '每期赠送2组抽签号码，奖励30喜币',
+    price: '29.8',
+    type: 'golden_to_higher_golden_vip',
+    action: '立即升级',
+  },
+  {
+    title: '钻石会员',
+    img: diamondsImgIcon,
+    desc: '每期赠送10组抽签号码，奖励100喜币',
+    price: '99.8',
+    type: 'golden_to_diamond_vip',
+    action: '立即升级',
+  },
+];
+
+//铂金会员
+const PlatinumVip = [
+  {
+    title: '黄金会员',
+    img: godImgIcon,
+    desc: '每期赠送1组抽签号码，奖励20喜币',
+    price: '19.8',
+    id: '1',
+    type: 'user_to_golden_vip',
+    enable: false,
+    action: '立即升级',
+  },
+  {
+    title: '铂金会员',
+    img: platinumImgIcon,
+    desc: '每期赠送2组抽签号码，奖励30喜币',
+    price: '29.8',
+    type: 'user_to_higher_golden_vip',
+    action: '立即购买',
+  },
+  {
+    title: '钻石会员',
+    img: diamondsImgIcon,
+    desc: '每期赠送10组抽签号码，奖励100喜币',
+    price: '99.8',
+    type: 'higher_golden_to_diamond_vip',
+    action: '立即升级',
+  },
 ];
 
 
-const VIPHeader = ({vipInfo}) => {
-  const {userIsVip,userVipType} = vipInfo ;
-  if(userIsVip===false){
+//钻石会员
+const DiamondVip = [
+  {
+    title: '黄金会员',
+    img: godImgIcon,
+    desc: '每期赠送1组抽签号码，奖励20喜币',
+    price: '19.8',
+    id: '1',
+    type: 'user_to_golden_vip',
+    enable: false,
+    action: '立即购买',
+  },
+  {
+    title: '铂金会员',
+    img: platinumImgIcon,
+    desc: '每期赠送2组抽签号码，奖励30喜币',
+    price: '29.8',
+    type: 'golden_to_higher_golden_vip',
+    enable: false,
+    action: '立即购买',
+  },
+  {
+    title: '钻石会员',
+    img: diamondsImgIcon,
+    desc: '每期赠送10组抽签号码，奖励100喜币',
+    price: '99.8',
+    type: 'user_to_diamond_vip',
+    action: '立即购买',
+  },
+];
+
+
+// user_to_diamond_vip(0, "开通钻石会员"),
+// user_to_higher_golden_vip(1, "开通铂金会员"),
+// user_to_golden_vip(2, "开通黄金会员"),
+
+
+// golden_to_diamond_vip(3, "黄金会员升级为钻石会员"),
+// golden_to_higher_golden_vip(4, "黄金会员升级为铂金会员"),
+// higher_golden_to_diamond_vip(5, "铂金会员升级为钻石会员")
+
+
+const createVipModels = (vipInfo) => {
+  const { userIsVip, userVipType } = vipInfo;
+  if (userIsVip == false) return VipNormal;
+  else if (userVipType === 'golden_vip') return GoldenVip;
+  else if (userVipType === 'higher_golden_vip') return PlatinumVip;
+  else if (userVipType === 'diamond_vip') return DiamondVip;
+};
+
+
+const VIPHeader = ({ vipInfo }) => {
+  const { userIsVip, userVipType } = vipInfo;
+  if (userIsVip === false) {
     return (
       <div className={styles.title}>
         <img width='150px' height='36px' src={vip_putong} alt=""/>
@@ -36,7 +169,7 @@ const VIPHeader = ({vipInfo}) => {
     );
   }
 
-  if(userVipType==='higher_golden_user'){
+  if (userVipType === 'higher_golden_user') {
     // 铂金会员
     return (
       <div className={styles.title}>
@@ -48,7 +181,7 @@ const VIPHeader = ({vipInfo}) => {
       </div>
     );
   }
-  if(userVipType==='golden_user'){
+  if (userVipType === 'golden_user') {
     // 黄金会员
     return (
       <div className={styles.title}>
@@ -61,7 +194,7 @@ const VIPHeader = ({vipInfo}) => {
     );
   }
 
-  if(userVipType==='diamond_user'){
+  if (userVipType === 'diamond_user') {
     // 钻石会员
     return (
       <div className={styles.title}>
@@ -73,8 +206,6 @@ const VIPHeader = ({vipInfo}) => {
       </div>
     );
   }
-
-
 };
 
 class Member extends React.Component {
@@ -101,16 +232,16 @@ class Member extends React.Component {
 
   buyNow = (vip) => {
     return () => {
-      console.log(vip.title);
+      console.log('vip ',vip);
       this.props.dispatch({
-        type:'member/upgrade',
-        payload:{
-          vipProductType:'user_to_golden_vip'
+        type: 'member/upgrade',
+        payload: {
+          vipProductType: 'user_to_golden_vip',
         },
-        cb:(orderInfo)=>{
+        cb: (orderInfo) => {
           // console.log('xxxxx');
-        }
-      })
+        },
+      });
 
       // this.showModal();
       // post(vip.id).then((info)=>{
@@ -120,19 +251,16 @@ class Member extends React.Component {
   };
 
   render() {
-
-    const userVipInfo = {
-      userIsVip:false
-    }
-    // const {userVipInfo  ,loading} = this.props.store ;
-    // if(userVipInfo == null)return (
-    //   <ActivityIndicator
-    //     toast
-    //     text="加载中"
-    //     animating={loading}
-    //   />
-    // );
-    // console.log(userVipInfo);
+    const { userVipInfo, loading } = this.props.store;
+    if (userVipInfo == null) return (
+      <ActivityIndicator
+        toast
+        text="加载中"
+        animating={loading}
+      />
+    );
+    const currentVips = createVipModels(userVipInfo);
+    console.log(userVipInfo);
     return <div>
       <div className={styles.header_bg}>
         <VIPHeader vipInfo={userVipInfo}/>
@@ -144,7 +272,7 @@ class Member extends React.Component {
       <div className={styles.vip}>
         <div className={styles.vip_title}>会员等级特权</div>
         <div className={styles.vip_list}>
-          {vips.map((vip, index) => {
+          {currentVips.map((vip, index) => {
             return (
               <VipItem key={index} vip={vip} action={this.buyNow(vip)}/>
             );
@@ -162,13 +290,13 @@ class Member extends React.Component {
       >
         <div>
           <div style={{ color: '#cc2636', fontSize: '18px' }}>我要升级</div>
-          {vips.map((vip, index) => {
+          {currentVips.map((vip, index) => {
             return (
               <VipUpgradeItem key={index} vip={vip} action={this.buyNow(vip)}/>
             );
           })}
           <div style={{ marginTop: '10px' }}>
-            <Button  type="warning" onClick={this.onClose}>确定</Button>
+            <Button type="warning" onClick={this.onClose}>确定</Button>
           </div>
 
           <div style={{ color: '#999999', fontSize: '12px', paddingTop: '4px' }}>会员升级仅需在当前的会员基础上补差价</div>
@@ -193,7 +321,7 @@ const VipItem = ({ vip, action }) => {
           </div>
         </div>
         <div className={styles.vip_right}>
-          <div className={styles.vip_right_action} onClick={action} vip_type={vip.type}>立即购买</div>
+          <div className={vip.enable!==false?styles.vip_right_action : styles.vip_right_action_disable} onClick={action} vip_type={vip.type}>{vip.action}</div>
         </div>
       </div>
     </div>
@@ -231,6 +359,6 @@ const Tips = () => {
 
 export default connect(state => ({
   store: state.member,
-  loading:state.global.loading
+  loading: state.global.loading,
 }))(Member);
 

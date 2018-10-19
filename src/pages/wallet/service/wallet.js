@@ -29,3 +29,12 @@ export async function fetchAccountInfo() {
   });
 }
 
+//邀请红包奖励
+export async function fetchInviteProfitXtb() {
+  return request('/profit/InviteProfitXtb',{
+    method:'post',
+    body:{}
+  });
+}
+
+
