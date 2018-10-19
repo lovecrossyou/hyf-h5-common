@@ -15,6 +15,12 @@ const friends = [
   }, { img: symbol_xiteng, name: '221', presentXtbMount: 121, acceptTime: 3 }];
 
 
+const EmptyPage = ({empty})=>{
+  if(!empty)return null ;
+  return <div className={styles.emptyTips}>您还没有钻石好友</div>
+}
+
+
 class InviteRedPacket extends React.Component {
 
   render() {
@@ -38,7 +44,7 @@ class InviteRedPacket extends React.Component {
               );
             })
           }
-          <div className={styles.emptyTips}>您还没有钻石好友</div>
+          <EmptyPage empty={inviteProfitXtbRecordModelList.length===0}/>
         </div>
 
       </div>
