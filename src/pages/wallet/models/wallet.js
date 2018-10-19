@@ -18,7 +18,6 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/wallet/page') {
           setTokenFromQueryString(query);
-
           dispatch({
             type: 'fetch',
             payload:{}
