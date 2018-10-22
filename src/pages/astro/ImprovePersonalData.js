@@ -7,7 +7,6 @@ import icon_man from "../../assets/astro/icon_man@2x.png";
 import icon_woman from "../../assets/astro/icon_woman@2x.png";
 import bg_icon_shuangyu from "../../assets/astro/bg_icon_shuangyu@2x.png"
 import icon_ziliao_xuanhao from "../../assets/astro/icon_ziliao_xuanhao@2x.png"
-import router from '../.umi/router';
 
 function ImprovePersonalData(props) {
   console.log(1111111111111111111111,props.astro.selectAstro);

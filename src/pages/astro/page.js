@@ -1,45 +1,37 @@
 import React from 'react';
 
-import {connect} from 'dva';
+import { connect } from 'dva';
 import styles from './page.css';
-import {routerRedux} from 'dva/router';
-import DocumentTitle from 'react-document-title'
-import BG_photo_xingzuo from '../../assets/astro/BG_photo_xingzuo@2x.png'
+import { routerRedux } from 'dva/router';
+import DocumentTitle from 'react-document-title';
+import Horoscope from './components/Horoscope';
 
 function Astro(props) {
-  const {selectAstro} = props.store ;
-  if(selectAstro==null){
+  const { userInfo, constellationDetail } = props.store;
+  if (userInfo == null) return null;
+  const constellation = userInfo.userInfo.constellation;
+  if (constellation === '') {
     return (
       <DocumentTitle title={props.title}>
-      <div className={styles.astrology_container}>
-        <div className={styles.astrology}>您还没有选择您的星座</div>
-        <div className={styles.choose_astrology}>
-          <button onClick={()=>{
-            props.dispatch(routerRedux.push('/astro/AstroItem'))
-          }}>选择星座</button>
+        <div className={styles.astrology_container}>
+          <div className={styles.astrology}>您还没有选择您的星座</div>
+          <div className={styles.choose_astrology}>
+            <button onClick={() => {
+              props.dispatch(routerRedux.push('/astro/AstroItem'));
+            }}>选择星座
+            </button>
+          </div>
         </div>
-      </div>
       </DocumentTitle>
     );
   }
-  return (
-    <DocumentTitle title={props.title}>
-      <div className={styles.astrology_container}>
-        <div className={styles.astrology}>您还没有选择您的星座</div>
-        <div className={styles.choose_astrology}>
-          <button onClick={()=>{
-            props.dispatch(routerRedux.push('/astro/AstroItem'))
-          }}>选择星座</button>
-        </div>
-      </div>
-    </DocumentTitle>
-  )
+  return <Horoscope data={constellationDetail}/>;
 }
 
 export default connect(state => {
   return {
     store: state.astro,
-    title:state.global.text
+    title: state.global.text,
   };
 })(Astro);
 //   Aquarius(0, "水瓶座"),
