@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccb6bfd-d748-4f40-a7f1-510e29b4ae1a" name="Default" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/ImprovePersonalData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/ImprovePersonalData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/models/astro.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/models/astro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/page.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -127,6 +135,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/page.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,6 +156,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
               <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+=======
+      <file leaf-file-name="ImprovePersonalData.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/ImprovePersonalData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -154,6 +169,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="astro.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/models/astro.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AstroItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+>>>>>>> Stashed changes
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -207,6 +257,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
+=======
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1337">
+              <caret line="169" column="12" lean-forward="true" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -223,6 +280,18 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< Updated upstream
+=======
+      <find>x</find>
+      <find>robot</find>
+      <find>fuc</find>
+      <find>jixuan</find>
+      <find>ball</find>
+      <find>create</find>
+      <find>new ball</find>
+      <find>push</find>
+      <find>new bid</find>
+>>>>>>> Stashed changes
       <find>current</find>
       <find>clear</find>
       <find>query.</find>
@@ -236,6 +305,7 @@
       <find>SelectPanelFuCai</find>
       <find>line</find>
       <find>btn</find>
+<<<<<<< Updated upstream
       <find>SingleNumberPanel</find>
       <find>jixuan</find>
       <find>create</find>
@@ -253,6 +323,14 @@
       <find>aimCount</find>
       <find>set</find>
       <find>45</find>
+=======
+      <find>improve_data_content</find>
+      <find>red</find>
+      <find>18</find>
+      <find>improve_data_content_ziliao_astro</find>
+      <find>双鱼</find>
+      <find>improve_data_content_ziliao</find>
+>>>>>>> Stashed changes
     </findStrings>
     <replaceStrings>
       <replace>className={style.</replace>
@@ -304,8 +382,6 @@
         <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" />
         <option value="$PROJECT_DIR$/src/pages/friendlist/page.css" />
         <option value="$USER_HOME$/Desktop/config" />
-        <option value="$PROJECT_DIR$/src/pages/astro/page.js" />
-        <option value="$PROJECT_DIR$/src/pages/astro/page.css" />
         <option value="$PROJECT_DIR$/.umirc.js" />
         <option value="$PROJECT_DIR$/src/utils/authority.js" />
         <option value="$PROJECT_DIR$/src/utils/request.js" />
@@ -319,6 +395,11 @@
         <option value="$PROJECT_DIR$/src/pages/document.ejs" />
         <option value="$PROJECT_DIR$/src/pages/address/page.css" />
         <option value="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/page.css" />
+        <option value="$PROJECT_DIR$/src/pages/astro/page.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/AstroItem.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/models/astro.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/ImprovePersonalData.js" />
       </list>
     </option>
   </component>
@@ -345,10 +426,17 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< Updated upstream
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+=======
+    <option name="x" value="467" />
+    <option name="y" value="2" />
+    <option name="width" value="1398" />
+    <option name="height" value="1066" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -361,6 +449,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,12 +483,18 @@
               <item name="address" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,7 +604,11 @@
       <workItem from="1539654408464" duration="16612000" />
       <workItem from="1539679657170" duration="952000" />
       <workItem from="1539681100796" duration="37277000" />
+<<<<<<< Updated upstream
       <workItem from="1539826225258" duration="14436000" />
+=======
+      <workItem from="1539826123460" duration="19142000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="xxxxxx">
       <created>1539679705257</created>
@@ -543,11 +642,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="164220000" />
 =======
     <option name="totallyTimeSpent" value="164559000" />
 >>>>>>> 958f088bad1984ef9fa9103b19487c2e933da151
+=======
+    <option name="totallyTimeSpent" value="168926000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -589,22 +692,53 @@
 =======
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+<<<<<<< Updated upstream
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.41078067" visible="true" weight="0.1406744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
       <window_info id="npm" order="2" sideWeight="0.58921933" side_tool="true" weight="0.1406744" />
       <window_info id="Project Explorer" order="3" />
       <window_info id="DB Browser" order="4" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.42070484" visible="true" weight="0.19599578" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32936078" />
+      <window_info id="npm" order="2" sideWeight="0.57929516" side_tool="true" weight="0.23529412" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24160346" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.25929978" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info anchor="bottom" id="Console" order="7" />
+      <window_info anchor="bottom" id="DB Execution Console" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="DB Browser" order="4" />
+      <window_info id="Project Explorer" order="3" />
+>>>>>>> Stashed changes
       <window_info id="Job Explorer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Find" order="1" weight="0.2966752" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5321001" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861805" />
+=======
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2966752" />
+    </layout>
+    <layout-to-restore>
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.39717084" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -621,6 +755,21 @@
       <window_info id="npm" order="2" sideWeight="0.5655914" side_tool="true" weight="0.23749007" />
       <window_info id="Project Explorer" order="3" />
       <window_info id="DB Browser" order="4" />
+=======
+      <window_info id="npm" order="2" sideWeight="0.5655914" side_tool="true" weight="0.23749007" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4344086" visible="true" weight="0.23749007" />
+      <window_info id="Structure" order="1" weight="0.2494043" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33562586" />
+      <window_info id="DB Browser" order="4" />
+      <window_info id="Project Explorer" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+>>>>>>> Stashed changes
       <window_info id="Job Explorer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -635,11 +784,17 @@
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.114369504" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2966752" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+>>>>>>> Stashed changes
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,6 +809,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="双色球更改" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
+=======
+    <entry file="file://$PROJECT_DIR$/dist/static/banner.5c0e24d8.png" />
+    <entry file="file://$PROJECT_DIR$/dist/static/dev-page.6adbee7e.png" />
+    <entry file="file://$PROJECT_DIR$/dist/static/haoli.ddc50d34.png" />
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/dist/static/hot.56f7a5fc.png" />
     <entry file="file://$PROJECT_DIR$/dist/static/right.2308c69c.png" />
     <entry file="file://$PROJECT_DIR$/dist/static/left.1660fc58.png" />
@@ -752,14 +913,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/astro/components/AstroItem.js" />
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2147">
@@ -767,6 +922,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/.umirc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -939,6 +1096,50 @@
             <element signature="n#!!block;n#judgeType#0" />
           </folding>
 >>>>>>> 958f088bad1984ef9fa9103b19487c2e933da151
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1337">
+          <caret line="169" column="12" lean-forward="true" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/models/astro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/ImprovePersonalData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
