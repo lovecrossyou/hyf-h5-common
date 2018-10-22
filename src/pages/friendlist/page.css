@@ -74,3 +74,12 @@
   width:18px;
   height:30px;
 }
+
+.emptyTips {
+  text-align: center;
+  height: 120px;
+  line-height: 120px;
+  background-color: #f5f5f5;
+  color: #999999;
+}
+

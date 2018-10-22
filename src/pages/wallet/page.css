@@ -22,7 +22,7 @@
   font-size:26px;
 }
 
-.wallet_item_top_rmb{
+:global(.wallet_withdraw){
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,7 +58,18 @@
   height:684px;
   margin-top:20px;
 }
-.wallet_fun_item, .bank{
+
+.wallet_fun_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:250px;
+  width:33%;
+  border-bottom:1px solid #F8F8F8;
+}
+
+:global(.wallet_bank){
   display: flex;
   flex-direction: column;
   justify-content: center;

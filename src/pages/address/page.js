@@ -47,7 +47,7 @@ class AddressList extends React.Component {
     const store = this.props.store;
     return <div style={{paddingBottom:'140px'}}>
       {
-        store.map((address,index) => {
+        store.list.map((address,index) => {
           return <AddressCell
             edit={this.addresseEdit}
             del={this.addressDel}
@@ -63,7 +63,7 @@ class AddressList extends React.Component {
 
 export default connect(state=>{
   return {
-    store:state.address.list
+    store:state.address
   }
 })(AddressList);
 

@@ -48,9 +48,20 @@ function  judgeType(obj) {
 
 
 
+function formatValue(value) {
+  if (value === ''){
+    return value;
+  }
+  if (value < 10){
+    return '0' + value;
+  }else{
+    return value;
+  }
+}
+
 class Ball{
   constructor(text,color){
-    this.text = ''+text ;
+    this.text = ''+text;
     this.color = color ;
     this.active = false;
   }
@@ -61,6 +72,7 @@ class Ball{
      return new Ball(other.text, other.color);
   }
 }
+
 
 class Bid{
 
@@ -78,7 +90,10 @@ class Bid{
 
       let randomValue = 0;
       do{
-        randomValue = Math.floor(Math.floor(Math.random() * base))+1;
+        randomValue = formatValue(Math.floor(Math.floor(Math.random() * base))+1);
+        if (this.type === '3d'){
+          break;
+        }
       }while(this.hasSelect(new Ball(randomValue, color)));
 
       return new Ball(randomValue, color);
@@ -244,7 +259,7 @@ export default {
           // const type = 'fucai' ;
           const type = query.type ;
 
-          const nos = query.nos===undefined?[] : query.nos ;
+          const nos = query.nos ;
 
           dispatch({
             type: 'init',
@@ -253,7 +268,7 @@ export default {
 
           dispatch({
             type:'saveBids',
-            payload:JSON.parse(nos)
+            payload:[]
           })
         }
       });
@@ -312,7 +327,14 @@ export default {
 
     selectBall(state,action){
       const ball = action.payload ;
-      ball.active = true;
+      let type = state.currentBid.type;
+      if (type === 'fucai'){
+        if (ball.active === true){
+           return state;
+        }
+        ball.active = true;
+      }
+
       // console.log('selectBall ball ',ball)
       let currentBid = state.currentBid;
       let selectedBids = state.selectedBids;

@@ -1,9 +1,11 @@
-import { fetchAstroInfo } from '../service/astro';
+import { fetchAstroInfo, queryUserInfo, queryModifyConstellation, queryConstellationDetail } from '../service/astro';
 
 export default {
   namespace: 'astro',
   state: {
-    selectAstro:null
+    selectAstro:null,
+    userInfo:null,
+    constellationDetail:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -16,6 +18,24 @@ export default {
               console.log('callback.....')
             }
           })
+
+          dispatch({
+            type:'userInfo',
+            payload:{}
+          })
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '星座选择',
+            },
+          });
+        }
+        else if(pathname === '/astro/AstroItem'){
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '12星座选择',
+            },
+          });
         }
       });
     },
@@ -29,12 +49,51 @@ export default {
         payload:result
       });
       cb&&cb();
+    },
+
+    *userInfo({ payload ,cb}, { call, put }) {
+      const userData = yield call(queryUserInfo,payload);
+      yield put({
+        type:'saveUserInfo',
+        payload:userData
+      });
+
+      //有星座信息则继续请求星座数据
+      if(userData.userInfo.constellation!==''){
+        const result = yield call(queryConstellationDetail, payload);
+        yield put({
+          type:'saveDetail',
+          payload:result
+        })
+      }
+    },
+
+    //设置星座性别
+    *constellation({ payload ,cb}, { call, put }) {
+      const result = yield call(queryModifyConstellation, payload);
+      if (result.respMsg === 'successful') {
+        cb();
+      }
+    },
+
+    *detail({ payload ,cb}, { call, put }) {
+      const result = yield call(queryConstellationDetail, payload);
+      yield put({
+        type:'saveDetail',
+        payload:result
+      })
     }
+    //
   },
   // 同步
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    saveUserInfo(state, action) {
+      return { ...state, userInfo:action.payload };
+    },
+
+    saveDetail(state,action){
+      return { ...state, constellationDetail:action.payload };
+
     },
 
     saveAstro(state, action ) {

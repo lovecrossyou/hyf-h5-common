@@ -16,6 +16,8 @@ function App(props) {
       <Link to="/astro/page"><h1>星座</h1></Link>
       <br/>
       <Link to="/address/page"><h1>地址管理</h1></Link>
+      <br/>
+      <Link to="/astro/ImprovePersonalData"><h1>完善资料</h1></Link>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './404.less'
 import {connect} from 'dva';
-import devIcon from '../assets/dev-page.png'
 
 export default connect()(({dispatch}) => {
   return (

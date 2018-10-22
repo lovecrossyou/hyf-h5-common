@@ -1,9 +1,10 @@
 import { connect } from 'dva';
-import { ListView } from 'antd-mobile';
 
 import styles from './page.css';
 import { LotteryBall } from './components/LotteryBall';
 import { Stepper } from './components/Stepper';
+import DocumentTitle from 'react-document-title';
+
 
 const Tips3D = '选号规则与福彩3D相同，选择号码与当期开奖号码对应位置的号码相同，即中签。';
 const TipsDOUBLE = '请选择6个红色球号码，1个蓝色球号码，中签号码以福彩双色球开奖结果为准。';
@@ -31,7 +32,7 @@ const NumberGroup = ({ balls, onClick }) => {
 // 一组号码
 const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, delClick }) => {
 
-  const leftWrapperStyle = bid.type ==='3d'?styles.leftWrapper45 : styles.leftWrapper ;
+  const leftWrapperStyle = bid.type === '3d' ? styles.leftWrapper45 : styles.leftWrapper;
 
   const EmptyNumberPanel = () => {
     return (<div className={styles.nos}>
@@ -40,9 +41,9 @@ const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, del
         <NumberGroup onClick={onClick} balls={bid.balls}/>
       </div>
       <div className={styles.stepperClear}/>
-    </div>)
+    </div>);
   };
-  const NormalNumberPanel = ()=>{
+  const NormalNumberPanel = () => {
     return (
       <div className={styles.nos}>
         <div className={leftWrapperStyle}>
@@ -61,9 +62,9 @@ const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, del
           />
         </div>
       </div>
-    )
-  }
-  if( hideStepper === undefined)return <NormalNumberPanel/>;
+    );
+  };
+  if (hideStepper === undefined) return <NormalNumberPanel/>;
   return <EmptyNumberPanel/>;
 };
 
@@ -100,37 +101,7 @@ const BtnJiXuan = ({ onClick }) => {
   return <div onClick={onClick} className={styles.jixuan}>全部机选</div>;
 };
 
-// 福彩3D 选号面板
-const SelectPanel3D = ({ codes }) => {
-  return <div className={styles.select_panel}>
-    <div className={styles.tips}>{Tips3D}</div>
-    <div className={styles.wrapper_3d}>
-      <div className={styles.all_ball}>
-        <LotteryBall text='0'/>
-        <LotteryBall text='1'/>
-        <LotteryBall text='2'/>
-        <LotteryBall text='3'/>
-        <LotteryBall text='4'/>
-      </div>
-      <div className={styles.all_ball}>
-        <LotteryBall text='5'/>
-        <LotteryBall text='6'/>
-        <LotteryBall text='7'/>
-        <LotteryBall text='8'/>
-        <LotteryBall text='9'/>
-      </div>
-    </div>
-
-    <div className={styles.btn_confirm}>
-      确认
-    </div>
-  </div>;
-};
-
-const COLUMN = 7;
-const calRowCount = (row, totalCount) => {
-  return (totalCount - row * COLUMN) > COLUMN ? COLUMN : (totalCount - row * COLUMN);
-};
+const COLUMN = 9;
 
 const GeneRowItems = ({ rowItems, numsOfRow }) => {
   if (numsOfRow != COLUMN) {
@@ -195,7 +166,7 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
           confirmBids();
         }
       }}
-      className={styles.btn_confirm} style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
+      className='lottery_btn_confirm' style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>
 
@@ -217,64 +188,67 @@ const LotterySel = (props) => {
   const restCount = props.store.totalCount - calcBidCount(props.store.selectedBids);
   const bidCmpleteFlag = restCount === 0;
   return (
-    <div className={styles.container}>
-      {/*菜单面板*/}
-      <OptionPanel
-        jiXuan={() => {
-          props.dispatch({
-            type: 'lotteryselect/jiXuan',
-          });
-        }}
-        restCount={restCount}/>
-      {/*已选号码*/}
+    <DocumentTitle title={props.title}>
+      <div className={styles.container}>
+        {/*菜单面板*/}
+        <OptionPanel
+          jiXuan={() => {
+            props.dispatch({
+              type: 'lotteryselect/jiXuan',
+            });
+          }}
+          restCount={restCount}/>
+        {/*已选号码*/}
 
-      <div className={styles.content}>
-        <LotteryNos
-          delClick={index => {
-            props.dispatch({
-              type: 'lotteryselect/delBid',
-              payload: index,
-            });
-          }}
-          restCount={restCount}
-          onChange={(count, index) => {
-            props.dispatch({
-              type: 'lotteryselect/setBidCount',
-              payload: { count, index },
-            });
-          }}
-          bidCmpleteFlag={bidCmpleteFlag}
-          onClick={(ball) => {
-            props.dispatch({
-              type: 'lotteryselect/unSelectBall',
-              payload: ball,
-            });
-          }}
-          currentBid={props.store.currentBid}
-          selectedBids={props.store.selectedBids}/>
-        {/*选号面板*/}
-        <SelectPanelFuCai
-          confirmBids={() => {
-            // console.log('xxxxx');
-          }}
-          bidCompleteFlg={bidCmpleteFlag}
-          onClick={(ball) => {
-            // console.log('ball ', ball);
-            props.dispatch({
-              type: 'lotteryselect/selectBall',
-              payload: ball,
-            });
-          }}
-          currentBid={props.store.currentBid}
-          balls={props.store.codes_panel}/>
+        <div className={styles.content}>
+          <LotteryNos
+            delClick={index => {
+              props.dispatch({
+                type: 'lotteryselect/delBid',
+                payload: index,
+              });
+            }}
+            restCount={restCount}
+            onChange={(count, index) => {
+              props.dispatch({
+                type: 'lotteryselect/setBidCount',
+                payload: { count, index },
+              });
+            }}
+            bidCmpleteFlag={bidCmpleteFlag}
+            onClick={(ball) => {
+              props.dispatch({
+                type: 'lotteryselect/unSelectBall',
+                payload: ball,
+              });
+            }}
+            currentBid={props.store.currentBid}
+            selectedBids={props.store.selectedBids}/>
+          {/*选号面板*/}
+          <SelectPanelFuCai
+            confirmBids={() => {
+              // console.log('xxxxx');
+            }}
+            bidCompleteFlg={bidCmpleteFlag}
+            onClick={(ball) => {
+              // console.log('ball ', ball);
+              props.dispatch({
+                type: 'lotteryselect/selectBall',
+                payload: ball,
+              });
+            }}
+            currentBid={props.store.currentBid}
+            balls={props.store.codes_panel}/>
+        </div>
+
       </div>
-
-    </div>
+    </DocumentTitle>
   );
 };
 
 export default connect(state => {
   return {
     store: state.lotteryselect,
+    title:state.global.text
   };
 })(LotterySel);

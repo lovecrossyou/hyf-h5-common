@@ -20,14 +20,17 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
+
+const BaseUrl = (url)=>{
+  return config.apiPrefix + url ;
+}
+
+
 export default async function request(url, options) {
+  const accessInfo = getAccessToken();
+  const body = Object.assign(options.body || {}, { accessInfo: accessInfo });
   console.log('request ', url);
-  // const state = window.g_app._store.getState();
-  // const accessInfo = state.global.accessInfo ;
-  // console.log('accessInfo ',accessInfo)
-  const accessToken = getAccessToken();
-  // let body = Object.assign(options.body || {}, { accessInfo: JSON.parse(accessToken) });
-  let body = Object.assign(options.body || {}, { accessInfo: accessToken });
+  console.log('request payload ', body);
   const opt = {
     body: JSON.stringify(body),
     headers: {
@@ -35,16 +38,7 @@ export default async function request(url, options) {
     },
     method: options.method,
   };
-  const response = await fetch(url, opt);
+  const response = await fetch(BaseUrl(url), opt);
   checkStatus(response);
-
-  try {
-    return response.json();
-
-  }
-  catch (e) {
-    console.log(e);
-    return {};
-  }
-
+  return response.json();
 }

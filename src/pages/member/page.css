@@ -135,13 +135,26 @@
   flex-direction: column;
   justify-content: center;
 }
-.vip_right_action{
+
+
+:global(.vip_right_action){
   border:1px solid #cc2636;
   font-size:28px;
   color:#cc2636;
   padding:6px 12px;
   border-radius: 4px;
 }
+
+:global(.vip_right_action_disable){
+  border:1px solid #f5f5f5;
+  font-size:28px;
+  color:#e1e1e1;
+  padding:6px 12px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+
+}
+
 .answer{
   margin-top:36px;
 
@@ -180,4 +193,10 @@
 
 .btnUpgrade{
 
+}
+
+.vipEndTime{
+  height: 80px;
+  line-height: 80px;
+  color: #ffffff;
 }

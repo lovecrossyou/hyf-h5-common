@@ -18,104 +18,50 @@
 <div id="root"></div>
 </body>
 <script>
-  wx.miniProgram.getEnv(function(res) {
-    if (res.miniprogram===true) {
-      //银行卡列表
-      $('#root').on('click', '.page__bank___3wlAE', function() {
-        console.log('银行卡列表')
-        wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
 
-      });
+  //银行卡列表
+  $('#root').on('click', '.wallet_bank', function() {
+    console.log('银行卡列表');
+    wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
 
-      //提现
-      $('#root').on('click', '.page__wallet_item_top_rmb___aE06c', function() {
-        console.log('提现')
-        wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
+  });
 
-      });
+  //提现
+  $('#root').on('click', '.wallet_withdraw', function() {
+    console.log('提现');
+    wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
+  });
 
-      // 账单明细
-      $('#root').on('click', '.page__account_detail___2jBX3', function() {
-        wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
-
-      });
-
-      // 账户安全
-      $('#root').on('click', '.page__security___11lED', function() {
-        wx.miniProgram.navigateTo({ url: '/pages/account/security' });
-
-      });
+  // 会员购买以及升级
+  $('#root').on('click', '.vip_right_action', function() {
+    const vip_type = $(this).attr("vip_type");
+    console.log('会员购买以及升级 vip_type ',vip_type);
+    wx.miniProgram.postMessage({ data: vip_type });
+    wx.miniProgram.navigateBack();
+  });
 
 
-      //会员升级
-      $('#root').on('click', '.page__vip_right_action___2J0qF', function() {
-        // window.g_app._store
-        // wx.miniProgram.postMessage({ type: 'user_to_golden_vip' });
-        // wx.miniProgram.navigateTo({url: '/path/to/page'})
-        const vipType = $(this).attr('vip_type');
-        wx.miniProgram.redirectTo({ url: '/pages/pay/pay?type='+vipType});
-      });
 
-
-      // 确认选号后 返回
-      $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
-        const state = window.g_app._store.getState() ;
-        const lotteryselect = state.lotteryselect ;
-        const type = lotteryselect.type ;
-        if(type === '3d'){
-          wx.miniProgram.postMessage({ data: lotteryselect.selectedBids });
-          wx.miniProgram.navigateBack();
-        }
-        else {
-          wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan'});
-        }
-      })
+  // 确认选号后 返回
+  $('#root').on('click', '.lottery_btn_confirm', function() {
+    const state = window.g_app._store.getState();
+    const lotteryselect = state.lotteryselect;
+    const selectedBids = lotteryselect.selectedBids;
+    if (window.__wxjs_environment) {
+      // 小程序环境
+      const type = lotteryselect.type;
+      if (type === '3d') {
+        wx.miniProgram.postMessage({ data: selectedBids });
+        wx.miniProgram.navigateBack();
+      }
+      else {
+        wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan' });
+      }
     }
     else {
-      //处理客户端事件
-      $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
-        if($(this).css("opacity")==0.3)return;
-        const state = window.g_app._store.getState() ;
-        const selectBids = state.lotteryselect.selectedBids ;
-        const getBidStr = (total,sum)=>{
-          if(total.length==''){
-            return sum.text ;
-          }
-          return total+','+ sum.text ;
-        }
-
-        let bidsStrGroup = [] ;
-        for(let bid of selectBids){
-          const balls = bid.balls ;
-          const bidStr = balls.reduce(getBidStr,'');
-          bidsStrGroup.push(bidStr);
-        }
-        console.log(bidsStrGroup)
-        window.postMessage(JSON.stringify(selectBids));
-      })
+      // 非小程序环境
+      window.postMessage(JSON.stringify(selectedBids));
     }
-  })
-
-  // $('#root').on('click', '.page__btn_confirm___EWlP0', function() {
-  //   if($(this).css("opacity")==0.3)return;
-  //   const state = window.g_app._store.getState() ;
-  //   const selectBids = state.lotteryselect.selectedBids ;
-  //   const getBidStr = (total,sum)=>{
-  //     if(total.length==''){
-  //       return sum.text ;
-  //     }
-  //     return total+','+ sum.text ;
-  //   }
-  //
-  //   let bidsStrGroup = [] ;
-  //   for(let bid of selectBids){
-  //     const balls = bid.balls ;
-  //     const bidStr = balls.reduce(getBidStr,'');
-  //     bidsStrGroup.push(bidStr);
-  //   }
-  //   console.log(bidsStrGroup)
-  //   window.postMessage(JSON.stringify(selectBids));
-  // })
-
+  });
 </script>
 </html>

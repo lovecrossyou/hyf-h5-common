@@ -1,22 +1,18 @@
 import { queryAddress, queryCreate } from '../services/address';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'address',
   state: {
-    text: 'page work',
     list: []
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/address/page') {
+          setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
-          })
-          dispatch({
-            type:'global/setTitle',payload:{
-              text:"地址列表"
-            }
           })
         }
       });
@@ -29,7 +25,8 @@ export default {
         size:10
       });
       yield put({
-        type: 'save', payload: list.content
+        type: 'save',
+        payload: list.content
       });
     },
 

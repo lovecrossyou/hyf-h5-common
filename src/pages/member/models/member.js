@@ -1,4 +1,5 @@
 import { fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'member',
@@ -9,8 +10,10 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/member/page') {
+          setTokenFromQueryString(query);
           dispatch({
-            type: 'fetch'
+            type: 'fetch',
+            payload:{}
           })
           dispatch({
             type:'global/setTitle',payload:{
@@ -23,9 +26,14 @@ export default {
   },
   effects: {
     *fetch({ payload }, { call, put }) {
+      console.log('fetchUserVipInfo before',payload)
+
       const response = yield call(fetchUserVipInfo,payload)
+
+      console.log('fetchUserVipInfo ',fetchUserVipInfo)
       yield put({
-        type: 'save', payload:response
+        type: 'save',
+        payload:response
       });
     },
 

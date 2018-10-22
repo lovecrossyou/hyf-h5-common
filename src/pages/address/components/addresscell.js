@@ -1,6 +1,9 @@
 import React from 'react';
 import { SwipeAction, List,Icon } from 'antd-mobile';
-import styles from './address.css'
+import styles from './address.css';
+import chooseIcon from '../../../assets/address/choose@2x.png';
+import editIcon from '../../../assets/address/adress_btn_edit@2x.png';
+import delIcon from '../../../assets/address/adress_btn_delete@2x.png';
 
 export const AddressCell = ({address,del,edit})=>{
 
@@ -33,16 +36,29 @@ export const AddressCell = ({address,del,edit})=>{
           onClick={e => console.log(e)}
         >
           <div className={styles["cell-content"]}>
-            <div className={styles["left-icon"]}>
-              <Icon type='search'/>
-            </div>
             <div className={styles.right}>
-              <div className={styles["flex-r"]}>
-                <div>{address.recievName}</div>
+              <div className={styles.linkman}>
+                <div className={styles.reciev_name}>{address.recievName}</div>
                 <div>{address.phoneNum}</div>
               </div>
-              <div className={styles["flex-r"]}>
+              <div className={styles.shipping_address}>
                 <div>{address.districtAddress}</div>
+              </div>
+              <div className={styles.address_operate}>
+                <span>
+                  <img src={chooseIcon} alt="" style={{width:'36px',height:'36px',margin:'-10px 10px 0 0'}}/>
+                  默认地址
+                </span>
+                <span className={styles.handle}>
+                  <s>
+                    <img src={editIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>
+                    编辑
+                  </s>
+                  <s>
+                    <img src={delIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>
+                    删除
+                  </s>
+                </span>
               </div>
             </div>
           </div>
