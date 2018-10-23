@@ -1,4 +1,5 @@
-import { queryCreateOrder } from '../services/lotteryselect';
+import { queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate } from '../services/lotteryselect';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 function deepClone(data) {
   const type = this.judgeType(data);
@@ -258,25 +259,28 @@ export default {
     totalCount: 0,
     type: '',
     discountGameId: '',
+    inviteGroupId:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
+          setTokenFromQueryString(query);
           //init selectedBids
           // const totalCount = 2 ;
           const totalCount = parseInt(query.totalCount);
           // const type = 'fucai' ;
           const type = query.type;
-
           const nos = query.nos;
           const discountGameId = query.discountGameId;
+          const inviteGroupId = parseInt(query.inviteGroupId);
 
           console.log('lotteryselect query',query)
+          console.log('lotteryselect inviteGroupId',inviteGroupId)
 
           dispatch({
             type: 'init',
-            payload: { totalCount, type, discountGameId },
+            payload: { totalCount, type, discountGameId ,inviteGroupId},
           });
 
           dispatch({
@@ -294,7 +298,7 @@ export default {
   effects: {
     * init({ payload }, { call, put }) {
       //初始化选号面板
-      const { totalCount, type, discountGameId } = payload;
+      const { totalCount, type, discountGameId,inviteGroupId } = payload;
       let balls = [];
       if (type === '3d') {
         balls = generates3D();
@@ -308,6 +312,7 @@ export default {
           totalCount: totalCount,
           type: type,
           discountGameId: discountGameId,
+          inviteGroupId:inviteGroupId
         },
       });
     },
@@ -324,17 +329,30 @@ export default {
       const res = yield call(queryCreateOrder, payload);
       cb(res);
     },
+
+    *participate({ payload, cb }, { call, put }) {
+      const res = yield call(queryParticipate, payload);
+      cb(res);
+    },
+
+
+    *clientOrderDetail({ payload, cb }, { call, put }) {
+      const res = yield call(queryClientOrderDetailByPlatform, payload);
+      cb(res);
+    },
+
   },
   reducers: {
     save(state, action) {
-      let { totalCount, type,discountGameId } = action.payload;
+      let { totalCount, type,discountGameId,inviteGroupId } = action.payload;
       return {
         ...state,
         codes_panel: action.payload.balls,
         totalCount,
         type,
         currentBid: new Bid(type),
-        discountGameId:discountGameId
+        discountGameId:discountGameId,
+        inviteGroupId:inviteGroupId
       };
     },
 

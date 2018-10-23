@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import { LotteryBall } from './components/LotteryBall';
 import { Stepper } from './components/Stepper';
 import DocumentTitle from 'react-document-title';
-import { Modal, List, Toast } from 'antd-mobile';
+import { Modal, List, Toast,ActivityIndicator } from 'antd-mobile';
 import { AddressCell } from './components/addressCell';
 
 import { RED_COLOR } from './models/lotteryselect';
@@ -328,5 +328,6 @@ export default connect(state => {
     store: state.lotteryselect,
     address: state.address,
     title: state.global.text,
+    loading: state.global.loading,
   };
 })(LotterySel);

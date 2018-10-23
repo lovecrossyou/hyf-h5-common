@@ -27,35 +27,62 @@
     if (addressStore.activeAddress == null) return;
     const lotteryStore = state.lotteryselect;
     const discountGameId = lotteryStore.discountGameId;
+    const inviteGroupId = lotteryStore.inviteGroupId;
+
     const activeAddress = addressStore.activeAddress;
     const selectedBids = lotteryStore.selectedBids;
 
+
+    console.log('lotteryStore ',lotteryStore)
+    const convertBid = bid => {
+      const length = bid.balls.length;
+      return bid.balls.reduce(((previousValue, currentValue) => {
+        if(previousValue==='')return currentValue.text ;
+        return previousValue + ',' + currentValue.text;
+      }),'');
+    };
     const convertCode2String = () => {
       let resultList = [];
       for (let bidItem of selectedBids) {
-
+        resultList.push(convertBid(bidItem));
       }
       return resultList;
-    }
-    console.log('lottery_confirm lotteryStore ', lotteryStore);
-    console.log('lottery_confirm addressStore ', addressStore);
-    const params = {
+    };
+    let params = {
       addressId: activeAddress.id,
-      codeList: ['13,25,28,26,03,31,12',],
-      gameId: discountGameId
+      codeList: convertCode2String(),
+      gameId: discountGameId,
+    };
+
+
+    let type = 'lotteryselect/createOrder'
+    if(inviteGroupId&&inviteGroupId!==undefined){
+      type = 'lotteryselect/participate';
+      params = Object.assign({},params,{
+        inviteGroupId:inviteGroupId
+      })
+    }
+    else {
+      type = 'lotteryselect/createOrder'
     }
     dispatch({
-      type: 'lotteryselect/createOrder',
+      type: type,
       payload: params,
       cb: res => {
         const { platformOrderNo } = res;
-        wx.miniProgram.postMessage({ data: platformOrderNo });
-        // url: '/pages/order/zeroOrderResult?' + 'discountGameId=' + this.discountGameId + '&inviteGroupId=' + groupId,
-        wx.miniProgram.navigateTo({ url: '/pages/order/zeroOrderResult?'+ 'discountGameId=' + discountGameId  });
-
-      }
-    })
-    // wx.miniProgram.navigateBack();
+        dispatch({
+          type:'lotteryselect/clientOrderDetail',
+          payload:{
+            platformOrderNo:platformOrderNo
+          },
+          cb:data=>{
+            const groupId = data.discountGameGroupModel.groupId;
+            let url = '/pages/order/zeroOrderResult?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId ;
+            wx.miniProgram.navigateTo({ url: url});
+          }
+        })
+      },
+    });
   });
 
 
@@ -74,7 +101,7 @@
 
   // 会员购买以及升级
   $('#root').on('click', '.vip_right_action', function() {
-    const vip_type = $(this).attr("vip_type");
+    const vip_type = $(this).attr('vip_type');
     console.log('会员购买以及升级 vip_type ', vip_type);
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.navigateBack();

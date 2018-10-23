@@ -7,5 +7,19 @@ export async function queryCreateOrder (params) {
   })
 }
 
+export async function queryParticipate (params) {
+  return request('/zeroDiscount/participate',{
+    method: 'post',
+    body: params,
+  })
+}
+
+export async function queryClientOrderDetailByPlatform (params) {
+  return request('/discountGameOrder/clientOrderDetail',{
+    method: 'post',
+    body: params,
+  })
+}
+
 
 
