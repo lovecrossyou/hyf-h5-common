@@ -117,7 +117,7 @@
 }
 /* 完善个人资料 */
 .improve_data{
-  width:356px;
+  width:442px;
   margin:116px auto;
 }
 .improve_data_tit{
@@ -133,37 +133,51 @@
   justify-content: space-between;
 }
 #improve_data_astro_content{
-  width:336px;
-  height:30px;
-  padding:15px;
+  width:412px;
+  height:75px;
+  line-height:75px;
+  padding:0 15px;
   border-radius: 10px;
-  border:2px solid #eee;
-  box-shadow: 2px 2px #eeeeee;
+  border:2px solid #ccc;
+  box-shadow: 3px 3px #eeeeee;
+  font-size:30px;
 }
 .improve_data_content>.improve_data_content_sex{
   display: inline-block;
-  width: 150px;
-  height: 48px;
-  line-height: 48px;
+  width: 180px;
+  height: 58px;
+  line-height: 58px;
   border-radius: 10px;
   border:1px solid #666666;
 }
-.improve_data_content>.improve_data_content_sex>img{
+.improve_data_content>.improve_data_content_man{
   display: inline-block;
-  padding:0 10px;
+  width: 180px;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  border:1px solid red;
+  color: red;
+}
+.improve_data_content>.improve_data_content_sex>img,
+.improve_data_content>.improve_data_content_man>img{
+  display: inline-block;
+  padding:0 15px;
 }
 .improve_data_content_ziliao{
   position: relative;
 }
 .improve_data_content_ziliao>span{
-  margin-left:70px;
+  margin-left:82px;
 }
 .improve_data_content_ziliao>.improve_data_content_ziliao_astro{
   position: absolute;
-  top:0;
-  left:15px;
-  width:30px;
-  height:30px;
+  top:14px;
+  left:14px;
+  width:46px;
+  height:46px;
+  background: darkblue;
+  border-radius: 50%;
 }
 .improve_data_finished{
   margin:200px auto;
