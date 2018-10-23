@@ -8,7 +8,6 @@ import icon_man from "../../assets/astro/icon_man@2x.png";
 import icon_man_h from "../../assets/astro/icon_man_h@2x.png";
 import icon_woman from "../../assets/astro/icon_woman@2x.png";
 import icon_woman_h from "../../assets/astro/icon_woman_h@2x.png";
-import bg_icon_shuangyu from "../../assets/astro/bg_icon_shuangyu@2x.png"
 import icon_ziliao_xuanhao from "../../assets/astro/icon_ziliao_xuanhao@2x.png"
 
 function ImprovePersonalData(props) {
