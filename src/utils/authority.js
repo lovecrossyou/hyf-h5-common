@@ -17,7 +17,7 @@ export function setTokenFromQueryString(query) {
   const {app_key, signature, access_token} = query ;
   let token_real = access_token.split('#')[0];
   const accessInfo = {app_key,signature,access_token:token_real} ;
-  if (accessInfo !== undefined) {
+  if (app_key !== undefined) {
     setAccessToken(accessInfo);
   }
 }
