@@ -1,0 +1,72 @@
+*{
+  text-decoration: none;
+  font-style: normal;
+}
+.left-icon{
+  width: 160px;
+  height: 140px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.flex-r{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999999;
+
+}
+
+.cell-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 160px;
+  background-color: #fff;
+  align-items: center;
+}
+.linkman{
+  width: 360px;
+  font-size: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.shipping_address{
+  color: #777;
+  font-size: 30px;
+  text-align: left;
+}
+.address_operate{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30px;
+  color: #777;
+}
+.handle{
+  width: 210px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-style: normal;
+}
+.am-swipe-content{
+  margin-bottom: 20px;
+}
+
+.address{
+  padding: 10px 20px;
+}
+

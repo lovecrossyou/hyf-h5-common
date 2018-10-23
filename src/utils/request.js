@@ -28,6 +28,9 @@ const BaseUrl = (url)=>{
 
 export default async function request(url, options) {
   const accessInfo = getAccessToken();
+
+  console.log('accessInfo..');
+  console.log('request accessInfo ',accessInfo);
   const body = Object.assign(options.body || {}, { accessInfo: accessInfo });
   console.log('request ', url);
   console.log('request payload ', body);

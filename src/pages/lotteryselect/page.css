@@ -239,5 +239,27 @@
   line-height: 60px;
   text-align: center;
   font-size: 24px;
+}
 
+:global(.popup-list .am-list-body) {
+  height: 500px;
+  overflow: auto;
+}
+
+
+.address{
+  height: 40px;
+
+}
+
+.address_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+}
+
+:global(.lottery_confirm_fucai){
+  /*color: #cc2636;*/
 }

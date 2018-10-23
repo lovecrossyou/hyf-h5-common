@@ -1,10 +1,11 @@
-import { fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
+import { fetchPayResult, fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'member',
   state: {
     userVipInfo:null,
+    payResult:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -18,6 +19,16 @@ export default {
           dispatch({
             type:'global/setTitle',payload:{
               text:"会员俱乐部"
+            }
+          })
+        }
+        if(pathname === '/member/payResult'){
+          const payOrderNo = query.payOrderNo ;
+          dispatch({
+            type: 'payResult',
+            payload:{
+              payOrderNo:payOrderNo,
+              payChannel:"WeixinMiniProgramPay"
             }
           })
         }
@@ -50,10 +61,20 @@ export default {
       });
     },
 
+    *payResult({ payload }, { call, put }) {
+      const res = yield call(fetchPayResult,payload) ;
+      yield put({
+        type: 'savePayResult', payload:res
+      });
+    },
   },
   reducers: {
     save(state, action) {
       return { ...state, userVipInfo:action.payload };
     },
+
+    savePayResult(state,action){
+      return { ...state, payResult:action.payload };
+    }
   },
 };

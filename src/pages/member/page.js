@@ -224,8 +224,8 @@ class Member extends React.Component {
     const { userVipInfo, loading } = this.props.store;
     if (userVipInfo == null) return (
       <ActivityIndicator
+        color="white"
         toast
-        text="加载中"
         animating={loading}
       />
     );
