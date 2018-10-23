@@ -5,7 +5,8 @@ export default {
   state: {
     selectAstro:null,
     userInfo:null,
-    constellationDetail:null
+    constellationDetail:null,
+    sex:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -29,6 +30,7 @@ export default {
               text: '星座选择',
             },
           });
+
         }
         else if(pathname === '/astro/AstroItem'){
           dispatch({
@@ -103,5 +105,13 @@ export default {
         selectAstro:action.payload
       }
     },
+
+    setSex(state,action){
+      return {
+        ...state,
+        sex:action.payload
+      }
+    }
+
   },
 };
