@@ -200,3 +200,20 @@
   line-height: 80px;
   color: #ffffff;
 }
+
+:global(.spe )
+{
+  width: 60px;
+  height: 60px;
+}
+
+.footer{
+  margin:40px 0 0 25px;
+}
+
+.footer_item{
+  height: 50px;
+  line-height: 50px;
+  font-size: 32px;
+  color: #999999;
+}

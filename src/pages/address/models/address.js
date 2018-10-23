@@ -4,7 +4,8 @@ import { setTokenFromQueryString } from '../../../utils/authority';
 export default {
   namespace: 'address',
   state: {
-    list: []
+    list: [],
+    activeAddress:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -49,5 +50,10 @@ export default {
     save(state, action) {
       return { ...state, list:action.payload };
     },
+
+    setActive(state,action){
+      return { ...state, activeAddress:action.payload };
+
+    }
   },
 };

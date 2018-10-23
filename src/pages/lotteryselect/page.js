@@ -1,10 +1,16 @@
-import { connect } from 'dva';
+import React from 'react';
 
-import styles from './page.css';
+import { connect } from 'dva';
 import { LotteryBall } from './components/LotteryBall';
 import { Stepper } from './components/Stepper';
 import DocumentTitle from 'react-document-title';
+import { Modal, List, Toast } from 'antd-mobile';
+import { AddressCell } from './components/addressCell';
 
+import { RED_COLOR } from './models/lotteryselect';
+
+
+import styles from './page.css';
 
 const Tips3D = '选号规则与福彩3D相同，选择号码与当期开奖号码对应位置的号码相同，即中签。';
 const TipsDOUBLE = '请选择6个红色球号码，1个蓝色球号码，中签号码以福彩双色球开奖结果为准。';
@@ -118,7 +124,7 @@ const GeneRowItems = ({ rowItems, numsOfRow }) => {
 };
 
 // 福彩双色球 选号面板
-const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids }) => {
+const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids, type }) => {
   const rows = Math.ceil(balls.length / COLUMN);
   let allRowItems = [];
   const numsOfRow = COLUMN;
@@ -131,7 +137,7 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       const c = balls[ballIndex];
       rowItems.push(<LotteryBall onClick={() => {
         if (bidCompleteFlg) return;
-        if (c.color === 'red') {
+        if (c.color === RED_COLOR) {
           if (currentBid.type === '3d'
             && currentBid.red_selectCount === 3) {
             return;
@@ -162,7 +168,8 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
     </div>
     <div
       onClick={() => {
-        if (bidCompleteFlg) {
+        if (bidCompleteFlg && type === 'fucai') {
+          console.log('onClick  bidCompleteFlg', bidCompleteFlg, 'type ', type);
           confirmBids();
         }
       }}
@@ -182,73 +189,144 @@ function calcBidCount(bids) {
   return result;
 }
 
-const LotterySel = (props) => {
-  // console.log('store ', JSON.stringify(props.store));
-
-  const restCount = props.store.totalCount - calcBidCount(props.store.selectedBids);
-  const bidCmpleteFlag = restCount === 0;
-  return (
-    <DocumentTitle title={props.title}>
-      <div className={styles.container}>
-        {/*菜单面板*/}
-        <OptionPanel
-          jiXuan={() => {
-            props.dispatch({
-              type: 'lotteryselect/jiXuan',
-            });
-          }}
-          restCount={restCount}/>
-        {/*已选号码*/}
-
-        <div className={styles.content}>
-          <LotteryNos
-            delClick={index => {
-              props.dispatch({
-                type: 'lotteryselect/delBid',
-                payload: index,
-              });
-            }}
-            restCount={restCount}
-            onChange={(count, index) => {
-              props.dispatch({
-                type: 'lotteryselect/setBidCount',
-                payload: { count, index },
-              });
-            }}
-            bidCmpleteFlag={bidCmpleteFlag}
-            onClick={(ball) => {
-              props.dispatch({
-                type: 'lotteryselect/unSelectBall',
-                payload: ball,
-              });
-            }}
-            currentBid={props.store.currentBid}
-            selectedBids={props.store.selectedBids}/>
-          {/*选号面板*/}
-          <SelectPanelFuCai
-            confirmBids={() => {
-              // console.log('xxxxx');
-            }}
-            bidCompleteFlg={bidCmpleteFlag}
-            onClick={(ball) => {
-              // console.log('ball ', ball);
-              props.dispatch({
-                type: 'lotteryselect/selectBall',
-                payload: ball,
-              });
-            }}
-            currentBid={props.store.currentBid}
-            balls={props.store.codes_panel}/>
-        </div>
-
-      </div>
-    </DocumentTitle>
-  );
+const AddressHeader = ({ confirm, cancel }) => {
+  return <div id='AddressHeader' className={styles.address_header}>
+    <div onClick={cancel}>取消</div>
+    <div>地址选择</div>
+    <div  className='lottery_confirm_fucai'>确定</div>
+  </div>
 };
+
+
+class LotterySel extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+      checkedAddressIndex: -1,
+    };
+  }
+
+  showModal = () => {
+    this.setState({
+      modal: true,
+    });
+  };
+
+  onClose = () => {
+    this.setState({
+      modal: false,
+    });
+  };
+
+  confirmAddress = () => {
+    if (this.state.checkedAddressIndex === -1) {
+      Toast.show('请选择地址', 1);
+    }
+    else {
+
+      this.onClose();
+    }
+  };
+
+  render() {
+    const store = this.props.store;
+    const address = this.props.address;
+    const restCount = store.totalCount - calcBidCount(store.selectedBids);
+    const bidCmpleteFlag = restCount === 0;
+    const bidType = store.type;
+    console.log('bidType ', bidType);
+    return (
+      <DocumentTitle title={this.props.title}>
+        <div className={styles.container}>
+          {/*菜单面板*/}
+          <OptionPanel
+            jiXuan={() => {
+              this.props.dispatch({
+                type: 'lotteryselect/jiXuan',
+              });
+            }}
+            restCount={restCount}/>
+          {/*已选号码*/}
+          <div className={styles.content}>
+            <LotteryNos
+              delClick={index => {
+                this.props.dispatch({
+                  type: 'lotteryselect/delBid',
+                  payload: index,
+                });
+              }}
+              restCount={restCount}
+              onChange={(count, index) => {
+                this.props.dispatch({
+                  type: 'lotteryselect/setBidCount',
+                  payload: { count, index },
+                });
+              }}
+              bidCmpleteFlag={bidCmpleteFlag}
+              onClick={(ball) => {
+                this.props.dispatch({
+                  type: 'lotteryselect/unSelectBall',
+                  payload: ball,
+                });
+              }}
+              currentBid={store.currentBid}
+              selectedBids={store.selectedBids}/>
+            {/*选号面板*/}
+            <SelectPanelFuCai
+              type={bidType}
+              confirmBids={this.showModal.bind(this)}
+              bidCompleteFlg={bidCmpleteFlag}
+              onClick={(ball) => {
+                this.props.dispatch({
+                  type: 'lotteryselect/selectBall',
+                  payload: ball,
+                });
+              }}
+              currentBid={store.currentBid}
+              balls={store.codes_panel}/>
+          </div>
+
+
+          {/*弹出地址层*/}
+          <Modal
+            popup
+            visible={this.state.modal}
+            onClose={this.onClose.bind(this)}
+            animationType="slide-up"
+          >
+            <List renderHeader={() => <AddressHeader
+              confirm={this.confirmAddress.bind(this)}
+              cancel={() => {
+                this.onClose();
+              }}/>} className="popup-list">
+              {address.list.map((data, index) => <AddressCell
+                toggle={() => {
+                  this.setState({
+                    checkedAddressIndex: index,
+                  });
+                  this.props.dispatch({
+                    type:'address/setActive',
+                    payload:data
+                  })
+
+                }}
+                active={this.state.checkedAddressIndex === index}
+                address={data}
+                key={index + '#'}/>)}
+            </List>
+          </Modal>
+        </div>
+      </DocumentTitle>
+    );
+  }
+}
 
 export default connect(state => {
   return {
     store: state.lotteryselect,
-    title:state.global.text
+    address: state.address,
+    title: state.global.text,
   };
 })(LotterySel);

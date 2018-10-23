@@ -13,3 +13,12 @@ export async function fetchUpdateToVipUser(payload) {
     body:payload
   });
 }
+
+// 支付结果查询
+
+export async function fetchPayResult(parmas) {
+  return request('/client/discountGamePay/queryResult',{
+    method:'post',
+    body:parmas
+  });
+}

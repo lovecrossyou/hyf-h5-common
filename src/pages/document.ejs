@@ -18,6 +18,46 @@
 <div id="root"></div>
 </body>
 <script>
+  //lottery_confirm 选号面板 选择完地址后确认
+  $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
+    const state = window.g_app._store.getState();
+    const dispatch = window.g_app._store.dispatch;
+
+    const addressStore = state.address;
+    if (addressStore.activeAddress == null) return;
+    const lotteryStore = state.lotteryselect;
+    const discountGameId = lotteryStore.discountGameId;
+    const activeAddress = addressStore.activeAddress;
+    const selectedBids = lotteryStore.selectedBids;
+
+    const convertCode2String = () => {
+      let resultList = [];
+      for (let bidItem of selectedBids) {
+
+      }
+      return resultList;
+    }
+    console.log('lottery_confirm lotteryStore ', lotteryStore);
+    console.log('lottery_confirm addressStore ', addressStore);
+    const params = {
+      addressId: activeAddress.id,
+      codeList: ['13,25,28,26,03,31,12',],
+      gameId: discountGameId
+    }
+    dispatch({
+      type: 'lotteryselect/createOrder',
+      payload: params,
+      cb: res => {
+        const { platformOrderNo } = res;
+        wx.miniProgram.postMessage({ data: platformOrderNo });
+        // url: '/pages/order/zeroOrderResult?' + 'discountGameId=' + this.discountGameId + '&inviteGroupId=' + groupId,
+        wx.miniProgram.navigateTo({ url: '/pages/order/zeroOrderResult?'+ 'discountGameId=' + discountGameId  });
+
+      }
+    })
+    // wx.miniProgram.navigateBack();
+  });
+
 
   //银行卡列表
   $('#root').on('click', '.wallet_bank', function() {
@@ -35,11 +75,10 @@
   // 会员购买以及升级
   $('#root').on('click', '.vip_right_action', function() {
     const vip_type = $(this).attr("vip_type");
-    console.log('会员购买以及升级 vip_type ',vip_type);
+    console.log('会员购买以及升级 vip_type ', vip_type);
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.navigateBack();
   });
-
 
 
   // 确认选号后 返回
@@ -55,7 +94,7 @@
         wx.miniProgram.navigateBack();
       }
       else {
-        wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan' });
+        // wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan' });
       }
     }
     else {
