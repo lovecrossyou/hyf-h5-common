@@ -1,12 +1,11 @@
 import config from './config';
 
 export function getAccessToken() {
-  // if (config.isMock) return {
-  //   app_key: 'b5958b665e0b4d8cae77d28e1ad3f521',
-  //   signature: 'F26BF643B2905A49A3850BACB51C04CD',
-  //   access_token: '2fda2caad5d74653b763ed8f078c4c95',
-  //   os: 'WeixinMiniProgramPay',
-  // };
+  if (config.isMock) return {
+    app_key: "b5958b665e0b4d8cae77d28e1ad3f521",
+    signature: "4BC20304F8E32ECC5AA8DEF81ADACC0F",
+    access_token: "0226eabaad854fb7b8d503fcd8fe4e27"
+  };
   return JSON.parse(localStorage.getItem('accessToken'));
 }
 
@@ -22,3 +21,6 @@ export function setTokenFromQueryString(query) {
     setAccessToken(accessInfo);
   }
 }
+
+
+
