@@ -203,21 +203,20 @@ class LotterySel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
       checkedAddressIndex: -1,
     };
   }
 
   showModal = () => {
-    this.setState({
-      modal: true,
-    });
+    this.props.dispatch({
+      type:'lotteryselect/showModal'
+    })
   };
 
   onClose = () => {
-    this.setState({
-      modal: false,
-    });
+    this.props.dispatch({
+      type:'lotteryselect/hideModal'
+    })
   };
 
   confirmAddress = () => {
@@ -230,7 +229,7 @@ class LotterySel extends React.Component {
   };
 
   render() {
-    const {store,loading,address,title} = this.props;
+    const {store,isLoading,address,title} = this.props;
     const restCount = store.totalCount - calcBidCount(store.selectedBids);
     const bidCmpleteFlag = restCount === 0;
     const bidType = store.type;
@@ -238,7 +237,10 @@ class LotterySel extends React.Component {
     return (
       <DocumentTitle title={title}>
         <div className={styles.container}>
-          <ActivityIndicator toast animating={loading}/>
+          <ActivityIndicator
+            toast
+            text="加载中"
+            animating={isLoading}/>
           {/*菜单面板*/}
           <OptionPanel
             jiXuan={() => {
@@ -287,11 +289,10 @@ class LotterySel extends React.Component {
               balls={store.codes_panel}/>
           </div>
 
-
           {/*弹出地址层*/}
           <Modal
             popup
-            visible={this.state.modal}
+            visible={store.showModal}
             onClose={this.onClose.bind(this)}
             animationType="slide-up"
           >
@@ -327,6 +328,6 @@ export default connect(state => {
     store: state.lotteryselect,
     address: state.address,
     title: state.global.text,
-    loading: state.lotteryselect.loading,
+    isLoading: state.loading.global,
   };
 })(LotterySel);

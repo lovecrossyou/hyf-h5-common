@@ -261,7 +261,9 @@ export default {
     type: '',
     discountGameId: '',
     inviteGroupId: null,
-    loading:false
+    loading: false,
+
+    showModal:false
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -345,10 +347,10 @@ export default {
 
     // 确认福彩选号
     * confirm_fucai({ payload, cb }, { call, put, select }) {
-      const { lotteryStore, addressStore} = yield select(state => {
+      const { lotteryStore, addressStore } = yield select(state => {
         const addressStore = state.address;
-        const lotteryStore = state.lotteryselect ;
-        return { lotteryStore, addressStore};
+        const lotteryStore = state.lotteryselect;
+        return { lotteryStore, addressStore };
       });
       const discountGameId = lotteryStore.discountGameId;
       const inviteGroupId = lotteryStore.inviteGroupId;
@@ -380,27 +382,27 @@ export default {
       };
 
       let resp = null;
-      console.log('activeAddress ',activeAddress)
-      console.log('lotteryStore ',lotteryStore)
-      console.log('inviteGroupId ',inviteGroupId)
       if (inviteGroupId && inviteGroupId !== undefined) {
         const payload = Object.assign({}, params, {
           inviteGroupId: inviteGroupId,
         });
-        resp = yield call(queryParticipate, payload,{loading:true});
+        resp = yield call(queryParticipate, payload, { loading: true });
       }
       else {
-        resp = yield call(queryCreateOrder, params,{loading:true});
+        resp = yield call(queryCreateOrder, params, { loading: true });
       }
-      if(resp.error){
-        Toast.show(resp.message, 1.5);
+      if (resp.error) {
+        yield put({
+          type:'hideModal'
+        })
+        Toast.fail(resp.message, 1.5);
         return;
       }
       const { platformOrderNo } = resp;
       if (platformOrderNo) {
         const data = yield call(queryClientOrderDetailByPlatform, {
           platformOrderNo: platformOrderNo,
-        },{loading:true});
+        }, { loading: true });
         cb(data);
       }
     },
@@ -489,7 +491,21 @@ export default {
         selectedBids.push(new Bid(type, true));
       }
       return { ...state, selectedBids, code_pannel, currentBid };
-
     },
+
+    //地址选择的显示与隐藏
+    showModal(state,action){
+      return {
+        ...state,
+        showModal:true
+      }
+    },
+
+    hideModal(state,action){
+      return {
+        ...state,
+        showModal:false
+      }
+    }
   },
 };
