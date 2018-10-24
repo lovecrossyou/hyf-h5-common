@@ -390,7 +390,7 @@ export default {
       };
 
       let resp = null;
-      if (setCode) {
+      if (setCode&&setCode===true) {
         params = Object.assign({}, params, {
           code: params.codeList[0],
         });
