@@ -20,6 +20,8 @@
 <script>
   //lottery_confirm 选号面板 选择完地址后确认
   $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
+
+    console.log('lottery_confirm_fucai ')
     const dispatch = window.g_app._store.dispatch;
     dispatch({
       type: 'lotteryselect/confirm_fucai',
@@ -30,7 +32,6 @@
       },
     });
   });
-
 
   //银行卡列表
   $('#root').on('click', '.wallet_bank', function() {
@@ -75,5 +76,14 @@
       window.postMessage(JSON.stringify(selectedBids));
     }
   });
+
+
+  // 账单明细
+  $('#root').on('click', '.account_record', function() {
+    wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+  });
+
+
+
 </script>
 </html>

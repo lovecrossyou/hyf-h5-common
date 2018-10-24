@@ -1,5 +1,8 @@
 import { Toast } from 'antd-mobile';
-import { queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate } from '../services/lotteryselect';
+import {
+  queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate,
+  querySetCode,
+} from '../services/lotteryselect';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 function deepClone(data) {
@@ -262,8 +265,8 @@ export default {
     discountGameId: '',
     inviteGroupId: null,
     loading: false,
-
-    showModal:false
+    showModal: false,
+    setCode: false,
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -278,13 +281,14 @@ export default {
           const nos = query.nos;
           const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);
-
+          const setCode = query.setCode;
           console.log('lotteryselect query', query);
           console.log('lotteryselect inviteGroupId', inviteGroupId);
+          console.log('lotteryselect setCode', setCode);
 
           dispatch({
             type: 'init',
-            payload: { totalCount, type, discountGameId, inviteGroupId },
+            payload: { totalCount, type, discountGameId, inviteGroupId, setCode },
           });
 
           dispatch({
@@ -302,7 +306,7 @@ export default {
   effects: {
     * init({ payload }, { call, put }) {
       //初始化选号面板
-      const { totalCount, type, discountGameId, inviteGroupId } = payload;
+      const { totalCount, type, discountGameId, inviteGroupId, setCode } = payload;
       let balls = [];
       if (type === '3d') {
         balls = generates3D();
@@ -317,6 +321,7 @@ export default {
           type: type,
           discountGameId: discountGameId,
           inviteGroupId: inviteGroupId,
+          setCode: setCode,
         },
       });
     },
@@ -352,9 +357,11 @@ export default {
         const lotteryStore = state.lotteryselect;
         return { lotteryStore, addressStore };
       });
+
       const discountGameId = lotteryStore.discountGameId;
       const inviteGroupId = lotteryStore.inviteGroupId;
       const activeAddress = addressStore.activeAddress;
+      const setCode = lotteryStore.setCode;
       if (activeAddress == null) {
         Toast.show('请选择地址！', 1);
         return;
@@ -379,22 +386,31 @@ export default {
         addressId: activeAddress.id,
         codeList: convertCode2String(),
         gameId: discountGameId,
+        inviteGroupId: inviteGroupId,
       };
 
       let resp = null;
-      if (inviteGroupId && inviteGroupId !== undefined) {
-        const payload = Object.assign({}, params, {
-          inviteGroupId: inviteGroupId,
+      if (setCode) {
+        params = Object.assign({}, params, {
+          code: params.codeList[0],
         });
-        resp = yield call(queryParticipate, payload, { loading: true });
+        resp = yield call(querySetCode, params);
+
+
+      } else {
+        if (inviteGroupId && inviteGroupId !== undefined) {
+          resp = yield call(queryParticipate, params);
+        }
+        else {
+          resp = yield call(queryCreateOrder, params);
+        }
       }
-      else {
-        resp = yield call(queryCreateOrder, params, { loading: true });
-      }
+
+
       if (resp.error) {
         yield put({
-          type:'hideModal'
-        })
+          type: 'hideModal',
+        });
         Toast.fail(resp.message, 1.5);
         return;
       }
@@ -410,7 +426,7 @@ export default {
   },
   reducers: {
     save(state, action) {
-      let { totalCount, type, discountGameId, inviteGroupId } = action.payload;
+      let { totalCount, type, discountGameId, inviteGroupId, setCode } = action.payload;
       return {
         ...state,
         codes_panel: action.payload.balls,
@@ -419,6 +435,7 @@ export default {
         currentBid: new Bid(type),
         discountGameId: discountGameId,
         inviteGroupId: inviteGroupId,
+        setCode: setCode,
       };
     },
 
@@ -494,18 +511,18 @@ export default {
     },
 
     //地址选择的显示与隐藏
-    showModal(state,action){
+    showModal(state, action) {
       return {
         ...state,
-        showModal:true
-      }
+        showModal: true,
+      };
     },
 
-    hideModal(state,action){
+    hideModal(state, action) {
       return {
         ...state,
-        showModal:false
-      }
-    }
+        showModal: false,
+      };
+    },
   },
 };

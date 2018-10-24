@@ -47,7 +47,7 @@ class Wallet extends React.Component {
             <img src={my_wallet_xb_icon} className={styles.wallet_rmb_icon}/>
             <div className={styles.wallet_item_top_title}>喜币</div>
           </div>
-          <div className={styles.wallet_money_count}>{accountInfo.xtbTotalAmount / 100}</div>
+          <div className={styles.wallet_money_count}>{accountInfo.xtbTotalAmount}</div>
         </div>
       </div>
       <div className={styles.wallet_fun}>
@@ -70,7 +70,7 @@ class Wallet extends React.Component {
             <img src={me_icon_shuipiao_jiangli} className={styles.my_sale_item_img}/>
             <div>会员奖励</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount}元</div>
+          <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount/100}元</div>
         </div>
 
         <div className={styles.line}/>
@@ -101,6 +101,12 @@ class Wallet extends React.Component {
           <div className={styles.astro}>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
             <div>星座运势</div>
+          </div>
+        </div>
+        <div className={styles.wallet_fun_item}>
+          <div className='account_record'>
+            <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
+            <div>账单明细</div>
           </div>
         </div>
       </div>

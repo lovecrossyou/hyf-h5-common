@@ -21,5 +21,10 @@ export async function queryClientOrderDetailByPlatform (params) {
   })
 }
 
-
+export async function querySetCode (params) {
+  return request('/zeroDiscount/setLuckyCode',{
+    method: 'post',
+    body: params,
+  })
+}
 
