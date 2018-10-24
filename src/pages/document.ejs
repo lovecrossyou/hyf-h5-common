@@ -20,67 +20,13 @@
 <script>
   //lottery_confirm 选号面板 选择完地址后确认
   $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
-    const state = window.g_app._store.getState();
     const dispatch = window.g_app._store.dispatch;
-
-    const addressStore = state.address;
-    if (addressStore.activeAddress == null) return;
-    const lotteryStore = state.lotteryselect;
-    const discountGameId = lotteryStore.discountGameId;
-    const inviteGroupId = lotteryStore.inviteGroupId;
-
-    const activeAddress = addressStore.activeAddress;
-    const selectedBids = lotteryStore.selectedBids;
-
-
-    console.log('lotteryStore ',lotteryStore)
-    const convertBid = bid => {
-      const length = bid.balls.length;
-      return bid.balls.reduce(((previousValue, currentValue) => {
-        if(previousValue==='')return currentValue.text ;
-        return previousValue + ',' + currentValue.text;
-      }),'');
-    };
-    const convertCode2String = () => {
-      let resultList = [];
-      for (let bidItem of selectedBids) {
-        resultList.push(convertBid(bidItem));
-      }
-      return resultList;
-    };
-    let params = {
-      addressId: activeAddress.id,
-      codeList: convertCode2String(),
-      gameId: discountGameId,
-    };
-
-
-    let type = 'lotteryselect/createOrder'
-    if(inviteGroupId&&inviteGroupId!==undefined){
-      type = 'lotteryselect/participate';
-      params = Object.assign({},params,{
-        inviteGroupId:inviteGroupId
-      })
-    }
-    else {
-      type = 'lotteryselect/createOrder'
-    }
     dispatch({
-      type: type,
-      payload: params,
-      cb: res => {
-        const { platformOrderNo } = res;
-        dispatch({
-          type:'lotteryselect/clientOrderDetail',
-          payload:{
-            platformOrderNo:platformOrderNo
-          },
-          cb:data=>{
-            const groupId = data.discountGameGroupModel.groupId;
-            let url = '/pages/order/zeroOrderResult?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId ;
-            wx.miniProgram.navigateTo({ url: url});
-          }
-        })
+      type: 'lotteryselect/confirm_fucai',
+      cb: data => {
+        const groupId = data.discountGameGroupModel.groupId;
+        let url = '/pages/order/zeroOrderResult?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
+        wx.miniProgram.navigateTo({ url: url });
       },
     });
   });

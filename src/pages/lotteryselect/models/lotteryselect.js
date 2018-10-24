@@ -1,3 +1,4 @@
+import { Toast } from 'antd-mobile';
 import { queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate } from '../services/lotteryselect';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
@@ -259,7 +260,8 @@ export default {
     totalCount: 0,
     type: '',
     discountGameId: '',
-    inviteGroupId:null
+    inviteGroupId: null,
+    loading:false
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -272,15 +274,15 @@ export default {
           // const type = 'fucai' ;
           const type = query.type;
           const nos = query.nos;
-          const discountGameId = query.discountGameId;
+          const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);
 
-          console.log('lotteryselect query',query)
-          console.log('lotteryselect inviteGroupId',inviteGroupId)
+          console.log('lotteryselect query', query);
+          console.log('lotteryselect inviteGroupId', inviteGroupId);
 
           dispatch({
             type: 'init',
-            payload: { totalCount, type, discountGameId ,inviteGroupId},
+            payload: { totalCount, type, discountGameId, inviteGroupId },
           });
 
           dispatch({
@@ -298,7 +300,7 @@ export default {
   effects: {
     * init({ payload }, { call, put }) {
       //初始化选号面板
-      const { totalCount, type, discountGameId,inviteGroupId } = payload;
+      const { totalCount, type, discountGameId, inviteGroupId } = payload;
       let balls = [];
       if (type === '3d') {
         balls = generates3D();
@@ -312,7 +314,7 @@ export default {
           totalCount: totalCount,
           type: type,
           discountGameId: discountGameId,
-          inviteGroupId:inviteGroupId
+          inviteGroupId: inviteGroupId,
         },
       });
     },
@@ -330,29 +332,91 @@ export default {
       cb(res);
     },
 
-    *participate({ payload, cb }, { call, put }) {
+    * participate({ payload, cb }, { call, put }) {
       const res = yield call(queryParticipate, payload);
       cb(res);
     },
 
 
-    *clientOrderDetail({ payload, cb }, { call, put }) {
+    * clientOrderDetail({ payload, cb }, { call, put }) {
       const res = yield call(queryClientOrderDetailByPlatform, payload);
       cb(res);
+    },
+
+    // 确认福彩选号
+    * confirm_fucai({ payload, cb }, { call, put, select }) {
+      const { lotteryStore, addressStore} = yield select(state => {
+        const addressStore = state.address;
+        const lotteryStore = state.lotteryselect ;
+        return { lotteryStore, addressStore};
+      });
+      const discountGameId = lotteryStore.discountGameId;
+      const inviteGroupId = lotteryStore.inviteGroupId;
+      const activeAddress = addressStore.activeAddress;
+      if (activeAddress == null) {
+        Toast.show('请选择地址！', 1);
+        return;
+      }
+      const selectedBids = lotteryStore.selectedBids;
+
+      const convertBid = bid => {
+        const length = bid.balls.length;
+        return bid.balls.reduce(((previousValue, currentValue) => {
+          if (previousValue === '') return currentValue.text;
+          return previousValue + ',' + currentValue.text;
+        }), '');
+      };
+      const convertCode2String = () => {
+        let resultList = [];
+        for (let bidItem of selectedBids) {
+          resultList.push(convertBid(bidItem));
+        }
+        return resultList;
+      };
+      let params = {
+        addressId: activeAddress.id,
+        codeList: convertCode2String(),
+        gameId: discountGameId,
+      };
+
+      let resp = null;
+      console.log('activeAddress ',activeAddress)
+      console.log('lotteryStore ',lotteryStore)
+      console.log('inviteGroupId ',inviteGroupId)
+      if (inviteGroupId && inviteGroupId !== undefined) {
+        const payload = Object.assign({}, params, {
+          inviteGroupId: inviteGroupId,
+        });
+        resp = yield call(queryParticipate, payload,{loading:true});
+      }
+      else {
+        resp = yield call(queryCreateOrder, params,{loading:true});
+      }
+      if(resp.error){
+        Toast.show(resp.message, 1.5);
+        return;
+      }
+      const { platformOrderNo } = resp;
+      if (platformOrderNo) {
+        const data = yield call(queryClientOrderDetailByPlatform, {
+          platformOrderNo: platformOrderNo,
+        },{loading:true});
+        cb(data);
+      }
     },
 
   },
   reducers: {
     save(state, action) {
-      let { totalCount, type,discountGameId,inviteGroupId } = action.payload;
+      let { totalCount, type, discountGameId, inviteGroupId } = action.payload;
       return {
         ...state,
         codes_panel: action.payload.balls,
         totalCount,
         type,
         currentBid: new Bid(type),
-        discountGameId:discountGameId,
-        inviteGroupId:inviteGroupId
+        discountGameId: discountGameId,
+        inviteGroupId: inviteGroupId,
       };
     },
 

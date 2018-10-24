@@ -225,21 +225,20 @@ class LotterySel extends React.Component {
       Toast.show('请选择地址', 1);
     }
     else {
-
       this.onClose();
     }
   };
 
   render() {
-    const store = this.props.store;
-    const address = this.props.address;
+    const {store,loading,address,title} = this.props;
     const restCount = store.totalCount - calcBidCount(store.selectedBids);
     const bidCmpleteFlag = restCount === 0;
     const bidType = store.type;
     console.log('bidType ', bidType);
     return (
-      <DocumentTitle title={this.props.title}>
+      <DocumentTitle title={title}>
         <div className={styles.container}>
+          <ActivityIndicator toast animating={loading}/>
           {/*菜单面板*/}
           <OptionPanel
             jiXuan={() => {
@@ -328,6 +327,6 @@ export default connect(state => {
     store: state.lotteryselect,
     address: state.address,
     title: state.global.text,
-    loading: state.global.loading,
+    loading: state.lotteryselect.loading,
   };
 })(LotterySel);
