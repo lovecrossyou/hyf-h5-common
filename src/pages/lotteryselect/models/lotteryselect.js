@@ -1,4 +1,9 @@
-import { queryCreateOrder } from '../services/lotteryselect';
+import { Toast } from 'antd-mobile';
+import {
+  queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate,
+  querySetCode,
+} from '../services/lotteryselect';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 function deepClone(data) {
   const type = this.judgeType(data);
@@ -258,25 +263,32 @@ export default {
     totalCount: 0,
     type: '',
     discountGameId: '',
+    inviteGroupId: null,
+    loading: false,
+    showModal: false,
+    setCode: false,
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
+          setTokenFromQueryString(query);
           //init selectedBids
           // const totalCount = 2 ;
           const totalCount = parseInt(query.totalCount);
           // const type = 'fucai' ;
           const type = query.type;
-
           const nos = query.nos;
-          const discountGameId = query.discountGameId;
-
-          console.log('lotteryselect query',query)
+          const discountGameId = parseInt(query.discountGameId);
+          const inviteGroupId = parseInt(query.inviteGroupId);
+          const setCode = query.setCode;
+          console.log('lotteryselect query', query);
+          console.log('lotteryselect inviteGroupId', inviteGroupId);
+          console.log('lotteryselect setCode', setCode);
 
           dispatch({
             type: 'init',
-            payload: { totalCount, type, discountGameId },
+            payload: { totalCount, type, discountGameId, inviteGroupId, setCode },
           });
 
           dispatch({
@@ -294,7 +306,7 @@ export default {
   effects: {
     * init({ payload }, { call, put }) {
       //初始化选号面板
-      const { totalCount, type, discountGameId } = payload;
+      const { totalCount, type, discountGameId, inviteGroupId, setCode } = payload;
       let balls = [];
       if (type === '3d') {
         balls = generates3D();
@@ -308,6 +320,8 @@ export default {
           totalCount: totalCount,
           type: type,
           discountGameId: discountGameId,
+          inviteGroupId: inviteGroupId,
+          setCode: setCode,
         },
       });
     },
@@ -324,17 +338,104 @@ export default {
       const res = yield call(queryCreateOrder, payload);
       cb(res);
     },
+
+    * participate({ payload, cb }, { call, put }) {
+      const res = yield call(queryParticipate, payload);
+      cb(res);
+    },
+
+
+    * clientOrderDetail({ payload, cb }, { call, put }) {
+      const res = yield call(queryClientOrderDetailByPlatform, payload);
+      cb(res);
+    },
+
+    // 确认福彩选号
+    * confirm_fucai({ payload, cb }, { call, put, select }) {
+      const { lotteryStore, addressStore } = yield select(state => {
+        const addressStore = state.address;
+        const lotteryStore = state.lotteryselect;
+        return { lotteryStore, addressStore };
+      });
+
+      const discountGameId = lotteryStore.discountGameId;
+      const inviteGroupId = lotteryStore.inviteGroupId;
+      const activeAddress = addressStore.activeAddress;
+      const setCode = lotteryStore.setCode;
+      if (activeAddress == null) {
+        Toast.show('请选择地址！', 1);
+        return;
+      }
+      const selectedBids = lotteryStore.selectedBids;
+
+      const convertBid = bid => {
+        const length = bid.balls.length;
+        return bid.balls.reduce(((previousValue, currentValue) => {
+          if (previousValue === '') return currentValue.text;
+          return previousValue + ',' + currentValue.text;
+        }), '');
+      };
+      const convertCode2String = () => {
+        let resultList = [];
+        for (let bidItem of selectedBids) {
+          resultList.push(convertBid(bidItem));
+        }
+        return resultList;
+      };
+      let params = {
+        addressId: activeAddress.id,
+        codeList: convertCode2String(),
+        gameId: discountGameId,
+        inviteGroupId: inviteGroupId,
+      };
+
+      let resp = null;
+      if (setCode&&setCode===true) {
+        params = Object.assign({}, params, {
+          code: params.codeList[0],
+        });
+        resp = yield call(querySetCode, params);
+
+
+      } else {
+        if (inviteGroupId && inviteGroupId !== undefined) {
+          resp = yield call(queryParticipate, params);
+        }
+        else {
+          resp = yield call(queryCreateOrder, params);
+        }
+      }
+
+
+      if (resp.error) {
+        yield put({
+          type: 'hideModal',
+        });
+        Toast.fail(resp.message, 1.5);
+        return;
+      }
+      const { platformOrderNo } = resp;
+      if (platformOrderNo) {
+        const data = yield call(queryClientOrderDetailByPlatform, {
+          platformOrderNo: platformOrderNo,
+        }, { loading: true });
+        cb(data);
+      }
+    },
+
   },
   reducers: {
     save(state, action) {
-      let { totalCount, type,discountGameId } = action.payload;
+      let { totalCount, type, discountGameId, inviteGroupId, setCode } = action.payload;
       return {
         ...state,
         codes_panel: action.payload.balls,
         totalCount,
         type,
         currentBid: new Bid(type),
-        discountGameId:discountGameId
+        discountGameId: discountGameId,
+        inviteGroupId: inviteGroupId,
+        setCode: setCode,
       };
     },
 
@@ -407,7 +508,21 @@ export default {
         selectedBids.push(new Bid(type, true));
       }
       return { ...state, selectedBids, code_pannel, currentBid };
+    },
 
+    //地址选择的显示与隐藏
+    showModal(state, action) {
+      return {
+        ...state,
+        showModal: true,
+      };
+    },
+
+    hideModal(state, action) {
+      return {
+        ...state,
+        showModal: false,
+      };
     },
   },
 };

@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import { LotteryBall } from './components/LotteryBall';
 import { Stepper } from './components/Stepper';
 import DocumentTitle from 'react-document-title';
-import { Modal, List, Toast } from 'antd-mobile';
+import { Modal, List, Toast,ActivityIndicator } from 'antd-mobile';
 import { AddressCell } from './components/addressCell';
 
 import { RED_COLOR } from './models/lotteryselect';
@@ -203,21 +203,20 @@ class LotterySel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
       checkedAddressIndex: -1,
     };
   }
 
   showModal = () => {
-    this.setState({
-      modal: true,
-    });
+    this.props.dispatch({
+      type:'lotteryselect/showModal'
+    })
   };
 
   onClose = () => {
-    this.setState({
-      modal: false,
-    });
+    this.props.dispatch({
+      type:'lotteryselect/hideModal'
+    })
   };
 
   confirmAddress = () => {
@@ -225,21 +224,23 @@ class LotterySel extends React.Component {
       Toast.show('请选择地址', 1);
     }
     else {
-
       this.onClose();
     }
   };
 
   render() {
-    const store = this.props.store;
-    const address = this.props.address;
+    const {store,isLoading,address,title} = this.props;
     const restCount = store.totalCount - calcBidCount(store.selectedBids);
     const bidCmpleteFlag = restCount === 0;
     const bidType = store.type;
     console.log('bidType ', bidType);
     return (
-      <DocumentTitle title={this.props.title}>
+      <DocumentTitle title={title}>
         <div className={styles.container}>
+          <ActivityIndicator
+            toast
+            text="加载中"
+            animating={isLoading}/>
           {/*菜单面板*/}
           <OptionPanel
             jiXuan={() => {
@@ -288,11 +289,10 @@ class LotterySel extends React.Component {
               balls={store.codes_panel}/>
           </div>
 
-
           {/*弹出地址层*/}
           <Modal
             popup
-            visible={this.state.modal}
+            visible={store.showModal}
             onClose={this.onClose.bind(this)}
             animationType="slide-up"
           >
@@ -328,5 +328,6 @@ export default connect(state => {
     store: state.lotteryselect,
     address: state.address,
     title: state.global.text,
+    isLoading: state.loading.global,
   };
 })(LotterySel);

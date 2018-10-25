@@ -89,6 +89,17 @@
   font-size:26px;
   color:#333;
 }
+
+:global(.account_record){
+  height:86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size:26px;
+  color:#333;
+}
+
 .my_friend_item_img{
   width:50px;
   height:38px;

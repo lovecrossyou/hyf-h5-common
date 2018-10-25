@@ -68,7 +68,7 @@ const FriendItem = ({ record }) => {
       <div className={styles.friend_info_right}>
         <div>+</div>
         <img src={symbol_xiteng} className={styles.xt_unit_icon}/>
-        <div>{friend.presentXtbMount}</div>
+        <div>{record.presentXtbMount}</div>
       </div>
     </div>
   );

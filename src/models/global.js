@@ -2,7 +2,8 @@ export default {
   namespace: "global",
   state: {
     text: "",
-    accessInfo:null
+    accessInfo:null,
+    loading:false
   },
 
   subscriptions: {
