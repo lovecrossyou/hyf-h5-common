@@ -20,14 +20,13 @@
 <script>
   //lottery_confirm 选号面板 选择完地址后确认
   $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
-
     console.log('lottery_confirm_fucai ');
     const dispatch = window.g_app._store.dispatch;
     dispatch({
       type: 'lotteryselect/confirm_fucai',
       cb: ({ discountGameId, groupId }) => {
         let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
-        wx.miniProgram.navigateTo({ url: url });
+        wx.miniProgram.redirectTo({ url: url });
       },
     });
   });
@@ -51,7 +50,6 @@
     console.log('会员购买以及升级 vip_type ', vip_type);
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-    // wx.miniProgram.navigateBack();
   });
 
 
