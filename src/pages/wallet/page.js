@@ -29,6 +29,11 @@ class Wallet extends React.Component {
     Toast.info('请下载app使用!', 1);
   }
 
+  // 会员奖励
+  vipReward(){
+    this.props.dispatch(routerRedux.push('/vipreward/page'));
+  }
+
 
   render() {
     const { accountInfo, userProfitAllFriendInfo, userProfitInfo } = this.props.store;
@@ -66,7 +71,7 @@ class Wallet extends React.Component {
           <div className={styles.wallet_fun_count_item}>{userProfitInfo.inviteProfitXtbAmount}喜币</div>
         </div>
         <div className={styles.wallet_fun_item}>
-          <div className={styles.wallet_item_top}>
+          <div className={styles.wallet_item_top} onClick={this.vipReward.bind(this)}>
             <img src={me_icon_shuipiao_jiangli} className={styles.my_sale_item_img}/>
             <div>会员奖励</div>
           </div>

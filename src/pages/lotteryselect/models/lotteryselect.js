@@ -344,7 +344,6 @@ export default {
       cb(res);
     },
 
-
     * clientOrderDetail({ payload, cb }, { call, put }) {
       const res = yield call(queryClientOrderDetailByPlatform, payload);
       cb(res);

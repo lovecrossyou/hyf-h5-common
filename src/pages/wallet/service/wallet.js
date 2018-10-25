@@ -37,4 +37,13 @@ export async function fetchInviteProfitXtb() {
   });
 }
 
+//会员奖励
+export async function fetchShareSellProfitRmb() {
+  return request('/profit/shareSellProfitRmb',{
+    method:'post',
+    body:{}
+  });
+}
+
+
 

@@ -1,5 +1,5 @@
 import {
-  fetchAccountInfo, fetchClientAccount, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
+  fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
   fetchUserProfitInfo,
 } from '../service/wallet';
 
@@ -38,6 +38,7 @@ export default {
       const accountInfo = yield call(fetchAccountInfo, payload);
       const userProfitAllFriendInfo = yield call(fetchUserProfitAllFriendInfo, payload);
       const inviteProfitXtb = yield call(fetchInviteProfitXtb, payload);
+      const shareSellProfitRmb = yield call(fetchShareSellProfitRmb, payload);
 
       yield put({
         type: 'save', payload: {
@@ -45,6 +46,7 @@ export default {
           userProfitInfo,
           userProfitAllFriendInfo,
           inviteProfitXtb,
+          shareSellProfitRmb
         },
       });
     },
@@ -65,6 +67,7 @@ export default {
         userProfitInfo: action.payload.userProfitInfo,
         userProfitAllFriendInfo: action.payload.userProfitAllFriendInfo,
         inviteProfitXtb: action.payload.inviteProfitXtb,
+        shareSellProfitRmb: action.payload.shareSellProfitRmb,
       };
     },
   },
