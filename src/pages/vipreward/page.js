@@ -69,11 +69,6 @@ class VIPReward extends React.Component {
 }
 
 const FriendItem = ({ friendInfo, action }) => {
-
-  // diamondFriendAmount (integer, optional): 钻石好友数量 ,
-  //   iconUrl (string, optional): 用户头像 ,
-  //   nickName (string, optional): 昵称 ,
-  //   profitUserId (integer, optional): 用户profitUserId
   return (
     <div onClick={action}>
       <div className={styles.diamond_friend_info}>
