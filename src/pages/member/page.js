@@ -11,7 +11,6 @@ import vip_putong from '../../assets/vip/icon_huiyuan_putong@2x.png';
 import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
 import vip_zuanshi from '../../assets/vip/icon_huiyuan_zuanshi@2x.png';
 import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
-import { getAccessToken } from '../../utils/authority';
 
 const RadioItem = Radio.RadioItem;
 
@@ -230,7 +229,7 @@ class Member extends React.Component {
       />
     );
     const currentVips = createVipModels(userVipInfo);
-    return <div>
+    return <div style={{paddingBottom:'40px'}}>
       <div className={styles.header_bg}>
         <VIPHeader vipInfo={userVipInfo}/>
       </div>
@@ -328,6 +327,6 @@ const Tips = () => {
 
 export default connect(state => ({
   store: state.member,
-  loading: state.global.loading,
+  loading: state.loading.global,
 }))(Member);
 

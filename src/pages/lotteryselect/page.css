@@ -1,4 +1,4 @@
-.container{
+.container {
   padding: 20px;
   display: flex;
   flex: 1;
@@ -6,7 +6,7 @@
   /*background-color: #cc2636;*/
 }
 
-.no_group{
+.no_group {
   /*display: flex;*/
   flex-direction: column;
   /*height: 504px;*/
@@ -17,10 +17,10 @@
   flex: 1;
 
 }
+
 .no_group::-webkit-scrollbar {
   display: none;
 }
-
 
 .delBtn_wrapper {
   width: 60px;
@@ -29,15 +29,14 @@
   line-height: 60px;
 }
 
-
-.delBtn{
-  width:30px;
-  height:30px;
-  backgroundColor:blue;
+.delBtn {
+  width: 30px;
+  height: 30px;
+  backgroundColor: blue;
   margin-right: 10px;
 }
 
-.leftWrapper{
+.leftWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,7 +44,7 @@
   /*background-color: yellow;*/
 }
 
-.leftWrapper45{
+.leftWrapper45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,7 +52,7 @@
   /*background-color: yellow;*/
 }
 
-.nos{
+.nos {
   display: flex;
   flex-direction: row;
   height: 100px;
@@ -64,16 +63,14 @@
   position: relative;
 }
 
-.seleted_item{
+.seleted_item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 0px;
 }
 
-
-
-.ball{
+.ball {
   width: 42px;
   height: 42px;
   line-height: 42px;
@@ -81,16 +78,17 @@
   text-align: center;
   color: #fff;
   background-color: #e64340;
-  margin-right:10px;
+  margin-right: 10px;
 }
-.wrapper_3d .ball{
+
+.wrapper_3d .ball {
   width: 62px;
   height: 62px;
   line-height: 62px;
   margin-bottom: 30px;
 }
 
-.nos_balls{
+.nos_balls {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -102,7 +100,7 @@
 
 }
 
-.select_panel{
+.select_panel {
   background-color: #f5f5f5;
   padding: 40px 30px 80px 30px;
   box-sizing: border-box;
@@ -110,24 +108,24 @@
 
 }
 
-.panel_wrapper{
+.panel_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.jixuan_wrapper{
+.jixuan_wrapper {
 
 }
 
-.sepline{
+.sepline {
   margin-top: 40px;
   border-top: solid 1px #e1e1e1;
   height: 1px;
   width: 100%;
 }
 
-.jixuan{
+.jixuan {
   color: #cc2636;
   font-size: 24px;
   padding: 8px 12px;
@@ -138,7 +136,7 @@
   text-align: center;
 }
 
-.opt_panel{
+.opt_panel {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -146,14 +144,14 @@
   height: 100px;
 }
 
-.tips{
+.tips {
   font-size: 24px;
   /*padding: 30px 20px;*/
   padding-bottom: 30px;
   line-height: 30px;
 }
 
-.all_ball{
+.all_ball {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -164,13 +162,13 @@
   /*justify-content: center;*/
 }
 
-.wrapper_3d{
+.wrapper_3d {
   display: flex;
   flex-direction: column;
   /*align-items: center;*/
 }
 
-:global(.lottery_btn_confirm){
+:global(.lottery_btn_confirm) {
   position: fixed;
   bottom: 0px;
   left: 0;
@@ -183,21 +181,21 @@
   font-size: 28px;
 }
 
-.rowWrapper{
+.rowWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.rowWrapper_no_center{
+.rowWrapper_no_center {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.stepper{
-  width:240px;
+.stepper {
+  width: 240px;
   background-color: #fff;
   border: solid 1px #e1e1e1;
   height: 60px;
@@ -206,20 +204,19 @@
   justify-content: space-between;
 }
 
-.stepperClear{
-  width:240px;
+.stepperClear {
+  width: 240px;
   background-color: #ffffffff;
 }
 
-.content{
+.content {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
 }
 
-
-.plus{
+.plus {
   flex: 1;
   text-align: center;
   line-height: 60px;
@@ -227,14 +224,14 @@
 
 }
 
-.minus{
+.minus {
   flex: 1;
   text-align: center;
   border-right: solid 1px #e1e1e1;
   line-height: 60px;
 }
 
-.stepper_value{
+.stepper_value {
   flex: 1.5;
   line-height: 60px;
   text-align: center;
@@ -246,13 +243,12 @@
   overflow: auto;
 }
 
-
-.address{
+.address {
   height: 40px;
 
 }
 
-.address_header{
+.address_header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -260,6 +256,15 @@
   align-items: center;
 }
 
-:global(.lottery_confirm_fucai){
+:global(.lottery_confirm_fucai) {
   /*color: #cc2636;*/
+}
+
+.btn_create_addr{
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.addr_btn{
+  font-size: 48px;
 }

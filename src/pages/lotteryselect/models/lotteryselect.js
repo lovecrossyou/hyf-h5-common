@@ -405,8 +405,6 @@ export default {
           resp = yield call(queryCreateOrder, params);
         }
       }
-
-
       if (resp.error) {
         yield put({
           type: 'hideModal',
@@ -418,8 +416,11 @@ export default {
       if (platformOrderNo) {
         const data = yield call(queryClientOrderDetailByPlatform, {
           platformOrderNo: platformOrderNo,
-        }, { loading: true });
-        cb(data);
+        });
+
+        const groupId = data.discountGameGroupModel.groupId;
+
+        cb({discountGameId,groupId});
       }
     },
 

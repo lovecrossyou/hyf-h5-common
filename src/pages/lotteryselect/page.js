@@ -4,7 +4,11 @@ import { connect } from 'dva';
 import { LotteryBall } from './components/LotteryBall';
 import { Stepper } from './components/Stepper';
 import DocumentTitle from 'react-document-title';
-import { Modal, List, Toast,ActivityIndicator } from 'antd-mobile';
+import { Modal, List, Toast, ActivityIndicator, Button } from 'antd-mobile';
+import {routerRedux} from 'dva/router';
+
+
+
 import { AddressCell } from './components/addressCell';
 
 import { RED_COLOR } from './models/lotteryselect';
@@ -193,8 +197,26 @@ const AddressHeader = ({ confirm, cancel }) => {
   return <div id='AddressHeader' className={styles.address_header}>
     <div onClick={cancel}>取消</div>
     <div>地址选择</div>
-    <div  className='lottery_confirm_fucai'>确定</div>
-  </div>
+    <div className='lottery_confirm_fucai'>确定</div>
+  </div>;
+};
+
+const AddrList = ({ list, toggle, checkedAddressIndex }) => {
+  return <div>
+    {list.map((data, index) => <AddressCell
+      toggle={() => {
+        toggle(index, data);
+      }}
+      active={checkedAddressIndex === index}
+      address={data}
+      key={index + '#'}/>)}
+  </div>;
+};
+
+const CreateAddressButton = ({ onClick }) => {
+  return <div onClick={onClick} className={styles.btn_create_addr}>
+    <div className={styles.addr_btn}>+ 新建地址</div>
+  </div>;
 };
 
 
@@ -209,14 +231,14 @@ class LotterySel extends React.Component {
 
   showModal = () => {
     this.props.dispatch({
-      type:'lotteryselect/showModal'
-    })
+      type: 'lotteryselect/showModal',
+    });
   };
 
   onClose = () => {
     this.props.dispatch({
-      type:'lotteryselect/hideModal'
-    })
+      type: 'lotteryselect/hideModal',
+    });
   };
 
   confirmAddress = () => {
@@ -228,8 +250,15 @@ class LotterySel extends React.Component {
     }
   };
 
+
+  // 新建地址
+  createAddress = ()=>{
+   this.props.dispatch(routerRedux.push('/address/AddressEdit'))
+
+  }
+
   render() {
-    const {store,isLoading,address,title} = this.props;
+    const { store, isLoading, address, title } = this.props;
     const restCount = store.totalCount - calcBidCount(store.selectedBids);
     const bidCmpleteFlag = restCount === 0;
     const bidType = store.type;
@@ -301,20 +330,22 @@ class LotterySel extends React.Component {
               cancel={() => {
                 this.onClose();
               }}/>} className="popup-list">
-              {address.list.map((data, index) => <AddressCell
-                toggle={() => {
-                  this.setState({
-                    checkedAddressIndex: index,
-                  });
-                  this.props.dispatch({
-                    type:'address/setActive',
-                    payload:data
-                  })
-
-                }}
-                active={this.state.checkedAddressIndex === index}
-                address={data}
-                key={index + '#'}/>)}
+              {
+                address.list.length == 0 ? (<CreateAddressButton
+                  onClick={this.createAddress.bind(this)}/>) : (<AddrList
+                  toggle={(index, data) => {
+                    this.setState({
+                      checkedAddressIndex: index,
+                    });
+                    this.props.dispatch({
+                      type: 'address/setActive',
+                      payload: data,
+                    });
+                  }}
+                  checkedAddressIndex={this.state.checkedAddressIndex}
+                  list={address.list}
+                />)
+              }
             </List>
           </Modal>
         </div>
