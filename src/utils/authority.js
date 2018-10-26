@@ -1,11 +1,7 @@
 import config from './config';
 
 export function getAccessToken() {
-  // if (config.isMock) return {
-  //   app_key: 'b5958b665e0b4d8cae77d28e1ad3f521',
-  //   signature: '4BC20304F8E32ECC5AA8DEF81ADACC0F',
-  //   access_token: '0226eabaad854fb7b8d503fcd8fe4e27',
-  // };
+  if (config.isMock) return {"app_key":"b5958b665e0b4d8cae77d28e1ad3f521","signature":"D4D6D65A79E72A793B25A572C77B9191","access_token":"b649b1c01f0f467db6c3e80c7e9cf339"};
   return JSON.parse(localStorage.getItem('accessToken'));
 }
 
