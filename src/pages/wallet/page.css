@@ -57,7 +57,9 @@
 }
 
 .wallet_rmb_icon{
-  transform:scale(1.1);
+  /*transform:scale(1.1);*/
+  width: auto;
+  height: auto;
 }
 .wallet_item_top_title{
   color:#FFF;
