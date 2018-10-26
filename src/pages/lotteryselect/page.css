@@ -173,12 +173,12 @@
   bottom: 0px;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 90px;
   background-color: #cc2636;
   color: #FFFFFF;
-  line-height: 80px;
+  line-height: 90px;
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .rowWrapper {
