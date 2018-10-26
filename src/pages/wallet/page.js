@@ -55,7 +55,7 @@ const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatc
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top}>
-            <img src={assets_icon_rmbaccount} className={styles.wallet_rmb_icon}/>
+            <img src={assets_icon_rmbaccount} className='wallet_rmb_icon'/>
             <div className={styles.wallet_item_top_title}>人民币</div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.rmbAmount / 100}</div>
@@ -63,7 +63,7 @@ const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatc
         <div className={styles.cutting_line}></div>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top}>
-            <img src={assets_icon_xibiaccount} className={styles.wallet_rmb_icon}/>
+            <img src={assets_icon_xibiaccount} className={styles.wallet_xb_icon}/>
             <div className={styles.wallet_item_top_title}>喜币</div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.xtbTotalAmount}</div>

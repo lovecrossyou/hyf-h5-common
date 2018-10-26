@@ -56,9 +56,17 @@
   font-size:26px;
 }
 
-.wallet_rmb_icon{
-  transform:scale(1.1);
+
+.wallet_xb_icon{
+  width: auto;
+  height: auto;
 }
+
+:global(.wallet_rmb_icon) {
+  width: auto;
+  height: auto;
+}
+
 .wallet_item_top_title{
   color:#FFF;
   padding-top:15px;
