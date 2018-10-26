@@ -6,20 +6,24 @@ export default {
     selectAstro:null,
     userInfo:null,
     constellationDetail:null,
-    sex:null
+    sex:null,
+    name:null,
+    selectSex:[
+      {
+        label: '男',
+        value: '男',
+      },
+      {
+        label: '女',
+        value: '女',
+      }
+    ],
+    selectedSex:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/astro/page') {
-          dispatch({
-            type:'fetch',
-            payload:{},
-            cb:()=>{
-              console.log('callback.....')
-            }
-          })
-
           dispatch({
             type:'userInfo',
             payload:{}
@@ -31,28 +35,23 @@ export default {
             },
           });
 
-        }
-        else if(pathname === '/astro/AstroItem'){
+        } else if(pathname === '/astro/AstroItem'){
           dispatch({
             type: 'global/setTitle', payload: {
               text: '12星座选择',
             },
           });
+        }else if(pathname === '/astro/personalInformation'){
+          dispatch({
+            type:"userInfo",
+            payload:{}
+          })
         }
       });
     },
   },
   // 异步
   effects: {
-    *fetch({ payload ,cb}, { call, put }) {
-      const result = yield call(fetchAstroInfo,payload);
-      yield put({
-        type:'saveAstro',
-        payload:result
-      });
-      cb&&cb();
-    },
-
     *userInfo({ payload ,cb}, { call, put }) {
       const userData = yield call(queryUserInfo,payload);
       yield put({
@@ -70,9 +69,21 @@ export default {
       }
     },
 
-    //设置星座性别
-    *constellation({ payload ,cb}, { call, put }) {
-      const result = yield call(queryModifyConstellation, payload);
+    //设置星座和性别
+    *constellation({ payload ,cb}, { call, put,select }) {
+
+      const params = yield select(state=>{
+        const selectAstro = state.astro.selectAstro ;
+        const sex = state.astro.sex ;
+
+        return {
+          sex:sex==='man'? 1 : 2,
+          constellation:selectAstro.name
+        }
+      })
+
+      // 设置星座
+      const result = yield call(queryModifyConstellation, params);
       if (result.respMsg === 'successful') {
         cb();
       }
@@ -111,7 +122,15 @@ export default {
         ...state,
         sex:action.payload
       }
+    },
+    // 选择性别
+    setSelectSex(state,action){
+      return{
+        ...state,
+        selectedSex:action.payload
+      }
     }
+
 
   },
 };

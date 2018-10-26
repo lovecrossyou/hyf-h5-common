@@ -131,6 +131,7 @@
   margin-top: 56px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 #improve_data_astro_content{
   width:412px;
@@ -143,41 +144,41 @@
   font-size:30px;
 }
 .improve_data_content>.improve_data_content_sex{
-  display: inline-block;
   width: 180px;
   height: 58px;
   line-height: 58px;
   border-radius: 10px;
   border:1px solid #666666;
+  display: flex;
+  align-items: center;
 }
 .improve_data_content>.improve_data_content_man{
-  display: inline-block;
   width: 180px;
   height: 58px;
   line-height: 58px;
   border-radius: 10px;
   border:1px solid red;
   color: red;
+  display: flex;
+  align-items: center;
 }
 .improve_data_content>.improve_data_content_sex>img,
 .improve_data_content>.improve_data_content_man>img{
-  display: inline-block;
-  padding:0 15px;
+  width:28px;
+  height:28px;
+  padding-left:15px;
+  padding-right:10px;
 }
 .improve_data_content_ziliao{
-  position: relative;
-}
-.improve_data_content_ziliao>span{
-  margin-left:82px;
+  display: flex;
+  align-items: center;
 }
 .improve_data_content_ziliao>.improve_data_content_ziliao_astro{
-  position: absolute;
-  top:14px;
-  left:14px;
   width:46px;
   height:46px;
   background: darkblue;
   border-radius: 50%;
+  margin:0 10px;
 }
 .improve_data_finished{
   margin:200px auto;
@@ -193,4 +194,30 @@
 .improve_data_content_ziliao_xuanhao{
   width: 30px;
   height: 30px;
+}
+/*个人信息*/
+.head_portrait{
+  width:92%;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px 4%;
+  font-size: 34px;
+  /*color:#333333;*/
+}
+.head_portrait>span{
+  display: flex;
+  align-items: center;
+}
+.head_portrait>span>.icon_name{
+  width:100px;
+  height:100px;
+  background: pink;
+  border-radius: 10px;
+  margin-right:22px;
+}
+.icon_name_left{
+  width:20px;
+  height:30px;
 }

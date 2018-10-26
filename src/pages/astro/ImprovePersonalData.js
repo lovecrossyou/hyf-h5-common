@@ -11,7 +11,8 @@ import icon_woman_h from "../../assets/astro/icon_woman_h@2x.png";
 import icon_ziliao_xuanhao from "../../assets/astro/icon_ziliao_xuanhao@2x.png"
 
 function ImprovePersonalData(props) {
-  const {sex} = props.astro ;
+  const {sex,selectAstro} = props.astro ;
+  console.log(props.astro.selectAstro);
   return (
     <div>
       <div className={styles.improve_data}>
@@ -42,12 +43,18 @@ function ImprovePersonalData(props) {
         >
            <span className={styles.improve_data_content_ziliao}>
              <img className={styles.improve_data_content_ziliao_astro} src={props.astro.selectAstro==null?'/static/icon_bg_shuangyu@2x.be7cbc3a.png':props.astro.selectAstro.img} alt=""/>
-             <span>{props.astro.selectAstro==null?"双鱼座":props.astro.selectAstro.cName}</span>
+             <span>{props.astro.selectAstro==null?"请选择":selectAstro.cName}</span>
            </span>
-          <span><img className={styles.improve_data_content_ziliao_xuanhao} src={icon_ziliao_xuanhao} alt=""/></span>
+          <img className={styles.improve_data_content_ziliao_xuanhao} src={icon_ziliao_xuanhao} alt=""/>
         </div>
       </div>
-      <div className={styles.improve_data_finished}>完成</div>
+      <div className={styles.improve_data_finished}
+           onClick={()=>{
+             props.dispatch({
+                type:"astro/constellation"
+             })
+           }}
+      >完成</div>
     </div>
   );
 }
