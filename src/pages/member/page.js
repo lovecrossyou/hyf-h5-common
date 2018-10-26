@@ -139,7 +139,7 @@ const createVipModels = (vipInfo) => {
   if (userIsVip == false) return VipNormal;
   else if (userVipType === 'golden_user') return GoldenVip;
   else if (userVipType === 'higher_golden_user') return PlatinumVip;
-  else if (userVipType === 'golden_user') return DiamondVip;
+  else if (userVipType === 'diamond_user') return DiamondVip;
 };
 
 

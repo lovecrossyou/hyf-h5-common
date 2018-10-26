@@ -258,7 +258,7 @@ export default {
     //号码
     codes_panel: [],
     // 初始化数组
-    currentBid: new Bid('fucai'),
+    currentBid: null,
     totalCount: 0,
     type: '',
     discountGameId: '',
@@ -272,19 +272,15 @@ export default {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/lotteryselect/page') {
           setTokenFromQueryString(query);
-          //init selectedBids
-          // const totalCount = 2 ;
           const totalCount = parseInt(query.totalCount);
-          // const type = 'fucai' ;
           const type = query.type;
           const nos = query.nos;
           const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);
           const setCode = query.setCode;
-          console.log('lotteryselect query', query);
-          console.log('lotteryselect inviteGroupId', inviteGroupId);
-          console.log('lotteryselect setCode', setCode);
-
+          // console.log('lotteryselect query', query);
+          // console.log('lotteryselect inviteGroupId', inviteGroupId);
+          // console.log('lotteryselect setCode', setCode);
           dispatch({
             type: 'init',
             payload: { totalCount, type, discountGameId, inviteGroupId, setCode },
@@ -366,20 +362,30 @@ export default {
       }
       const selectedBids = lotteryStore.selectedBids;
 
+      function formatText(text){
+        let value = parseInt(text);
+          if (value < 10){
+             return '0' + text;
+          }return text;
+      }
       const convertBid = bid => {
-        const length = bid.balls.length;
         return bid.balls.reduce(((previousValue, currentValue) => {
-          if (previousValue === '') return currentValue.text;
-          return previousValue + ',' + currentValue.text;
+          if (previousValue === '') return formatText(currentValue.text);
+          return previousValue + ',' + formatText(currentValue.text);
         }), '');
       };
       const convertCode2String = () => {
         let resultList = [];
         for (let bidItem of selectedBids) {
-          resultList.push(convertBid(bidItem));
+          let bidStr = convertBid(bidItem);
+          for(let i = 0; i < bidItem.buyCount; i++){
+            resultList.push(bidStr);
+          }
         }
         return resultList;
       };
+
+
       let params = {
         addressId: activeAddress.id,
         codeList: convertCode2String(),
@@ -451,7 +457,7 @@ export default {
 
     selectBall(state, action) {
       const ball = action.payload;
-      let type = state.currentBid.type;
+      let type = state.type;
       if (type === 'fucai') {
         if (ball.active === true) {
           return state;
@@ -502,7 +508,7 @@ export default {
       currentBid.clear();
       let code_pannel = resetPannel(state.codes_panel);
 
-      let type = state.currentBid.type;
+      let type = state.type;
       for (let i = 0; i < state.totalCount; i++) {
         selectedBids.push(new Bid(type, true));
       }

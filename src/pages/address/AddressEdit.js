@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import {List,Button,InputItem,Picker,ActivityIndicator} from 'antd-mobile';
+import {List,Button,InputItem,Picker,ActivityIndicator,Toast} from 'antd-mobile';
 import { createForm } from 'rc-form';
 import { district } from 'antd-mobile-demo-data';
 import {routerRedux} from 'dva/router';
@@ -20,9 +20,24 @@ class AddressEdit extends React.Component{
 
   onCreate = ()=>{
     this.props.form.validateFields((error, value) => {
-      const phoneNum = value.phoneNum.replace(/\s+/g,"") ;
+      let phoneNum = value.phoneNum ;
+      if(phoneNum===undefined){
+        Toast.show('请输入正确的手机号！');
+        return;
+      }
+      if(phoneNum.length!==11){
+        Toast.show('请输入正确的手机号！');
+        return;
+      }
+      phoneNum = phoneNum.replace(/\s+/g,"") ;
+
+
       const districtAddress = value.districtAddress.join('') ;
       const detailAddress = value.detailAddress ;
+      if(detailAddress===undefined||detailAddress.length===0){
+        Toast.show('请完善详细地址！');
+        return;
+      }
       const params = {
         phoneNum: phoneNum,
         recievName: value.recievName,
