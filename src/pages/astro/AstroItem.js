@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'umi/link';
-import {connect} from 'dva';
-import styles from './page.css'
-import { Flex , WhiteSpace } from 'antd-mobile'
-import {routerRedux} from 'dva/router';
+import { connect } from 'dva';
+import styles from './page.css';
+import { Flex, WhiteSpace } from 'antd-mobile';
+import { routerRedux } from 'dva/router';
 
 import icon_bg_baiyang from '../../assets/astro/icon_bg_baiyang@2x.png';
 import icon_bg_chunv from '../../assets/astro/icon_bg_chunv@2x.png';
@@ -20,39 +20,35 @@ import icon_bg_shuiping from '../../assets/astro/icon_bg_shuiping@2x.png';
 import icon_bg_cuowu from '../../assets/astro/icon_bg_cuowu@2x.png';
 
 const astrologys = [
-  {name:"Aries",cName:"白羊座",img:icon_bg_baiyang},
-  {name:"Taurus",cName:"金牛座",img:icon_bg_jinniu},
-  {name:"Gemini",cName:"双子座",img:icon_bg_shuangzi},
-  {name:"Cancer",cName:"巨蟹座",img:icon_bg_juxie},
-  {name:"Leo",cName:"狮子座",img:icon_bg_shizi},
-  {name:"Virgo",cName:"处女座",img:icon_bg_chunv},
-  {name:"Libra",cName:"天秤座",img:icon_bg_tianping},
-  {name:"Scorpio",cName:"天蝎座",img:icon_bg_tianxie},
-  {name:"Sagittarius",cName:"射手座",img:icon_bg_sheshou},
-  {name:"Capricorn",cName:"摩羯座",img:icon_bg_mojie},
-  {name:"Aquarius",cName:"水瓶座",img:icon_bg_shuiping},
-  {name:"Pisces",cName:"双鱼座",img:icon_bg_shuangyu}
+  { name: 'Aries', cName: '白羊座', img: icon_bg_baiyang },
+  { name: 'Taurus', cName: '金牛座', img: icon_bg_jinniu },
+  { name: 'Gemini', cName: '双子座', img: icon_bg_shuangzi },
+  { name: 'Cancer', cName: '巨蟹座', img: icon_bg_juxie },
+  { name: 'Leo', cName: '狮子座', img: icon_bg_shizi },
+  { name: 'Virgo', cName: '处女座', img: icon_bg_chunv },
+  { name: 'Libra', cName: '天秤座', img: icon_bg_tianping },
+  { name: 'Scorpio', cName: '天蝎座', img: icon_bg_tianxie },
+  { name: 'Sagittarius', cName: '射手座', img: icon_bg_sheshou },
+  { name: 'Capricorn', cName: '摩羯座', img: icon_bg_mojie },
+  { name: 'Aquarius', cName: '水瓶座', img: icon_bg_shuiping },
+  { name: 'Pisces', cName: '双鱼座', img: icon_bg_shuangyu },
 ];
 
 function AstroItem(props) {
-  const store = props.store ;
-  let astrologyItem = astrologys.map((item,i)=>{
-    return(
-      <div onClick={()=>{
+  const store = props.store;
+  let astrologyItem = astrologys.map((item, i) => {
+    return (
+      <div onClick={() => {
         props.dispatch({
-          type:'astro/constellation',
-          payload:{
-            constellation:item.name
-          },
-          cb:()=>{
-            props.dispatch(routerRedux.push('/astro/ImprovePersonalData'));
-          }
+          type: 'astro/saveAstro',
+          payload: item,
         });
-        // props.dispatch(routerRedux.push('/astro/Horoscope'));
+        props.dispatch(routerRedux.push('/astro/ImprovePersonalData'));
+
       }} key={i} className={styles.astroItem_astrology_name_item}>
-          <img src={item.img} alt=""/>
+        <img src={item.img} alt=""/>
       </div>
-    )
+    );
   });
   return (
     <div className={styles.astroItem}>
@@ -60,7 +56,7 @@ function AstroItem(props) {
       <div className={styles.astroItem_astrology_name}>
         {astrologyItem}
       </div>
-      <div className={styles.astroItem_icon_bg_cuowu} >
+      <div className={styles.astroItem_icon_bg_cuowu}>
         <img src={icon_bg_cuowu} alt=""/>
       </div>
     </div>
@@ -69,6 +65,6 @@ function AstroItem(props) {
 
 export default connect(state => {
   return {
-    store: state.astro
+    store: state.astro,
   };
 })(AstroItem);

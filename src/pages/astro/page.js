@@ -25,7 +25,7 @@ function Astro(props) {
       </DocumentTitle>
     );
   }
-  return <Horoscope data={constellationDetail}/>;
+    return <Horoscope data={constellationDetail}/>;
 }
 
 export default connect(state => {
