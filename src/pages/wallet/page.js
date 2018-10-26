@@ -3,13 +3,16 @@ import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import { Toast} from 'antd-mobile';
 
-import my_wallet_rmb_icon from '../../assets/my_wallet_rmb_icon.png';
-import my_wallet_xb_icon from '../../assets/my_wallet_xb_icon.png';
+import assets_icon_rmbaccount from '../../assets/assets_icon_rmbaccount@2x.png';
+import assets_icon_xibiaccount from '../../assets/assets_icon_xibiaccount@2x.png';
 import me_icon_shuipiao_haoyou from '../../assets/me_icon_shuipiao_haoyou@2x.png';
 import me_icon_shuipiao_hongbao from '../../assets/me_icon_shuipiao_hongbao@2x.png';
 import me_icon_shuipiao_jiangli from '../../assets/me_icon_shuipiao_jiangli@2x.png';
 import me_icon_ticket_blue from '../../assets/me_icon_ticket_blue@2x.png';
 import me_icon_yinhangka from '../../assets/me_icon_yinhangka@2x.png';
+import icon_rmb from '../../assets/icon_rmb@2x.png';
+import assets_icon_vip from '../../assets/assets_icon_vip@2x.png';
+import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png'
 import styles from './page.css';
 
 
@@ -41,15 +44,16 @@ class Wallet extends React.Component {
     return <div>
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
-          <div className='wallet_withdraw'>
-            <img src={my_wallet_rmb_icon} className={styles.wallet_rmb_icon}/>
+          <div className={styles.wallet_item_top}>
+            <img src={assets_icon_rmbaccount} className={styles.wallet_rmb_icon}/>
             <div className={styles.wallet_item_top_title}>人民币</div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.rmbAmount / 100}</div>
         </div>
+        <div className={styles.cutting_line}></div>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top}>
-            <img src={my_wallet_xb_icon} className={styles.wallet_rmb_icon}/>
+            <img src={assets_icon_xibiaccount} className={styles.wallet_rmb_icon}/>
             <div className={styles.wallet_item_top_title}>喜币</div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.xtbTotalAmount}</div>
@@ -82,29 +86,29 @@ class Wallet extends React.Component {
 
         <div onClick={this.xbCharge} className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top}>
-            <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
+            <img src={icon_rmb} className={styles.my_water_ticket_item_img}/>
             <div>喜币充值</div>
           </div>
           {/*<div className={styles.wallet_fun_count_item}>0元</div>*/}
         </div>
         <div className='wallet_bank'>
-          <div className={styles.wallet_item_top}>
+          <div className={styles.back_card}>
             <img src={me_icon_yinhangka} className={styles.my_bank_item_img}/>
             <div>银行卡</div>
           </div>
-          <div className={styles.wallet_fun_count_item_big}>+</div>
+          <div className={styles.back_card_add}>+</div>
         </div>
 
         <div onClick={this.vipClick} className={styles.wallet_fun_item}>
           <div className={styles.vip}>
-            <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
+            <img src={assets_icon_vip} className={styles.my_water_ticket_item_img}/>
             <div>会员中心</div>
           </div>
         </div>
 
         <div onClick={this.astroClick} className={styles.wallet_fun_item}>
           <div className={styles.astro}>
-            <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
+            <img src={assets_icon_horoscope} className={styles.my_water_ticket_item_img}/>
             <div>星座运势</div>
           </div>
         </div>

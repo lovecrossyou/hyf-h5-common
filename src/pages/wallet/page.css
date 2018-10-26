@@ -1,13 +1,17 @@
 .wallet_header{
+  width: 100%;
+  height:260px;
   position:relative;
   display:flex;
   flex-direction: row;
   background:#8C8E95;
-  height:260px;
+  padding: 60px 0 50px 0;
+  box-sizing: border-box;
 }
 .wallet_item{
   display:flex;
   flex:1;
+  height: 148px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -21,6 +25,26 @@
   color:#fff;
   font-size:26px;
 }
+.back_card{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height:60px;
+  color:#fff;
+  font-size:26px;
+  margin-top: 57px;
+}
+.back_card_add{
+  font-size:40px;
+  color:#FF4F4E;
+  margin-top:10px;
+}
+.cutting_line{
+  width: 1px;
+  height: 128px;
+  background-color: #c1c2c5;
+}
 
 :global(.wallet_withdraw){
   display:flex;
@@ -32,18 +56,12 @@
   font-size:26px;
 }
 
-
 .wallet_rmb_icon{
-  width:58px;
-  height:58px;
-}
-.wallet_rmb_icon{
-  width:58px;
-  height:58px;
+  transform:scale(1.1);
 }
 .wallet_item_top_title{
   color:#FFF;
-  padding-top:10px;
+  padding-top:15px;
 }
 .wallet_money_count{
   margin-top:24px;
@@ -65,7 +83,7 @@
   justify-content: center;
   align-items: center;
   height:250px;
-  width:33%;
+  width: 33%;
   border-bottom:1px solid #F8F8F8;
 }
 
@@ -80,7 +98,7 @@
 }
 
 
-.wallet_item_top,.vip,.security,.astro{
+.wallet_item_top,.vip,.security,.astro,.back_card{
   height:86px;
   display: flex;
   flex-direction: column;
