@@ -220,7 +220,8 @@ class Member extends React.Component {
   };
 
   render() {
-    const { userVipInfo, loading } = this.props.store;
+    const { userVipInfo } = this.props.store;
+    const {  loading } = this.props;
     if (userVipInfo == null) return (
       <ActivityIndicator
         color="white"
