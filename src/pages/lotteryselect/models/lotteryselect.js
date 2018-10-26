@@ -58,11 +58,7 @@ function formatValue(value) {
   if (value === '') {
     return value;
   }
-  if (value < 10) {
-    return '0' + value;
-  } else {
-    return value;
-  }
+  return value;
 }
 
 class Ball {
@@ -93,9 +89,12 @@ class Bid {
       return new Ball('', color);
     } else {
       let base = 0;
-      if (type === '3d' || color === BLUE_COLOR) {
+      if (color === BLUE_COLOR) {
         base = 16;
-      } else {
+      } else if(type === '3d') {
+        base = 9;
+      }
+      else {
         base = 33;
       }
 

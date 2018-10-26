@@ -1,5 +1,13 @@
 import styles from '../page.css'
 
+
+const displatText = text=>{
+  if(text<10){
+    return '0' + text ;
+  }
+  return text ;
+}
+
 export const LotteryBall = ({ball,onClick})=>{
   if(ball === undefined)return (
     <div className={styles.ball} style={{backgroundColor:'#00000000'}}/>
