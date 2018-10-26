@@ -8,7 +8,10 @@ import Horoscope from './components/Horoscope';
 
 function Astro(props) {
   const { userInfo, constellationDetail } = props.store;
-  if (userInfo == null) return null;
+  console.log('==================',userInfo)
+  if (userInfo == null){
+    return null;
+  }
   const constellation = userInfo.userInfo.constellation;
   if (constellation === '') {
     return (

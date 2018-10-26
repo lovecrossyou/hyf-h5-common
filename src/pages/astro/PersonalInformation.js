@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
-import DocumentTitle from 'react-document-title';
-import icon_woman_h from '../../assets/astro/icon_woman_h@2x.png';
 import icon_left from '../../assets/astro/left.jpg';
 import { Picker, List, ActivityIndicator } from 'antd-mobile';
 import { createForm } from 'rc-form';
@@ -17,13 +15,15 @@ function PersonalInformation(props) {
   const {selectSex,selectedSex,userInfo} = props.astro;
   const {isLoading} = props ;
   if(userInfo == null){
+    console.log(1111)
     return <ActivityIndicator
       toast
       text="加载中"
       animating={isLoading}/>
   }else{
+    console.log(222)
     const {icon,cnName,xtNumber,sex,address,constellation} = userInfo.userInfo;
-    console.log(userInfo.userInfo)
+    console.log(userInfo.userInfo);
     return (
       <div>
         <div className={styles.head_portrait}>
