@@ -1,4 +1,5 @@
 import { fetchAstroInfo, queryUserInfo, queryModifyConstellation, queryConstellationDetail } from '../service/astro';
+import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'astro',
@@ -23,7 +24,13 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/astro/page') {
+
+
+        if (pathname === '/astro/PersonalInformation') {
+          // setTokenFromQueryString(query);
+        }
+
+          if (pathname === '/astro/page') {
           dispatch({
             type:'userInfo',
             payload:{}

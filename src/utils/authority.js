@@ -1,7 +1,7 @@
 import config from './config';
 
 export function getAccessToken() {
-  if (config.isMock) return {"app_key":"b5958b665e0b4d8cae77d28e1ad3f521","signature":"9DCD02E5B2C277687681BA62A3707784","access_token":"0312aff9a63d4ec48899925be2d5f1ec","os":"WeixinMiniProgramPay"}
+  if (config.isMock) return {"app_key":"b5958b665e0b4d8cae77d28e1ad3f521","signature":"10D1C6BE9CB2E1DF69FCFA9F49CB90E2","access_token":"68fef30df069465b8a4efac048f57b4c"}
   return JSON.parse(localStorage.getItem('accessToken'));
 }
 
