@@ -24,9 +24,11 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-
-
         if (pathname === '/astro/PersonalInformation') {
+          dispatch({
+            type:'userInfo',
+            payload:{}
+          })
           // setTokenFromQueryString(query);
         }
 
@@ -78,11 +80,9 @@ export default {
 
     //设置星座和性别
     *constellation({ payload ,cb}, { call, put,select }) {
-
       const params = yield select(state=>{
         const selectAstro = state.astro.selectAstro ;
         const sex = state.astro.sex ;
-
         return {
           sex:sex==='man'? 1 : 2,
           constellation:selectAstro.name
