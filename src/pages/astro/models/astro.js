@@ -14,18 +14,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/astro/PersonalInformation') {
-<<<<<<< HEAD
           setTokenFromQueryString(query);
-=======
-          dispatch({
-            type:'userInfo',
-            payload:{}
-          })
-          // setTokenFromQueryString(query);
-        }
-
-          if (pathname === '/astro/page') {
->>>>>>> 4757e3d039682876cf7376d34d1ce15b3a7a48ad
           dispatch({
             type:'userInfo',
             payload:{}
@@ -62,17 +51,10 @@ export default {
     },
 
     //设置星座和性别
-<<<<<<< HEAD
-    * constellation({ payload, cb }, { call, put, select }) {
-      const params = yield select(state => {
-        const selectAstro = state.astro.selectAstro;
-        const sex = state.astro.selectedSex;
-=======
     *constellation({ payload ,cb}, { call, put,select }) {
       const params = yield select(state=>{
         const selectAstro = state.astro.selectAstro ;
         const sex = state.astro.sex ;
->>>>>>> 4757e3d039682876cf7376d34d1ce15b3a7a48ad
         return {
           sex: sex,
           constellation: selectAstro.name,

@@ -21,6 +21,7 @@ function PersonalInformation(props) {
       animating={isLoading}/>;
   } else {
     console.log(222);
+    console.log('userInfo.userInfo ',userInfo);
     const { icon, cnName, xtNumber, sex, address, constellation } = userInfo.userInfo;
     console.log(userInfo.userInfo);
     return (
