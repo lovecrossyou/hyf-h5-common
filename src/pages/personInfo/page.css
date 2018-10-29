@@ -1,0 +1,287 @@
+.astrology_container {
+  width: 100%;
+  height: 300px;
+  background: url('../../assets/astro/BG_photo_xingzuo@3x.png') no-repeat;
+  background-size: 100% 100%;
+}
+.astrology{
+  padding-top: 54px;
+  text-align: center;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+.choose_astrology{
+  margin-top: 52px;
+  text-align: center;
+}
+.choose_astrology button{
+  width:278px;
+  height:70px;
+  line-height:30px;
+  border-radius: 30px;
+  outline: none;
+  border:0;
+  background: #4b3194;
+  background-color:rgba(0,0,0,0.1);
+  font-size: 34px;
+  color:#FFFFFF;
+}
+/*星座选择*/
+.astroItem{
+  width:100%;
+  height:100%;
+  padding-top: 10px;
+  background:#9b52e2;
+}
+.astroItem_choose_astrology{
+  padding-top:76px;
+  text-align: center;
+  font-size: 40px;
+  color:#FFFFFF;
+}
+.astroItem_astrology_name{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top:76px;
+}
+.astroItem_astrology_name_item{
+  flex-basis: 33%;
+  margin-top: 28px;
+}
+.astroItem_icon_bg_cuowu{
+  padding:70px 0;
+  text-align: center;
+}
+/*星座运势*/
+.Horoscopecontainer_tit{
+  width:100%;
+  height:240px;
+  padding-left:30px;
+  padding-top:60px;
+  color:#FFFFFF;
+  background: url("../../assets/astro/BG_photo_xingzuo@3x.png") no-repeat;
+  background-size: 100% 100%;
+  position:relative;
+}
+.Horoscope_tit{
+  padding:0 40px;
+}
+.Horoscope_tit_left_name{
+  padding-top: 20px;
+  font-size: 46px;
+  padding-right:30px;
+}
+.Horoscope_tit_left_sex{
+  font-size: 34px;
+}
+.Horoscope_tit_left_center{
+  padding:22px 0 20px 0;
+}
+.Horoscope_tit_left_center_astro{
+  display: inline-block;
+  width:130px;
+  height:45px;
+  line-height:45px;
+  text-align: center;
+  border-radius: 20px;
+  background:#FFFFFF;
+  color:#8b3be6;
+  font-size: 34px;
+  margin-right:22px;
+}
+.Horoscope_tit_right{
+  position: absolute;
+  top:90px;
+  right:60px;
+}
+.Horoscopecontainer_content{
+  background: #fbf9ff;
+}
+.Horoscopecontainer_content_item{
+  background: #FFFFFF;
+  padding:50px 0 36px 20px;
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px #e8dff5;
+}
+.Horoscopecontainer_content_item_tit{
+  margin-bottom:36px;
+  font-size: 34px;
+  line-height: 34px;
+}
+.Horoscopecontainer_content_item_tit_name{
+  padding-left:20px;
+}
+/* 完善个人资料 */
+.improve_data{
+  width:442px;
+  margin:116px auto;
+}
+.improve_data_tit{
+  font-size: 36px;
+  color:#000000;
+  text-align: center;
+}
+.improve_data_content{
+  font-size: 22px;
+  color:#666666;
+  margin-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#improve_data_astro_content{
+  width:412px;
+  height:75px;
+  line-height:75px;
+  padding:0 15px;
+  border-radius: 10px;
+  border:2px solid #ccc;
+  box-shadow: 3px 3px #eeeeee;
+  font-size:30px;
+}
+.improve_data_content>.improve_data_content_sex{
+  width: 180px;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  border:1px solid #666666;
+  display: flex;
+  align-items: center;
+}
+.improve_data_content>.improve_data_content_man{
+  width: 180px;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  border:1px solid red;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+.improve_data_content>.improve_data_content_sex>img,
+.improve_data_content>.improve_data_content_man>img{
+  width:28px;
+  height:28px;
+  padding-left:15px;
+  padding-right:10px;
+}
+.improve_data_content_ziliao{
+  display: flex;
+  align-items: center;
+}
+.improve_data_content_ziliao>.improve_data_content_ziliao_astro{
+  width:46px;
+  height:46px;
+  background: darkblue;
+  border-radius: 50%;
+  margin:0 10px;
+}
+.improve_data_finished{
+  margin:200px auto;
+  width:90%;
+  height:88px;
+  line-height:88px;
+  background:#c00f0f;
+  color:#FFFFFF;
+  font-size: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+.improve_data_content_ziliao_xuanhao{
+  width: 30px;
+  height: 30px;
+}
+/*个人信息*/
+.head_portrait{
+  width:92%;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px 4%;
+  font-size: 34px;
+  /*color:#333333;*/
+}
+.head_portrait>span{
+  display: flex;
+  align-items: center;
+}
+.head_portrait>span>.icon_name{
+  width:100px;
+  height:100px;
+  background: pink;
+  border-radius: 10px;
+  margin-right:22px;
+}
+.icon_name_left{
+  width:20px;
+  height:30px;
+}
+
+.qrcode{
+  width: 100%;
+  height: 150%;
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr_img{
+  width: 100%;
+}
+
+.content{
+  width: 80%;
+  height: 60%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.img_border{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar{
+  width: 120px;
+  height: 120px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.flex_r{
+  display: flex;
+  flex-direction: row;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+.name{
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.xt_number{
+  font-size: 24px;
+  color: #999999;
+}
+
+.footer{
+  position: relative;
+  bottom: 20px;
+  text-align: center;
+  color: #999999;
+}
