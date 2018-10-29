@@ -6,6 +6,7 @@ import { Stepper } from './components/Stepper';
 import DocumentTitle from 'react-document-title';
 import { Modal, List, Toast, ActivityIndicator, Button } from 'antd-mobile';
 import {routerRedux} from 'dva/router';
+import cheng_icon from '../../assets/lottery/icon_haoma_cheng@2x.png';
 
 
 
@@ -15,6 +16,7 @@ import { RED_COLOR } from './models/lotteryselect';
 
 
 import styles from './page.css';
+import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 
 const Tips3D = '选号规则与福彩3D相同，选择号码与当期开奖号码对应位置的号码相同，即中签。';
 const TipsDOUBLE = '请选择6个红色球号码，1个蓝色球号码，中签号码以福彩双色球开奖结果为准。';
@@ -58,7 +60,9 @@ const SingleNumberPanel = ({ bid, restCount, onClick, hideStepper, onChange, del
       <div className={styles.nos}>
         <div className={leftWrapperStyle}>
           <div className={styles.delBtn_wrapper}>
-            <div className={styles.delBtn} onClick={delClick}>x</div>
+            <div className={styles.delBtn} onClick={delClick}>
+              <img src={cheng_icon} />
+            </div>
           </div>
           <NumberGroup onClick={onClick} balls={bid.balls}/>
         </div>

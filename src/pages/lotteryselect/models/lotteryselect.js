@@ -273,7 +273,10 @@ export default {
         if (pathname === '/lotteryselect/page') {
           setTokenFromQueryString(query);
           const totalCount = parseInt(query.totalCount);
+          // const totalCount = 3;
           const type = query.type;
+          // const type = "fucai";
+
           const nos = query.nos;
           const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);

@@ -1,21 +1,42 @@
 import styles from '../page.css';
-import cheng_icon from '../../../assets/lottery/icon_haoma_cheng@2x.png'
-import jia from '../../../assets/lottery/icon_haoma_jia@2x.png'
-import jian from '../../../assets/lottery/icon_haoma_jia_h@2x.png'
+import jia from '../../../assets/lottery/icon_haoma_jia@2x.png';
+import yinjia from '../../../assets/lottery/icon_haoma_jia_h@2x.png';
+import jian from '../../../assets/lottery/icon_haoma_jian@2x.png';
+import yinjian from '../../../assets/lottery/icon_haoma_jian_h@2x.png';
 
-export const Stepper = ({ onChange, min, max, value }) => {
+const OptionCom = ({enable,onChange,left=true})=>{
+ const minusIcon_active = jian ;
+ const minusIcon = yinjian ;
+ const plusIcon_active = jia ;
+ const plusIcon = yinjia ;
+ if(left){
+  return <div onClick={onChange} className={styles.minus_btn}>
+    <img src={enable?minusIcon_active:minusIcon} alt=""/>
+  </div>
+ }
+  return <div onClick={onChange} className={styles.plus_btn}>
+    <img src={enable?plusIcon_active:plusIcon} alt=""/>
+  </div>
+};
+
+export const Stepper = ({ onChange, min=1, max=3, value }) => {
   return <div className={styles.stepper}>
-    <div
-      onClick={() => {
+    <OptionCom
+      onChange={()=>{
         if(value<=min)return;
         onChange(--value);
       }}
-      className={styles.minus}>-</div>
+      enable={value>min}
+      left={true}/>
+
     <div className={styles.stepper_value}>{value}</div>
-    <div onClick={() => {
-      if(value>=max)return;
-      onChange(++value);
-    }}
-         className={styles.plus}>+</div>
+
+    <OptionCom
+      onChange={()=>{
+        if(value>=max)return;
+        onChange(++value);
+      }}
+      enable={value<max}
+      left={false}/>
   </div>;
 };
