@@ -1,8 +1,7 @@
 import React from 'react';
-import Link from 'umi/link';
 import { connect } from 'dva';
 import styles from './page.css';
-import { Flex, WhiteSpace } from 'antd-mobile';
+import DocumentTitle from 'react-document-title';
 import { routerRedux } from 'dva/router';
 
 import icon_bg_baiyang from '../../assets/astro/icon_bg_baiyang@2x.png';
@@ -51,15 +50,18 @@ function AstroItem(props) {
     );
   });
   return (
-    <div className={styles.astroItem}>
-      <div className={styles.astroItem_choose_astrology}>选择星座</div>
-      <div className={styles.astroItem_astrology_name}>
-        {astrologyItem}
+    <DocumentTitle title='星座选择'>
+      <div className={styles.astroItem}>
+        <div className={styles.astroItem_choose_astrology}>选择星座</div>
+        <div className={styles.astroItem_astrology_name}>
+          {astrologyItem}
+        </div>
+        <div className={styles.astroItem_icon_bg_cuowu}>
+          <img src={icon_bg_cuowu} alt=""/>
+        </div>
       </div>
-      <div className={styles.astroItem_icon_bg_cuowu}>
-        <img src={icon_bg_cuowu} alt=""/>
-      </div>
-    </div>
+    </DocumentTitle>
+
   );
 }
 

@@ -20,6 +20,8 @@ function App(props) {
       <Link to="/astro/ImprovePersonalData"><h1>完善资料</h1></Link>
       <br/>
       <Link to="/member/payResult"><h1>vip支付结果</h1></Link>
+      <br/>
+      <Link to="/astro/PersonalInformation"><h1>用户信息</h1></Link>
     </div>
   );
 }

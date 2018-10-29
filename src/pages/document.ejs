@@ -44,10 +44,19 @@
     wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
   });
 
-  // 会员购买以及升级
+  // 会员购买
   $('#root').on('click', '.vip_right_action', function() {
     const vip_type = $(this).attr('vip_type');
     console.log('会员购买以及升级 vip_type ', vip_type);
+    wx.miniProgram.postMessage({ data: vip_type });
+    wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+  });
+
+  // 会员升级
+  $('#root').parent().on('click', '.btn_vip_upgrade', function() {
+    const state = window.g_app._store.getState();
+    const upgradeVIP = state.member.upgradeVIP;
+    const vip_type = upgradeVIP.type;
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
   });
@@ -81,11 +90,11 @@
     wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
   });
 
-  // 新建地址
-  // $('#root').parent().on('click', '.btn_create_addr', function() {
-  //   console.log('新建地址');
-  //   wx.miniProgram.navigateTo({ url: '/pages/address-add/index' });
-  // });
+  // 用户信息 收货地址
+  $('#root').on('click', '.information_addr_btn', function() {
+    console.log('新建地址');
+    wx.miniProgram.navigateTo({ url: '/pages/address/addressList' });
+  });
 
 
 </script>

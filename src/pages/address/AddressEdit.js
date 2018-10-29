@@ -25,11 +25,11 @@ class AddressEdit extends React.Component{
         Toast.show('请输入正确的手机号！');
         return;
       }
+      phoneNum = phoneNum.replace(/\s+/g,"") ;
       if(phoneNum.length!==11){
         Toast.show('请输入正确的手机号！');
         return;
       }
-      phoneNum = phoneNum.replace(/\s+/g,"") ;
 
 
       const districtAddress = value.districtAddress.join('') ;

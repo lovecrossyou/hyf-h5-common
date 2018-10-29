@@ -4,139 +4,111 @@ import { setTokenFromQueryString } from '../../../utils/authority';
 export default {
   namespace: 'astro',
   state: {
-    selectAstro:null,
-    userInfo:null,
-    constellationDetail:null,
-    sex:null,
-    name:null,
-    selectSex:[
-      {
-        label: '男',
-        value: '男',
-      },
-      {
-        label: '女',
-        value: '女',
-      }
-    ],
-    selectedSex:null
+    selectAstro: null,
+    userInfo: null,
+    constellationDetail: null,
+    name: null,
+    selectedSex: 1,
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-
-
         if (pathname === '/astro/PersonalInformation') {
-          // setTokenFromQueryString(query);
-        }
-
-          if (pathname === '/astro/page') {
+          setTokenFromQueryString(query);
           dispatch({
             type:'userInfo',
             payload:{}
           })
-
+        }
+        if (pathname === '/astro/page') {
           dispatch({
-            type: 'global/setTitle', payload: {
-              text: '星座选择',
-            },
-          });
-
-        } else if(pathname === '/astro/AstroItem'){
-          dispatch({
-            type: 'global/setTitle', payload: {
-              text: '12星座选择',
-            },
-          });
-        }else if(pathname === '/astro/personalInformation'){
-          dispatch({
-            type:"userInfo",
+            type:'userInfo',
             payload:{}
           })
+        } else if (pathname === '/astro/AstroItem') {
+
         }
       });
     },
   },
   // 异步
   effects: {
-    *userInfo({ payload ,cb}, { call, put }) {
-      const userData = yield call(queryUserInfo,payload);
+    * userInfo({ payload, cb }, { call, put }) {
+      const userData = yield call(queryUserInfo, payload);
       yield put({
-        type:'saveUserInfo',
-        payload:userData
+        type: 'saveUserInfo',
+        payload: userData,
       });
 
       //有星座信息则继续请求星座数据
-      if(userData.userInfo.constellation!==''){
+      if (userData.userInfo.constellation !== '') {
         const result = yield call(queryConstellationDetail, payload);
         yield put({
-          type:'saveDetail',
-          payload:result
-        })
+          type: 'saveDetail',
+          payload: result,
+        });
       }
     },
 
     //设置星座和性别
-    *constellation({ payload ,cb}, { call, put,select }) {
-
-      const params = yield select(state=>{
-        const selectAstro = state.astro.selectAstro ;
-        const sex = state.astro.sex ;
-
+    * constellation({ payload, cb }, { call, put, select }) {
+      const params = yield select(state => {
+        const selectAstro = state.astro.selectAstro;
+        const sex = state.astro.selectedSex;
         return {
-          sex:sex==='man'? 1 : 2,
-          constellation:selectAstro.name
-        }
-      })
+          sex: sex,
+          constellation: selectAstro.name,
+        };
+      });
 
       // 设置星座
       const result = yield call(queryModifyConstellation, params);
       if (result.respMsg === 'successful') {
-        cb();
+        cb&&cb();
       }
     },
 
-    *detail({ payload ,cb}, { call, put }) {
+    * detail({ payload, cb }, { call, put }) {
       const result = yield call(queryConstellationDetail, payload);
       yield put({
-        type:'saveDetail',
-        payload:result
-      })
-    }
+        type: 'saveDetail',
+        payload: result,
+      });
+    },
     //
   },
   // 同步
   reducers: {
     saveUserInfo(state, action) {
-      return { ...state, userInfo:action.payload };
+      return { ...state, userInfo: action.payload };
     },
 
-    saveDetail(state,action){
-      return { ...state, constellationDetail:action.payload };
+    saveDetail(state, action) {
+      return { ...state, constellationDetail: action.payload };
 
     },
 
-    saveAstro(state, action ) {
+    saveAstro(state, action) {
       console.log('astro ', action.payload);
       return {
         ...state,
-        selectAstro:action.payload
-      }
+        selectAstro: action.payload,
+      };
     },
 
-    setSex(state,action){
+    setSex(state, action) {
       return {
         ...state,
-        sex:action.payload
-      }
+        selectedSex: action.payload,
+      };
     },
     // 选择性别
-    setSelectSex(state,action){
-      return{
+    setSelectSex(state, action) {
+      return {
         ...state,
-        selectedSex:action.payload
-      }
-    }
+        selectedSex: action.payload,
+      };
+    },
 
 
   },

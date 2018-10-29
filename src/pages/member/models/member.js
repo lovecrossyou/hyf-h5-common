@@ -5,7 +5,8 @@ export default {
   namespace: 'member',
   state: {
     userVipInfo:null,
-    payResult:null
+    payResult:null,
+    upgradeVIP:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -75,6 +76,11 @@ export default {
 
     savePayResult(state,action){
       return { ...state, payResult:action.payload };
+    },
+
+    saveVip(state,action){
+      return { ...state, upgradeVIP:action.payload };
+
     }
   },
 };

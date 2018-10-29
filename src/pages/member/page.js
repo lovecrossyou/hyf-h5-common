@@ -12,6 +12,9 @@ import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
 import vip_zuanshi from '../../assets/vip/icon_huiyuan_zuanshi@2x.png';
 import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
 
+
+import checked_icon from '../../assets/vip/icon_huiyuan_shengji_xuanzhong@2x.png' ;
+import unchecked_icon from '../../assets/vip/icon_huiyuan_shengji@2x.png' ;
 const RadioItem = Radio.RadioItem;
 
 
@@ -102,7 +105,6 @@ const PlatinumVip = [
   },
 ];
 
-
 //钻石会员
 const DiamondVip = [
   {
@@ -134,6 +136,9 @@ const DiamondVip = [
   },
 ];
 
+
+const UpgradeVip = VipNormal.slice(1, 3);
+
 const createVipModels = (vipInfo) => {
   const { userIsVip, userVipType } = vipInfo;
   if (userIsVip == false) return VipNormal;
@@ -143,8 +148,8 @@ const createVipModels = (vipInfo) => {
 };
 
 
-const VIPHeader = ({ vipInfo }) => {
-  const { userIsVip, userVipType ,vipEndTime} = vipInfo;
+const VIPHeader = ({ vipInfo,upgradeClick }) => {
+  const { userIsVip, userVipType, vipEndTime } = vipInfo;
   if (userIsVip === false) {
     return (
       <div className={styles.title}>
@@ -153,6 +158,8 @@ const VIPHeader = ({ vipInfo }) => {
           <div className={styles.inline_text}>普通会员</div>
           ，仅可每月参与1次0元抢金砖活动
         </div>
+
+        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
       </div>
     );
   }
@@ -204,6 +211,7 @@ class Member extends React.Component {
     super(props);
     this.state = {
       modal: false,
+      checkedIndex: 0,
     };
   }
 
@@ -219,9 +227,27 @@ class Member extends React.Component {
     });
   };
 
+  onChange = (index) => {
+    this.setState({
+      checkedIndex: index,
+    });
+  };
+
+
+  VIPChange = (vip, index) => {
+    this.setState({
+      checkedIndex: index,
+    });
+    //保存升级的VIP类型
+    this.props.dispatch({
+      type: 'member/saveVip',
+      payload: vip,
+    });
+  };
+
   render() {
     const { userVipInfo } = this.props.store;
-    const {  loading } = this.props;
+    const { loading } = this.props;
     if (userVipInfo == null) return (
       <ActivityIndicator
         color="white"
@@ -230,9 +256,15 @@ class Member extends React.Component {
       />
     );
     const currentVips = createVipModels(userVipInfo);
-    return <div style={{paddingBottom:'40px'}}>
+    return <div style={{ paddingBottom: '40px' }}>
       <div className={styles.header_bg}>
-        <VIPHeader vipInfo={userVipInfo}/>
+        <VIPHeader
+          vipInfo={userVipInfo}
+          upgradeClick={()=>{
+            this.setState({
+              modal:true
+            })
+          }}/>
       </div>
       <div className={styles.tips}>
         <div className={styles.tips_title}>会员专享特权</div>
@@ -259,16 +291,22 @@ class Member extends React.Component {
       >
         <div>
           <div style={{ color: '#cc2636', fontSize: '18px' }}>我要升级</div>
-          {currentVips.map((vip, index) => {
+          {UpgradeVip.map((vip, index) => {
             return (
-              <VipUpgradeItem key={index} vip={vip}/>
+              <VipUpgradeItem
+                onChange={() => {
+                  this.VIPChange(vip, index);
+                }}
+                vip={vip}
+                key={index + '#'}
+                selected={this.state.checkedIndex === index}/>
             );
           })}
-          <div style={{ marginTop: '10px' }}>
+          <div style={{ marginTop: '10px' }} className='btn_vip_upgrade'>
             <Button type="warning" onClick={this.onClose}>确定</Button>
           </div>
 
-          <div style={{ color: '#999999', fontSize: '12px', paddingTop: '4px' }}>会员升级仅需在当前的会员基础上补差价</div>
+          <div style={{ color: '#999999', fontSize: '12px', paddingTop: '8px' }}>会员升级仅需在当前的会员基础上补差价</div>
         </div>
       </Modal>
 
@@ -290,24 +328,30 @@ const VipItem = ({ vip, action }) => {
           </div>
         </div>
         <div className={styles.vip_right}>
-          <div className={vip.enable!==false?'vip_right_action' : 'vip_right_action_disable'} onClick={action} vip_type={vip.type}>{vip.action}</div>
+          <div className={vip.enable !== false ? 'vip_right_action' : 'vip_right_action_disable'} onClick={action}
+               vip_type={vip.type}>{vip.action}</div>
         </div>
       </div>
     </div>
   );
 };
 
-const VipUpgradeItem = ({ vip, action }) => {
+const VipUpgradeItem = ({ vip, action, selected = false, onChange }) => {
   return (
-    <div className={styles.vip_item_line} className='btnUpgrade'>
-      <div className={styles.vip_item_content}>
-        <div className={styles.vip_left}>
-          <img src={vip.img} alt="" className={styles.vip_left_img}/>
-          <div style={{ paddingLeft: '10px' }}>
-            <div className={styles.vip_left_text_title}>{vip.title}</div>
-            <div className={styles.vip_left_text_desc}>{vip.desc}</div>
+    <div className={styles.vip_item_line} onClick={onChange}>
+      <div className={styles.flex_r}>
+        <div className={styles.vip_item_content}>
+          <div className={styles.vip_left}>
+            <img src={vip.img} alt="" className={styles.vip_left_img}/>
+            <div style={{ paddingLeft: '10px' }}>
+              <div className={styles.vip_left_text_title}>{vip.title}</div>
+              <div className={styles.vip_left_text_desc}>{vip.desc}</div>
+            </div>
           </div>
         </div>
+        {
+          selected ? (<img src={checked_icon}/>) : <img src={unchecked_icon}/>
+        }
       </div>
     </div>
   );

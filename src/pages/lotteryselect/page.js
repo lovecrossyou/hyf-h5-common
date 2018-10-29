@@ -165,7 +165,7 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
     <div className={styles.sepline}/>
 
     <div className={styles.select_panel}>
-      <div className={styles.tips}>{TipsDOUBLE}</div>
+      <div className={styles.tips}>{type==='fucai'?TipsDOUBLE:Tips3D}</div>
       <div className={styles.wrapper_3d}>
         {allRowItems}
       </div>
