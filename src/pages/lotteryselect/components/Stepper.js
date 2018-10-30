@@ -19,7 +19,7 @@ const OptionCom = ({enable,onChange,left=true})=>{
   </div>
 };
 
-export const Stepper = ({ onChange, min=1, max=3, value }) => {
+export const Stepper = ({ onChange, min=1, max, value }) => {
   return <div className={styles.stepper}>
     <OptionCom
       onChange={()=>{

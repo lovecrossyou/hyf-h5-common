@@ -6,12 +6,14 @@ import icon_left from '../../assets/astro/left.jpg';
 import { Picker, List, ActivityIndicator } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 
+import astroData from '../../utils/astroData';
 
 const Item = List.Item;
 const Brief = Item.Brief;
 
+
 function PersonalInformation(props) {
-  const { selectSex, selectedSex, userInfo } = props.personInfo;
+  const { selectSex, userInfo } = props.personInfo;
   const { isLoading } = props;
   if (userInfo == null) {
     console.log(1111);
@@ -20,10 +22,10 @@ function PersonalInformation(props) {
       text="加载中"
       animating={isLoading}/>;
   } else {
-    console.log(222);
-    console.log('userInfo.userInfo ',userInfo);
     const { icon, cnName, xtNumber, sex, address, constellation } = userInfo.userInfo;
-    console.log(userInfo.userInfo);
+    // console.log('props.personInfo  ',props.personInfo);
+    // console.log('selectSex  ',selectSex);
+    // console.log('sex  ',sex);
     return (
       <DocumentTitle title='用户资料'>
         <div>
@@ -48,27 +50,33 @@ function PersonalInformation(props) {
           <Picker
             cols={1}
             data={selectSex}
-            value={selectedSex}
-            extra={sex == 1 ? '男' : '女'}
-            onChange={(sex) => {
+            extra={sex === 1 ? '男' : '女'}
+            onOk={sexValue => {
+              console.log(sexValue);
+              const sex = sexValue[0];
               props.dispatch({
-                type: 'astro/setSelectSex',
-                payload: sex,
+                type: 'personInfo/constellation',
+                payload: {
+                  sex: sex,
+                },
               });
-            }}
-            onOk={() => {
-              return 'ok';
-
             }}
           >
             <List.Item arrow="horizontal">性别</List.Item>
           </Picker>
           <List className="my-list">
-            <Item extra={constellation} arrow="horizontal" onClick={() => {
+            <Item extra={astroData.astroName(constellation)} arrow="horizontal" onClick={() => {
               props.dispatch(routerRedux.push('/astro/AstroItem'));
             }}>星座</Item>
-            <Item extra={address} arrow="horizontal">送货地址</Item>
+
+            <div className='information_addr_btn'>
+              <Item extra={address} arrow="horizontal">送货地址</Item>
+            </div>
+
           </List>
+          <ActivityIndicator
+            toast
+            animating={isLoading}/>
         </div>
       </DocumentTitle>
 

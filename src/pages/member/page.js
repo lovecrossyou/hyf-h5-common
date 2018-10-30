@@ -159,7 +159,6 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
           ，仅可每月参与1次0元抢金砖活动
         </div>
 
-        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
       </div>
     );
   }
@@ -174,6 +173,8 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
           ，每期赠送2组抽签号码 奖励20喜币
         </div>
         <div className={styles.vipEndTime}>{vipEndTime}</div>
+        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
+
       </div>
     );
   }
@@ -187,6 +188,8 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
           ，每期赠送1组抽签号码 奖励30喜币
         </div>
         <div className={styles.vipEndTime}>{vipEndTime}</div>
+        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
+
       </div>
     );
   }
@@ -200,6 +203,8 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
           <div className={styles.inline_text}>钻石会员</div>
           ，每期赠送10组抽签号码 奖励100喜币
         </div>
+        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
+
       </div>
     );
   }

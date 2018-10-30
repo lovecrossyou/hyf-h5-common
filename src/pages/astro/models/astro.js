@@ -52,15 +52,18 @@ export default {
 
     //设置星座和性别
     *constellation({ payload ,cb}, { call, put,select }) {
-      const params = yield select(state=>{
-        const selectAstro = state.astro.selectAstro ;
-        const sex = state.astro.sex ;
-        return {
-          sex: sex,
-          constellation: selectAstro.name,
-        };
-      });
+      let params = payload
 
+      if(payload===undefined){
+        params = yield select(state=>{
+          const selectAstro = state.astro.selectAstro ;
+          const sex = state.astro.selectedSex ;
+          return {
+            sex: sex,
+            constellation: selectAstro.name,
+          };
+        });
+      }
       // 设置星座
       const result = yield call(queryModifyConstellation, params);
       if (result.respMsg === 'successful') {
@@ -109,7 +112,5 @@ export default {
         selectedSex: action.payload,
       };
     },
-
-
   },
 };

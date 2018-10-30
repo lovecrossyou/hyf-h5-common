@@ -3,7 +3,10 @@
  */
 
 import { setTokenFromQueryString } from '../../../utils/authority';
-import { generateQRCode, queryConstellationDetail, queryUserInfo } from '../service/personInfo';
+import {
+  generateQRCode, queryConstellationDetail, queryModifyConstellation,
+  queryUserInfo,
+} from '../service/personInfo';
 
 export default {
   namespace: 'personInfo',
@@ -11,16 +14,16 @@ export default {
     selectAstro: null,
     userInfo: null,
     constellationDetail: null,
-    sex: null,
+    sex: 1,
     name: null,
     selectSex: [
       {
         label: '男',
-        value: '男',
+        value: 1,
       },
       {
         label: '女',
-        value: '女',
+        value: 2,
       },
     ],
     qrData: null,
@@ -81,6 +84,19 @@ export default {
         type: 'saveqrCode',
         payload: qrData,
       });
+    },
+
+    //设置星座和性别
+    * constellation({ payload, cb }, { call, put, select }) {
+      // 设置星座
+      const result = yield call(queryModifyConstellation, payload);
+      if (result.respMsg === 'successful') {
+        const userData = yield call(queryUserInfo, payload);
+        yield put({
+          type: 'saveUserInfo',
+          payload: userData,
+        });
+      }
     },
   },
   reducers: {
