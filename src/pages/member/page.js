@@ -185,7 +185,7 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
         <img width='150px' height='36px' src={vip_gold} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>黄金会员</div>
-          ，每期赠送1组抽签号码 奖励30喜币
+          ，每期赠送1组抽签号码 奖励20喜币
         </div>
         <div className={styles.vipEndTime}>{vipEndTime}</div>
         <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
@@ -295,7 +295,7 @@ class Member extends React.Component {
         style={{ width: '90%' }}
       >
         <div>
-          <div style={{ color: '#cc2636', fontSize: '18px' }}>我要升级</div>
+          <div style={{ color: '#cc2636', fontSize: '36px' }}>我要升级</div>
           {UpgradeVip.map((vip, index) => {
             return (
               <VipUpgradeItem
@@ -311,7 +311,7 @@ class Member extends React.Component {
             <Button type="warning" onClick={this.onClose}>确定</Button>
           </div>
 
-          <div style={{ color: '#999999', fontSize: '12px', paddingTop: '8px' }}>会员升级仅需在当前的会员基础上补差价</div>
+          <div style={{ color: '#999999', fontSize: '24px', paddingTop: '8px' }}>会员升级仅需在当前的会员基础上补差价</div>
         </div>
       </Modal>
 

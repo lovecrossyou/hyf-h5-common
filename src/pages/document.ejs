@@ -69,14 +69,8 @@
     const selectedBids = lotteryselect.selectedBids;
     if (window.__wxjs_environment) {
       // 小程序环境
-      const type = lotteryselect.type;
-      if (type === '3d') {
-        wx.miniProgram.postMessage({ data: selectedBids });
-        wx.miniProgram.navigateBack();
-      }
-      else {
-        // wx.miniProgram.redirectTo({ url: '/pages/pindan/pindan' });
-      }
+      wx.miniProgram.postMessage({ data: selectedBids });
+      wx.miniProgram.navigateBack();
     }
     else {
       // 非小程序环境
