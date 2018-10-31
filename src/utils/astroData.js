@@ -1,15 +1,15 @@
-import icon_bg_baiyang from '../assets/astro/icon_bg_baiyang@2x.png';
-import icon_bg_chunv from '../assets/astro/icon_bg_chunv@2x.png';
-import icon_bg_tianxie from '../assets/astro/icon_bg_tianxie@2x.png';
-import icon_bg_jinniu from '../assets/astro/icon_bg_jinniu@2x.png';
-import icon_bg_sheshou from '../assets/astro/icon_bg_sheshou@2x.png';
-import icon_bg_shuangyu from '../assets/astro/icon_bg_shuangyu@2x.png';
-import icon_bg_shuangzi from '../assets/astro/icon_bg_shuangzi@2x.png';
-import icon_bg_juxie from '../assets/astro/icon_bg_juxie@2x.png';
-import icon_bg_shizi from '../assets/astro/icon_bg_shizi@2x.png';
-import icon_bg_tianping from '../assets/astro/icon_bg_tianping@2x.png';
-import icon_bg_mojie from '../assets/astro/icon_bg_mojie@2x.png';
-import icon_bg_shuiping from '../assets/astro/icon_bg_shuiping@2x.png';
+import icon_bg_baiyang from '../assets/astro/icon_bg_baiyang@3x.png';
+import icon_bg_chunv from '../assets/astro/icon_bg_chunv@3x.png';
+import icon_bg_tianxie from '../assets/astro/icon_bg_tianxie@3x.png';
+import icon_bg_jinniu from '../assets/astro/icon_bg_jinniu@3x.png';
+import icon_bg_sheshou from '../assets/astro/icon_bg_sheshou@3x.png';
+import icon_bg_shuangyu from '../assets/astro/icon_bg_shuangyu@3x.png';
+import icon_bg_shuangzi from '../assets/astro/icon_bg_shuangzi@3x.png';
+import icon_bg_juxie from '../assets/astro/icon_bg_juxie@3x.png';
+import icon_bg_shizi from '../assets/astro/icon_bg_shizi@3x.png';
+import icon_bg_tianping from '../assets/astro/icon_bg_tianping@3x.png';
+import icon_bg_mojie from '../assets/astro/icon_bg_mojie@3x.png';
+import icon_bg_shuiping from '../assets/astro/icon_bg_shuiping@3x.png';
 
 const astrologys = [
   { name: 'Aries', cName: '白羊座', img: icon_bg_baiyang },
