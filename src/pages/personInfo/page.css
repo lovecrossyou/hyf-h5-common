@@ -286,64 +286,29 @@
   color: #999999;
 }
 /*我的黄金票*/
-.xiteng_golden_ticket_container{
-  width:632px;
-  height:862px;
-  background:url('../../assets/huangjinpiao_bgm.png') no-repeat;
-  background-size: 100% 100%;
-  margin:60px auto;
-  padding-top:90px;
+.golden_ticket_container{
+  width:100%;
+  height:200%;
+  background: linear-gradient(#f5a68f,#d32b44);
 }
-.xiteng_golden_ticket{
-  width:520px;
-  height:538px;
-  border-radius: 10px;
-  background: #FFFFFF;
-  margin:auto;
-  padding:50px 30px;
-  line-height: 1.4;
+.golden_ticket_title{
+  text-align: center;
+  padding-top:22px;
+  padding-bottom:22px;
 }
-.my_golden_bar{
-  /*text-align: center;*/
-  background: pink;
+.golden_ticket_title img{
+  width:344px;
+  height:72px;
 }
-.my_golden_bar>img{
-  /*width:375px;*/
-  /*height:300px;*/
-}
-.my_gold_bar_info{
-  font-size: 32px;
-  color:#322e30;
-}
-.my_gold_bar_info_second{
-  font-size: 22px;
-  color:#ea6b49;
-  padding:20px 0;
-}
-.my_gold_bar_info_third>span:nth-child(1){
-  display: inline-block;
-  background: #b81f3c;
-  border-radius: 10px;
-  color:#FFFFFF;
-  padding:0 14px;
-}
-.my_gold_bar_info_third>span:nth-child(2){
-  font-size: 28px;
-  color:#b81f3c;
-  margin-left:14px;
-  margin-right:10px;
-}
-.zero_bigger{
-  font-size: 44px;
-}
-.my_gold_bar_info_third>span:nth-child(3){
-  font-size: 24px;
-  color:#797679;
+.golden_ticket_main{
+  width:90%;
+  padding:0 5%;
 }
 .xiteng_golden_ticket_intro{
-  width:580px;
-  margin:32px auto;
+  width:90%;
+  padding:0 5%;
   display: flex;
+  margin-top: 32px;
 }
 .xiteng_golden_ticket_intro_left{
   width:166px;
@@ -351,15 +316,18 @@
   border:2px solid #ccc;
   margin-right:26px;
 }
+.xiteng_golden_ticket_intro_left>img{
+  width:166px;
+  height:166px;
+}
 .xiteng_golden_ticket_intro_right{
   font-size: 24px;
   color:#FFFFFF;
-  line-height: 1.6;
+  line-height: 1.5;
 }
-.xiteng_golden_ticket_intro_righty{
-  font-size: 25px;
+.erweima{
   color:#eedf56;
-  margin-top:18px;
+  margin-top:30px;
 }
 /*喜腾抢购*/
 .rush_topurchase_container{
