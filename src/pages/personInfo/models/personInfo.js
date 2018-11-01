@@ -38,7 +38,7 @@ export default {
             payload: {},
           });
         }
-        else if (pathname === '/personInfo/qrCode') {
+        else if (pathname === '/personInfo/qrCode'||pathname === '/personInfo/goldenTicket') {
           // 生成二维码
           dispatch({
             type: 'generateQRCode',
