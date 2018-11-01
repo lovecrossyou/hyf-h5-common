@@ -16,7 +16,6 @@ import { RED_COLOR } from './models/lotteryselect';
 
 
 import styles from './page.css';
-import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 
 const Tips3D = '选号规则与福彩3D相同，选择号码与当期开奖号码对应位置的号码相同，即中签。';
 const TipsDOUBLE = '请选择6个红色球号码，1个蓝色球号码，中签号码以福彩双色球开奖结果为准。';
@@ -175,12 +174,12 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       </div>
     </div>
     <div
-      onClick={() => {
-        if (bidCompleteFlg && type === 'fucai') {
-          console.log('onClick  bidCompleteFlg', bidCompleteFlg, 'type ', type);
-          confirmBids();
-        }
-      }}
+      // onClick={() => {
+      //   if (bidCompleteFlg && type === 'fucai') {
+      //     console.log('onClick  bidCompleteFlg', bidCompleteFlg, 'type ', type);
+      //     confirmBids();
+      //   }
+      // }}
       className='lottery_btn_confirm' style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>

@@ -54,7 +54,10 @@ function ImprovePersonalData(props) {
         <div className={styles.improve_data_finished}
              onClick={()=>{
                props.dispatch({
-                 type:"astro/constellation"
+                 type:"astro/constellation",
+                 cb:()=>{
+                   props.dispatch(routerRedux.goBack());
+                 }
                })
              }}
         >完成</div>
