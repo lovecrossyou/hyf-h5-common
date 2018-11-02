@@ -19,17 +19,17 @@
 </body>
 <script>
   //lottery_confirm 选号面板 选择完地址后确认
-  $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
-    console.log('lottery_confirm_fucai ');
-    const dispatch = window.g_app._store.dispatch;
-    dispatch({
-      type: 'lotteryselect/confirm_fucai',
-      cb: ({ discountGameId, groupId }) => {
-        let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
-        wx.miniProgram.redirectTo({ url: url });
-      },
-    });
-  });
+  // $('#root').parent().on('click', '.lottery_confirm_fucai', function() {
+  //   console.log('lottery_confirm_fucai ');
+  //   const dispatch = window.g_app._store.dispatch;
+  //   dispatch({
+  //     type: 'lotteryselect/confirm_fucai',
+  //     cb: ({ discountGameId, groupId }) => {
+  //       let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
+  //       wx.miniProgram.redirectTo({ url: url });
+  //     },
+  //   });
+  // });
 
   //银行卡列表
   $('#root').on('click', '.wallet_bank', function() {
@@ -65,12 +65,26 @@
   // 确认选号后 返回
   $('#root').on('click', '.lottery_btn_confirm', function() {
     const state = window.g_app._store.getState();
+    const dispatch = window.g_app._store.dispatch;
+
     const lotteryselect = state.lotteryselect;
     const selectedBids = lotteryselect.selectedBids;
+    const setCode = lotteryselect.setCode;
+
     if (window.__wxjs_environment) {
-      // 小程序环境
-      wx.miniProgram.postMessage({ data: selectedBids });
-      wx.miniProgram.navigateBack();
+      if (setCode != true) {
+        // 小程序环境
+        wx.miniProgram.postMessage({ data: selectedBids });
+        wx.miniProgram.navigateBack();
+      } else {
+        dispatch({
+          type: 'lotteryselect/confirm_fucai',
+          cb: ({ discountGameId, groupId }) => {
+            let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
+            wx.miniProgram.redirectTo({ url: url });
+          },
+        });
+      }
     }
     else {
       // 非小程序环境

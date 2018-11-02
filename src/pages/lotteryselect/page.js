@@ -131,7 +131,7 @@ const GeneRowItems = ({ rowItems, numsOfRow }) => {
 };
 
 // 福彩双色球 选号面板
-const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids, type }) => {
+const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmBids, type,setCode }) => {
   const rows = Math.ceil(balls.length / COLUMN);
   let allRowItems = [];
   const numsOfRow = COLUMN;
@@ -174,12 +174,13 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
       </div>
     </div>
     <div
-      // onClick={() => {
-      //   if (bidCompleteFlg && type === 'fucai') {
-      //     console.log('onClick  bidCompleteFlg', bidCompleteFlg, 'type ', type);
-      //     confirmBids();
-      //   }
-      // }}
+      onClick={() => {
+        if (bidCompleteFlg && setCode === true) {
+          console.log('onClick  bidCompleteFlg', bidCompleteFlg, 'type ', type);
+          confirmBids();
+          // lottery_confirm_fucai
+        }
+      }}
       className='lottery_btn_confirm' style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>
@@ -309,7 +310,11 @@ class LotterySel extends React.Component {
             {/*选号面板*/}
             <SelectPanelFuCai
               type={bidType}
-              confirmBids={this.showModal.bind(this)}
+              confirmBids={()=>{
+                //setCode
+
+
+              }}
               bidCompleteFlg={bidCmpleteFlag}
               onClick={(ball) => {
                 this.props.dispatch({

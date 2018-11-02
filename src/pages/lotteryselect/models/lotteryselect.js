@@ -281,6 +281,7 @@ export default {
           const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);
           const setCode = query.setCode;
+          // const setCode = true ;
           // console.log('lotteryselect query', query);
           // console.log('lotteryselect inviteGroupId', inviteGroupId);
           // console.log('lotteryselect setCode', setCode);
@@ -359,10 +360,10 @@ export default {
       const inviteGroupId = lotteryStore.inviteGroupId;
       const activeAddress = addressStore.activeAddress;
       const setCode = lotteryStore.setCode;
-      if (activeAddress == null) {
-        Toast.show('请选择地址！', 1);
-        return;
-      }
+      // if (activeAddress == null) {
+      //   Toast.show('请选择地址！', 1);
+      //   return;
+      // }
       const selectedBids = lotteryStore.selectedBids;
 
       function formatText(text){
@@ -390,7 +391,7 @@ export default {
 
 
       let params = {
-        addressId: activeAddress.id,
+        // addressId: activeAddress.id,
         codeList: convertCode2String(),
         gameId: discountGameId,
         inviteGroupId: inviteGroupId,
