@@ -29,12 +29,15 @@ function PersonalInformation(props) {
     return (
       <DocumentTitle title='用户资料'>
         <div>
-          <div className={styles.head_portrait}>
+          <div className={styles.head_portrait} onClick={()=>{
+            console.log('点击获取头像');
+            props.dispatch(routerRedux.push('/personInfo/userPicture'));
+          }}>
             <span>头像</span>
             <span>
-          <img className={styles.icon_name} src={icon} alt=""/>
-          <img className={styles.icon_name_left} src={icon_left} alt=""/>
-        </span>
+              <img className={styles.icon_name} src={icon} alt=""/>
+              <img className={styles.icon_name_left} src={icon_left} alt=""/>
+            </span>
           </div>
           <List className="my-list">
             <Item extra={cnName} arrow="horizontal" onClick={() => {
