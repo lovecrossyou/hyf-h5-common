@@ -56,7 +56,11 @@
   $('#root').parent().on('click', '.btn_vip_upgrade', function() {
     const state = window.g_app._store.getState();
     const upgradeVIP = state.member.upgradeVIP;
-    const vip_type = upgradeVIP.type;
+    let vip_type = upgradeVIP.type;
+    if(vip_type==null){
+      vip_type = 'user_to_higher_golden_vip' ;
+    }
+
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
   });

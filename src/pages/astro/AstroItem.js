@@ -31,7 +31,6 @@ function AstroItem(props) {
   return (
     <DocumentTitle title='星座选择'>
       <div className={styles.astroItem}>
-        <div className={styles.astroItem_choose_astrology}>选择星座</div>
         <div className={styles.astroItem_astrology_name}>
           {astrologyItem}
         </div>

@@ -31,7 +31,6 @@ const payChannelFormat = (channel) => {
 
 
 function vipPayResult(props) {
-  console.log('payResult ', props.store.payResult);
   const payResultInfo = props.store.payResult;
   if (payResultInfo === null) return null;
   const { payChannel, payOrderNo, payResult, totalFee, tradeTime } = payResultInfo;
