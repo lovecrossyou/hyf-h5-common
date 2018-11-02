@@ -29,7 +29,8 @@
 /*星座选择*/
 .astroItem{
   width:100%;
-  height:200%;
+  height: 100%;
+  position: fixed;
   padding-top: 10px;
   background:#9b52e2;
 }
@@ -224,7 +225,8 @@
 
 .qrcode{
   width: 100%;
-  height: 150%;
+  height: 100%;
+  position: fixed;
   background-color: #333333;
   display: flex;
   flex-direction: column;
@@ -288,7 +290,8 @@
 /*我的黄金票*/
 .golden_ticket_container{
   width:100%;
-  height:200%;
+  height: 100%;
+  position: fixed;
   background: linear-gradient(#f5a68f,#d32b44);
 }
 .golden_ticket_title{
@@ -332,7 +335,8 @@
 /*喜腾抢购*/
 .rush_topurchase_container{
   width:100%;
-  height:200%;
+  height: 100%;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;

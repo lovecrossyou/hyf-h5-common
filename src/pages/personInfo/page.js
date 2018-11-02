@@ -48,9 +48,9 @@ function PersonalInformation(props) {
             <Item arrow="horizontal" onClick={() => {
               props.dispatch(routerRedux.push('/personInfo/goldenTicket'));
             }}>我的黄金票</Item>
-            <Item arrow="horizontal" onClick={() => {
-              props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));
-            }}>抢购</Item>
+            {/*<Item arrow="horizontal" onClick={() => {*/}
+              {/*props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));*/}
+            {/*}}>抢购</Item>*/}
           </List>
           <div style={{ marginTop: '60px' }}></div>
           <Picker
