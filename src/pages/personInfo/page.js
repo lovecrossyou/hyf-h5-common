@@ -55,7 +55,7 @@ function PersonalInformation(props) {
               {/*props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));*/}
             {/*}}>抢购</Item>*/}
           </List>
-          <div style={{ marginTop: '60px' }}></div>
+          <div style={{ marginTop: '20px' }}></div>
           <Picker
             cols={1}
             data={selectSex}
