@@ -43,7 +43,7 @@ function PersonalInformation(props) {
           </div>
           <List className="my-list">
             <Item extra={cnName} arrow="horizontal" onClick={() => {
-              props.dispatch(routerRedux.push('/astro/SetName'));
+              props.dispatch(routerRedux.push('/astro/SetName?paramName=name'));
             }}
             >名字</Item>
             <Item extra={xtNumber}>喜腾号</Item>
