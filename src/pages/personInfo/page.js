@@ -16,7 +16,6 @@ function PersonalInformation(props) {
   const { selectSex, userInfo } = props.personInfo;
   const { isLoading } = props;
   if (userInfo == null) {
-    console.log(1111);
     return <ActivityIndicator
       toast
       text="加载中"
@@ -29,19 +28,34 @@ function PersonalInformation(props) {
     return (
       <DocumentTitle title='用户资料'>
         <div>
-          <div className={styles.head_portrait} onClick={()=>{
-            console.log('点击获取头像');
-            props.dispatch(routerRedux.push('/personInfo/userPicture'));
+          <div className={styles.head_portrait} onClick={() => {
+            // console.log('点击获取头像');
+            // props.dispatch(routerRedux.push('/personInfo/userPicture'));
           }}>
             <span>头像</span>
             <span>
+ <input
+   className={styles.file}
+   disabled
+   type="file"
+   accept="image/*"
+   onChange={(e) => {
+     let files;
+     if (e.dataTransfer) {
+       files = e.dataTransfer.files;
+     } else if (e.target) {
+       files = e.target.files;
+     }
+     console.log('files ',files);
+   }}
+ />
               <img className={styles.icon_name} src={icon} alt=""/>
               <img className={styles.icon_name_left} src={icon_left} alt=""/>
             </span>
           </div>
           <List className="my-list">
             <Item extra={cnName} arrow="horizontal" onClick={() => {
-              props.dispatch(routerRedux.push('/astro/SetName'));
+              props.dispatch(routerRedux.push('/personInfo/SetName'));
             }}
             >名字</Item>
             <Item extra={xtNumber}>喜腾号</Item>
@@ -49,10 +63,10 @@ function PersonalInformation(props) {
               props.dispatch(routerRedux.push('/personInfo/qrCode'));
             }}>我的二维码</Item>
             {/*<Item arrow="horizontal" onClick={() => {*/}
-              {/*props.dispatch(routerRedux.push('/personInfo/goldenTicket'));*/}
+            {/*props.dispatch(routerRedux.push('/personInfo/goldenTicket'));*/}
             {/*}}>我的黄金票</Item>*/}
             {/*<Item arrow="horizontal" onClick={() => {*/}
-              {/*props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));*/}
+            {/*props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));*/}
             {/*}}>抢购</Item>*/}
           </List>
           <div style={{ marginTop: '20px' }}></div>

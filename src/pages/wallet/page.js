@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import { Toast,ActivityIndicator} from 'antd-mobile';
+import { Toast, ActivityIndicator } from 'antd-mobile';
+import DocumentTitle from 'react-document-title';
 
 import assets_icon_rmbaccount from '../../assets/assets_icon_rmbaccount@2x.png';
 import assets_icon_xibiaccount from '../../assets/assets_icon_xibiaccount@2x.png';
@@ -12,10 +13,10 @@ import me_icon_ticket_blue from '../../assets/me_icon_ticket_blue@2x.png';
 import me_icon_yinhangka from '../../assets/me_icon_yinhangka@2x.png';
 import icon_rmb from '../../assets/icon_rmb@2x.png';
 import assets_icon_vip from '../../assets/assets_icon_vip@2x.png';
-import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png'
+import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 import styles from './page.css';
 
-const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatch})=>{
+const ContentPage = ({ accountInfo, userProfitAllFriendInfo, userProfitInfo, dispatch }) => {
 
   // 我的好友
   function myFriend() {
@@ -28,23 +29,23 @@ const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatc
   }
 
   //喜币充值
-  function xbCharge(){
+  function xbCharge() {
     Toast.info('请下载app使用!', 1);
   }
 
   // 会员奖励
-  function vipReward(){
+  function vipReward() {
     dispatch(routerRedux.push('/vipreward/page'));
   }
 
   // 点击运势
-  function astroClick(){
+  function astroClick() {
     dispatch(routerRedux.push('/astro/page'));
   };
 
 
   // 会员中心
-  function vipClick(){
+  function vipClick() {
     dispatch(routerRedux.push('/member/page'));
   };
 
@@ -89,7 +90,7 @@ const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatc
             <img src={me_icon_shuipiao_jiangli} className={styles.my_sale_item_img}/>
             <div>会员奖励</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount/100}元</div>
+          <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount / 100}元</div>
         </div>
 
         <div className={styles.line}/>
@@ -130,26 +131,29 @@ const ContentPage = ({accountInfo,userProfitAllFriendInfo,userProfitInfo,dispatc
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 
 class Wallet extends React.Component {
   render() {
     const { accountInfo, userProfitAllFriendInfo, userProfitInfo } = this.props.store;
-    const {loading} = this.props ;
-    return <div>
-      <ContentPage
-        dispatch={this.props.dispatch}
-        userProfitAllFriendInfo={userProfitAllFriendInfo}
-        userProfitInfo={userProfitInfo}
-        accountInfo={accountInfo}/>
-      <ActivityIndicator
-        color="white"
-        toast
-        animating={loading}
-      />
-    </div>;
+    const { loading } = this.props;
+    return <DocumentTitle title='我的钱包'>
+      <div>
+        <ContentPage
+          dispatch={this.props.dispatch}
+          userProfitAllFriendInfo={userProfitAllFriendInfo}
+          userProfitInfo={userProfitInfo}
+          accountInfo={accountInfo}/>
+        <ActivityIndicator
+          color="white"
+          toast
+          animating={loading}
+        />
+      </div>
+    </DocumentTitle>;
+
   }
 }
 

@@ -4,7 +4,7 @@
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 import {
-  generateQRCode, queryConstellationDetail, queryModifyConstellation,
+  generateQRCode, modifyName, queryConstellationDetail, queryModifyConstellation,
   queryUserInfo,
 } from '../service/personInfo';
 
@@ -84,6 +84,11 @@ export default {
         type: 'saveqrCode',
         payload: qrData,
       });
+    },
+
+    * setName({ payload, cb }, { call, put }) {
+      const res = yield call(modifyName,payload) ;
+      cb&&cb();
     },
 
     //设置星座和性别

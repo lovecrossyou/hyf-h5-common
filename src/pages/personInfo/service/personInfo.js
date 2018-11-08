@@ -49,3 +49,20 @@ export async function generateQRCode(text) {
     })
 }
 
+// 设置名字
+export async function modifyName(params) {
+  return request('/user/modify/name',{
+    method:'post',
+    body:params
+  });
+}
+
+
+
+// 修改头像
+export async function modifyIcon(params) {
+  return request('/constellation/detail',{
+    method:'post',
+    body:params
+  });
+}

@@ -1,6 +1,6 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo,
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,
 } from '../service/wallet';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
@@ -13,6 +13,10 @@ export default {
     userProfitInfo: null,
     userProfitAllFriendInfo: null,
     inviteProfitXtb: null,
+    // 钻石好友
+    userDiamondFriends:[],
+
+    user:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -58,6 +62,24 @@ export default {
       });
     },
 
+    *fetchDiamondFriends({ payload ,cb}, { call, put }){
+      const params = {
+        profitUserId:payload.user.profitUserId
+      }
+
+      yield put({
+        type:'saveUser',
+        payload:payload.user
+      })
+
+      const lists = yield call(fetchUserProfitDiamondFriendInfo,params);
+      yield put({
+        type:'saveUserDiamondFriends',
+        payload:lists
+      });
+      cb&&cb();
+    }
+
   },
   reducers: {
     save(state, action) {
@@ -70,5 +92,19 @@ export default {
         shareSellProfitRmb: action.payload.shareSellProfitRmb,
       };
     },
+
+    saveUserDiamondFriends(state,action){
+      return {
+        ...state,
+        userDiamondFriends:action.payload
+      }
+    },
+
+    saveUser(state,action){
+      return {
+        ...state,
+        user:action.payload
+      }
+    }
   },
 };

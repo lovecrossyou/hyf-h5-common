@@ -39,6 +39,8 @@ export default async function request(url, options) {
     method: options.method,
   };
   const response = await fetch(BaseUrl(url), opt);
+
+  console.log('response ',response)
   // checkStatus(response);
   return response.json();
 }

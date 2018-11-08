@@ -16,15 +16,15 @@ export default {
         if (pathname === '/astro/PersonalInformation') {
           setTokenFromQueryString(query);
           dispatch({
-            type:'userInfo',
-            payload:{}
-          })
+            type: 'userInfo',
+            payload: {},
+          });
         }
         if (pathname === '/astro/page') {
           dispatch({
-            type:'userInfo',
-            payload:{}
-          })
+            type: 'userInfo',
+            payload: {},
+          });
         } else if (pathname === '/astro/AstroItem') {
 
         }
@@ -51,13 +51,12 @@ export default {
     },
 
     //设置星座和性别
-    *constellation({ payload ,cb}, { call, put,select }) {
-      let params = payload
-
-      if(payload===undefined){
-        params = yield select(state=>{
-          const selectAstro = state.astro.selectAstro ;
-          const sex = state.astro.selectedSex ;
+    * constellation({ payload, cb }, { call, put, select }) {
+      let params = payload;
+      if (payload === undefined) {
+        params = yield select(state => {
+          const selectAstro = state.astro.selectAstro;
+          const sex = state.astro.selectedSex;
           return {
             sex: sex,
             constellation: selectAstro.name,
@@ -67,7 +66,7 @@ export default {
       // 设置星座
       const result = yield call(queryModifyConstellation, params);
       if (result.respMsg === 'successful') {
-        cb&&cb();
+        cb && cb();
       }
     },
 

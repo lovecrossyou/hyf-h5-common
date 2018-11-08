@@ -45,5 +45,14 @@ export async function fetchShareSellProfitRmb() {
   });
 }
 
+// 获取用户的钻石好友
+export async function fetchUserProfitDiamondFriendInfo(params) {
+  return request('/profit/userProfitDiamondFriendInfo',{
+    method:'post',
+    body:params
+  });
+}
+
+
 
 
