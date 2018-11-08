@@ -10,14 +10,13 @@ export default {
   state: {
     accountInfo: null,
     userProfitInfo: null,
-    userProfitInfo: null,
     userProfitAllFriendInfo: null,
     inviteProfitXtb: null,
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page') {
+        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView') {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
