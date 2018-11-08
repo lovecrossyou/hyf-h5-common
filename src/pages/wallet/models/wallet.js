@@ -10,7 +10,6 @@ export default {
   state: {
     accountInfo: null,
     userProfitInfo: null,
-    userProfitInfo: null,
     userProfitAllFriendInfo: null,
     inviteProfitXtb: null,
     // 钻石好友
@@ -21,7 +20,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page') {
+        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView') {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
