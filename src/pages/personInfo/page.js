@@ -36,7 +36,7 @@ function PersonalInformation(props) {
             <span>
  <input
    className={styles.file}
-   disabled
+   // disabled
    type="file"
    accept="image/*"
    onChange={(e) => {

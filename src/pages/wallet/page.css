@@ -183,7 +183,7 @@
 .rmbMainContainer_price_gold>big{
   font-size: 48px;
 }
-.rmbMainContainer_btn{
+:global(.rmbMainContainer_btn){
   width:95%;
   margin:84px auto;
 }

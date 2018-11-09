@@ -1,8 +1,9 @@
 // var qiniu = require('qiniu-js') ;
 //
+//
 // var config = {
 //   useCdnDomain: true,
-//   region: qiniu.region.z2
+//   region: qiniu.region.z1 //华北
 // };
 //
 // var putExtra = {
@@ -11,8 +12,8 @@
 //   mimeType: [] || null
 // };
 //
-//
-// var observable = qiniu.upload(file, key, token, putExtra, config)
+// const fileName = 'file_001' ;
+// var observable = qiniu.upload(file, fileName, token, putExtra, config)
 //
 // var subscription = observable.subscribe(observer) // 上传开始
 // // or

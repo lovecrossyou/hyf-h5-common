@@ -6,16 +6,16 @@ import { routerRedux } from 'dva/router';
 import rmbimg from '../../assets/renminbi.png';
 
 function RmbContainerView (props) {
-    const {rmbAmount} = props.store.accountInfo;
+    const {rmbAmount,canWithdrawRmb} = props.store.accountInfo;
     return(
       <div>
         <div className={styles.rmbMainContainer}>
           <img className={styles.rmbMainContainer_amountOfImage} src={rmbimg} alt=""/>
           <div className={styles.rmbMainContainer_price}>金额</div>
           <div className={styles.rmbMainContainer_price_gold}>￥<big>{rmbAmount/100}</big></div>
-          <div className={styles.rmbMainContainer_price}>可提现:<span>￥{rmbAmount/100}</span></div>
+          <div className={styles.rmbMainContainer_price}>可提现:<span>￥{canWithdrawRmb/100}</span></div>
         </div>
-        <div className={styles.rmbMainContainer_btn}>
+        <div className='rmbMainContainer_btn'>
           <Button>提现</Button>
         </div>
         <div className={styles.rmbFooter}>
