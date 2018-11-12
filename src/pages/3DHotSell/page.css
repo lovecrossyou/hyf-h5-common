@@ -66,7 +66,7 @@
 .hot_sell_list{
   margin-top: 42px;
 }
-.hot_sell_list_item{
+:global(.hot_sell_list_item){
   height:208px;
   display: flex;
   margin-bottom: 38px;

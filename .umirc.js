@@ -1,5 +1,8 @@
 export default {
   history: 'hash',
+  targets:{
+    ios:9
+  },
   // publicPath:'./',
   publicPath:'/xitenggamejar/dist/',
   base:'/xitenggamejar/',
@@ -8,7 +11,7 @@ export default {
       antd: true,
       dva: true,
       immer: true,
-      hd: true
+      hd: true,
     }],
   ],
   proxy: {
@@ -21,4 +24,5 @@ export default {
       pathRewrite: { "^/api" : "" }
     }
   },
+  extraBabelPresets: ['@lingui/babel-preset-react'],
 }

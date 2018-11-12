@@ -9,7 +9,7 @@ function HotSellView(props) {
   const { list } = props.store;
   const hotSellListItem = list.map((item, i) => {
     return (
-      <div className={styles.hot_sell_list_item} key={i}>
+      <div className='hot_sell_list_item' key={i} itemid={item.discountGameId}>
         <div className={styles.hot_sell_list_item_left}>
           <img src={item.productImageUrl} alt=""/>
         </div>

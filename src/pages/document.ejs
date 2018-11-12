@@ -33,7 +33,7 @@
 
   // 会员购买
   $('#root').on('click', '.vip_right_action', function() {
-    const vip_type = $(this).attr('vip_type');
+    var vip_type = $(this).attr('vip_type');
     console.log('会员购买以及升级 vip_type ', vip_type);
     wx.miniProgram.postMessage({ data: vip_type });
     wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
@@ -41,9 +41,9 @@
 
   // 会员升级
   $('#root').parent().on('click', '.btn_vip_upgrade', function() {
-    const state = window.g_app._store.getState();
-    const upgradeVIP = state.member.upgradeVIP;
-    let vip_type = upgradeVIP.type;
+    var state = window.g_app._store.getState();
+    var upgradeVIP = state.member.upgradeVIP;
+    var vip_type = upgradeVIP.type;
     if(vip_type==null){
       vip_type = 'user_to_higher_golden_vip' ;
     }
@@ -55,12 +55,12 @@
 
   // 确认选号后 返回
   $('#root').on('click', '.lottery_btn_confirm', function() {
-    const state = window.g_app._store.getState();
-    const dispatch = window.g_app._store.dispatch;
+    var state = window.g_app._store.getState();
+    var dispatch = window.g_app._store.dispatch;
 
-    const lotteryselect = state.lotteryselect;
-    const selectedBids = lotteryselect.selectedBids;
-    const setCode = lotteryselect.setCode;
+    var lotteryselect = state.lotteryselect;
+    var selectedBids = lotteryselect.selectedBids;
+    var setCode = lotteryselect.setCode;
 
     if (window.__wxjs_environment) {
       if (setCode != true) {
@@ -94,6 +94,13 @@
     console.log('新建地址');
     wx.miniProgram.navigateTo({ url: '/pages/address/addressList' });
   });
+
+  //3d精选 点击商品
+  $('#root').on('click', '.hot_sell_list_item', function() {
+    var itemid = $(this).attr('itemid');
+    wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
+  });
+
 
 
 </script>
