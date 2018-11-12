@@ -2,20 +2,24 @@
   width: 100%;
 }
 .price_details_head{
-  height: 240px;
   text-align: center;
   background: #FFFFFF;
   padding-top:62px;
-  box-sizing: border-box;
+  padding-bottom:46px;
 }
 .price_details_tit{
   font-size: 36px;
   color:#cc2636;
-  margin-bottom: 68px;
+}
+.price_details_tit_intro{
+  font-size: 30px;
+  color:#cc2636;
+  margin-top: 24px;
 }
 .price_details_num{
   font-size: 30px;
   color:#333333;
+  margin-top: 68px;
 }
 .price_details_num>span{
   color:#eeeeee;
@@ -25,6 +29,12 @@
 .price_details_section{
   margin-top:20px;
   background: #FFFFFF;
+}
+.price_details_section_title{
+  height: 88px;
+  line-height: 88px;
+  padding-left: 30px;
+  border-bottom: 1px solid #cccccc;
 }
 .price_details_section_item{
   width:100%;
@@ -51,4 +61,10 @@
 }
 .price_details_section_item_num{
   width:90px;
+}
+.unfold{
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background:#F29A3D
 }
