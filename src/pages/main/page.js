@@ -27,7 +27,9 @@ function App(props) {
       <br/>
       <Link to="/3DHotSell/page"><h1>3D热销</h1></Link>
       <br/>
-      <Link to="/awardDetail/page"><h1>奖品详情</h1></Link>
+      <Link to="/awardDetail/page"><h1>奖品设置</h1></Link>
+      <br/>
+      <Link to="/awardDetail/thePrizeForDetails"><h1>奖品详情</h1></Link>
     </div>
   );
 }
