@@ -28,7 +28,13 @@ export default {
   reducers: {
     save(state, action) {
       const type = action.payload;
-      return { ...state, userVipInfo: action.payload };
+      if(type === 'openByZero'){
+        return {
+          ...state,
+          page_src:zeroUrl
+        }
+      }
+      return state;
     },
   },
 };

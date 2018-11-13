@@ -1,0 +1,15 @@
+.box {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.btn {
+  width: 80px;
+  height: 40px;
+  background: green;
+  margin: 20px;
+}
+
+.btn-choose{
+  background: pink;
+}
