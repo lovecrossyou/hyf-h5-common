@@ -1,11 +1,12 @@
 const zeroUrl = 'http://pax4lf8m2.bkt.clouddn.com/rule_003.jpg';
+const threedUrl = 'http://pax4lf8m2.bkt.clouddn.com/threed.jpg';
 const commonUrl = 'http://pax4lf8m2.bkt.clouddn.com/rule_004.jpg';
 
 
 export default {
   namespace: 'rule',
   state: {
-    page_src: commonUrl //页面图片
+    page_src: threedUrl //页面图片
   },
   subscriptions: {
     setup({ dispatch, history }) {

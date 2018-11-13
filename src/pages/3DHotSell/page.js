@@ -4,17 +4,36 @@ import styles from './page.css';
 import icon_shouye_honghuo from '../../assets/icon_shouye_honghuo@3x.png';
 import {ActivityIndicator } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
-
-// function HotSellView(props) {
-//
-// }
+import util from '../../utils/util'
 
 class HotSellView extends React.Component{
+
+  state= {
+    timeObj:null
+  }
+
+  componentDidMount(){
+    this.timer = setInterval(()=>{
+      const { list } = this.props.store;
+      if(list.length!=0){
+        let p = list[0] ;
+        var openResultTime = p.openResultTime ;
+        let timeObj = util.showTickTime(openResultTime);
+        console.log(timeObj);
+        this.setState({
+          timeObj:timeObj
+        })
+      }
+    },1000);
+  }
+
   render(){
     const { list } = this.props.store;
+    const {timeObj} = this.state ;
+    if(timeObj==null)return null;
     const hotSellListItem = list.map((item, i) => {
       return (
-        <div className='hot_sell_list_item' key={i} itemid={item.discountGameId}>
+        <div className='hot_sell_list_item' key={i} itemID={item.discountGameId}>
           <div className={styles.hot_sell_list_item_left}>
             <img src={item.productImageUrl} alt=""/>
           </div>
@@ -41,7 +60,7 @@ class HotSellView extends React.Component{
             <div className={styles.hot_sell_headbg}></div>
             <div className={styles.hot_sell_head_main}>
               <div>揭晓中签：每天22:00</div>
-              <div>距揭晓<span>10</span>:<span>20</span>:<span>09</span></div>
+              <div>距揭晓<span>{timeObj.hour}</span>:<span>{timeObj.minute}</span>:<span>{timeObj.sec}</span></div>
               <div>选福彩3D号码，中签即免费送，不中签全额团款（也可全额购买）商品均来源于天猫。</div>
             </div>
           </div>
