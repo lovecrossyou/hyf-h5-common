@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'dva';
 import {List,Button,InputItem,Picker,ActivityIndicator,Toast} from 'antd-mobile';
 import { createForm } from 'rc-form';
-import { district } from 'antd-mobile-demo-data';
 import {routerRedux} from 'dva/router';
 import commonCityData from '../../utils/city'
 

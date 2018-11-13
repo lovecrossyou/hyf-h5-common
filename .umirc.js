@@ -24,5 +24,4 @@ export default {
       pathRewrite: { "^/api" : "" }
     }
   },
-  extraBabelPresets: ['@lingui/babel-preset-react'],
 }
