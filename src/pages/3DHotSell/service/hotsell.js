@@ -1,7 +1,7 @@
 import request from '../../../utils/request';
 
 export async function querySpecProduct (params) {
-  return request('/discountGameList/byTimeLimit',{
+  return request('/discountGameList/byTimeLimitChoice',{
     method: 'post',
     body: params,
   })
