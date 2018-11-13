@@ -21,12 +21,16 @@
     "umi-plugin-react": "^1.1.1"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix", "git add"]
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "antd-mobile": "^2.2.5",
     "babel-preset-env": "^1.7.0",
     "qiniu-js": "^2.5.2",
