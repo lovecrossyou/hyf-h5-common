@@ -24,8 +24,6 @@ class HotSellView extends React.Component{
           timeObj:timeObj
         })
       }
-
-
     },1000);
   }
 

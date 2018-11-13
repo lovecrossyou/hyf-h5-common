@@ -19,10 +19,12 @@ export default {
   },
   effects: {
     *fetch({ payload }, { call, put }) {
-      const list = yield call(querySpecProduct,{
+      const params = {
         pageNo:0,
         size:10
-      });
+      }
+      const list = yield call(querySpecProduct,params);
+
       yield put({
         type: 'save',
         payload: list
