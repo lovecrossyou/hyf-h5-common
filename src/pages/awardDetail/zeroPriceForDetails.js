@@ -3,22 +3,33 @@ import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
 import DocumentTitle from 'react-document-title';
+import { ActivityIndicator } from 'antd-mobile';
 
 
 
 function ZeroPriceForDetails(props) {
+  const {dataSSQ} = props.store ;
+  if(dataSSQ===null){
+    return <ActivityIndicator
+      color="white"
+      toast
+      animating={props.loading}
+    />
+  }
+
+  const {lotteryStage,winCodeCount,winUserCount,winUserInfoModelList} = dataSSQ ;
 
   return <DocumentTitle title='中签详情'>
     <div>
       <div className={styles.price_details_container}>
         <div className={styles.price_details_head}>
-          <div className={styles.price_details_tit}>0元抢金条第2018184期</div>
+          <div className={styles.price_details_tit}>0元抢金条第{lotteryStage}期</div>
           <div className={styles.price_details_tit_intro}
                onClick={()=>{
                  props.dispatch(routerRedux.push('/awardDetail/page'))
                }}
           >奖品详情>></div>
-          <div className={styles.price_details_num}>中签人数：3人<span>|</span>中签注数：3注</div>
+          <div className={styles.price_details_num}>中签人数：{winUserCount}人<span>|</span>中签注数：{winCodeCount}注</div>
         </div>
         <div className={styles.price_details_section}>
           <div className={styles.price_details_section_title}>一等奖（1注）</div>
@@ -40,6 +51,7 @@ function ZeroPriceForDetails(props) {
 
 export default connect(state=>{
   return {
-    store:state
+    store: state.award,
+    loading:state.loading.global
   }
 })(ZeroPriceForDetails)
