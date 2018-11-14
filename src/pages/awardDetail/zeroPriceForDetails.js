@@ -17,7 +17,14 @@ function ZeroPriceForDetails(props) {
     />
   }
 
-  const {lotteryStage,winCodeCount,winUserCount,winUserInfoModelList} = dataSSQ ;
+  const {lotteryStage,winCodeCount,winUserCount,winUserInfoModelList,zeroGameWinDetailModel} = dataSSQ ;
+
+console.log(1111111111111111,zeroGameWinDetailModel);
+
+  const luckyguy = Object.keys(zeroGameWinDetailModel).forEach((key) => {
+    console.log(key)
+    }
+  );
 
   return <DocumentTitle title='中签详情'>
     <div>
@@ -32,18 +39,82 @@ function ZeroPriceForDetails(props) {
           <div className={styles.price_details_num}>中签人数：{winUserCount}人<span>|</span>中签注数：{winCodeCount}注</div>
         </div>
         <div className={styles.price_details_section}>
-          <div className={styles.price_details_section_title}>一等奖（1注）</div>
-          <div className={styles.price_details_section_item}>
-          <span className={styles.price_details_section_item_headportrait}>
-            {/*<img src="" alt=""/>*/}
-          </span>
-            <span className={styles.price_details_section_item_name}>贝贝</span>
-            <span className={styles.price_details_section_item_num}>2注</span>
-            <span>佳能750D单反套机 2件</span>
+          <div className={styles.price_zero_details_section_item}>
+            <div className={styles.price_details_section_title}>一等奖（{zeroGameWinDetailModel.firstWinCodeCount}注）</div>
+            {
+              zeroGameWinDetailModel.firstWinUserInfoModel.map((item,i)=>{
+                return <div className={styles.price_details_section_item}>
+                    <span className={styles.price_details_section_item_headportrait}>
+                      <img src={item.winUserIconUrl} alt=""/>
+                    </span>
+                  <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
+                  <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
+                  <span>{item.productName}</span>
+                </div>
+              })
+            }
           </div>
-          {/*<div className={styles.unfold}>展开v</div>*/}
+          <div className={styles.price_zero_details_section_item}>
+            <div className={styles.price_details_section_title}>二等奖（{zeroGameWinDetailModel.secondWinCodeCount}注）</div>
+            {
+              zeroGameWinDetailModel.secondWinUserInfoModel.map((item,i)=>{
+                return <div className={styles.price_details_section_item}>
+                    <span className={styles.price_details_section_item_headportrait}>
+                      <img src={item.winUserIconUrl} alt=""/>
+                    </span>
+                  <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
+                  <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
+                  <span>{item.productName}</span>
+                </div>
+              })
+            }
+          </div>
+          <div className={styles.price_zero_details_section_item}>
+            <div className={styles.price_details_section_title}>三等奖（{zeroGameWinDetailModel.thirdWinCodeCount}注）</div>
+            {
+              zeroGameWinDetailModel.thirdWinUserInfoModel.map((item,i)=>{
+                return <div className={styles.price_details_section_item}>
+                    <span className={styles.price_details_section_item_headportrait}>
+                      <img src={item.winUserIconUrl} alt=""/>
+                    </span>
+                  <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
+                  <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
+                  <span>{item.productName}</span>
+                </div>
+              })
+            }
+          </div>
+          <div className={styles.price_zero_details_section_item}>
+            <div className={styles.price_details_section_title}>四等奖（{zeroGameWinDetailModel.fourthWinCodeCount}注）</div>
+            {
+              zeroGameWinDetailModel.fourthWinUserInfoModel.map((item,i)=>{
+                return <div className={styles.price_details_section_item}>
+                    <span className={styles.price_details_section_item_headportrait}>
+                      <img src={item.winUserIconUrl} alt=""/>
+                    </span>
+                  <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
+                  <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
+                  <span>{item.productName}</span>
+                </div>
+              })
+            }
+          </div>
+          <div className={styles.price_zero_details_section_item}>
+            <div className={styles.price_details_section_title}>五等奖（{zeroGameWinDetailModel.fifthWinCodeCount}注）</div>
+            {
+              zeroGameWinDetailModel.fifthWinUserInfoModel.map((item,i)=>{
+                return <div className={styles.price_details_section_item}>
+                    <span className={styles.price_details_section_item_headportrait}>
+                      <img src={item.winUserIconUrl} alt=""/>
+                    </span>
+                  <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
+                  <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
+                  <span>{item.productName}</span>
+                </div>
+              })
+            }
+          </div>
         </div>
-
       </div>
     </div>
   </DocumentTitle>

@@ -1,4 +1,3 @@
-import {queryAddress} from "../../address/services/address";
 import {queryWinGameListByStageDetail} from "../service/awardDetail";
 
 const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';

@@ -31,9 +31,9 @@ function ThePriceForDetails(props) {
             return (
               <div className={styles.price_details_section}>
                 <div className={styles.price_details_section_item}>
-          <span className={styles.price_details_section_item_headportrait}>
-            <img src={data.winUserIconUrl} alt=""/>
-          </span>
+                  <span className={styles.price_details_section_item_headportrait}>
+                    <img src={data.winUserIconUrl} alt=""/>
+                  </span>
                   <span className={styles.price_details_section_item_name}>{data.winUserName}</span>
                   <span className={styles.price_details_section_item_num}>{data.winUserPurchaseCount}注</span>
                   <span>{data.productName} {data.winCount}件</span>
