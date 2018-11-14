@@ -27,13 +27,20 @@
   padding-right:60px;
 }
 .price_details_section{
-  margin-top:20px;
+  width: 100%;
+  margin-top:30px;
+}
+.price_zero_details_section_item{
+  width:100%;
+  margin-bottom:30px;
   background: #FFFFFF;
 }
 .price_details_section_title{
+  width:100%;
   height: 88px;
   line-height: 88px;
   padding-left: 30px;
+  box-sizing: border-box;
   border-bottom: 1px solid #cccccc;
 }
 .price_details_section_item{

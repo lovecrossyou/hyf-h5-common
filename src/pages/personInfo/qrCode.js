@@ -6,9 +6,6 @@ import styles from './page.css' ;
 
 function QrCode(props) {
   const { qrData,userInfo } = props.personInfo;
-
-  console.log('userInfo ', userInfo);
-  console.log('qrData ', qrData);
   return <DocumentTitle title='我的二维码'>
     <div className={styles.qrcode}>
       <div className={styles.content}>
@@ -23,7 +20,7 @@ function QrCode(props) {
           <img className={styles.qr_img} src={qrData} alt=''></img>
         </div>
         <div className={styles.footer}>
-          扫一扫上面二维码图案
+          扫码成为我的钻石好友
         </div>
       </div>
     </div>
