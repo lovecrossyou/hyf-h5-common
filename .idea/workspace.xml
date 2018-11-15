@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a48791-008b-44e7-ab83-63d10c710c7f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/models/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/models/award.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,8 +48,8 @@
       <file leaf-file-name="thePrizeForDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="828">
+              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -65,14 +57,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zeroPriceForDetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zeroPriceForDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
+            <state relative-caret-position="1334">
+              <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AstroItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/3DHotSell/page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="80" column="1" lean-forward="true" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -80,8 +104,8 @@
       <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="1265">
+              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -89,8 +113,8 @@
       <file leaf-file-name="award.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/models/award.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="894">
-              <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+            <state relative-caret-position="1449">
+              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -99,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -118,9 +142,9 @@
       <find>AddressEdit</find>
       <find>district</find>
       <find>http://192.168.1.251:8000/#/awardDetail/zeroPriceForDetails</find>
-      <find>price_details_section_item</find>
       <find>queryWinGameListByStageDetail</find>
       <find>price_details_section_title</find>
+      <find>price_details_section_item</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,6 +165,8 @@
         <option value="$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js" />
         <option value="$PROJECT_DIR$/src/pages/awardDetail/page.css" />
         <option value="$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js" />
+        <option value="$PROJECT_DIR$/src/pages/astro/AstroItem.js" />
+        <option value="$PROJECT_DIR$/src/pages/3DHotSell/page.css" />
       </list>
     </option>
   </component>
@@ -170,8 +196,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="514" />
-    <option name="y" value="-18" />
+    <option name="x" value="461" />
+    <option name="y" value="-17" />
     <option name="width" value="1423" />
     <option name="height" value="1041" />
   </component>
@@ -201,6 +227,28 @@
               <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="3DHotSell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="astro" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hyf-h5-common" type="b2602c69:ProjectViewProjectNode" />
@@ -312,26 +360,27 @@
       <workItem from="1542116797482" duration="327000" />
       <workItem from="1542157585028" duration="3769000" />
       <workItem from="1542162479160" duration="333000" />
-      <workItem from="1542163613303" duration="9047000" />
+      <workItem from="1542163613303" duration="15148000" />
+      <workItem from="1542245163256" duration="1347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14321000" />
+    <option name="totallyTimeSpent" value="21769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.58074534" weight="0.27220216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5791925" visible="true" weight="0.15542677" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50357425" side_tool="true" weight="0.20509194" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info id="npm" order="2" sideWeight="0.41925466" side_tool="true" weight="0.19863014" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722" weight="0.30227518" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32936078" />
+      <window_info id="npm" order="2" sideWeight="0.42080745" side_tool="true" visible="true" weight="0.15542677" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49722" visible="true" weight="0.30227518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.34223828" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49960285" weight="0.14626218" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49960285" weight="0.0064935065" />
       <window_info id="Favorites" order="6" side_tool="true" weight="0.32982087" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Console" order="7" />
@@ -355,6 +404,66 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="63" column="27" lean-forward="true" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1265">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/models/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.umirc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -366,9 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -385,9 +491,6 @@
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/util.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/authority.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -414,9 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -431,9 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -443,9 +540,6 @@
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/util.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/authority.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -472,9 +566,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -484,9 +575,6 @@
           <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.umirc.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/authority.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -513,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -523,9 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,9 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/util.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -578,50 +657,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/models/award.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        <state relative-caret-position="1449">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/thePrizeForDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="1265">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/zeroPriceForDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
+        <state relative-caret-position="1334">
+          <caret line="63" column="27" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/astro/AstroItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/3DHotSell/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="80" column="1" lean-forward="true" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
         </state>
       </provider>
     </entry>
