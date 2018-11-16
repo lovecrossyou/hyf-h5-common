@@ -97,7 +97,7 @@
   });
 
   // 用户信息 收货地址
-  $('#root').on('click touchstart', '.information_addr_btn', function() {
+  $('#root').on('click', '.information_addr_btn', function() {
     console.log('新建地址');
     wx.miniProgram.navigateTo({ url: '/pages/address/addressList' });
   });
