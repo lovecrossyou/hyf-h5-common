@@ -5,7 +5,6 @@ import { routerRedux } from 'dva/router';
 import icon_left from '../../assets/astro/left.jpg';
 import { Picker, List, ActivityIndicator } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
-
 import astroData from '../../utils/astroData';
 
 const Item = List.Item;
@@ -36,7 +35,6 @@ function PersonalInformation(props) {
             <span>
  <input
    className={styles.file}
-   // disabled
    type="file"
    accept="image/*"
    onChange={(e) => {
@@ -46,7 +44,16 @@ function PersonalInformation(props) {
      } else if (e.target) {
        files = e.target.files;
      }
-     console.log('files ',files);
+     props.dispatch({
+       type:'personInfo/upload',
+       payload:files[0],
+       cb:()=>{
+         props.dispatch({
+           type:'personInfo/userInfo',
+         })
+       }
+     })
+
    }}
  />
               <img className={styles.icon_name} src={icon} alt=""/>

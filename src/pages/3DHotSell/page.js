@@ -61,7 +61,7 @@ class HotSellView extends React.Component{
             <div className={styles.hot_sell_head_main}>
               <div>揭晓中签：每天22:00</div>
               <div>距揭晓<span>{timeObj.hour}</span>:<span>{timeObj.minute}</span>:<span>{timeObj.sec}</span></div>
-              <div>选福彩3D号码，中签即免费送，不中签全额团款（也可全额购买）商品均来源于天猫。</div>
+              <div>选福彩3D号码，中签即免费送，不中签全额退款（也可全额购买）商品均来源于天猫。</div>
             </div>
           </div>
           <div className={styles.hot_sell_section}>

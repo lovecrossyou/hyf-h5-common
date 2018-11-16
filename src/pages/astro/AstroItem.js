@@ -34,9 +34,9 @@ function AstroItem(props) {
         <div className={styles.astroItem_astrology_name}>
           {astrologyItem}
         </div>
-        <div className={styles.astroItem_icon_bg_cuowu}>
-          <img src={icon_bg_cuowu} alt=""/>
-        </div>
+        {/*<div className={styles.astroItem_icon_bg_cuowu}>*/}
+          {/*<img src={icon_bg_cuowu} alt=""/>*/}
+        {/*</div>*/}
       </div>
     </DocumentTitle>
 

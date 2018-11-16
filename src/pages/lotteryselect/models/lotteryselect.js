@@ -1,9 +1,9 @@
-import { Toast } from 'antd-mobile';
+import {Toast} from 'antd-mobile';
 import {
   queryClientOrderDetailByPlatform, queryCreateOrder, queryParticipate,
   querySetCode,
 } from '../services/lotteryselect';
-import { setTokenFromQueryString } from '../../../utils/authority';
+import {setTokenFromQueryString} from '../../../utils/authority';
 
 function deepClone(data) {
   const type = this.judgeType(data);
@@ -91,7 +91,7 @@ class Bid {
       let base = 0;
       if (color === BLUE_COLOR) {
         base = 16;
-      } else if(type === '3d') {
+      } else if (type === '3d') {
         base = 9;
       }
       else {
@@ -268,8 +268,8 @@ export default {
     setCode: false,
   },
   subscriptions: {
-    setup({ dispatch, history }) {
-      return history.listen(({ pathname, query }) => {
+    setup({dispatch, history}) {
+      return history.listen(({pathname, query}) => {
         if (pathname === '/lotteryselect/page') {
           setTokenFromQueryString(query);
           const totalCount = parseInt(query.totalCount);
@@ -287,7 +287,7 @@ export default {
           // console.log('lotteryselect setCode', setCode);
           dispatch({
             type: 'init',
-            payload: { totalCount, type, discountGameId, inviteGroupId, setCode },
+            payload: {totalCount, type, discountGameId, inviteGroupId, setCode},
           });
 
           dispatch({
@@ -303,9 +303,9 @@ export default {
     },
   },
   effects: {
-    * init({ payload }, { call, put }) {
+    * init({payload}, {call, put}) {
       //初始化选号面板
-      const { totalCount, type, discountGameId, inviteGroupId, setCode } = payload;
+      const {totalCount, type, discountGameId, inviteGroupId, setCode} = payload;
       let balls = [];
       if (type === '3d') {
         balls = generates3D();
@@ -325,7 +325,7 @@ export default {
       });
     },
 
-    * delete({ payload }, { call, put }) {
+    * delete({payload}, {call, put}) {
       yield put({
         type: 'save', payload: {
           list: [],
@@ -333,45 +333,43 @@ export default {
       });
     },
 
-    * createOrder({ payload, cb }, { call, put }) {
+    * createOrder({payload, cb}, {call, put}) {
       const res = yield call(queryCreateOrder, payload);
       cb(res);
     },
 
-    * participate({ payload, cb }, { call, put }) {
+    * participate({payload, cb}, {call, put}) {
       const res = yield call(queryParticipate, payload);
       cb(res);
     },
 
-    * clientOrderDetail({ payload, cb }, { call, put }) {
+    * clientOrderDetail({payload, cb}, {call, put}) {
       const res = yield call(queryClientOrderDetailByPlatform, payload);
       cb(res);
     },
 
     // 确认福彩选号
-    * confirm_fucai({ payload, cb }, { call, put, select }) {
-      const { lotteryStore, addressStore } = yield select(state => {
+    * confirm_fucai({payload, cb}, {call, put, select}) {
+      const {lotteryStore, addressStore} = yield select(state => {
         const addressStore = state.address;
         const lotteryStore = state.lotteryselect;
-        return { lotteryStore, addressStore };
+        return {lotteryStore, addressStore};
       });
 
       const discountGameId = lotteryStore.discountGameId;
       const inviteGroupId = lotteryStore.inviteGroupId;
       const activeAddress = addressStore.activeAddress;
       const setCode = lotteryStore.setCode;
-      // if (activeAddress == null) {
-      //   Toast.show('请选择地址！', 1);
-      //   return;
-      // }
       const selectedBids = lotteryStore.selectedBids;
 
-      function formatText(text){
+      function formatText(text) {
         let value = parseInt(text);
-          if (value < 10){
-             return '0' + text;
-          }return text;
+        if (value < 10) {
+          return '0' + text;
+        }
+        return text;
       }
+
       const convertBid = bid => {
         return bid.balls.reduce(((previousValue, currentValue) => {
           if (previousValue === '') return formatText(currentValue.text);
@@ -382,7 +380,7 @@ export default {
         let resultList = [];
         for (let bidItem of selectedBids) {
           let bidStr = convertBid(bidItem);
-          for(let i = 0; i < bidItem.buyCount; i++){
+          for (let i = 0; i < bidItem.buyCount; i++) {
             resultList.push(bidStr);
           }
         }
@@ -398,12 +396,20 @@ export default {
       };
 
       let resp = null;
-      if (setCode&&setCode===true) {
+      if (setCode && setCode === 'true') {
         params = Object.assign({}, params, {
           code: params.codeList[0],
         });
         resp = yield call(querySetCode, params);
-
+        if (resp.error) {
+          yield put({
+            type: 'hideModal',
+          });
+          Toast.fail(resp.message, 1.5);
+          // return;
+        }
+        cb&&cb({discountGameId, groupId:null});
+        return ;
 
       } else {
         if (inviteGroupId && inviteGroupId !== undefined) {
@@ -420,22 +426,20 @@ export default {
         Toast.fail(resp.message, 1.5);
         return;
       }
-      const { platformOrderNo } = resp;
+      const {platformOrderNo} = resp;
       if (platformOrderNo) {
         const data = yield call(queryClientOrderDetailByPlatform, {
           platformOrderNo: platformOrderNo,
         });
-
         const groupId = data.discountGameGroupModel.groupId;
-
-        cb({discountGameId,groupId});
+        cb({discountGameId, groupId});
       }
     },
 
   },
   reducers: {
     save(state, action) {
-      let { totalCount, type, discountGameId, inviteGroupId, setCode } = action.payload;
+      let {totalCount, type, discountGameId, inviteGroupId, setCode} = action.payload;
       return {
         ...state,
         codes_panel: action.payload.balls,
@@ -454,7 +458,7 @@ export default {
       for (let i = 0; i < bidArray.length; i++) {
         result.push(Bid.copy(bidArray[i]));
       }
-      const state_now = { ...state, selectedBids: result };
+      const state_now = {...state, selectedBids: result};
       console.log(state_now);
       return state_now;
     },
@@ -480,21 +484,21 @@ export default {
         code_pannel = resetPannel(state.codes_panel);
       }
 
-      return { ...state, currentBid: currentBid, selectedBids: selectedBids, codes_panel: code_pannel };
+      return {...state, currentBid: currentBid, selectedBids: selectedBids, codes_panel: code_pannel};
     },
 
     delBid(state, action) {
       let index = action.payload;
       let selectBids = state.selectedBids;
       selectBids.splice(index, 1);
-      return { ...state, selectBids: selectBids };
+      return {...state, selectBids: selectBids};
     },
 
     setBidCount(state, action) {
-      let { index, count } = action.payload;
+      let {index, count} = action.payload;
       let selectBids = state.selectedBids;
       selectBids[index].setCount(count);
-      return { ...state, selectedBids: selectBids };
+      return {...state, selectedBids: selectBids};
     },
 
     unSelectBall(state, action) {
@@ -503,7 +507,7 @@ export default {
       let ball = action.payload;
       updatePannel(state.codes_panel, ball);
       currentBid.unSelectBall(ball);
-      return { ...state, currentBid: currentBid, codes_panel: codes_panel };
+      return {...state, currentBid: currentBid, codes_panel: codes_panel};
     },
 
     jiXuan(state, action) {
@@ -516,7 +520,7 @@ export default {
       for (let i = 0; i < state.totalCount; i++) {
         selectedBids.push(new Bid(type, true));
       }
-      return { ...state, selectedBids, code_pannel, currentBid };
+      return {...state, selectedBids, code_pannel, currentBid};
     },
 
     //地址选择的显示与隐藏
