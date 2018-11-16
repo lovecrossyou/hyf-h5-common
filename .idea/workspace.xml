@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a48791-008b-44e7-ab83-63d10c710c7f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.umirc.js" afterPath="$PROJECT_DIR$/.umirc.js" />
-      <change beforePath="$PROJECT_DIR$/src/global.css" afterPath="$PROJECT_DIR$/src/global.css" />
-      <change beforePath="$PROJECT_DIR$/src/pages/3DHotSell/page.js" afterPath="$PROJECT_DIR$/src/pages/3DHotSell/page.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" afterPath="$PROJECT_DIR$/src/pages/astro/AstroItem.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/document.ejs" afterPath="$PROJECT_DIR$/src/pages/document.ejs" />
-      <change beforePath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" afterPath="$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/models/personInfo.js" afterPath="$PROJECT_DIR$/src/pages/personInfo/models/personInfo.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/page.css" afterPath="$PROJECT_DIR$/src/pages/personInfo/page.css" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/page.js" afterPath="$PROJECT_DIR$/src/pages/personInfo/page.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/service/personInfo.js" afterPath="$PROJECT_DIR$/src/pages/personInfo/service/personInfo.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages/wallet/page.css" afterPath="$PROJECT_DIR$/src/pages/wallet/page.css" />
-      <change beforePath="$PROJECT_DIR$/src/utils/authority.js" afterPath="$PROJECT_DIR$/src/utils/authority.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/config.js" afterPath="$PROJECT_DIR$/src/utils/config.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/request.js" afterPath="$PROJECT_DIR$/src/utils/request.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uploader/config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uploader/fileUploader.js" afterPath="$PROJECT_DIR$/src/utils/uploader/fileUploader.js" />
+      <change beforePath="$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js" afterPath="$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -115,6 +98,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="rmbContainerView.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/astro/page.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,21 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lotteryselect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="398" column="29" lean-forward="false" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/wallet/page.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2865">
-              <caret line="191" column="18" lean-forward="false" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
+            <state relative-caret-position="51">
+              <caret line="406" column="13" lean-forward="true" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -217,6 +200,7 @@
         <option value="$PROJECT_DIR$/src/utils/authority.js" />
         <option value="$PROJECT_DIR$/src/utils/config.js" />
         <option value="$PROJECT_DIR$/.umirc.js" />
+        <option value="$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js" />
       </list>
     </option>
   </component>
@@ -246,8 +230,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="46" />
+    <option name="x" value="20" />
+    <option name="y" value="30" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -280,11 +264,6 @@
             <path>
               <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
               <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -292,13 +271,6 @@
               <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="astro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
@@ -306,14 +278,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="lotteryselect" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
@@ -422,16 +386,15 @@
       <workItem from="1542163613303" duration="15148000" />
       <workItem from="1542245163256" duration="1347000" />
       <workItem from="1542252337729" duration="14816000" />
-      <workItem from="1542359177719" duration="1379000" />
+      <workItem from="1542359177719" duration="1458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37964000" />
+    <option name="totallyTimeSpent" value="38043000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="46" width="1280" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="20" y="30" width="1280" height="777" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -439,9 +402,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20509194" sideWeight="0.50357425" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29864973" sideWeight="0.43838385" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27419356" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21554253" sideWeight="0.49960285" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29864973" sideWeight="0.5616162" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27419356" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43255132" sideWeight="0.49960285" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29864973" sideWeight="0.5616162" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -748,16 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/services/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -851,8 +804,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="398" column="29" lean-forward="false" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
+        <state relative-caret-position="51">
+          <caret line="406" column="13" lean-forward="true" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/wallet/rmbContainerView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
