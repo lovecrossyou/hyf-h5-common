@@ -109,7 +109,7 @@ console.log(1111111111111111,zeroGameWinDetailModel);
                     </span>
                   <span className={styles.price_details_section_item_name}>{item.winUserName}</span>
                   <span className={styles.price_details_section_item_num}>{item.winCodeCount}注</span>
-                  <span>{item.productName}</span>
+                  <span className={styles.price_details_section_item_productname}>{item.productName}</span>
                 </div>
               })
             }
