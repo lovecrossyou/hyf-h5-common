@@ -106,6 +106,19 @@
       var itemid = $(this).attr('itemid');
       wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
     });
+
+
+
+    // 生成分享 qrCodeTips
+    $('#root').parent().on('click', '.btn_qrcode_share', function() {
+      var state = window.g_app._store.getState();
+      var personInfo = state.personInfo;
+      var qrCodeTips = personInfo.qrCodeTips ;
+      // wx.miniProgram.postMessage({ data: qrCodeTips });
+      wx.miniProgram.navigateTo({ url: '/pages/QR-code/code-share?qrCodeTips='+qrCodeTips});
+    });
+
+
   })
 </script>
 </html>

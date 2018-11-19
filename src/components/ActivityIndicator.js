@@ -3,7 +3,7 @@
  */
 
 import styles from './page.css'
-const loadingIcon = 'http://pax4lf8m2.bkt.clouddn.com/xiteng_loading.gif' ;
+import loadingIcon  from './loading.gif';
 export const ActivityIndicator = ({animating})=>{
   if(!animating)return null ;
   return <div className={styles.activityIndicator}>
