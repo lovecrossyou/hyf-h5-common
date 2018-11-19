@@ -143,6 +143,11 @@
   width:80px;
   height:80px;
 }
+.monthly_focus_section_list_name{
+  width:240px;
+  height: 30px;
+  overflow: hidden;
+}
 .monthly_focus_section_list_portion{
   font-size: 24px;
 }
