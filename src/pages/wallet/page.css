@@ -186,6 +186,7 @@
 :global(.rmbMainContainer_btn){
   width:95%;
   margin:84px auto;
+  cursor: pointer;
 }
 .rmbFooter{
   position: fixed;

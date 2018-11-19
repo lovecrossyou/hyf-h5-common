@@ -7,3 +7,5 @@ html, body, #root {
 body {
   margin: 0;
 }
+
+.div {     cursor: pointer; }

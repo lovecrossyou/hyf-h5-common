@@ -1,8 +1,0 @@
-{
-  "AccessKey": "jGR8a8mMKth60oAUwX8Ec1aY92-lN1-YK-yYcKYw",  // https://portal.qiniu.com/user/key
-  "SecretKey": "4aFnbbLgJzkUy2XrDbN-KQm2BsWIWxPL7N2tBCJf",
-  "Bucket": "xiteng",
-  "Port": 9000,
-  "UptokenUrl": "https://www.xiteng.com/xitenggamejar/discountGame/qiniu/getUpToken",
-  "Domain": "idv093d.qiniudns.com" // bucket domain eg:http://qiniu-plupload.qiniudn.com/
-}

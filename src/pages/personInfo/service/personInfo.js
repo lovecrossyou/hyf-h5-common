@@ -61,7 +61,7 @@ export async function modifyName(params) {
 
 // 修改头像
 export async function modifyIcon(params) {
-  return request('/constellation/detail',{
+  return request('/user/modify/icon',{
     method:'post',
     body:params
   });

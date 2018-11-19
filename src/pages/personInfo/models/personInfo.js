@@ -4,9 +4,11 @@
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 import {
-  generateQRCode, modifyName, queryConstellationDetail, queryModifyConstellation,
+  generateQRCode, modifyIcon, modifyName, queryConstellationDetail, queryModifyConstellation,
   queryUserInfo,
 } from '../service/personInfo';
+import uploadFile from '../../../utils/uploader/fileUploader'
+
 
 export default {
   namespace: 'personInfo',
@@ -103,6 +105,16 @@ export default {
         });
       }
     },
+
+    *upload({ payload, cb }, { call, put, select }) {
+     const res = yield uploadFile(payload,progress=>{
+        console.log('progress ',progress)
+      });
+     yield call(modifyIcon,{
+       icon:res
+     })
+      cb&&cb();
+    }
   },
   reducers: {
     saveUserInfo(state, action) {
