@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'dva';
 import DocumentTitle from 'react-document-title';
-import { ActivityIndicator } from 'antd-mobile';
 
 
 import styles from './page.css';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 function ThePriceForDetails(props) {
   const {data3D} = props.store ;

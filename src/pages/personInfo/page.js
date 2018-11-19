@@ -3,9 +3,10 @@ import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
 import icon_left from '../../assets/astro/left.jpg';
-import { Picker, List, ActivityIndicator } from 'antd-mobile';
+import { Picker, List } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import astroData from '../../utils/astroData';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -98,11 +99,9 @@ function PersonalInformation(props) {
             <Item extra={astroData.astroName(constellation)} arrow="horizontal" onClick={() => {
               props.dispatch(routerRedux.push('/astro/AstroItem'));
             }}>星座</Item>
-
-            <div className='information_addr_btn'>
+            <a className='information_addr_btn' >
               <Item extra={address} arrow="horizontal">送货地址</Item>
-            </div>
-
+            </a>
           </List>
           <ActivityIndicator
             toast

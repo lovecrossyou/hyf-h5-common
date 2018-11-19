@@ -3,7 +3,7 @@ import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
 import DocumentTitle from 'react-document-title';
-import { ActivityIndicator } from 'antd-mobile';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 
 

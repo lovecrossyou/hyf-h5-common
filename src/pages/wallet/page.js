@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import { Toast, ActivityIndicator } from 'antd-mobile';
+import { Toast } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 
 import assets_icon_rmbaccount from '../../assets/assets_icon_rmbaccount@2x.png';
@@ -15,6 +15,7 @@ import icon_rmb from '../../assets/icon_rmb@2x.png';
 import assets_icon_vip from '../../assets/assets_icon_vip@2x.png';
 import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 import styles from './page.css';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 const ContentPage = ({ accountInfo, userProfitAllFriendInfo, userProfitInfo, dispatch }) => {
 

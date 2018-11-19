@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Modal, Button, ActivityIndicator, Radio } from 'antd-mobile';
+import { Modal, Button, Radio } from 'antd-mobile';
 
 import styles from './page.css';
 import diamondsImgIcon from '../../assets/icon_diamonds_vip.png';
@@ -15,6 +15,7 @@ import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
 
 import checked_icon from '../../assets/vip/icon_huiyuan_shengji_xuanzhong@2x.png' ;
 import unchecked_icon from '../../assets/vip/icon_huiyuan_shengji@2x.png' ;
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 const RadioItem = Radio.RadioItem;
 
 

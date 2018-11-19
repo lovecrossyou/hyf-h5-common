@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Result, Icon, WhiteSpace, ActivityIndicator } from 'antd-mobile';
+import { Result, Icon, WhiteSpace } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import styles from './page.css';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 
 const Fail = () => {
