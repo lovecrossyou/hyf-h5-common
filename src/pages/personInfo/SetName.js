@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'dva';
-import {InputItem ,Button,ActivityIndicator} from 'antd-mobile';
+import {InputItem ,Button} from 'antd-mobile';
 import { routerRedux } from 'dva/router';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 
 class SetName extends React.Component{

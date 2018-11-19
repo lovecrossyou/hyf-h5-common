@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
-import { ActivityIndicator} from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 
 import icon_haoyou_zuanshi from '../../assets/icon_haoyou_zuanshi@2x.png';
 import icon_haoyou_huangjin from '../../assets/icon_haoyou_huangjin@2x.png';
 import me_arrow from '../../assets/me_arrow@2x.png';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 
 

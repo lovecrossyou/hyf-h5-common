@@ -404,5 +404,5 @@
 
 :global(.information_addr_btn){
   cursor:pointer;
-
+  -webkit-tap-highlight-color: transparent;
 }

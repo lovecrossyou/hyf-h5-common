@@ -15,99 +15,97 @@
 <div id="root"></div>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 <script type="text/javascript" src="//cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
-
-<!--<script src="https://apps.bdimg.com/libs/jquery/2.2.4/jquery.min.js"></script>-->
 </body>
 <script>
 
-  //银行卡列表
-  $('#root').on('click', '.wallet_bank', function() {
-    console.log('银行卡列表');
-    wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
+  $(document).ready(function(){
+    //银行卡列表
+    $('#root').on('click', '.wallet_bank', function() {
+      console.log('银行卡列表');
+      wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
 
-  });
+    });
 
-  //提现
-  $('#root').on('click', '.rmbMainContainer_btn', function() {
-    console.log('提现');
-    wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
-  });
+    //提现
+    $('#root').on('click', '.rmbMainContainer_btn', function() {
+      console.log('提现');
+      wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
+    });
 
-  // 会员购买
-  $('#root').on('click', '.vip_right_action', function() {
-    var vip_type = $(this).attr('vip_type');
-    console.log('会员购买以及升级 vip_type ', vip_type);
-    wx.miniProgram.postMessage({ data: vip_type });
-    wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-  });
+    // 会员购买
+    $('#root').on('click', '.vip_right_action', function() {
+      var vip_type = $(this).attr('vip_type');
+      console.log('会员购买以及升级 vip_type ', vip_type);
+      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+    });
 
-  // 会员升级
-  $('#root').parent().on('click', '.btn_vip_upgrade', function() {
-    var state = window.g_app._store.getState();
-    var upgradeVIP = state.member.upgradeVIP;
-    var vip_type = upgradeVIP.type;
-    if(vip_type==null){
-      vip_type = 'user_to_higher_golden_vip' ;
-    }
-
-    wx.miniProgram.postMessage({ data: vip_type });
-    wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-  });
-
-
-  // 确认选号后 返回
-  $('#root').on('click', '.lottery_btn_confirm', function() {
-    var state = window.g_app._store.getState();
-    var dispatch = window.g_app._store.dispatch;
-
-    var lotteryselect = state.lotteryselect;
-    var selectedBids = lotteryselect.selectedBids;
-    var setCode = lotteryselect.setCode;
-
-    if (window.__wxjs_environment) {
-        // 小程序环境
-      if (setCode === 'true') {
-        dispatch({
-          type: 'lotteryselect/confirm_fucai',
-          cb: ({ discountGameId, groupId }) => {
-            if(discountGameId&&groupId){
-              let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
-              wx.miniProgram.redirectTo({ url: url });
-            }
-            else {
-              wx.miniProgram.navigateBack();
-            }
-          },
-        });
-      } else {
-        wx.miniProgram.postMessage({ data: selectedBids });
-        wx.miniProgram.navigateBack();
+    // 会员升级
+    $('#root').parent().on('click', '.btn_vip_upgrade', function() {
+      var state = window.g_app._store.getState();
+      var upgradeVIP = state.member.upgradeVIP;
+      var vip_type = upgradeVIP.type;
+      if(vip_type==null){
+        vip_type = 'user_to_higher_golden_vip' ;
       }
-    }
-    else {
-      // 非小程序环境
-      window.postMessage(JSON.stringify(selectedBids));
-    }
-  });
+
+      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+    });
 
 
-  // 账单明细
-  $('#root').on('click', '.account_record', function() {
-    wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
-  });
+    // 确认选号后 返回
+    $('#root').on('click', '.lottery_btn_confirm', function() {
+      var state = window.g_app._store.getState();
+      var dispatch = window.g_app._store.dispatch;
 
-  // 用户信息 收货地址
-  $('#root').on('click', '.information_addr_btn', function() {
-    console.log('新建地址');
-    wx.miniProgram.navigateTo({ url: '/pages/address/addressList' });
-  });
+      var lotteryselect = state.lotteryselect;
+      var selectedBids = lotteryselect.selectedBids;
+      var setCode = lotteryselect.setCode;
 
-  //3d精选 点击商品
-  $('#root').on('click', '.hot_sell_list_item', function() {
-    var itemid = $(this).attr('itemid');
-    wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
-  });
+      if (window.__wxjs_environment) {
+        // 小程序环境
+        if (setCode === 'true') {
+          dispatch({
+            type: 'lotteryselect/confirm_fucai',
+            cb: ({ discountGameId, groupId }) => {
+              if(discountGameId&&groupId){
+                let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
+                wx.miniProgram.redirectTo({ url: url });
+              }
+              else {
+                wx.miniProgram.navigateBack();
+              }
+            },
+          });
+        } else {
+          wx.miniProgram.postMessage({ data: selectedBids });
+          wx.miniProgram.navigateBack();
+        }
+      }
+      else {
+        // 非小程序环境
+        window.postMessage(JSON.stringify(selectedBids));
+      }
+    });
 
 
+    // 账单明细
+    $('#root').on('click', '.account_record', function() {
+      wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+    });
+
+    // 用户信息 收货地址
+    $('#root').on('click', '.information_addr_btn', function() {
+      console.log('新建地址');
+      wx.miniProgram.navigateTo({ url: '/pages/address/addressList' });
+    });
+
+    //3d精选 点击商品
+    $('#root').on('click', '.hot_sell_list_item', function() {
+      var itemid = $(this).attr('itemid');
+      wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
+    });
+  })
 </script>
 </html>

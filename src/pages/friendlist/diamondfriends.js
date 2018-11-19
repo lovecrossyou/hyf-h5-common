@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './page.css';
 import { routerRedux } from 'dva/router';
-import { ActivityIndicator} from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 
 import me_arrow from '../../assets/me_arrow@2x.png';
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 
 
