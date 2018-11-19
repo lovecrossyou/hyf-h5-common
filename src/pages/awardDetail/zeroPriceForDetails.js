@@ -5,8 +5,6 @@ import { routerRedux } from 'dva/router';
 import DocumentTitle from 'react-document-title';
 import { ActivityIndicator } from 'antd-mobile';
 
-
-
 function ZeroPriceForDetails(props) {
   const {dataSSQ} = props.store ;
   if(dataSSQ===null){

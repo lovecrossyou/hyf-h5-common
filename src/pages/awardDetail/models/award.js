@@ -1,14 +1,13 @@
 import {queryWinGameListByStageDetail} from "../service/awardDetail";
-
 const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';
-
 
 export default {
   namespace: 'award',
   state: {
     page_src: awardUrl, //页面图片
     dataSSQ:null,
-    data3D:null
+    data3D:null,
+    zerogold:true
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -64,6 +63,12 @@ export default {
     save3D(state,action){
       return { ...state, data3D:action.payload };
 
+    },
+    zeroGold(){
+      return { zerogold:true }
+    },
+    zeroGold3D(){
+      return { zerogold:false }
     }
   },
 };
