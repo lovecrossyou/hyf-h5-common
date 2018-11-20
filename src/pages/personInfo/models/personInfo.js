@@ -4,9 +4,12 @@
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 import {
-  generateQRCode, modifyName, queryConstellationDetail, queryModifyConstellation,
+  generateQRCode, modifyIcon, modifyName, queryConstellationDetail, queryModifyConstellation,
   queryUserInfo,
 } from '../service/personInfo';
+import uploadFile from '../../../utils/uploader/fileUploader'
+const tips = '亲，一起来抽签抢金条吧！0元抢金条，完全免费！每周二、四、日22：00揭晓中签，选中双色球就送！'
+
 
 export default {
   namespace: 'personInfo',
@@ -27,6 +30,7 @@ export default {
       },
     ],
     qrData: null,
+    qrCodeTips:tips
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -103,6 +107,16 @@ export default {
         });
       }
     },
+
+    *upload({ payload, cb }, { call, put, select }) {
+     const res = yield uploadFile(payload,progress=>{
+        console.log('progress ',progress)
+      });
+     yield call(modifyIcon,{
+       icon:res
+     })
+      cb&&cb();
+    }
   },
   reducers: {
     saveUserInfo(state, action) {
@@ -119,5 +133,11 @@ export default {
         qrData: action.payload,
       };
     },
+    saveShareTips(state,action){
+      return {
+        ...state,
+        qrCodeTips:action.payload
+      }
+    }
   },
 };

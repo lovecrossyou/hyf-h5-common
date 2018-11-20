@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './page.css';
 import icon_shouye_honghuo from '../../assets/icon_shouye_honghuo@3x.png';
-import {ActivityIndicator } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import util from '../../utils/util'
+import {ActivityIndicator} from "../../components/ActivityIndicator";
 
 class HotSellView extends React.Component{
 
@@ -25,6 +25,11 @@ class HotSellView extends React.Component{
         })
       }
     },1000);
+  }
+
+
+  componentWillUnmount(){
+    clearInterval(this.timer);
   }
 
   render(){
@@ -56,12 +61,17 @@ class HotSellView extends React.Component{
     return (
       <DocumentTitle title='3D精选'>
         <div className={styles.hot_sell_container}>
+          <ActivityIndicator
+            color="white"
+            toast
+            animating={this.props.loading}
+          />
           <div className={styles.hot_sell_head}>
             <div className={styles.hot_sell_headbg}></div>
             <div className={styles.hot_sell_head_main}>
               <div>揭晓中签：每天22:00</div>
               <div>距揭晓<span>{timeObj.hour}</span>:<span>{timeObj.minute}</span>:<span>{timeObj.sec}</span></div>
-              <div>选福彩3D号码，中签即免费送，不中签全额团款（也可全额购买）商品均来源于天猫。</div>
+              <div>选福彩3D号码，中签即免费送，不中签全额退款（也可全额购买）商品均来源于天猫。</div>
             </div>
           </div>
           <div className={styles.hot_sell_section}>
@@ -70,11 +80,6 @@ class HotSellView extends React.Component{
               {hotSellListItem}
             </div>
           </div>
-          <ActivityIndicator
-            color="white"
-            toast
-            animating={this.props.loading}
-          />
         </div>
       </DocumentTitle>
 

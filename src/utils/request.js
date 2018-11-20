@@ -1,5 +1,5 @@
 import fetch from 'dva/fetch';
-import { getAccessToken } from './authority';
+import {getAccessToken} from './authority';
 import config from './config';
 
 
@@ -21,17 +21,17 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 
-const BaseUrl = (url)=>{
-  return config.apiPrefix + url ;
+const BaseUrl = (url) => {
+  return config.apiPrefix + url;
 }
 
 
-export default async function request(url, options) {
+export default async function request(url, options, type='json') {
   const accessInfo = getAccessToken();
-  const body = Object.assign(options.body || {}, { accessInfo: accessInfo });
+  const body = Object.assign(options.body || {}, {accessInfo: accessInfo});
   console.log('request ', url);
   console.log('request payload ', body);
-  const opt = {
+  let opt = {
     body: JSON.stringify(body),
     headers: {
       'Content-Type': 'application/json',
@@ -39,8 +39,6 @@ export default async function request(url, options) {
     method: options.method,
   };
   const response = await fetch(BaseUrl(url), opt);
-
-  console.log('response ',response)
-  // checkStatus(response);
+  if (type !== 'json') return response.text();
   return response.json();
 }

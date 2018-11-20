@@ -19,7 +19,7 @@ function RmbContainerView (props) {
           <Button>提现</Button>
         </div>
         <div className={styles.rmbFooter}>
-          总金额包含参与3D抢购的退款金额和会员奖励，3D抢购退款金额可直接体现，会员奖励需升级为会员方可提现。
+          总金额包含参与3D抢购的退款金额和会员奖励，3D抢购退款金额可直接提现，会员奖励需升级为会员方可提现。
           <span className={styles.upqradeYourAccount} onClick={()=>{
             props.dispatch(routerRedux.push('/member/page'))
           }}>升级会员>></span>
