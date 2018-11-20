@@ -120,15 +120,61 @@
   margin:0 auto;
   background: #ffffff;
   border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding:30px;
   box-sizing: border-box;
+}
+.monthly_focus_section_friends_list{
+  font-size: 28px;
+  color: #e13646;
+}
+.monthly_focus_section_friends_list>img{
+  width:24px;
 }
 .monthly_focus_section_list_tit_left{
   display: flex;
   align-items: center;
+}
+.monthly_focus_section_friends_list_num{
+  font-size: 30px;
+  color:#333333;
+  text-align: center;
+  margin-top:34px;
+  margin-bottom:48px;
+}
+.monthly_focus_section_friends_list_num_bbig{
+  font-size: 74px;
+  color:#e02f42;
+  padding-left:10px;
+  padding-right:10px;
+}
+.monthly_focus_section_friends_list_num_big{
+  font-size: 30px;
+  color:#f8978a;
+}
+.monthly_focus_section_friends_list_pic{
+  display: flex;
+  flex-wrap: wrap;
+}
+.monthly_focus_section_friends_list_picitem{
+  width: 60px;
+  height: 60px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-right: 14px;
+}
+.monthly_focus_section_friends_list_picitem>img{
+  width: 60px;
+}
+.monthly_focus_section_friends_list_all{
+  font-size: 24px;
+  color: #333333;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 22px;
+}
+.monthly_focus_section_friends_list_all>img{
+  width:10px;
+  margin-left:10px;
 }
 .monthly_focus_section_list_avatar{
   display: inline-block;
