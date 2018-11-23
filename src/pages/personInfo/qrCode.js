@@ -49,7 +49,7 @@ class QrCode extends React.Component {
             />
           </div>
           <div className='btn_qrcode_share'>
-            <Button type="warning" >生成分享</Button>
+            <Button type="warning" >分享</Button>
           </div>
         </div>
       </div>

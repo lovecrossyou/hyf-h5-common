@@ -285,8 +285,9 @@
 .footer{
   text-align: center;
   color: #999999;
-  background-color: #f5f5f5;
+  background-color: gray;
   margin-bottom: 20px;
+  border:solid 1px #e2e2e2;
 }
 /*我的黄金票*/
 .golden_ticket_container{
