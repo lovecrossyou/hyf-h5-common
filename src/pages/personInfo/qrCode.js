@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
 import DocumentTitle from 'react-document-title';
-import { List, TextareaItem,Button } from 'antd-mobile';
-import { createForm } from 'rc-form';
+import { TextareaItem,Button } from 'antd-mobile';
 
 import styles from './page.css' ;
 
-const tips = '亲，一起来抽签抢金条吧！0元请金条，完全免费！每周二、四、日22：00揭晓中签，选中双色球就送！'
+const tips = '亲，一起来抽签抢金条吧！0元抢金条，完全免费！每周二、四、日22：00揭晓中签，选中双色球就送！'
 
 class QrCode extends React.Component {
 
@@ -57,11 +56,9 @@ class QrCode extends React.Component {
   }
 }
 
-// const QrCodeWrapper = createForm()(QrCode);
-
-
 export default connect(state => {
   return {
     personInfo: state.personInfo,
   };
 })(QrCode);
+

@@ -70,7 +70,7 @@
             type: 'lotteryselect/confirm_fucai',
             cb: ({ discountGameId, groupId }) => {
               if(discountGameId&&groupId){
-                let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId;
+                let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId +'&justBuy=true';
                 wx.miniProgram.redirectTo({ url: url });
               }
               else {
@@ -116,6 +116,14 @@
       var qrCodeTips = personInfo.qrCodeTips ;
       // wx.miniProgram.postMessage({ data: qrCodeTips });
       wx.miniProgram.navigateTo({ url: '/pages/QR-code/code-share?qrCodeTips='+qrCodeTips});
+    });
+
+
+    // 选择收货地址 addr_btn
+    $('#root').parent().on('click', '.addr_btn', function() {
+      var addr_id = JSON.parse($(this).attr('data'));
+      wx.miniProgram.postMessage({ data: addr_id });
+      wx.miniProgram.navigateBack();
     });
 
 

@@ -27,7 +27,7 @@
 
 }
 
-.cell-content{
+:global(.addr_btn){
   display: flex;
   flex-direction: row;
   width: 100%;

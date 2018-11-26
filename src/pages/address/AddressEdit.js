@@ -44,7 +44,7 @@ class AddressEdit extends React.Component{
         detailAddress: detailAddress,
         districtAddress: districtAddress,
         fullAddress: districtAddress + detailAddress,
-        isDefault: 0,
+        isDefault: 1,
       }
       this.props.dispatch({
         type:'address/create',
@@ -93,10 +93,12 @@ class AddressEdit extends React.Component{
 
 
     const store = this.props.store ;
-    if(store.active!=null){
-      const editAddress = store.active ;
+
+    console.log('store ',store)
+    if(store.activeAddress!=null){
+      const editAddress = store.activeAddress ;
       this.props.form.setFieldsValue({
-        userName:editAddress.userName,
+        recievName:editAddress.recievName,
         phoneNum:editAddress.phoneNum,
       })
     }
@@ -139,13 +141,6 @@ class AddressEdit extends React.Component{
         placeholder="详细地址"
         ref={el => this.autoFocusInst = el}
       >详细地址</InputItem>
-      <InputItem
-        {...getFieldProps('postcode')}
-        clear
-        placeholder="邮编"
-        ref={el => this.autoFocusInst = el}
-      >邮编</InputItem>
-
 
       <div style={{margin:'auto',marginTop:'40px',width:'95%'}}>
         <Button  type="warning"  onClick={this.onCreate}>确认添加</Button>
@@ -158,7 +153,7 @@ class AddressEdit extends React.Component{
 const EditAddressWrapper = createForm()(AddressEdit);
 
 
-export default connect(({address,loading})=>({
-  store:address,
-  loading:loading.global
+export default connect(state=>({
+  store:state.address,
+  loading:state.global.loading
 }))(EditAddressWrapper);
