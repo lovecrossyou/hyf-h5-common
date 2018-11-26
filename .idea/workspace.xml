@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="044f52e0-bde8-44fa-9160-fbed783844f3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.css" afterPath="$PROJECT_DIR$/src/layouts/index.css" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/page.css" afterPath="$PROJECT_DIR$/src/pages/personInfo/page.css" />
-      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/qrCode.js" afterPath="$PROJECT_DIR$/src/pages/personInfo/qrCode.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/authority.js" afterPath="$PROJECT_DIR$/src/utils/authority.js" />
+      <change beforePath="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" afterPath="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" />
+      <change beforePath="$PROJECT_DIR$/src/pages/inviteredpacket/page.js" afterPath="$PROJECT_DIR$/src/pages/inviteredpacket/page.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,16 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".umirc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.umirc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="qrCode.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/personInfo/qrCode.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,11 +39,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/personInfo/page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="419" column="0" lean-forward="true" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
+            <state relative-caret-position="332">
+              <caret line="417" column="0" lean-forward="true" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="document.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -106,16 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -135,6 +144,8 @@
         <option value="$PROJECT_DIR$/src/layouts/index.css" />
         <option value="$PROJECT_DIR$/src/pages/personInfo/qrCode.js" />
         <option value="$PROJECT_DIR$/src/pages/personInfo/page.css" />
+        <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.css" />
+        <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.js" />
       </list>
     </option>
   </component>
@@ -200,6 +211,13 @@
               <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xt-miniProgram-h5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="inviteredpacket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xt-miniProgram-h5" type="b2602c69:ProjectViewProjectNode" />
@@ -284,12 +302,12 @@
       <workItem from="1542624129251" duration="3614000" />
       <workItem from="1542961499545" duration="1030000" />
       <workItem from="1543200965010" duration="1333000" />
-      <workItem from="1543210579873" duration="2470000" />
+      <workItem from="1543210579873" duration="3238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8447000" />
+    <option name="totallyTimeSpent" value="9215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
@@ -302,7 +320,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2771261" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494043" sideWeight="0.537037" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3020528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.46296296" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -529,9 +547,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/personInfo/page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="419" column="0" lean-forward="true" selection-start-line="419" selection-start-column="0" selection-end-line="419" selection-end-column="0" />
+        <state relative-caret-position="332">
+          <caret line="417" column="0" lean-forward="true" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
