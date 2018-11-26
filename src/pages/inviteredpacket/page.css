@@ -1,11 +1,15 @@
+.invite_red_pocket_header_wrapper{
+  display: flex;
+  flex-direction: row;
+}
 .invite_red_pocket_header{
-  position: relative;
   background:#FFF;
   height:220px;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex: 1;
 }
 .invite_red_top{
   height:88px;
