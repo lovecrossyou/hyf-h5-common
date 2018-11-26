@@ -12,30 +12,55 @@ const EmptyPage = ({empty})=>{
 
 class InviteRedPacket extends React.Component {
 
-  render() {
+  state = {
+    list:[]
+  }
+
+  componentDidMount() {
     const { inviteProfitXtb } = this.props.store;
     const { inviteProfitXtbRecordModelList } = inviteProfitXtb;
+    this.setState({
+      list:inviteProfitXtbRecordModelList
+    })
+  }
+
+  render() {
+    const { inviteProfitXtb } = this.props.store;
+    const { inviteProfitXtbRecordModelList,inviteGoldenProfitXtbRecordModelList } = inviteProfitXtb;
     return (
       <div>
         <div className={styles.invite_red_pocket_header_wrapper}>
-          <div className={styles.invite_red_pocket_header}>
+          <div
+            className={styles.invite_red_pocket_header}
+            onClick={()=>{
+              this.setState({
+                list:inviteProfitXtbRecordModelList
+              });
+            }}>
             <div className={styles.invite_red_top}>
               <img src={me_icon_shuipiao_hongbao} className={styles.invite_red_pocket_icon}/>
               <div>钻石好友（{inviteProfitXtb.diamondUserAmount || 0}人）</div>
             </div>
-            <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteProfitXtbAmount || 0}喜币</div>
+            <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteDiamondProfitXtbAmount || 0}喜币</div>
           </div>
-          <div className={styles.invite_red_pocket_header}>
+          <div
+            className={styles.invite_red_pocket_header}
+            onClick={()=>{
+              this.setState({
+                list:inviteGoldenProfitXtbRecordModelList
+              });
+            }}
+          >
             <div className={styles.invite_red_top}>
               <img src={me_icon_shuipiao_hongbao} className={styles.invite_red_pocket_icon}/>
-              <div>黄金好友（{inviteProfitXtb.diamondUserAmount || 0}人）</div>
+              <div>黄金好友（{inviteProfitXtb.goldenUserAmount || 0}人）</div>
             </div>
-            <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteProfitXtbAmount || 0}喜币</div>
+            <div className={styles.invite_total_xb}>{inviteProfitXtb.inviteGoldenProfitXtbAmount || 0}喜币</div>
           </div>
         </div>
         <div className={styles.friend_list}>
           {
-            inviteProfitXtbRecordModelList.map((record, index) => {
+            this.state.list.map((record, index) => {
               return (
                 <FriendItem record={record} key={index}/>
               );
