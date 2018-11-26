@@ -14,6 +14,7 @@ class QrCode extends React.Component {
     tips:tips
   }
 
+
   onChange = text=>{
     this.props.dispatch({
       type:'personInfo/saveShareTips',
@@ -42,6 +43,7 @@ class QrCode extends React.Component {
           </div>
           <div className={styles.footer}>
             <TextareaItem
+              className={styles['am-textarea-control']}
               rows={3}
               editable
               value={this.state.tips}
