@@ -182,7 +182,7 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
           // lottery_confirm_fucai
         }
       }}
-      className='lottery_btn_confirm' style={{ opacity: bidCompleteFlg ? 1 : 0.3 }}>
+      className='lottery_btn_confirm' style={{ cursor: 'pointer',opacity: bidCompleteFlg ? 1 : 0.3 }}>
       确认
     </div>
 

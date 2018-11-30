@@ -1,3 +1,4 @@
+import {setTokenFromQueryString} from "../../../utils/authority";
 
 export default {
     namespace: 'main',
@@ -9,7 +10,8 @@ export default {
         setup({ dispatch, history }) {
             return history.listen(({ pathname, query }) => {
                 if (pathname === '/main'||pathname === '/') {
-                    dispatch({
+                  setTokenFromQueryString(query);
+                  dispatch({
                         type: 'fetch'
                     })
                     dispatch({
