@@ -1,5 +1,9 @@
-import {queryWinGameListByStageDetail} from "../service/awardDetail";
+import {queryWinGameListByStageDetail , queryInviteUserRank , queryPurchaseRank} from "../service/awardDetail";
 const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';
+
+
+const pageSize = 8 ;
+
 
 export default {
   namespace: 'award',
@@ -7,14 +11,22 @@ export default {
     page_src: awardUrl, //页面图片
     dataSSQ:null,
     data3D:null,
-    zerogold:true
+    isShow:false,
+    datePurchaseRank:[],
+    dateInviteUserRank:[],
+
+    friendCirclePageNo: -1,
+    friendCircleList:[],
+
+
+
+    platformPageNo: -1,
+    platformList:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-
         console.log('query ',query)
-        console.log('pathname ',pathname)
         if (pathname === '/awardDetail/thePrizeForDetails') {
           const {lotteryStage} = query ;
           dispatch({
@@ -35,8 +47,22 @@ export default {
             }
           })
         }
+        else if (pathname === '/awardDetail/monthlyFocus') {
+          dispatch({
+            type:'fetchInviteUserRank',
+            payload:{}
+          })
+        }
       });
     },
+    inviteUserRank({ dispatch, history }){
+      dispatch({
+        type:'fetchInviteUserRank',
+        payload:{
+          isShow:false
+        }
+      })
+    }
   },
   effects: {
     *fetchZero({ payload }, { call, put }) {
@@ -53,22 +79,96 @@ export default {
         payload: data
       });
     },
-  },
+    *fetchPurchaseRank({ payload }, { call, put }) {
+      const data = yield call(queryPurchaseRank,payload);
+      yield put({
+        type: 'savePurchaseRank',
+        payload: data
+      });
+    },
+    *fetchInviteUserRank({ payload ,cb}, { call, put }) {
+      const {type} = payload ;
+      let params = {}
+      if(type!=='friendList'){
+        //请求平台数据
+        params = {
+          platformPageNo: 0,
+          platformPageSize: pageSize
+        }
+      }
+      else {
+        // 请求朋友圈数据
+        params = {
+          friendCirclePageNo: 0,
+          friendCirclePageSize: pageSize,
+        }
+      }
 
+      const data = yield call(queryInviteUserRank,params);
+      if(type!=='friendList'){
+        yield put({
+          type: 'savePlatformRank',
+          payload: data
+        });
+      }
+      else{
+        yield put({
+          type: 'saveFriendsRank',
+          payload: data
+        });
+      }
+      cb&&cb(data);
+    }
+  },
   reducers: {
     saveSSQ(state, action) {
       return { ...state, dataSSQ:action.payload };
     },
-
     save3D(state,action){
       return { ...state, data3D:action.payload };
+    },
+    savePurchaseRank(state,action){
+      return { ...state, datePurchaseRank:action.payload };
+    },
+    saveInviteUserRank(state,action){
+      console.log('aaaaaaaaaaaaaasaveInviteUserRank====',state);
+      const oldDateInviteUserRank = state.dateInviteUserRank ;
+      const dateInviteUserRank = action.payload.concat(oldDateInviteUserRank);
+      return { ...state, dateInviteUserRank:dateInviteUserRank };
+    },
 
+    savePlatformRank(state,action){
+      const {platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
+      const oldDateInviteUserRank = state.platformList ;
+      const list = platformInviteRankUserInfo.concat(oldDateInviteUserRank);
+
+      return { ...state,
+        platformList:list,
+        userIconUrl,
+        allRankOfFriendCircle,
+        friendCirclePageNo,
+        allRankOfPlatform,
+        inviteAllUserAmount
+      };
     },
-    zeroGold(){
-      return { zerogold:true }
+
+    saveFriendsRank(state,action){
+      const {friendCircleInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
+      const oldDateInviteUserRank = state.friendCircleList ;
+      const list = friendCircleInviteRankUserInfo.concat(oldDateInviteUserRank);
+
+      return { ...state,
+        friendCircleList:list,
+        userIconUrl,
+        allRankOfFriendCircle,
+        friendCirclePageNo,
+        allRankOfPlatform,
+        inviteAllUserAmount
+      };
     },
-    zeroGold3D(){
-      return { zerogold:false }
+
+    purchaseRank(){
+      return { isShow:true }
     }
   },
 };
