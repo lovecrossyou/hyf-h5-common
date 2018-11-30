@@ -1,7 +1,6 @@
 import config from './config';
 
 export function getAccessToken() {
-
   return {
     "app_key":"b5958b665e0b4d8cae77d28e1ad3f521",
     "signature":"9BAE6990D1245F70D8C8907C117FB2B4",

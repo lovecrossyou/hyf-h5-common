@@ -285,9 +285,16 @@
 .footer{
   text-align: center;
   color: #999999;
-  background-color: #f5f5f5;
+  background-color: gray;
   margin-bottom: 20px;
+  border:solid 1px #333333;
 }
+
+.am-textarea-control>textarea{
+  color: #999999;
+}
+
+
 /*我的黄金票*/
 .golden_ticket_container{
   width:100%;
@@ -411,4 +418,10 @@
 
 :global(.btn_qrcode_share){
 
+}
+
+
+.am-textarea-control textarea {
+  color: #999999!important;
+  font-size: 24px!important;
 }

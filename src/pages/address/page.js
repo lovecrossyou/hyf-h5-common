@@ -18,17 +18,27 @@ class AddressList extends React.Component {
   // 编辑
   addresseEdit = (address)=>{
     this.props.dispatch({
-      type:'address/saveActive',
+      type:'address/setActive',
       payload:address
     });
     this.props.dispatch(
-      routerRedux.push('/addressedit')
+      routerRedux.push('AddressEdit')
     );
   }
 
   // 删除
-  addressDel = ()=>{
-
+  addressDel = (addr)=>{
+    this.props.dispatch({
+      type:'address/delete',
+      payload:{
+        addressId:addr.id
+      },
+      cb:()=>{
+        this.props.dispatch({
+          type:'address/fetch'
+        })
+      }
+    });
   };
 
   // 新建

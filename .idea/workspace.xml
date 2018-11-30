@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="ece89f21-8c03-4c7d-a43f-f4c55607a81f" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/pages/awardDetail/friendCircleInviteRank.js" afterDir="false" />
@@ -11,39 +12,135 @@
       <change beforePath="$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
+=======
+    <list default="true" id="c9943c65-70c1-4dd2-b15b-81dac2e8b525" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/xt-miniProgram-h5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/classify/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classify/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/classify/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/classify/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/personInfo/models/personInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/personInfo/models/personInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/authority.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/authority.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/config.js" afterDir="false" />
+    </list>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+<<<<<<< HEAD
     <option name="TRACKING_ENABLED" value="true" />
+=======
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="-335779555">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="ESLintLanguageService" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="543" />
+          <entry key="js" value="698" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="543" />
+          <entry key="JavaScript" value="698" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="3" />
+          <entry key="ejs" value="2" />
+          <entry key="jpg" value="2" />
+          <entry key="js" value="23" />
+          <entry key="json" value="2" />
+          <entry key="png" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="3" />
+          <entry key="EJS" value="2" />
+          <entry key="Image" value="8" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="23" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
   <component name="FavoritesManager">
     <favorites_list name="hyf-h5-common" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name=".umirc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.umirc.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/main/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="awardDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/service/awardDetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
               <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/classify/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="95" column="22" lean-forward="true" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="monthlyFocus.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/monthlyFocus.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,15 +152,30 @@
                 <element signature="e#4268#4859#0" />
                 <element signature="e#4872#5463#0" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/classify/page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="friendCircleInviteRank.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/friendCircleInviteRank.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="70">
               <caret line="77" column="13" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/address/page.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -71,15 +183,24 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/page.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="368">
               <caret line="165" column="21" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/authority.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="award.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/models/award.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,6 +210,22 @@
                 <element signature="e#532#758#0" />
                 <element signature="e#825#1052#0" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.umirc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </state>
           </provider>
         </entry>
@@ -97,6 +234,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>price_details_section_item_headportrait</find>
       <find>linear-gradient</find>
       <find>background</find>
@@ -121,6 +259,16 @@
       <find>monthly_focus_section_list_avatar</find>
       <find>monthly_focus_section_friends_list_picitem</find>
       <find>platformInviteRankUserInfo</find>
+=======
+      <find>state</find>
+      <find>ReactDOM</find>
+      <find>container</find>
+      <find>id</find>
+      <find>newslistclick</find>
+      <find>classify_shop</find>
+      <find>bind</find>
+      <find>connect</find>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,6 +277,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/pages/address/AddressEdit.js" />
         <option value="$PROJECT_DIR$/src/global.js" />
@@ -146,11 +295,26 @@
         <option value="$PROJECT_DIR$/src/pages/awardDetail/monthlyFocus.js" />
         <option value="$PROJECT_DIR$/src/pages/awardDetail/models/award.js" />
         <option value="$PROJECT_DIR$/src/pages/awardDetail/friendCircleInviteRank.js" />
+=======
+        <option value="$PROJECT_DIR$/src/pages/inviteredpacket/page.js" />
+        <option value="$PROJECT_DIR$/src/utils/authority.js" />
+        <option value="$PROJECT_DIR$/src/utils/config.js" />
+        <option value="$PROJECT_DIR$/src/pages/main/page.js" />
+        <option value="$PROJECT_DIR$/src/pages/address/page.js" />
+        <option value="$PROJECT_DIR$/src/pages/classify/page.js" />
+        <option value="$PROJECT_DIR$/src/pages/classify/page.css" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+<<<<<<< HEAD
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+=======
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -158,6 +322,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+<<<<<<< HEAD
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -169,13 +334,28 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+=======
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="650" />
+    <option name="y" value="-15" />
+    <option name="width" value="1287" />
+    <option name="height" value="1100" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,6 +379,7 @@
               <item name="hyf-h5-common" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="awardDetail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,18 +404,31 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="classify" type="462c0819:PsiDirectoryNode" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="E:\ProjectSpace\WebstormProjects\hyf-h5-common\node_modules\prettier" />
+=======
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Administrator\WebstormProjects\hyf-h5-common\node_modules\eslint" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RunDashboard">
@@ -270,12 +464,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="ece89f21-8c03-4c7d-a43f-f4c55607a81f" name="Default" comment="" />
+=======
+      <changelist id="c9943c65-70c1-4dd2-b15b-81dac2e8b525" name="Default Changelist" comment="" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
       <created>1542098050838</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542098050838</updated>
       <workItem from="1542098054014" duration="845000" />
+<<<<<<< HEAD
       <workItem from="1542116797482" duration="327000" />
       <workItem from="1542157585028" duration="3769000" />
       <workItem from="1542162479160" duration="333000" />
@@ -284,11 +483,33 @@
       <workItem from="1542331925032" duration="104035000" />
       <workItem from="1543540063169" duration="719000" />
       <workItem from="1543541076181" duration="17710000" />
+=======
+      <workItem from="1542706091830" duration="380000" />
+      <workItem from="1542706494424" duration="655000" />
+      <workItem from="1542762125503" duration="33000" />
+      <workItem from="1542849158716" duration="36000" />
+      <workItem from="1542936729319" duration="33000" />
+      <workItem from="1543194334528" duration="441000" />
+      <workItem from="1543194783846" duration="94000" />
+      <workItem from="1543369523792" duration="619000" />
+      <workItem from="1543370152136" duration="22566000" />
+    </task>
+    <task id="LOCAL-00001" summary="xxx">
+      <created>1542706323174</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542706323174</updated>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="115158000" />
+=======
+    <option name="totallyTimeSpent" value="23333000" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,6 +524,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.59667677" visible="true" weight="0.1406744" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
@@ -352,6 +574,33 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Favorites" order="6" sideWeight="0.40332326" side_tool="true" weight="0.17755532" />
     </layout-to-restore>
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7433071" visible="true" weight="0.16280295" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.25669292" side_tool="true" visible="true" weight="0.16280295" />
+      <window_info id="DB Browser" order="3" />
+      <window_info id="Project Explorer" order="4" />
+      <window_info id="Job Explorer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.14767933" side_tool="true" weight="0.16280295" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297062" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49578503" weight="0.0021762785" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49683878" weight="0.32861805" />
+      <window_info anchor="bottom" id="Console" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="DB Execution Console" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.48208642" visible="true" weight="0.30903155" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5179136" side_tool="true" weight="0.30903155" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.7028451" weight="0.484222" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -385,6 +634,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -493,10 +743,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+=======
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="xxx" />
+    <option name="LAST_COMMIT_MESSAGE" value="xxx" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/pages/personInfo/models/personInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/inviteredpacket/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2185">
+          <caret line="99" column="34" lean-forward="true" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
@@ -543,10 +812,36 @@
         <state relative-caret-position="552">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
+=======
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ActivityIndicator.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/city.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/personInfo/qrCode.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="96">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
         </state>
@@ -634,10 +929,55 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#47#78#0" expanded="true" />
+=======
+        <state relative-caret-position="114">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/document.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/DvaContainer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/initDva.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pages/wallet/page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -661,20 +1001,42 @@
         <state>
           <folding>
             <element signature="e#0#64#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/initHistory.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/polyfills.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1938">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pages/3DHotSell/models/hotsell.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/pages/.umi/umi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-298">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pages/lotteryselect/models/lotteryselect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1104">
@@ -694,12 +1056,33 @@
     <entry file="file://$PROJECT_DIR$/src/pages/astro/components/Horoscope.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+=======
+    <entry file="file://$PROJECT_DIR$/.umirc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/personInfo/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pages/astro/models/astro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
@@ -765,16 +1148,78 @@
           <folding>
             <element signature="e#532#758#0" />
             <element signature="e#825#1052#0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/utils/authority.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/main/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/assets_icon_horoscope@2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/golden.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/icon_chakan@3x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/me_arrow@2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/symbol_xiteng_black3@2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/rush_topurchase.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/classify/touxiang.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/classify/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="68" column="1" lean-forward="true" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/address/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="57" column="48" lean-forward="true" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/pages/awardDetail/friendCircleInviteRank.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="77" column="13" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="13" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/pages/classify/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="95" column="22" lean-forward="true" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+>>>>>>> f0d0c46e9eb2cceba07230c0c292ce3a3fe07394
           </folding>
         </state>
       </provider>

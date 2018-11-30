@@ -17,7 +17,7 @@ import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 import styles from './page.css';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
 
-const ContentPage = ({ accountInfo, userProfitAllFriendInfo, userProfitInfo, dispatch }) => {
+const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, userProfitInfo, dispatch }) => {
 
   // 我的好友
   function myFriend() {
@@ -87,7 +87,7 @@ const ContentPage = ({ accountInfo, userProfitAllFriendInfo, userProfitInfo, dis
             <img src={me_icon_shuipiao_hongbao} className={styles.my_invite_item_img}/>
             <div>邀请红包</div>
           </div>
-          <div className={styles.wallet_fun_count_item}>{userProfitInfo.inviteProfitXtbAmount}喜币</div>
+          <div className={styles.wallet_fun_count_item}>{inviteProfitXtb.inviteProfitXtbAmount}喜币</div>
         </div>
         <div className={styles.wallet_fun_item}>
           <div className={styles.wallet_item_top} onClick={vipReward}>
@@ -141,11 +141,13 @@ const ContentPage = ({ accountInfo, userProfitAllFriendInfo, userProfitInfo, dis
 
 class Wallet extends React.Component {
   render() {
-    const { accountInfo, userProfitAllFriendInfo, userProfitInfo } = this.props.store;
+    // inviteProfitXtb.inviteProfitXtbAmount
+    const { accountInfo, userProfitAllFriendInfo, userProfitInfo,inviteProfitXtb } = this.props.store;
     const { loading } = this.props;
     return <DocumentTitle title='我的钱包'>
       <div>
         <ContentPage
+          inviteProfitXtb={inviteProfitXtb}
           dispatch={this.props.dispatch}
           userProfitAllFriendInfo={userProfitAllFriendInfo}
           userProfitInfo={userProfitInfo}

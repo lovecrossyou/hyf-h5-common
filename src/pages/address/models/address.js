@@ -1,4 +1,4 @@
-import { queryAddress, queryCreate } from '../services/address';
+import {queryAddress, queryCreate, queryDel, querySetDef} from '../services/address';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
@@ -37,14 +37,16 @@ export default {
     },
 
 
-    *delete({ payload }, { call, put }) {
-      yield put({
-        type: 'save', payload: {
-          list: []
-        }
-      });
+    *delete({ payload,cb }, { call, put }) {
+      const res = yield call(queryDel,payload);
+      cb&&cb();
     },
 
+
+    *setDefault({ payload,cb }, { call, put }) {
+      const res = yield call(querySetDef,payload);
+      cb&&cb();
+    },
   },
   reducers: {
     save(state, action) {

@@ -8,7 +8,7 @@ import delIcon from '../../../assets/address/adress_btn_delete@2x.png';
 export const AddressCell = ({address,del,edit})=>{
 
   console.log('address ',address)
-  return <div style={{margin:'10px 0',backgroundColor:'#fff'}}>
+  return <div   style={{margin:'10px 0',backgroundColor:'#fff'}}>
     <List>
       <SwipeAction
         style={{ backgroundColor: '#f5f5f5' }}
@@ -35,30 +35,38 @@ export const AddressCell = ({address,del,edit})=>{
         <List.Item
           onClick={e => console.log(e)}
         >
-          <div className={styles["cell-content"]}>
+          <div className='addr_btn' data={address.id}>
             <div className={styles.right}>
               <div className={styles.linkman}>
                 <div className={styles.reciev_name}>{address.recievName}</div>
                 <div>{address.phoneNum}</div>
               </div>
               <div className={styles.shipping_address}>
-                <div>{address.districtAddress}</div>
+                <div>{address.fullAddress}</div>
               </div>
               <div className={styles.address_operate}>
-                <span>
-                  <img src={chooseIcon} alt="" style={{width:'36px',height:'36px',margin:'-10px 10px 0 0'}}/>
-                  默认地址
-                </span>
-                <span className={styles.handle}>
-                  <s>
-                    <img src={editIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>
-                    编辑
-                  </s>
-                  <s>
-                    <img src={delIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>
-                    删除
-                  </s>
-                </span>
+                {/*<span>*/}
+                  {/*<img src={chooseIcon} alt="" style={{width:'36px',height:'36px',margin:'-10px 10px 0 0'}}/>*/}
+                  {/*默认地址*/}
+                {/*</span>*/}
+                {/*<span className={styles.handle}>*/}
+                  {/*<s*/}
+                    {/*onClick={(e)=>{*/}
+                      {/*e.stopPropagation();*/}
+                      {/*edit(address);*/}
+                    {/*}}>*/}
+                    {/*<img src={editIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>*/}
+                    {/*编辑*/}
+                  {/*</s>*/}
+                  {/*<s*/}
+                    {/*onClick={(e)=>{*/}
+                      {/*e.stopPropagation();*/}
+                      {/*del(address);*/}
+                    {/*}}>*/}
+                    {/*<img src={delIcon} alt="" style={{width:'34px',height:'34px',margin:'-10px 10px 0 0'}}/>*/}
+                    {/*删除*/}
+                  {/*</s>*/}
+                {/*</span>*/}
               </div>
             </div>
           </div>

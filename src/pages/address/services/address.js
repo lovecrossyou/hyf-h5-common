@@ -1,5 +1,4 @@
 import request from '../../../utils/request';
-import config from '../../../utils/config';
 
 export async function queryAddress (params) {
   return request('/deliveryAddress/list',{
@@ -15,5 +14,20 @@ export async function queryCreate (params) {
     body: params,
   })
 }
+
+export async function queryDel (params) {
+  return request('/deliveryAddress/delete',{
+    method: 'post',
+    body: params,
+  })
+}
+
+export async function querySetDef (params) {
+  return request('/deliveryAddress/setDefault',{
+    method: 'post',
+    body: params,
+  })
+}
+
 
 
