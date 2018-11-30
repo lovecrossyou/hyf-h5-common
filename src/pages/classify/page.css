@@ -17,13 +17,13 @@
   flex-direction: row;
 }
 .classify_list{
-  width: 168px;
+  width: 170px;
   display: flex;
   flex-direction: column;
 }
 .classify_name{
-  width: 168px;
-  height: 106px;
+  width: 170px;
+  height: 120px;
   text-align: center;
   line-height: 106px;
   color: #797979;
@@ -32,40 +32,50 @@
 .onclick_before{
   color: #797979;
   background-color: #fff;
-  width: 168px;
-  height: 106px;
+  width: 170px;
+  height: 120px;
   text-align: center;
   margin-bottom: 3px;
-  line-height: 106px;
+  line-height: 120px;
   font-size: 28px;
 }
 .onclick_after{
   color: #cc2637;
   background-color: rgba(0,0,0,0);
-  width: 168px;
-  height: 106px;
+  width: 170px;
+  height: 120px;
   margin-bottom: 3px;
   text-align: center;
-  line-height: 106px;
-  font-size: 28px;
+  line-height: 120px;
   border-left: 3px solid #cc2637;
+  font-size: 32px;
 }
 .classify_content_wrap{
   flex: 1;
-  /*background-color: pink;*/
   padding: 26px;
   box-sizing: border-box;
-}
-.classify_content_list{
-
-}
-.classify_shop{
-  width: 45%;
-  background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  align-content:flex-start;
+}
+.classify_shop{
+  width: 47%;
+  height: 340px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24px;
+  color: #343333;
+}
+.classify_shop_img{
+  width: 100%;
+}
+.classify_shop_img img{
+  width: 100%;
+  height: auto;
 }
 .classify_shop_name{
   width: 100%;
