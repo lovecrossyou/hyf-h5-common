@@ -9,6 +9,16 @@ import icon_ya from '../../assets/icon_ya@3x.png';
 import { ListView } from 'antd-mobile';
 
 
+function MyBody(props) {
+  return (
+    <div className="am-list-body my-body">
+      <span style={{ display: 'none' }}>you can custom body wrap element</span>
+      {props.children}
+    </div>
+  );
+}
+
+
 class FriendCircleInviteRank extends React.Component{
 
   constructor(props) {
@@ -17,10 +27,7 @@ class FriendCircleInviteRank extends React.Component{
     const getRowData = (dataBlob, sectionID, rowID) => dataBlob[rowID];
 
     const dataSource = new ListView.DataSource({
-      getRowData,
-      getSectionHeaderData: getSectionData,
       rowHasChanged: (row1, row2) => row1 !== row2,
-      sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
     });
 
     this.state = {
@@ -29,6 +36,7 @@ class FriendCircleInviteRank extends React.Component{
   }
 
   componentWillMount(){
+
     this.fetchData();
   }
 
@@ -76,23 +84,22 @@ class FriendCircleInviteRank extends React.Component{
     );
 
     const Row = (rowData, sectionID, rowID)=>{
-
       console.log('rowData ',rowData);
-      return (<div></div>);
-      <div className={styles.monthly_focus_section_list_item}>
-        <div className={styles.monthly_focus_section_list_tit_left}>
-          <div className={styles.monthly_focus_section_list_guan}>
-            {rowData.rank}
+      return (
+        <div className={styles.monthly_focus_section_list_item}>
+          <div className={styles.monthly_focus_section_list_tit_left}>
+            <div className={styles.monthly_focus_section_list_guan}>
+              {rowData.rank}
+            </div>
+            <div className={styles.monthly_focus_section_list_avatar}>
+              <img src={rowData.userIconUrl} alt=""/>
+            </div>
+            <div className={styles.monthly_focus_section_list_name}>{rowData.userName}</div>
           </div>
-          <div className={styles.monthly_focus_section_list_avatar}>
-            <img src={rowData.userIconUrl} alt=""/>
-          </div>
-          <div className={styles.monthly_focus_section_list_name}>{rowData.userName}</div>
+          <div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>份</div>
         </div>
-        <div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>份</div>
-      </div>
+      )
     }
-
 
 
     const friendCircleInviteRankRank = friendCircleList.map((item,i)=>{
@@ -171,6 +178,10 @@ class FriendCircleInviteRank extends React.Component{
           <ListView
             ref={el => this.lv = el}
             dataSource={this.state.dataSource}
+            style={{
+              height: '1900px',
+              overflow: 'auto',
+            }}
             renderRow={Row}
             renderSeparator={separator}
             pageSize={8}
