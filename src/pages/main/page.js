@@ -30,6 +30,8 @@ function App(props) {
       <Link to="/awardDetail/page"><h1>奖品设置</h1></Link>
       <br/>
       <Link to="/awardDetail/thePrizeForDetails"><h1>奖品详情</h1></Link>
+      <br/>
+      <Link to="/classify/page"><h1>分类</h1></Link>
     </div>
   );
 }
