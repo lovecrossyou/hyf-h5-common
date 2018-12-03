@@ -37,15 +37,45 @@ function MonthlyFocus(props) {
       </div>
     )
   });
+
+  //名次
+  const RankLabel = ({item})=>{
+    if(item.rank===1){
+      return (
+        <div className={styles.monthly_focus_section_list_guan}>
+          <img src={icon_guan} alt=""/>
+        </div>
+      )
+    }
+    else if(item.rank===2){
+      return (
+        <div className={styles.monthly_focus_section_list_guan}>
+          <img src={icon_ya} alt=""/>
+        </div>
+      )
+    }
+    else if(item.rank===3){
+      return (
+        <div className={styles.monthly_focus_section_list_guan}>
+          <img src={icon_ji} alt=""/>
+        </div>
+      )
+    }
+    return (
+      <div className={styles.monthly_focus_section_list_guan}>
+        {item.rank}
+      </div>
+    )
+  }
+
+
+
   // // 平台排行
   const PlatformInviteRankContainer = platformList.map((item,i)=>{
-    if(i<=2) return null;
     return(
       <div className={styles.monthly_focus_section_list_item} key={i}>
         <div className={styles.monthly_focus_section_list_tit_left}>
-          <div className={styles.monthly_focus_section_list_guan}>
-            {item.rank}
-          </div>
+          <RankLabel item={item}/>
           <div className={styles.monthly_focus_section_list_avatar}>
             <img src={item.userIconUrl} alt=""/>
           </div>
@@ -104,42 +134,6 @@ function MonthlyFocus(props) {
                 <div className={styles.monthly_focus_section_list_name}>我</div>
               </div>
               <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_item} style={{marginTop:"24px"}}>
-              <div className={styles.monthly_focus_section_list_tit_left}>
-                <div className={styles.monthly_focus_section_list_guan}>
-                  <img src={icon_guan} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_avatar}>
-                  <img src={platformList[0].userIconUrl} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_name}>{platformList[0].userName}</div>
-              </div>
-              <div className={styles.monthly_focus_section_list_portion}><span>{platformList[0].friendAmount}</span>份</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_item}>
-              <div className={styles.monthly_focus_section_list_tit_left}>
-                <div className={styles.monthly_focus_section_list_guan}>
-                  <img src={icon_ya} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_avatar}>
-                  <img src={platformList[1].userIconUrl} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_name}>{platformList[1].userName}</div>
-              </div>
-              <div className={styles.monthly_focus_section_list_portion}><span>{platformList[1].friendAmount}</span>份</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_item}>
-              <div className={styles.monthly_focus_section_list_tit_left}>
-                <div className={styles.monthly_focus_section_list_guan}>
-                  <img src={icon_ji} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_avatar}>
-                  <img src={platformList[2].userIconUrl} alt=""/>
-                </div>
-                <div className={styles.monthly_focus_section_list_name}>{platformList[2].userName}</div>
-              </div>
-              <div className={styles.monthly_focus_section_list_portion}><span>{platformList[2].friendAmount}</span>份</div>
             </div>
             {PlatformInviteRankContainer}
           </div>
