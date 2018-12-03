@@ -123,8 +123,12 @@ export default {
       };
     },
 
-    purchaseRank(){
-      return { isShow:true }
+    purchaseRank(state){
+      return {...state, isShow:true }
+    },
+
+    inviteUserRank(state){
+      return {...state, isShow:false }
     }
   },
 };

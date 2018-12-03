@@ -97,12 +97,12 @@ function MonthlyFocus(props) {
         <div className={styles.monthly_focus_title}>
           <div className={isShow?styles.bdb6:""} onClick={()=>{
             props.dispatch({
-              type:"award/purchaseRank"
+              type:"rank/purchaseRank"
             })
           }}>抢购榜单</div>
           <div className={isShow?"":styles.bdb6} onClick={()=>{
             props.dispatch({
-              type:"award/inviteUserRank"
+              type:"rank/inviteUserRank"
             })
           }}>邀请榜单</div>
         </div>
