@@ -126,7 +126,7 @@ function MonthlyFocus(props) {
             </div>
           </div>
           <div className={styles.monthly_focus_section_list}>
-            <div className={styles.monthly_focus_section_list_item}>
+            <div className={styles.monthly_focus_section_list_item} style={{marginBottom:"20px"}}>
               <div className={styles.monthly_focus_section_list_tit_left}>
                 <div>{allRankOfPlatform}</div>
                 <div className={styles.monthly_focus_section_list_avatar}>

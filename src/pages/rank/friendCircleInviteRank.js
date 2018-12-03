@@ -125,7 +125,7 @@ class FriendCircleInviteRank extends React.Component{
           animating={this.props.loading}
         />
         <div>
-          <div className={styles.monthly_focus_section_list_item}>
+          <div className={styles.monthly_focus_section_list_item} style={{marginBottom:"20px"}}>
             <div className={styles.monthly_focus_section_list_tit_left}>
               <div>{allRankOfPlatform}</div>
               <div className={styles.monthly_focus_section_list_avatar}>
