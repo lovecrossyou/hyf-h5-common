@@ -38,7 +38,13 @@ class FriendCircleInviteRank extends React.Component{
 
 
   onEndReached=()=>{
-
+    console.log('onEndReached ');
+    this.props.dispatch({
+      type:'rank/fetchInviteUserRank',
+      payload:{
+        type:'friendList'
+      },
+    })
   }
 
 
@@ -116,14 +122,13 @@ class FriendCircleInviteRank extends React.Component{
             ref={el => this.lv = el}
             dataSource={this.state.dataSource}
             style={{
-              height: '1900px',
               overflow: 'auto',
             }}
             renderRow={Row}
             renderSeparator={separator}
             pageSize={8}
             onScroll={() => { console.log('scroll'); }}
-            scrollRenderAheadDistance={500}
+            scrollRenderAheadDistance={100}
             onEndReached={this.onEndReached}
             onEndReachedThreshold={10}
           />

@@ -1,5 +1,5 @@
 import {queryInviteUserRank , queryPurchaseRank} from "../service/rank";
-const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';
+const awardUrl = 'http://qnimage.xiteng.com/award_detail.png';
 
 
 const pageSize = 8 ;
