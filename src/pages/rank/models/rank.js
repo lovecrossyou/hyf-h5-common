@@ -21,15 +21,8 @@ export default {
         if (pathname === '/rank/page') {
           dispatch({
             type:'fetchInviteUserRank',
-            payload:{}
-          })
-        }
-
-        if (pathname === '/rank/friendCircleInviteRank') {
-          dispatch({
-            type:'fetchInviteUserRank',
             payload:{
-              type:'friendList'
+              type:'platform'
             },
           })
         }
@@ -44,13 +37,22 @@ export default {
         payload: data
       });
     },
-    *fetchInviteUserRank({ payload ,cb}, { call, put }) {
+
+    *fetchInviteUserRank({ payload ,cb}, { call, put ,select}) {
+      const {rankStore} = yield select(state => {
+        const rankStore = state.rank;
+        return {rankStore};
+      });
+
+      const {platformPageNo,friendCirclePageNo} = rankStore ;
+
+      const nextPage = parseInt(platformPageNo) + 1 ;
       const {type} = payload ;
       let params = {}
       if(type!=='friendList'){
         //请求平台数据
         params = {
-          platformPageNo: 0,
+          platformPageNo: nextPage,
           platformPageSize: pageSize
         }
       }
@@ -89,9 +91,9 @@ export default {
     },
 
     savePlatformRank(state,action){
-      const {friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
+      const {platformPageNo,friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
       const oldPlatformList = state.platformList ;
-      const list_platform = platformInviteRankUserInfo.concat(oldPlatformList);
+      const list_platform = oldPlatformList.concat(platformInviteRankUserInfo);
 
       return { ...state,
         friendCircleList:friendCircleInviteRankUserInfo,
@@ -100,14 +102,15 @@ export default {
         allRankOfFriendCircle,
         friendCirclePageNo,
         allRankOfPlatform,
-        inviteAllUserAmount
+        inviteAllUserAmount,
+        platformPageNo
       };
     },
 
     saveFriendsRank(state,action){
-      const {friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
+      const {platformPageNo,friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
       const oldDateInviteUserRank = state.friendCircleList ;
-      const list = friendCircleInviteRankUserInfo.concat(oldDateInviteUserRank);
+      const list = oldDateInviteUserRank.concat(friendCircleInviteRankUserInfo);
       return { ...state,
         friendCircleList:list,
         platformList:platformInviteRankUserInfo,
@@ -115,7 +118,8 @@ export default {
         allRankOfFriendCircle,
         friendCirclePageNo,
         allRankOfPlatform,
-        inviteAllUserAmount
+        inviteAllUserAmount,
+        platformPageNo
       };
     },
 
