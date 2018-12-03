@@ -11,6 +11,38 @@ import icon_gengduo from '../../assets/icon_gengduo@3x.png'
 import icon_chakan from '../../assets/icon_chakan@3x.png'
 import { routerRedux } from 'dva/router';
 
+
+//名次
+export const RankLabel = ({item})=>{
+  if(item.rank===1){
+    return (
+      <div className={styles.monthly_focus_section_list_guan}>
+        <img src={icon_guan} alt=""/>
+      </div>
+    )
+  }
+  else if(item.rank===2){
+    return (
+      <div className={styles.monthly_focus_section_list_guan}>
+        <img src={icon_ya} alt=""/>
+      </div>
+    )
+  }
+  else if(item.rank===3){
+    return (
+      <div className={styles.monthly_focus_section_list_guan}>
+        <img src={icon_ji} alt=""/>
+      </div>
+    )
+  }
+  return (
+    <div className={styles.monthly_focus_section_list_guan}>
+      {item.rank}
+    </div>
+  )
+}
+
+
 function MonthlyFocus(props) {
   // platformList,
   //   userIconUrl,
@@ -37,37 +69,6 @@ function MonthlyFocus(props) {
       </div>
     )
   });
-
-  //名次
-  const RankLabel = ({item})=>{
-    if(item.rank===1){
-      return (
-        <div className={styles.monthly_focus_section_list_guan}>
-          <img src={icon_guan} alt=""/>
-        </div>
-      )
-    }
-    else if(item.rank===2){
-      return (
-        <div className={styles.monthly_focus_section_list_guan}>
-          <img src={icon_ya} alt=""/>
-        </div>
-      )
-    }
-    else if(item.rank===3){
-      return (
-        <div className={styles.monthly_focus_section_list_guan}>
-          <img src={icon_ji} alt=""/>
-        </div>
-      )
-    }
-    return (
-      <div className={styles.monthly_focus_section_list_guan}>
-        {item.rank}
-      </div>
-    )
-  }
-
 
 
   // // 平台排行

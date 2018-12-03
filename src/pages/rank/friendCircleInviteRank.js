@@ -7,6 +7,7 @@ import icon_guan from '../../assets/icon_guan@3x.png';
 import icon_ji from '../../assets/icon_ji@3x.png';
 import icon_ya from '../../assets/icon_ya@3x.png';
 import { ListView } from 'antd-mobile';
+import { RankLabel } from './page';
 
 
 function MyBody(props) {
@@ -103,13 +104,10 @@ class FriendCircleInviteRank extends React.Component{
 
 
     const friendCircleInviteRankRank = friendCircleList.map((item,i)=>{
-      if(i<=2) return null;
       return(
         <div className={styles.monthly_focus_section_list_item} key={i}>
           <div className={styles.monthly_focus_section_list_tit_left}>
-            <div className={styles.monthly_focus_section_list_guan}>
-              {item.rank}
-            </div>
+            <RankLabel item={item} />
             <div className={styles.monthly_focus_section_list_avatar}>
               <img src={item.userIconUrl} alt=""/>
             </div>
@@ -137,43 +135,8 @@ class FriendCircleInviteRank extends React.Component{
             </div>
             <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
           </div>
-          <div className={styles.monthly_focus_section_list_item} style={{marginTop:"24px"}}>
-            <div className={styles.monthly_focus_section_list_tit_left}>
-              <div className={styles.monthly_focus_section_list_guan}>
-                <img src={icon_guan} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_avatar}>
-                <img src={friendCircleList[0].userIconUrl} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_name}>{friendCircleList[0].userName}</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_portion}><span>{friendCircleList[0].friendAmount}</span>份</div>
-          </div>
-          <div className={styles.monthly_focus_section_list_item}>
-            <div className={styles.monthly_focus_section_list_tit_left}>
-              <div className={styles.monthly_focus_section_list_guan}>
-                <img src={icon_ya} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_avatar}>
-                <img src={friendCircleList[1].userIconUrl} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_name}>{friendCircleList[1].userName}</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_portion}><span>{friendCircleList[1].friendAmount}</span>份</div>
-          </div>
-          <div className={styles.monthly_focus_section_list_item}>
-            <div className={styles.monthly_focus_section_list_tit_left}>
-              <div className={styles.monthly_focus_section_list_guan}>
-                <img src={icon_ji} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_avatar}>
-                <img src={friendCircleList[2].userIconUrl} alt=""/>
-              </div>
-              <div className={styles.monthly_focus_section_list_name}>{friendCircleList[2].userName}</div>
-            </div>
-            <div className={styles.monthly_focus_section_list_portion}><span>{friendCircleList[2].friendAmount}</span>份</div>
-          </div>
-          {/*{friendCircleInviteRankRank}*/}
+
+          {friendCircleInviteRankRank}
 
           <ListView
             ref={el => this.lv = el}

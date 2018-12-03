@@ -24,6 +24,15 @@ export default {
             payload:{}
           })
         }
+
+        if (pathname === '/rank/friendCircleInviteRank') {
+          dispatch({
+            type:'fetchInviteUserRank',
+            payload:{
+              type:'friendList'
+            },
+          })
+        }
       });
     }
   },
