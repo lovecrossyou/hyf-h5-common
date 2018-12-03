@@ -36,32 +36,6 @@ class FriendCircleInviteRank extends React.Component{
     };
   }
 
-  componentWillMount(){
-
-    this.fetchData();
-  }
-
-
-  // 加载数据
-  fetchData = ()=>{
-    this.props.dispatch({
-      type:'award/fetchInviteUserRank',
-      payload:{
-        type:'friendList'
-      },
-      cb:()=>{
-        const list = this.props.store.friendCircleList ;
-
-
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(list),
-        });
-
-        console.log('list  dataSource ',this.state.dataSource);
-
-      }
-    })
-  }
 
   onEndReached=()=>{
 

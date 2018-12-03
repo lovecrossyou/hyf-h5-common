@@ -21,15 +21,8 @@ export default {
         if (pathname === '/rank/page') {
           dispatch({
             type:'fetchInviteUserRank',
-            payload:{}
-          })
-        }
-
-        if (pathname === '/rank/friendCircleInviteRank') {
-          dispatch({
-            type:'fetchInviteUserRank',
             payload:{
-              type:'friendList'
+              type:'platform'
             },
           })
         }
@@ -44,7 +37,14 @@ export default {
         payload: data
       });
     },
-    *fetchInviteUserRank({ payload ,cb}, { call, put }) {
+
+    *fetchInviteUserRank({ payload ,cb}, { call, put ,select}) {
+      const {rankStore} = yield select(state => {
+        const rankStore = state.rank;
+        return {rankStore};
+      });
+
+      const {platformPageNo,friendCirclePageNo} = rankStore ;
       const {type} = payload ;
       let params = {}
       if(type!=='friendList'){

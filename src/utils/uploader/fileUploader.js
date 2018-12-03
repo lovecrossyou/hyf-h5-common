@@ -12,7 +12,7 @@ const putExtra = {
 };
 
 const qiniuUploadTokenURL = '/discountGame/qiniu/getUpToken';
-const qiniuImageURLPrefix = 'http://pax4lf8m2.bkt.clouddn.com/' ;
+const qiniuImageURLPrefix = 'http://qnimage.xiteng.com/' ;
 
 const getUploadToken = async () => {
   return request(qiniuUploadTokenURL, {
