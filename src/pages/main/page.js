@@ -5,7 +5,8 @@ import Link from 'umi/link';
 function App(props) {
   return (
     <div className={styles.normal}>
-      <br/>
+      <Link to="/classify/page"><h1>分类</h1></Link>
+      <Link to="/rank/page"><h1>排行</h1></Link>
       <br/>
       <Link to="/member/page"><h1>会员</h1></Link>
       <br/>
@@ -31,7 +32,6 @@ function App(props) {
       <br/>
       <Link to="/awardDetail/thePrizeForDetails"><h1>奖品详情</h1></Link>
       <br/>
-      <Link to="/classify/page"><h1>分类</h1></Link>
     </div>
   );
 }

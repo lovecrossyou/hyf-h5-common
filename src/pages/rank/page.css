@@ -1,0 +1,221 @@
+.img{
+  width: 100%;
+}
+.price_details_head{
+  text-align: center;
+  background: #FFFFFF;
+  padding-top:62px;
+  padding-bottom:46px;
+}
+.price_details_tit{
+  font-size: 36px;
+  color:#cc2636;
+}
+.price_details_tit_intro{
+  font-size: 30px;
+  color:#cc2636;
+  margin-top: 24px;
+}
+.price_details_num{
+  font-size: 30px;
+  color:#333333;
+  margin-top: 68px;
+}
+.price_details_num>span{
+  color:#eeeeee;
+  padding-left:60px;
+  padding-right:60px;
+}
+.price_details_section{
+  width: 100%;
+  margin-top:30px;
+}
+.price_zero_details_section_item{
+  width:100%;
+  margin-bottom:30px;
+  background: #FFFFFF;
+}
+.price_details_section_title{
+  width:100%;
+  height: 88px;
+  line-height: 88px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #cccccc;
+}
+.price_details_section_item{
+  width:100%;
+  height:120px;
+  line-height:60px;
+  padding:30px;
+  box-sizing: border-box;
+  font-size: 26px;
+  color:#666666;
+  display: flex;
+}
+.price_details_section_item_headportrait{
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+  background: #F29A3D;
+}
+.price_details_section_item_headportrait>img{
+  width:60px;
+  height:60px;
+}
+.price_details_section_item_name{
+  width:187px;
+  padding-left:20px;
+  padding-right:20px;
+  box-sizing: border-box;
+  color: #333333;
+  overflow: hidden
+}
+.price_details_section_item_num{
+  width:90px;
+}
+.price_details_section_item_productname{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap
+}
+.unfold{
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background:#F29A3D
+}
+/*榜单*/
+.monthly_focus_container{
+  width:100%;
+
+}
+.monthly_focus_title{
+  display: flex;
+  justify-content: space-around;
+  padding-top:30px;
+  padding-bottom: 20px;
+  background: linear-gradient(to right,#db2f3b,#f79789);
+}
+.bdb6{
+  border-bottom:6px solid #ffffff;
+}
+.monthly_focus_title>div{
+  font-size: 30px;
+  color: #ffffff;
+  line-height: 2;
+  padding:0 20px;
+}
+.monthly_focus_section{
+  font-size: 30px;
+  color: #333333;
+}
+.monthly_focus_section_list_tit_box{
+  width:100%;
+  padding-bottom:20px;
+  background: linear-gradient(to right,#db2f3b,#f79789);
+}
+.monthly_focus_section_list_tit{
+  width:96%;
+  margin:0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  padding:30px;
+  box-sizing: border-box;
+}
+.monthly_focus_section_friends_list{
+  font-size: 28px;
+  color: #e13646;
+}
+.monthly_focus_section_friends_list>img{
+  width:24px;
+}
+.monthly_focus_section_list_tit_left{
+  display: flex;
+  align-items: center;
+}
+.monthly_focus_section_friends_list_num{
+  font-size: 30px;
+  color:#333333;
+  text-align: center;
+  margin-top:34px;
+  margin-bottom:48px;
+}
+.monthly_focus_section_friends_list_num_bbig{
+  font-size: 74px;
+  color:#e02f42;
+  padding-left:10px;
+  padding-right:10px;
+}
+.monthly_focus_section_friends_list_num_big{
+  font-size: 30px;
+  color:#f8978a;
+}
+.monthly_focus_section_friends_list_pic{
+  width:100%;
+  height:60px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.monthly_focus_section_friends_list_picitem{
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 14px;
+  background: #f5f5f5;
+}
+.monthly_focus_section_friends_list_picitem>img{
+  width: 60px;
+}
+.monthly_focus_section_friends_list_all{
+  font-size: 24px;
+  color: #333333;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 22px;
+}
+.monthly_focus_section_friends_list_all>img{
+  width:10px;
+  margin-left:10px;
+}
+.monthly_focus_section_list_avatar{
+  display: inline-block;
+  width:80px;
+  height:80px;
+  border-radius: 5px;
+  margin-left:18px;
+  margin-right:18px;
+  background: #f5f5f5;
+}
+.monthly_focus_section_list_avatar>img{
+  width:80px;
+  height:80px;
+}
+.monthly_focus_section_list_name{
+  width:240px;
+}
+.monthly_focus_section_list_portion{
+  font-size: 24px;
+}
+.monthly_focus_section_list_portion>span{
+  font-size: 34px;
+  padding-right:10px;
+}
+.monthly_focus_section_list_item{
+  width:100%;
+  height:140px;
+  background: #ffffff;
+  border:1px solid #e1e1e1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30px;
+  box-sizing: border-box;
+}
+.monthly_focus_section_list_guan{
+  width:34px;
+}
+.monthly_focus_section_list_guan>img{
+  width:34px;
+}
