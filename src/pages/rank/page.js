@@ -48,23 +48,15 @@ export const RankLabel = ({item})=>{
 
 
 function MonthlyFocus(props) {
-  // platformList,
-  //   userIconUrl,
-  //   allRankOfFriendCircle,
-  //   friendCirclePageNo,
-  //   allRankOfPlatform,
-  //   inviteAllUserAmount
-  // friendCircleList
-  // isShow
 
   const {isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
-  // console.log('shifouqiehuanaaaa==',isShow)
-  if(platformList.length===0)return null;
-  console.log('邀请榜单==',props.store);// 邀请榜单
-
-
-  // const {platformList,allRankOfFriendCircle , allRankOfPlatform , friendCircleInviteRankUserInfo , userIconUrl , inviteAllUserAmount , platformInviteRankUserInfo} = dateInviteUserRank;
-  //
+  if(platformList.length===0)return (
+    <ActivityIndicator
+      color="white"
+      toast
+      animating={props.loading}
+    />
+  );
   // // 朋友圈排行
   const InviteUserRankContainer = friendCircleList.map((item,i)=>{
     return(
@@ -74,14 +66,9 @@ function MonthlyFocus(props) {
     )
   });
 
-  const platformLists = platformList.sort(sortByRank);
-  console.log('platformLists #### ',platformLists)
-  console.log('lists #### ',platformList)
-
-
 
   // // 平台排行
-  const PlatformInviteRankContainer = platformLists.map((item,i)=>{
+  const PlatformInviteRankContainer = platformList.map((item,i)=>{
     return(
       <div className={styles.monthly_focus_section_list_item} key={i}>
         <div className={styles.monthly_focus_section_list_tit_left}>
@@ -91,7 +78,7 @@ function MonthlyFocus(props) {
           </div>
           <div className={styles.monthly_focus_section_list_name}>{item.userName}</div>
         </div>
-        <div className={styles.monthly_focus_section_list_portion}><span>{item.friendAmount}</span>份</div>
+        <div className={styles.monthly_focus_section_list_portion}><span>{item.friendAmount}</span>人</div>
       </div>
     )
   });
@@ -121,7 +108,7 @@ function MonthlyFocus(props) {
               <div className={styles.monthly_focus_section_friends_list}><img src={icon_paihang} alt=""/><span style={{marginLeft:"10px"}}>好友排行</span></div>
               <div className={styles.monthly_focus_section_friends_list_num}>
                 <span>我</span>
-                <span className={styles.monthly_focus_section_friends_list_num_bbig}>{allRankOfFriendCircle}</span>
+                <span className={styles.monthly_focus_section_friends_list_num_bbig}>{allRankOfPlatform}</span>
                 <span className={styles.monthly_focus_section_friends_list_num_big}>名</span>
               </div>
               <div className={styles.monthly_focus_section_friends_list_pic}>

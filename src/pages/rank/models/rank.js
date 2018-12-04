@@ -3,7 +3,7 @@ const awardUrl = 'http://qnimage.xiteng.com/award_detail.png';
 
 
 const sortByRank = (a,b)=>{
-  return a.rank >=b.rank ;
+  return parseInt(a.rank) - parseInt(b.rank) ;
 }
 
 
@@ -11,9 +11,9 @@ const pageSize = 20 ;
 export default {
   namespace: 'rank',
   state: {
-    friendCirclePageNo: -1,
+    friendCirclePageNo: 0,
     friendCircleList:[],
-    platformPageNo: -1,
+    platformPageNo: 0,
     platformList:[],
 
     isShow:false
@@ -49,23 +49,30 @@ export default {
 
       const {platformPageNo,friendCirclePageNo} = rankStore ;
 
-      const nextPage = parseInt(platformPageNo) + 1 ;
+      const nextPage = parseInt(platformPageNo) ;
       const {type} = payload ;
-      let params = {}
-      if(type!=='friendList'){
-        //请求平台数据
-        params = {
-          platformPageNo: nextPage,
-          platformPageSize: pageSize*5
-        }
+      let params = {
+        friendCirclePageNo: 0,
+        friendCirclePageSize: pageSize,
+        platformPageNo: 0,
+        platformPageSize: pageSize
       }
-      else {
-        // 请求朋友圈数据
-        params = {
-          friendCirclePageNo: 0,
-          friendCirclePageSize: pageSize,
-        }
-      }
+
+
+      // if(type!=='friendList'){
+      //   //请求平台数据
+      //   params = {
+      //     platformPageNo: nextPage,
+      //     platformPageSize: pageSize
+      //   }
+      // }
+      // else {
+      //   // 请求朋友圈数据
+      //   params = {
+      //     friendCirclePageNo: 0,
+      //     friendCirclePageSize: pageSize,
+      //   }
+      // }
 
       const data = yield call(queryInviteUserRank,params);
       if(type!=='friendList'){
@@ -95,12 +102,11 @@ export default {
 
     savePlatformRank(state,action){
       const {platformPageNo,friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
-      const oldPlatformList = state.platformList ;
-      const list_platform = oldPlatformList.concat(platformInviteRankUserInfo);
+
 
       return { ...state,
         friendCircleList:friendCircleInviteRankUserInfo.sort(sortByRank),
-        platformList:list_platform.sort(sortByRank),
+        platformList:platformInviteRankUserInfo.sort(sortByRank),
         userIconUrl,
         allRankOfFriendCircle,
         friendCirclePageNo,
@@ -112,10 +118,8 @@ export default {
 
     saveFriendsRank(state,action){
       const {platformPageNo,friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
-      const oldDateInviteUserRank = state.friendCircleList ;
-      const list = oldDateInviteUserRank.concat(friendCircleInviteRankUserInfo);
       return { ...state,
-        friendCircleList:list.sort(sortByRank),
+        friendCircleList:friendCircleInviteRankUserInfo.sort(sortByRank),
         platformList:platformInviteRankUserInfo.sort(sortByRank),
         userIconUrl,
         allRankOfFriendCircle,
