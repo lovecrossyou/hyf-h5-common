@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
+import { routerRedux } from 'dva/router';
 
 import styles from './page.css'
 
@@ -44,7 +45,14 @@ class Classify extends Component {
           <li className={styles.classify_content_wrap}>
             {second_category_list.map((data,index) =>{
               return (
-                <div key={index} className={styles.classify_shop}>
+                <div
+                  onClick={()=>{
+                    const {secondCategoryId} = data ;
+                    console.log('data ',data);
+                    this.props.dispatch(routerRedux.push('./classify_detail?categoryId='+secondCategoryId))
+                  }}
+                  key={index}
+                  className={styles.classify_shop}>
                   <div className={styles.classify_shop_img}>
                     <img src={data.secondCategoryImageUrl} alt=""/>
                   </div>

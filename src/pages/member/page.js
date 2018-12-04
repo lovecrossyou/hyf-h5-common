@@ -274,7 +274,7 @@ class Member extends React.Component {
       </div>
       <div className={styles.tips}>
         <div className={styles.tips_title}>会员专享特权</div>
-        <div className={styles.tips_desc}>VIP会员一年内不限期数参与0元抢金砖活动，每期可参与选号抽签；每期均可发起拼团，每成功一个拼团奖励次选号抽签0元抢购金砖。</div>
+        <div className={styles.tips_desc}>VIP会员一年内不限期数参与抽签抢金砖活动，每期可参与选号抽签；每期均可发起拼团，每成功一个拼团奖励一次选号抽签抢购金砖。</div>
       </div>
       <div className={styles.vip}>
         <div className={styles.vip_title}>会员等级特权</div>

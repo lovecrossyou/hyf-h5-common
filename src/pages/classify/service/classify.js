@@ -13,3 +13,10 @@ export async function fetchSecondCategory(params) {
     body:params
   });
 }
+
+export async function productOfSecondCategory(params) {
+  return request('/discountProduct/productOfSecondCategory',{
+    method:'post',
+    body:params
+  });
+}

@@ -55,12 +55,13 @@
 
 .tips_title{
   font-weight: bold;
-  font-size: 30px;
+  font-size: 32px;
   color: #999999;
 }
 
 .tips_desc{
-  color: #999999;
+  color: #999;
+  line-height: 40px;
 }
 
 .tips div{
