@@ -15,13 +15,6 @@ export default {
     datePurchaseRank:[],
     dateInviteUserRank:[],
 
-    friendCirclePageNo: -1,
-    friendCircleList:[],
-
-
-
-    platformPageNo: -1,
-    platformList:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -54,14 +47,6 @@ export default {
           })
         }
       });
-    },
-    inviteUserRank({ dispatch, history }){
-      dispatch({
-        type:'fetchInviteUserRank',
-        payload:{
-          isShow:false
-        }
-      })
     }
   },
   effects: {

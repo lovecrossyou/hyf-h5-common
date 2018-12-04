@@ -2,9 +2,12 @@ import {queryInviteUserRank , queryPurchaseRank} from "../service/rank";
 const awardUrl = 'http://qnimage.xiteng.com/award_detail.png';
 
 
-const pageSize = 8 ;
+const sortByRank = (a,b)=>{
+  return a.rank <b.rank ;
+}
 
 
+const pageSize = 20 ;
 export default {
   namespace: 'rank',
   state: {
@@ -53,7 +56,7 @@ export default {
         //请求平台数据
         params = {
           platformPageNo: nextPage,
-          platformPageSize: pageSize
+          platformPageSize: pageSize*5
         }
       }
       else {
@@ -96,8 +99,8 @@ export default {
       const list_platform = oldPlatformList.concat(platformInviteRankUserInfo);
 
       return { ...state,
-        friendCircleList:friendCircleInviteRankUserInfo,
-        platformList:list_platform,
+        friendCircleList:friendCircleInviteRankUserInfo.sort(sortByRank),
+        platformList:list_platform.sort(sortByRank),
         userIconUrl,
         allRankOfFriendCircle,
         friendCirclePageNo,
@@ -112,8 +115,8 @@ export default {
       const oldDateInviteUserRank = state.friendCircleList ;
       const list = oldDateInviteUserRank.concat(friendCircleInviteRankUserInfo);
       return { ...state,
-        friendCircleList:list,
-        platformList:platformInviteRankUserInfo,
+        friendCircleList:list.sort(sortByRank),
+        platformList:platformInviteRankUserInfo.sort(sortByRank),
         userIconUrl,
         allRankOfFriendCircle,
         friendCirclePageNo,
