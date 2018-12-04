@@ -11,8 +11,12 @@ import icon_gengduo from '../../assets/icon_gengduo@3x.png'
 import icon_chakan from '../../assets/icon_chakan@3x.png'
 import { routerRedux } from 'dva/router';
 
+const sortByRank = (a,b)=>{
+  return parseInt(a.rank) >=parseInt(b.rank) ;
+}
 
-//名次
+
+// 名次
 export const RankLabel = ({item})=>{
   if(item.rank===1){
     return (
@@ -70,9 +74,14 @@ function MonthlyFocus(props) {
     )
   });
 
+  const platformLists = platformList.sort(sortByRank);
+  console.log('platformLists #### ',platformLists)
+  console.log('lists #### ',platformList)
+
+
 
   // // 平台排行
-  const PlatformInviteRankContainer = platformList.map((item,i)=>{
+  const PlatformInviteRankContainer = platformLists.map((item,i)=>{
     return(
       <div className={styles.monthly_focus_section_list_item} key={i}>
         <div className={styles.monthly_focus_section_list_tit_left}>

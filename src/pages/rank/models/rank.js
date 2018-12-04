@@ -3,8 +3,6 @@ const awardUrl = 'http://qnimage.xiteng.com/award_detail.png';
 
 
 const sortByRank = (a,b)=>{
-
-  console.log('sortByRank ',a,b);
   return a.rank >=b.rank ;
 }
 
