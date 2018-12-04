@@ -1,4 +1,4 @@
-const zeroUrl = 'http://qnimage.xiteng.com/rule_003.jpg';
+const zeroUrl = 'http://qnimage.xiteng.com/0yuan_rule.jpg';
 const threedUrl = 'http://qnimage.xiteng.com/threed.jpg';
 const commonUrl = 'http://qnimage.xiteng.com/index_rule.jpg';
 
