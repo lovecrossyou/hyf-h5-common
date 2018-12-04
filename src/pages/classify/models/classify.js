@@ -1,11 +1,12 @@
 import { setTokenFromQueryString } from '../../../utils/authority';
-import { fetchFirstCategory ,fetchSecondCategory} from '../service/classify';
+import { fetchFirstCategory ,fetchSecondCategory,productOfSecondCategory} from '../service/classify';
 
 export default {
   namespace: 'classify',
   state: {
     first_category_list:[],
-    second_category_list:[]
+    second_category_list:[],
+    productOfSecondCategory:[],
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -15,6 +16,15 @@ export default {
           dispatch({
             type: 'firstCategory',
             payload: {},
+          });
+        }
+        else if(pathname === '/classify/classify_detail'){
+          const {categoryId} = query ;
+          dispatch({
+            type: 'productOfSecondCategory',
+            payload: {
+              secondCategoryId:categoryId
+            },
           });
         }
       });
@@ -47,6 +57,14 @@ export default {
         payload: userData,
       });
     },
+
+    * productOfSecondCategory({ payload, cb }, { call, put }) {
+      const products = yield call(productOfSecondCategory, payload);
+      yield put({
+        type: 'saveProducts',
+        payload: products,
+      });
+    },
   },
   // 同步
   reducers: {
@@ -57,5 +75,12 @@ export default {
     saveSecondCategory(state, action) {
       return { ...state, second_category_list: action.payload };
     },
+
+    saveProducts(state,action){
+      return {
+        ...state,
+        productOfSecondCategory:action.payload
+      }
+    }
   },
 };
