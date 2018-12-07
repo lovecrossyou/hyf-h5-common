@@ -42,7 +42,7 @@ export default {
         }
         else if (pathname === '/awardDetail/monthlyFocus') {
           dispatch({
-            type:'fetchInviteUserRank',
+            type:'inviteUserRank',
             payload:{}
           })
         }

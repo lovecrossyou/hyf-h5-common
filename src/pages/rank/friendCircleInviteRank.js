@@ -38,19 +38,16 @@ class FriendCircleInviteRank extends React.Component{
 
 
   onEndReached=()=>{
-    console.log('onEndReached ');
-    this.props.dispatch({
-      type:'rank/fetchInviteUserRank',
-      payload:{
-        type:'friendList',
-      },
-    })
+    // this.props.dispatch({
+    //   type:'rank/fetchInviteUserRank',
+    //   payload:{
+    //     type:'friendList',
+    //   },
+    // })
   }
 
   componentWillMount(){
     const {friendCircleList, friendCirclePageNo} = this.props.store;
-
-    console.log('friendCircleList ',friendCircleList);
     this.setState({
       dataSource: this.state.dataSource.cloneWithRows(friendCircleList)
     });
@@ -58,7 +55,7 @@ class FriendCircleInviteRank extends React.Component{
 
 
   render(){
-    const {friendCircleList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCirclePageNo} = this.props.store;
+    const {isShow,friendCircleList,allPurchaseAmount,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCirclePageNo} = this.props.store;
     const separator = (sectionID, rowID) => (
       <div
         key={`${sectionID}-${rowID}`}
@@ -81,7 +78,9 @@ class FriendCircleInviteRank extends React.Component{
             </div>
             <div className={styles.monthly_focus_section_list_name}>{rowData.userName}</div>
           </div>
-          <div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>人</div>
+          {
+            isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{rowData.allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>人</div>)
+          }
         </div>
       )
     }
@@ -100,7 +99,9 @@ class FriendCircleInviteRank extends React.Component{
               </div>
               <div className={styles.monthly_focus_section_list_name}>我</div>
             </div>
-            <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
+            {
+              isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>)
+            }
           </div>
 
           <ListView

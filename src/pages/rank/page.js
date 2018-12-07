@@ -49,7 +49,7 @@ export const RankLabel = ({item})=>{
 
 function MonthlyFocus(props) {
 
-  const {isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
+  const {allPurchaseAmount,inviteRankUserInfo,purchaseRankUserInfo,isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
   if(platformList.length===0)return (
     <ActivityIndicator
       color="white"
@@ -78,7 +78,7 @@ function MonthlyFocus(props) {
           </div>
           <div className={styles.monthly_focus_section_list_name}>{item.userName}</div>
         </div>
-        <div className={styles.monthly_focus_section_list_portion}><span>{item.friendAmount}</span>人</div>
+        <div className={styles.monthly_focus_section_list_portion}><span>{item.allPurchaseAmount||item.friendAmount}</span>{isShow==false?'人':'份'}</div>
       </div>
     )
   });
@@ -91,16 +91,16 @@ function MonthlyFocus(props) {
       />
       <div className={styles.monthly_focus_container}>
         <div className={styles.monthly_focus_title}>
-          <div className={isShow?styles.bdb6:""} onClick={()=>{
-            props.dispatch({
-              type:"rank/purchaseRank"
-            })
-          }}>抢购榜单</div>
           <div className={isShow?"":styles.bdb6} onClick={()=>{
             props.dispatch({
-              type:"rank/inviteUserRank"
+              type:"rank/fetchInviteUserRank"
             })
           }}>邀请榜单</div>
+          <div className={isShow?styles.bdb6:""} onClick={()=>{
+            props.dispatch({
+              type:"rank/fetchPurchaseRank"
+            })
+          }}>抢购榜单</div>
         </div>
         <div className={styles.monthly_focus_section}>
           <div className={styles.monthly_focus_section_list_tit_box}>
@@ -108,7 +108,7 @@ function MonthlyFocus(props) {
               <div className={styles.monthly_focus_section_friends_list}><img src={icon_paihang} alt=""/><span style={{marginLeft:"10px"}}>好友排行</span></div>
               <div className={styles.monthly_focus_section_friends_list_num}>
                 <span>我</span>
-                <span className={styles.monthly_focus_section_friends_list_num_bbig}>{allRankOfPlatform}</span>
+                <span className={styles.monthly_focus_section_friends_list_num_bbig}>{allRankOfFriendCircle}</span>
                 <span className={styles.monthly_focus_section_friends_list_num_big}>名</span>
               </div>
               <div className={styles.monthly_focus_section_friends_list_pic}>
@@ -130,7 +130,9 @@ function MonthlyFocus(props) {
                 </div>
                 <div className={styles.monthly_focus_section_list_name}>我</div>
               </div>
-              <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
+              {
+                isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>)
+              }
             </div>
             {PlatformInviteRankContainer}
           </div>

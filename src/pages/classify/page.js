@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
+import DocumentTitle from 'react-document-title';
 
 import styles from './page.css'
 
@@ -32,38 +33,40 @@ class Classify extends Component {
   render() {
     const {first_category_list,second_category_list} = this.props.store ;
     return (
-      <div className={styles.warpper}>
-        <ul>
-          <li className={styles.classify_list}>
-            {first_category_list.map((data,index) => {
+      <DocumentTitle title='分类'>
+        <div className={styles.warpper}>
+          <ul>
+            <li className={styles.classify_list}>
+              {first_category_list.map((data,index) => {
                 return (
                   <span key={index+'#'} onClick={this.handleClick.bind(this,index)} className={this.state.needIndex==index?styles.onclick_after:styles.onclick_before}>{data.firstCategoryName}</span>
                 )
               })
-            }
-          </li>
-          <li className={styles.classify_content_wrap}>
-            {second_category_list.map((data,index) =>{
-              return (
-                <div
-                  onClick={()=>{
-                    const {secondCategoryId} = data ;
-                    console.log('data ',data);
-                    this.props.dispatch(routerRedux.push('./classify_detail?categoryId='+secondCategoryId))
-                  }}
-                  key={index}
-                  className={styles.classify_shop}>
-                  <div className={styles.classify_shop_img}>
-                    <img src={data.secondCategoryImageUrl} alt=""/>
+              }
+            </li>
+            <li className={styles.classify_content_wrap}>
+              {second_category_list.map((data,index) =>{
+                return (
+                  <div
+                    onClick={()=>{
+                      const {secondCategoryId} = data ;
+                      console.log('data ',data);
+                      this.props.dispatch(routerRedux.push('./classify_detail?categoryId='+secondCategoryId))
+                    }}
+                    key={index}
+                    className={styles.classify_shop}>
+                    <div className={styles.classify_shop_img}>
+                      <img src={data.secondCategoryImageUrl} alt=""/>
+                    </div>
+                    <p className={styles.classify_shop_name}>{data.secondCategoryName}</p>
                   </div>
-                  <p className={styles.classify_shop_name}>{data.secondCategoryName}</p>
-                </div>
-              )
-            })
-          }
-          </li>
-        </ul>
-      </div>
+                )
+              })
+              }
+            </li>
+          </ul>
+        </div>
+      </DocumentTitle>
     );
   }
 }
