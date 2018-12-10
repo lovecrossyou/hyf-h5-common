@@ -200,3 +200,67 @@
 .upqradeYourAccount{
   color:#cc2636;
 }
+
+
+/*账单明细*/
+.billing_details_container{
+
+}
+.billing_details_container .billing_details_header{
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+}
+.billing_details_container .billing_details_header .billing_details_header_item{
+  flex:1;
+  text-align: center;
+  padding-top:28px;
+  padding-bottom:26px;
+}
+.billing_details_container .billing_details_header .billing_details_header_item_active{
+  flex:1;
+  text-align: center;
+  border-bottom:4px solid #e02f42;
+  padding-top:28px;
+  padding-bottom:26px;
+}
+.billing_details_container .billing_details_header .billing_details_header_item:first-child,
+.billing_details_container .billing_details_header .billing_details_header_item_active:first-child{
+  border-right:1px solid #cccccc;
+}
+.billing_details_container .billing_details_header .billing_details_header_item h4,
+.billing_details_container .billing_details_header .billing_details_header_item_active h4{
+  margin-bottom:20px;
+}
+.billilng_details_section_head{
+  height:74px;
+  line-height:74px;
+  border:1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  padding-left:20px;
+  padding-right:20px;
+}
+.billilng_details_section_item{
+  background: #ffffff;
+  border:1px solid #cccccc;
+  padding:28px 20px;
+}
+.billilng_details_section_item_data{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+.billilng_details_section_item_data>.billilng_details_section_item_data_second{
+  color:#17a97a;
+}
+.billilng_details_section_item_data_specific{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  color:#989898;
+  margin-top:10px;
+}
+.billilng_details_section_item_data_specific>.billilng_details_section_item_data_specific_second{
+  font-size: 22px;
+}

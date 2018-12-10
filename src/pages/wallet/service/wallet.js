@@ -53,6 +53,13 @@ export async function fetchUserProfitDiamondFriendInfo(params) {
   });
 }
 
+// 账单明细
+export async function fetchBill(params) {
+  return request('/account/bill',{
+    method:'post',
+    body:params
+  });
+}
 
 
 

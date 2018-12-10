@@ -127,7 +127,9 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
             <div>星座运势</div>
           </div>
         </div>
-        <div className={styles.wallet_fun_item}>
+        <div className={styles.wallet_fun_item} onClick={() => {
+          dispatch(routerRedux.push('/wallet/billingDetails'));
+        }}>
           <div className='account_record'>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
             <div>账单明细</div>
