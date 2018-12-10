@@ -46,6 +46,7 @@ const Layout = props => {
         onLeftClick={() => {
           if(isRootPage(props)){
             window.postMessage('goBack');
+            return;
           }
           router.go(-1);
         }}
