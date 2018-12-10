@@ -4,7 +4,16 @@ import DocumentTitle from 'react-document-title';
 
 
 import styles from './page.css';
+import emptyBg from '../../assets/bqku.png'
 import {ActivityIndicator} from "../../components/ActivityIndicator";
+
+
+export const EmptyData = ({hasData=false})=>{
+  if(hasData===true)return null ;
+  return <div>
+    <img src={emptyBg} alt="" className={styles.emptyBg}/>
+  </div>
+}
 
 function ThePriceForDetails(props) {
   const {data3D} = props.store ;
@@ -42,6 +51,7 @@ function ThePriceForDetails(props) {
             )
           })
         }
+        <EmptyData hasData={winUserCount!==0}/>
       </div>
     </div>
   </DocumentTitle>;

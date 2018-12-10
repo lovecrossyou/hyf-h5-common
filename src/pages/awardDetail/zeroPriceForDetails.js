@@ -4,6 +4,7 @@ import styles from './page.css';
 import { routerRedux } from 'dva/router';
 import DocumentTitle from 'react-document-title';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
+import { EmptyData } from './thePrizeForDetails';
 
 function ZeroPriceForDetails(props) {
   const {dataSSQ} = props.store ;
@@ -16,8 +17,6 @@ function ZeroPriceForDetails(props) {
   }
 
   const {lotteryStage,winCodeCount,winUserCount,winUserInfoModelList,zeroGameWinDetailModel} = dataSSQ ;
-
-console.log(1111111111111111,zeroGameWinDetailModel);
 
   const luckyguy = Object.keys(zeroGameWinDetailModel).forEach((key) => {
     console.log(key)
@@ -36,7 +35,7 @@ console.log(1111111111111111,zeroGameWinDetailModel);
           >奖品详情>></div>
           <div className={styles.price_details_num}>中签人数：{winUserCount}人<span>|</span>中签注数：{winCodeCount}注</div>
         </div>
-        <div className={styles.price_details_section}>
+        {winCodeCount===0? (<EmptyData hasData={false}/>) : (<div className={styles.price_details_section}>
           <div className={styles.price_zero_details_section_item}>
             <div className={styles.price_details_section_title}>一等奖（{zeroGameWinDetailModel.firstWinCodeCount}注）</div>
             {
@@ -112,7 +111,8 @@ console.log(1111111111111111,zeroGameWinDetailModel);
               })
             }
           </div>
-        </div>
+        </div>)}
+
       </div>
     </div>
   </DocumentTitle>
