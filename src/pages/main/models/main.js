@@ -16,7 +16,7 @@ export default {
                     })
                     dispatch({
                         type:'global/setTitle',payload:{
-                          text:"组件"
+                          text:"首页"
                         }
                       })
                 }

@@ -6,33 +6,55 @@ import withRouter from "umi/withRouter";
 import config from "../utils/config";
 import styles from "./index.css";
 
-const {openPages } = config;
+const {rootPages } = config;
 
+
+const pageInArray = (pathname,arr)=>{
+  let findPage = false ;
+  for(let page of arr){
+    if(pathname === page){
+      findPage = true ;
+      break ;
+    }
+  }
+  return findPage ;
+}
+
+
+const isRootPage = props =>{
+  const state = window.g_app._store.getState();
+  const platform = state.global.platform ;
+  return pageInArray(props.pathname,rootPages) && platform!==undefined ;
+}
 
 const Layout = props => {
-  return <div className={styles.wrapper}> {props.children}</div>;
-  if (openPages && openPages.includes(props.pathname)) {
-    return <div> {props.children}</div>;
+  const state = window.g_app._store.getState();
+  if(state.global.platform===undefined){
+    return <div className={styles.wrapper}> {props.children}</div>;
   }
   return (
     <div>
       <NavBar
         mode="dark"
         className={styles.barColor}
-        style={{ backgroundColor: "#cc2636",height:'50px',position:"fixed",zIndex:"11",width:"100%",top:"0" }}
+        style={{ backgroundColor: "#fff",height:'1rem',position:"fixed",zIndex:"11",width:"100%",top:"0" }}
         icon={
           (props.pathname === "/main" || props.pathname === "/") ?null: (
             <Icon type="left" size={'lg'}/>
           )
         }
         onLeftClick={() => {
-          //这里需要做指定式跳转，手机页面会涉及到用户刷新的问题
+          if(isRootPage(props)){
+            window.postMessage('goBack');
+          }
           router.go(-1);
         }}
       >
         {props.text}
       </NavBar>
-      {props.children}
+      <div style={{marginTop:'1rem'}}>
+        {props.children}
+      </div>
     </div>
   );
 };

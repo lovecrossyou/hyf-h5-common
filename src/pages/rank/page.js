@@ -49,7 +49,7 @@ export const RankLabel = ({item})=>{
 
 function MonthlyFocus(props) {
 
-  const {allPurchaseAmount,inviteRankUserInfo,purchaseRankUserInfo,isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
+  const {allPurchaseAmount,purchaseRankUserInfo,isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
   if(platformList.length===0)return (
     <ActivityIndicator
       color="white"

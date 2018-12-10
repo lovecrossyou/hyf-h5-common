@@ -13,6 +13,13 @@ export default {
           dispatch({
             type: 'fetch',
           })
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '3D热销',
+            },
+          });
+
         }
       });
     }
