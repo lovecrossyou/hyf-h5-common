@@ -38,6 +38,21 @@ export default {
           dispatch({
             type:'fetchInviteUserRank',
           })
+
+          //标题
+          dispatch({
+            type:'global/setTitle',payload:{
+              text:"榜单"
+            }
+          })
+        }
+        else if (pathname === '/rank/friendCircleInviteRank'){
+          //标题
+          dispatch({
+            type:'global/setTitle',payload:{
+              text:"朋友圈排行"
+            }
+          })
         }
       });
     }
@@ -58,14 +73,6 @@ export default {
     },
 
     *fetchInviteUserRank({ payload ,cb}, { call, put ,select}) {
-      const {rankStore} = yield select(state => {
-        const rankStore = state.rank;
-        return {rankStore};
-      });
-
-      const {platformPageNo,friendCirclePageNo} = rankStore ;
-
-      const nextPage = parseInt(platformPageNo) ;
       let params = {
         friendCirclePageNo: 0,
         friendCirclePageSize: pageSize,
@@ -82,8 +89,7 @@ export default {
   },
   reducers: {
     savePurchaseRank(state,action){
-      const {allPurchaseAmount,purchaseRankUserInfo,platformTotalCount,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,friendCirclePurchaseRankUserInfo,platformPurchaseRankUserInfo,friendCircleTotalCount} = action.payload ;
-
+      const {allPurchaseAmount,purchaseRankUserInfo,platformTotalCount,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,friendCirclePurchaseRankUserInfo,platformPurchaseRankUserInfo} = action.payload ;
       return { ...state,
         friendCircleList:friendCirclePurchaseRankUserInfo.sort(sortByRank),
         platformList:platformPurchaseRankUserInfo.sort(sortByRank),

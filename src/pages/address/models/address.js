@@ -15,6 +15,12 @@ export default {
           dispatch({
             type: 'fetch',
           })
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '地址列表',
+            },
+          });
         }
       });
     }

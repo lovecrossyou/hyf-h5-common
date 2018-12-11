@@ -19,14 +19,29 @@ export default {
             type: 'userInfo',
             payload: {},
           });
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '用户信息',
+            },
+          });
         }
         if (pathname === '/astro/page') {
           dispatch({
             type: 'userInfo',
             payload: {},
           });
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '星座',
+            },
+          });
         } else if (pathname === '/astro/AstroItem') {
-
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '星座选择',
+            },
+          });
         }
       });
     },

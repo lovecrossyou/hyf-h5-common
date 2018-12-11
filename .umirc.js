@@ -3,10 +3,7 @@ export default {
   targets:{
     ios:9
   },
-  // publicPath:'/xitenggamenode/',
   publicPath:'./',
-  // base:'/xitenggamenode/',
-  // publicPath:'/xitenggamejar/dist/',
   base:'/xitenggamenode/',
   plugins: [
     ['umi-plugin-react', {
