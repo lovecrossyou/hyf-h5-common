@@ -3,7 +3,7 @@ import {fetchClientAccount} from '../service/bank';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
-  namespace: 'wallet',
+  namespace: 'bank',
   state: {
 
   },
