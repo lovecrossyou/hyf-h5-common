@@ -9,7 +9,7 @@ class Classify extends Component {
 
   state = {
     needIndex:0
-  }
+  };
 
   componentDidMount () {
     console.log(this.state)
@@ -24,7 +24,7 @@ class Classify extends Component {
       payload:{
         firstCategoryId:selectCategory.firstCategoryId
       }
-    })
+    });
     this.setState({
       needIndex:categoryIndex
     })
