@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import styles from './classify_detail.css';
+import ClassifyFilter from './components/ClassifyFilter';
 
 
 class ClasifyDetail extends React.Component {
@@ -9,12 +10,7 @@ class ClasifyDetail extends React.Component {
     super(props);
     this.state = {
       needIndex:0,
-      list: [
-        { id: "综合", title: '前端人人1' },
-        { id: "价格", title: '前端人人2' },
-        { id: "销量", title: '前端人人3' },
-        { id: "筛选", title: '前端人人4' },
-      ]
+      sortNum: 1
     };
   }
   componentDidMount () {
@@ -28,30 +24,36 @@ class ClasifyDetail extends React.Component {
   }
 
 
+
   render() {
+    const product_categor_list = this.props.store ;
+    console.log(product_categor_list.productOfSecondCategory);
     return (
       <div>
-        <ul>
-          <li className={styles.top_nav}>
-            {
-              this.state.list.map((data, index) => {
-                return (
-                  <div key={index} onClick={this.newslistclick.bind(this, index)} className={this.state.needIndex==index?styles.onclick_after:styles.onclick_before}>{data.id}</div>
-                )
-              })
-            }
-          </li>
-          <li className={styles.classify_detail_shop}>
-            {
-              this.state.list.map((data, index) => {
-                return (
-                  <div key={index} style={{ display: this.state.needIndex == index ? "block" : "none" }}>{data.title}</div>
-                )
-              })
-            }
-          </li>
-        </ul>
+        {/*条件排序*/}
+        <ClassifyFilter/>
+        {/*商品列表*/}
+        <div className={styles.product_categor_wrapper}>
+          {product_categor_list.productOfSecondCategory.map((data, index) => {
+            return (
+              <div key={index} className={styles.product_categor_cont}>
+                <div className={styles.product_categor_img}>
+                  <img src={data.productImageUrl} alt=""/>
+                </div>
+                <div className={styles.product_categor_cont_text}>
+                  <div className={styles.product_categor_name}>{data.productName}</div>
+                  <div className={styles.all_price}>
+                    <div className={styles.categor_original_price}>¥0.00</div>
+                    <div className={styles.product_categor_price}>¥{data.originalPrice/100}.00</div>
+                  </div>
+                </div>
+              </div>
+            )
+          })
+          }
+        </div>
       </div>
+
     );
   }
 }

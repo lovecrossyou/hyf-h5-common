@@ -32,6 +32,26 @@
       wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
     });
 
+    // 新版购买会员
+    $('#root').on('click', '.btn_vip_product_confirm', function() {
+
+      var state = window.g_app._store.getState();
+      var member = state.member;
+      var address = state.address;
+
+      const params = {
+        deliverAddressId:address.activeAddress.id,
+        entityVipProductType:member.activeProduct.entityVipProductType,
+        purchaseCount:member.buyCount,
+      }
+
+      console.log('params 新版购买会员 ',params)
+
+      wx.miniProgram.postMessage({ data: params });
+      wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+    });
+
+
     // 会员购买
     $('#root').on('click', '.vip_right_action', function() {
       var vip_type = $(this).attr('vip_type');
