@@ -1,4 +1,4 @@
-import { fetchBankCardKindListMsg } from '../service/bank';
+import { fetchBankCardKindListMsg, fetchBankCardList } from '../service/bank';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 
@@ -6,17 +6,21 @@ export default {
   namespace: 'bank',
   state: {
     bankNameList : [],
-    bankInfo : {}
+    bankInfo : {},
+    bankCardList:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/bank/addBankCard' ) {
+        if(pathname === '/bank/page'){
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
             payload: {},
           })
+        }
+        else if (pathname === '/bank/addBankCard' ) {
+
         }
       });
     },
@@ -25,11 +29,14 @@ export default {
   effects: {
     * fetch({ payload }, { call, put }) {
       const {content} = yield call(fetchBankCardKindListMsg, payload);
-      console.log('bankNameList ### ',content)
       let list = content.map(bank=>Object.assign({...bank,label:bank.name})) ;
-      console.log('list#### ',list);
       yield put({
         type: 'save', payload:list
+      });
+
+      const bankCardList= yield call(fetchBankCardList, payload) ;
+      yield put({
+        type: 'saveBankCardList', payload:bankCardList.content
       });
     },
 
@@ -41,6 +48,8 @@ export default {
         bankNameList: action.payload
       };
     },
+
+
     changeBankDataValue(state,action){
       console.log(action)
       return {
@@ -48,12 +57,19 @@ export default {
         bankdatavalue:action.payload
       }
     },
+
     saveBankInfo(state,action){
       return {
         ...state,
         bankInfo:action.payload
       }
-    }
+    },
 
+    saveBankCardList(state,action){
+      return {
+        ...state,
+        bankCardList:action.payload
+      }
+    }
   },
 };

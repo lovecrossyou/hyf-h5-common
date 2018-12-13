@@ -25,7 +25,6 @@ for (let i = 0; i<userVipGrade;i++){
       </div>
     </div>
   }
-  console.log('userVipInfo ',userVipInfo);
 //头部会员详情
   return <div className={styles.flex_row}>
     <div className={styles.diamond_wrapper}>
