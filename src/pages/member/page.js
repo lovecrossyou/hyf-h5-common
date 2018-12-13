@@ -5,7 +5,9 @@ import { routerRedux } from 'dva/router';
 import styles from './page.css';
 import { ActivityIndicator } from '../../components/ActivityIndicator';
 
-const VIPHeader = ()=>{
+const VIPHeader = ({userVipInfo})=>{
+
+  console.log('userVipInfo ',userVipInfo)
   return <div>
 
   </div>
@@ -59,7 +61,7 @@ class Member extends React.Component {
     );
     return <div style={{ paddingBottom: '40px' }}>
       <div className={styles.header_bg}>
-        <VIPHeader/>
+        <VIPHeader userVipInfo={userVipInfo}/>
       </div>
       <div className={styles.tips}>
         <div className={styles.tips_title}>会员专享特权</div>
