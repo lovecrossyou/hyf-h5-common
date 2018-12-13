@@ -6,7 +6,8 @@ export default {
   state: {
     userVipInfo:null,
     payResult:null,
-    upgradeVIP:null
+    upgradeVIP:null,
+    products:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -46,6 +47,11 @@ export default {
         type: 'save',
         payload:response
       });
+
+      yield put({
+        type: 'saveVIPProducts',
+        payload:products
+      });
     },
 
     *upgrade({ payload,cb }, { call, put }) {
@@ -79,6 +85,10 @@ export default {
 
     saveVip(state,action){
       return { ...state, upgradeVIP:action.payload };
+    },
+
+    saveVIPProducts(state,action){
+      return { ...state, products:action.payload };
 
     }
   },

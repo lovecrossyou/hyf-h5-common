@@ -19,13 +19,13 @@ const BtnBuy = ()=>{
 
 
 
-const ProductItem = ({onClick})=>{
+const ProductItem = ({data,onClick})=>{
   return <div className={styles.product} onClick={onClick}>
-    <div className={styles.p_img}></div>
+    <img src={data.imageUrl} className={styles.p_img} alt=""/>
     <div className={styles.p_info}>
-      <div className={styles.p_info_title}>喜腾精选毛巾</div>
-      <div className={styles.p_info_desc}>赠送抽签抢黄金，每期一注</div>
-      <div className={styles.p_info_price}>￥28.9</div>
+      <div className={styles.p_info_title}>{data.productName}</div>
+      <div className={styles.p_info_desc}>{data.subtitle}</div>
+      <div className={styles.p_info_price}>￥{data.price/100}</div>
     </div>
     <div className={styles.btn_buy_wrapper}>
       <BtnBuy/>
@@ -46,7 +46,7 @@ class Member extends React.Component {
 
 
   render() {
-    const { userVipInfo } = this.props.store;
+    const { userVipInfo,products } = this.props.store;
     const { loading } = this.props;
     if (userVipInfo == null) return (
       <ActivityIndicator
@@ -71,42 +71,22 @@ class Member extends React.Component {
       <div className={styles.vip}>
         <div className={styles.vip_title}>会员专供</div>
         <div className={styles.vip_list}>
-          <ProductItem
-            onClick={()=>{
-              this.props.dispatch(routerRedux.push('/member/confirmOrder'))
-            }}/>
-          <ProductItem/>
-          <ProductItem/>
+          {
+            products.map((p,index)=>{
+              return <ProductItem
+                key={index+'#'}
+                data={p}
+                onClick={()=>{
+                  this.props.dispatch(routerRedux.push('/member/confirmOrder'))
+                }}/>
+            })
+          }
         </div>
       </div>
       <Tips/>
     </div>;
   }
-
 }
-
-const VipItem = ({ vip, action }) => {
-  return (
-    <div className={[styles.vip_item]}>
-      <div className={styles.vip_item_content}>
-        <div className={styles.vip_left}>
-          <img src={vip.img} alt="" className={styles.vip_left_img}/>
-          <div className={styles.vip_left_text}>
-            <div className={styles.vip_left_text_title}>{vip.title}</div>
-            <div className={styles.vip_left_text_desc}>{vip.desc}</div>
-            <div className={styles.vip_left_text_price}>{vip.price}元/年</div>
-          </div>
-        </div>
-        <div className={styles.vip_right}>
-          <div className={vip.enable !== false ? 'vip_right_action' : 'vip_right_action_disable'} onClick={action}
-               vip_type={vip.type}>{vip.action}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
 
 const Tips = () => {
   return (
