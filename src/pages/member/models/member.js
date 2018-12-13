@@ -19,6 +19,10 @@ export default {
             type: 'fetch',
             payload: {},
           });
+          //获取地址列表
+          dispatch({
+            type:'address/fetch'
+          })
           dispatch({
             type: 'global/setTitle', payload: {
               text: '会员俱乐部',

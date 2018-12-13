@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import { Modal, Button } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
+import { routerRedux } from 'dva/router';
 
 import styles from './page.css';
 import { ActivityIndicator } from '../../components/ActivityIndicator';
@@ -9,9 +10,10 @@ import { Stepper } from '../lotteryselect/components/Stepper';
 
 
 // 地址信息
-const AddressContainer = ({data=null})=>{
+const AddressContainer = ({data=null,goAddressList})=>{
+  console.log(' data ',data);
   if(data==null){
-    return <div className={styles.addr_container_empty}>
+    return <div className={styles.addr_container_empty} onClick={goAddressList}>
       + 请完善地址
     </div>
   }
@@ -83,9 +85,14 @@ class VIPConfirmOrder extends React.Component{
   };
 
   render(){
+    const {activeAddress} = this.props.addrStore ;
     return <DocumentTitle title='购买会员'>
       <div className={styles.order_confirm_container}>
-        <AddressContainer/>
+        <AddressContainer
+          goAddressList={()=>{
+            this.props.dispatch(routerRedux.push('/address/page'))
+          }}
+          data={activeAddress}/>
         <ProductInfo/>
         <BuyCountWrapper
           number={this.state.number}
@@ -101,5 +108,10 @@ class VIPConfirmOrder extends React.Component{
   }
 }
 
-export default connect()(VIPConfirmOrder)
+export default connect(state=>{
+  return {
+    memberStore:state.member,
+    addrStore:state.address,
+  }
+})(VIPConfirmOrder)
 

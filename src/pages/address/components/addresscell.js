@@ -5,7 +5,7 @@ import chooseIcon from '../../../assets/address/choose@2x.png';
 import editIcon from '../../../assets/address/adress_btn_edit@2x.png';
 import delIcon from '../../../assets/address/adress_btn_delete@2x.png';
 
-export const AddressCell = ({address,del,edit})=>{
+export const AddressCell = ({address,del,edit,onClick})=>{
 
   console.log('address ',address)
   return <div   style={{margin:'10px 0',backgroundColor:'#fff'}}>
@@ -35,7 +35,7 @@ export const AddressCell = ({address,del,edit})=>{
         <List.Item
           onClick={e => console.log(e)}
         >
-          <div className='addr_btn' data={address.id}>
+          <div className='addr_btn' data={address.id} onClick={onClick}>
             <div className={styles.right}>
               <div className={styles.linkman}>
                 <div className={styles.reciev_name}>{address.recievName}</div>
