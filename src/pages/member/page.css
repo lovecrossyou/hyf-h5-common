@@ -413,7 +413,7 @@
   margin-left: 10px;
 }
 
-.footer_wrapper_right{
+:global(.btn_vip_product_confirm){
   height: 90px;
   flex: 1;
   text-align: center;

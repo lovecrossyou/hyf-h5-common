@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Modal, Button,Icon } from 'antd-mobile';
+import {Icon } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import { routerRedux } from 'dva/router';
 
@@ -84,7 +84,7 @@ const BuyFooter = ({buyCount=1,totalAmount=0})=>{
       <div className={styles.footer_wrapper_left_price}>¥{totalAmount}</div>
     </div>
 
-    <div className={styles.footer_wrapper_right}>
+    <div className='btn_vip_product_confirm'>
       提交订单
     </div>
   </div>
@@ -95,7 +95,6 @@ class VIPConfirmOrder extends React.Component{
   state = {
     number:1
   };
-
 
   componentWillMount(){
     this.props.dispatch({
@@ -133,6 +132,7 @@ class VIPConfirmOrder extends React.Component{
           }}/>
         <ProductSum totalAmount={totalAmount}/>
         <BuyFooter totalAmount={totalAmount} buyCount={buyCount}/>
+        <ActivityIndicator loading={this.props.loading}/>
       </div>
     </DocumentTitle>
   }
@@ -142,6 +142,7 @@ export default connect(state=>{
   return {
     memberStore:state.member,
     addrStore:state.address,
+    loading:state.loading.global
   }
 })(VIPConfirmOrder)
 
