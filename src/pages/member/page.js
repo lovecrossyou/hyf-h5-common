@@ -20,7 +20,9 @@ const BtnBuy = ()=>{
 
 
 const ProductItem = ({data,onClick})=>{
-  return <div className={styles.product} onClick={onClick}>
+  return <div
+    className={styles.product}
+    onClick={onClick}>
     <img src={data.imageUrl} className={styles.p_img} alt=""/>
     <div className={styles.p_info}>
       <div className={styles.p_info_title}>{data.productName}</div>
@@ -77,6 +79,10 @@ class Member extends React.Component {
                 key={index+'#'}
                 data={p}
                 onClick={()=>{
+                  this.props.dispatch({
+                    type:'member/setActiveProduct',
+                    payload:p
+                  })
                   this.props.dispatch(routerRedux.push('/member/confirmOrder'))
                 }}/>
             })
