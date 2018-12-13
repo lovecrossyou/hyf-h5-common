@@ -18,7 +18,7 @@ const AddressContainer = ({data=null})=>{
   return <div className={styles.addr_container}>
 
   </div>
-}
+};
 
 // 商品信息
 
@@ -32,7 +32,7 @@ const ProductInfo = ()=>{
 
 
   </div>
-}
+};
 
 const BuyCountWrapper = ({onChange,number})=>{
   return (
@@ -47,7 +47,20 @@ const BuyCountWrapper = ({onChange,number})=>{
         }}/>
     </div>
   )
-}
+};
+
+const ProductSum = ()=>{
+  return <div>
+    <div className={styles.product_sum_wrapper}>
+      <div className={styles.product_sum_text}>商品金额</div>
+      <div className={styles.product_sum_num}>¥59.00</div>
+    </div>
+    <div className={styles.product_freight_wrapper}>
+      <div className={styles.product_sum_text}>运费</div>
+      <div className={styles.product_sum_num}>+¥0.00</div>
+    </div>
+  </div>
+};
 
 const BuyFooter = ()=>{
   return <div className={styles.footer_wrapper}>
@@ -61,13 +74,13 @@ const BuyFooter = ()=>{
       提交订单
     </div>
   </div>
-}
+};
 
 class VIPConfirmOrder extends React.Component{
 
   state = {
     number:1
-  }
+  };
 
   render(){
     return <DocumentTitle title='购买会员'>
@@ -81,6 +94,7 @@ class VIPConfirmOrder extends React.Component{
               number:v
             })
           }}/>
+        <ProductSum/>
         <BuyFooter/>
       </div>
     </DocumentTitle>

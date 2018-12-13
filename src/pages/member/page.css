@@ -319,37 +319,36 @@
   text-align: center;
   line-height: 140px;
   background: #FFFFFF url("http://qnimage.xiteng.com/top_crosse.png") no-repeat bottom;
-  background-size: 100% 2px;
+  background-size: 100% 4px;
 }
 
 .product_info_wrapper{
   width: 100%;
   height: 180px;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-
   border-bottom: solid #e1e1e1 1px;
+  margin-top: 22px;
+  padding: 25px 27px;
+  box-sizing: border-box;
 
 }
 
 .product_info_img{
   width: 140px;
   height: 140px;
-  margin-left: 20px;
-  border: solid 1px #999999;
-
+  border: solid 1px #dedede;
 }
 
 .product_info_des{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 140px;
-  width: 60%;
-  margin-left: 12px;
+  flex: 1;
+  height: 125px;
+  margin-left: 24px;
   background-color: #fff;
 }
 
@@ -370,9 +369,9 @@
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
-
   height: 120px;
   background-color: #FFFFFF;
+  border: 1px solid #dedede;
 }
 
 .footer_wrapper{
@@ -406,6 +405,8 @@
 
 .footer_wrapper_left_mid{
   padding: 0 12px;
+  box-sizing: border-box;
+  margin-left: 10px;
 }
 
 .footer_wrapper_right{
@@ -418,4 +419,35 @@
 }
 
 .order_confirm_container{
+}
+.product_sum_wrapper{
+  width: 100%;
+  height: 90px;
+  background-color: #fff;
+  margin-top: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 85px;
+  padding: 0 27px;
+  box-sizing: border-box;
+  font-size: 30px;
+}
+.product_sum_text{
+  color: #333;
+}
+.product_sum_num{
+  color: #cc2636;
+}
+.product_freight_wrapper{
+  width: 100%;
+  height: 90px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 85px;
+  padding: 0 27px;
+  box-sizing: border-box;
+  font-size: 30px;
 }
