@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Modal, Button } from 'antd-mobile';
+import { Modal, Button,Icon } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import { routerRedux } from 'dva/router';
 
@@ -17,8 +17,18 @@ const AddressContainer = ({data=null,goAddressList})=>{
       + 请完善地址
     </div>
   }
-  return <div className={styles.addr_container}>
+  return <div className={styles.addr_container} onClick={goAddressList}>
+    <div className={styles.personage_info}>
+      <div>收货人：{data.recievName}</div>
+      <div>{data.phoneNum}</div>
+    </div>
+    <div className={styles.personage_address}>
+      <div>收货地址: {data.fullAddress}</div>
+    </div>
 
+    <div className={styles.right_icon}>
+      <Icon type='right' color='#999'/>
+    </div>
   </div>
 };
 

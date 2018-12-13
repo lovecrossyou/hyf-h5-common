@@ -310,6 +310,9 @@
   height: 140px;
   background: #FFFFFF url("http://qnimage.xiteng.com/top_crosse.png") no-repeat bottom;
   background-size: 100% 4px;
+  font-size: 30px;
+  color: #333;
+  position: relative;
 }
 
 .addr_container_empty{
@@ -452,3 +455,20 @@
   box-sizing: border-box;
   font-size: 30px;
 }
+.personage_info,
+.personage_address
+{
+  width: 80%;
+  height: 24px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 27px 45px;
+  box-sizing: border-box;
+}
+.right_icon{
+  position: absolute;
+  top: 35%;
+  right: 30px;
+}
+
