@@ -8,7 +8,9 @@ export default {
     payResult: null,
     upgradeVIP: null,
     products: [],
-    activeProduct:null
+    activeProduct:null,
+    buyCount:1,
+    totalAmount:0.00
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -98,6 +100,17 @@ export default {
 
     setActiveProduct(state,action){
       return { ...state, activeProduct: action.payload };
+    },
+
+    saveBuyCount(state,action){
+      const buyCount = action.payload ;
+      const totalAmount = buyCount * state.activeProduct.price
+
+      return {
+        ...state,
+        buyCount:action.payload,
+        totalAmount:totalAmount/100
+      }
     }
   },
 };

@@ -34,12 +34,14 @@ const AddressContainer = ({data=null,goAddressList})=>{
 
 // 商品信息
 
-const ProductInfo = ()=>{
+const ProductInfo = ({data=null,totalAmount})=>{
+  console.log('ProductInfo ',data);
+  if(data==null)return null;
   return <div className={styles.product_info_wrapper}>
-    <div  className={styles.product_info_img}></div>
+    <img src={data.imageUrl} alt=""  className={styles.product_info_img}/>
     <div className={styles.product_info_des}>
-      <div className={styles.product_info_des_title}>小米(M1)AI 音响蓝牙Wi-Fi喜哦啊爱同学</div>
-      <div className={styles.product_info_des_price}>¥369</div>
+      <div className={styles.product_info_des_title}>{data.productName}</div>
+      <div className={styles.product_info_des_price}>¥{data.price/100}</div>
     </div>
 
 
@@ -61,11 +63,11 @@ const BuyCountWrapper = ({onChange,number})=>{
   )
 };
 
-const ProductSum = ()=>{
+const ProductSum = ({totalAmount})=>{
   return <div>
     <div className={styles.product_sum_wrapper}>
       <div className={styles.product_sum_text}>商品金额</div>
-      <div className={styles.product_sum_num}>¥59.00</div>
+      <div className={styles.product_sum_num}>¥{totalAmount}</div>
     </div>
     <div className={styles.product_freight_wrapper}>
       <div className={styles.product_sum_text}>运费</div>
@@ -74,12 +76,12 @@ const ProductSum = ()=>{
   </div>
 };
 
-const BuyFooter = ()=>{
+const BuyFooter = ({buyCount=1,totalAmount=0})=>{
   return <div className={styles.footer_wrapper}>
     <div className={styles.footer_wrapper_left}>
-      <div>共1份</div>
+      <div>共{buyCount}份</div>
       <div className={styles.footer_wrapper_left_mid}>实付款：</div>
-      <div className={styles.footer_wrapper_left_price}>¥369</div>
+      <div className={styles.footer_wrapper_left_price}>¥{totalAmount}</div>
     </div>
 
     <div className={styles.footer_wrapper_right}>
@@ -94,8 +96,25 @@ class VIPConfirmOrder extends React.Component{
     number:1
   };
 
+
+  componentWillMount(){
+    this.props.dispatch({
+      type:'member/saveBuyCount',
+      payload:1
+    })
+  }
+
+  updateAmount = count=>{
+    this.props.dispatch({
+      type:'member/saveBuyCount',
+      payload:count
+    })
+  }
+
   render(){
     const {activeAddress} = this.props.addrStore ;
+    const {activeProduct,totalAmount,buyCount} = this.props.memberStore ;
+
     return <DocumentTitle title='购买会员'>
       <div className={styles.order_confirm_container}>
         <AddressContainer
@@ -103,16 +122,17 @@ class VIPConfirmOrder extends React.Component{
             this.props.dispatch(routerRedux.push('/address/page'))
           }}
           data={activeAddress}/>
-        <ProductInfo/>
+        <ProductInfo data={activeProduct} />
         <BuyCountWrapper
           number={this.state.number}
           onChange={v=>{
             this.setState({
               number:v
             })
+            this.updateAmount(v);
           }}/>
-        <ProductSum/>
-        <BuyFooter/>
+        <ProductSum totalAmount={totalAmount}/>
+        <BuyFooter totalAmount={totalAmount} buyCount={buyCount}/>
       </div>
     </DocumentTitle>
   }
