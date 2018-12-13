@@ -284,14 +284,29 @@
 
 .footer{
   text-align: center;
-  color: #999999;
-  background-color: gray;
-  margin-bottom: 20px;
-  border:solid 1px #333333;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .am-textarea-control>textarea{
   color: #999999;
+  width: 668px;
+  height:200px;
+  background-color: #f3f3f3;
+  font-size: 30px;
+}
+.am-textarea-control{
+  color: #999999;
+  width: 668px;
+  height:200px;
+  background-color: #f3f3f3;
+  font-size: 30px;
+}
+.btn_qrcode_share_btn{
+  background-color: #CC2124;
+  color: #fff;
 }
 
 
