@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import styles from './classify_detail.css';
+import ClassifyFilter from './components/ClassifyFilter';
 
 
 class ClasifyDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      needIndex:0
+      needIndex:0,
+      sortNum: 1
     };
   }
   componentDidMount () {
@@ -20,14 +22,7 @@ class ClasifyDetail extends React.Component {
       needIndex:val
     })
   }
-  state = {
-    sortNum: 1
-  };
-  setSortNum = (num) => {
-    this.setState({
-      sortNum: num
-    });
-  };
+
 
 
   render() {
@@ -36,22 +31,7 @@ class ClasifyDetail extends React.Component {
     return (
       <div>
         {/*条件排序*/}
-        <div className={styles.condition_wrapper}>
-          <ul className={styles.condition_sort}>
-            <li onClick={()=>this.setSortNum(1)} className={this.state.sortNum ===1?styles.sort_after:styles.sort_before}>综合</li>
-            <li onClick={()=>this.setSortNum(2)} className={this.state.sortNum ===2?styles.sort_after:styles.sort_before}>
-              价格
-              <div className={styles.sort_icon_up}>
-                <img src="../../assets/classify/icon_up@2x.png" alt=""/>
-              </div>
-              <div className={styles.sort_icon_down}>
-                <img src="../../assets/classify/icon_down@2x.png" alt=""/>
-              </div>
-            </li>
-            <li onClick={()=>this.setSortNum(3)} className={this.state.sortNum ===3?styles.sort_after:styles.sort_before}>销量</li>
-            <li onClick={()=>this.setSortNum(4)} className={this.state.sortNum ===4?styles.sort_after:styles.sort_before}>筛选</li>
-          </ul>
-        </div>
+        <ClassifyFilter/>
         {/*商品列表*/}
         <div className={styles.product_categor_wrapper}>
           {product_categor_list.productOfSecondCategory.map((data, index) => {

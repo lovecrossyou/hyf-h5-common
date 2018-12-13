@@ -1,4 +1,4 @@
-import { fetchPayResult, fetchUpdateToVipUser, fetchUserVipInfo } from '../service/member';
+import { fetchPayResult, fetchUpdateToVipUser, fetchUserVipInfo, fetchVIPProduct } from '../service/member';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
@@ -39,9 +39,8 @@ export default {
   effects: {
     *fetch({ payload }, { call, put }) {
       console.log('fetchUserVipInfo before',payload)
-
       const response = yield call(fetchUserVipInfo,payload)
-
+      const products = yield call(fetchVIPProduct,payload)
       console.log('fetchUserVipInfo ',fetchUserVipInfo)
       yield put({
         type: 'save',
