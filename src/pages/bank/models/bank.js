@@ -1,16 +1,17 @@
-import {fetchClientAccount} from '../service/bank';
+import { fetchBankCardKindListMsg } from '../service/bank';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
   namespace: 'bank',
   state: {
-
+    bankNameList : [],
+    bankInfo : {}
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page' ) {
+        if (pathname === '/bank/addBankCard' ) {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
@@ -19,23 +20,39 @@ export default {
         }
       });
     },
+
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      const userProfitInfo = yield call(fetchClientAccount, payload);
+      const {content} = yield call(fetchBankCardKindListMsg, payload);
+      console.log('bankNameList ### ',content)
+      let list = content.map(bank=>Object.assign({...bank,label:bank.name})) ;
+      console.log('list#### ',list);
       yield put({
-        type: 'save', payload: {
-          userProfitInfo
-        },
+        type: 'save', payload:list
       });
-    }
+    },
+
   },
   reducers: {
     save(state, action) {
       return {
         ...state,
-        userProfitInfo: action.payload.userProfitInfo
+        bankNameList: action.payload
       };
+    },
+    changeBankDataValue(state,action){
+      console.log(action)
+      return {
+        ...state,
+        bankdatavalue:action.payload
+      }
+    },
+    saveBankInfo(state,action){
+      return {
+        ...state,
+        bankInfo:action.payload
+      }
     }
 
   },
