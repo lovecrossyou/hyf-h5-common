@@ -1,4 +1,4 @@
-import { fetchAddBankCard, fetchBankCardKindListMsg, fetchBankCardList, fetchCheckCode } from '../service/bank';
+import { fetchAddBankCard, fetchBankCardKindListMsg, fetchBankCardList, fetchCheckCode } from '../services/bank';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 

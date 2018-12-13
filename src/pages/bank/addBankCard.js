@@ -28,7 +28,7 @@ function addBankCard(props){
 
               <Picker
                 extra="请选择"
-                title="银行名称 ："
+                title="银行列表"
                 {...getFieldProps('bankCardKind')}
                 data={bankNameList}
                 cols={1}
