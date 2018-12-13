@@ -107,8 +107,6 @@ class CheckPhoneNumView extends React.Component{
                         params.code = code;
                         const phone = phoneNum.replace(/\s+/g,"") ;
                         params.phoneNum = phone;
-
-                        console.log('bankInfo params',params)
                         this.bindCard(params);
                       });
                     }}

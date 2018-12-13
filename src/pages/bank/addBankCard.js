@@ -7,7 +7,6 @@ import { createForm } from 'rc-form';
 import { routerRedux } from 'dva/router';
 
 function addBankCard(props){
-  console.log(11111,props.store);
   const { bankNameList , bankdatavalue } = props.store;
   const { getFieldProps } = props.form;
   return(
@@ -46,10 +45,7 @@ function addBankCard(props){
               style={{background:"#e02f42",color:"#FFFFFF"}}
               onClick={()=>{
                 props.form.validateFields((error, value) => {
-                  console.log(error, value);
-
                   const {cardholder,bankCardNumber,bankCardKind,openAccountbranch} = value ;
-
                   if(cardholder===undefined){
                     Toast.show('请输入持卡人姓名');
                     return ;
