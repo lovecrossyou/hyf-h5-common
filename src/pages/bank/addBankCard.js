@@ -2,7 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { connect } from 'dva';
 import styles from './page.css';
-import { List, InputItem, Button , Picker , WingBlank } from 'antd-mobile';
+import { List, InputItem, Button , Picker , WingBlank ,Toast} from 'antd-mobile';
 import { createForm } from 'rc-form';
 import { routerRedux } from 'dva/router';
 
@@ -15,31 +15,30 @@ function addBankCard(props){
         <div className={styles.add_bank_card_container}>
             <div className={styles.add_bank_card_container_list}>
               <InputItem
-                {...getFieldProps('cardUser')}
+                {...getFieldProps('cardholder')}
                 type="name"
                 placeholder="请填写持卡人姓名" >持卡人 ：</InputItem>
 
               <InputItem
-                {...getFieldProps('bankCard', {
-                  initialValue: '',
+                {...getFieldProps('bankCardNumber', {
                 })}
                 type="bankCard"
                 placeholder="请填写银行卡卡号"
               >银行卡</InputItem>
 
               <Picker
-                extra="省市区县"
+                extra="请选择"
                 title="银行名称 ："
-                {...getFieldProps('bankName')}
+                {...getFieldProps('bankCardKind')}
                 data={bankNameList}
                 cols={1}
                 className={styles.forss}
                 onOk={(val)=>{
                 }} >
-                <List.Item arrow="horizontal">省市区县</List.Item>
+                <List.Item arrow="horizontal">银行类型</List.Item>
               </Picker>
               <InputItem
-                {...getFieldProps('banksubName')}
+                {...getFieldProps('openAccountbranch')}
                 type="name" placeholder="请填写开户支行名称" >开户支行 ：</InputItem>
             </div>
           <WingBlank>
@@ -48,12 +47,43 @@ function addBankCard(props){
               onClick={()=>{
                 props.form.validateFields((error, value) => {
                   console.log(error, value);
+
+                  const {cardholder,bankCardNumber,bankCardKind,openAccountbranch} = value ;
+
+                  if(cardholder===undefined){
+                    Toast.show('请输入持卡人姓名');
+                    return ;
+                  }
+
+                  if(bankCardNumber===undefined){
+                    Toast.show('请输入卡号');
+                    return ;
+                  }
+
+                  if(bankCardKind===undefined){
+                    Toast.show('请选择银行卡类型');
+                    return ;
+                  }
+
+                  if(openAccountbranch===undefined) {
+                    Toast.show('请输入开支行');
+                    return;
+                  }
+
+                  const params = {
+                    cardholder,
+                    bankCardNumber,
+                    bankCardKind:bankCardKind[0],
+                    openAccountbranch
+                  }
+
                   props.dispatch({
                     type:"bank/saveBankInfo",
-                    payload:value
+                    payload:params
                   })
+                  props.dispatch(routerRedux.push('/bank/checkPhoneNum'))
+
                 });
-                props.dispatch(routerRedux.push('/bank/checkPhoneNum'))
               }}>下一步</Button>
           </WingBlank>
         </div>

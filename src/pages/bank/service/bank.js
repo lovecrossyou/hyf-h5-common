@@ -24,8 +24,16 @@ export async function fetchBankCardKindListMsg() {
 }
 
 
-export async function fetchGetCode(params) {
+export async function fetchCheckCode(params) {
   return request('/reqcheckCode/getCode',{
+    method:'post',
+    body:params
+  });
+}
+
+//添加银行卡
+export async function fetchAddBankCard(params) {
+  return request('/client/bankCard/addBankCard',{
     method:'post',
     body:params
   });

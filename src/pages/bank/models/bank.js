@@ -1,4 +1,4 @@
-import { fetchBankCardKindListMsg, fetchBankCardList } from '../service/bank';
+import { fetchAddBankCard, fetchBankCardKindListMsg, fetchBankCardList, fetchCheckCode } from '../service/bank';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 
@@ -29,7 +29,7 @@ export default {
   effects: {
     * fetch({ payload }, { call, put }) {
       const {content} = yield call(fetchBankCardKindListMsg, payload);
-      let list = content.map(bank=>Object.assign({...bank,label:bank.name})) ;
+      let list = content.map(bank=>Object.assign({...bank,label:bank.name,value:bank.id})) ;
       yield put({
         type: 'save', payload:list
       });
@@ -39,6 +39,15 @@ export default {
         type: 'saveBankCardList', payload:bankCardList.content
       });
     },
+
+    * getCheckCode({payload},{call,put}){
+      yield call(fetchCheckCode, payload);
+    },
+
+    * addBank({payload,cb},{call,put}){
+      const res = yield  call(fetchAddBankCard,payload);
+      cb&&cb();
+    }
 
   },
   reducers: {

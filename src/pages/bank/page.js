@@ -3,7 +3,7 @@ import DocumentTitle from 'react-document-title';
 import { connect } from 'dva';
 import styles from './page.css';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
-import { Button,WingBlank,Flex } from 'antd-mobile';
+import { Button,WingBlank,WhiteSpace, } from 'antd-mobile';
 import icon_bank from '../../assets/bank.png';
 import { routerRedux } from 'dva/router';
 
@@ -19,21 +19,22 @@ import { routerRedux } from 'dva/router';
 
 const BankItem = ({data})=>{
   console.log('data ',data)
-  return (<div>
+  return (<WingBlank>
+    <WhiteSpace/>
     <div className={styles.bank_wrapper} style={{backgroundColor:data.bgColor}}>
-      <div direction='row' align='center'>
+      <div className={styles.bank_info}>
         <img src={data.big_icon} alt="" className={styles.icon_bank}/>
-        <div>
+        <div className={styles.bank_info_detail}>
           <div>{data.bankName}</div>
           <div>储蓄卡</div>
         </div>
       </div>
       <div className={styles.bank_footer} style={{backgroundColor:data.bgColor}}>
-        <div>**** **** **** {data.endCardCode}</div>
+        **** **** **** {data.endCardCode}
       </div>
     </div>
 
-  </div>);
+  </WingBlank>);
 }
 
 function BankView(props){
