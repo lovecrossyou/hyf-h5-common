@@ -245,12 +245,11 @@
   padding: 10px 25px 50px 30px;
   box-sizing: border-box;
   justify-content: space-between;
-  border-bottom: solid 1px #999;
+  border-bottom: solid 1px #dedede;
 }
 .p_img{
   width: auto;
   height: 100%;
-  background-color: #999999;
 }
 .p_info{
   /*margin-left: 20px;*/
@@ -321,7 +320,7 @@
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-  border-bottom: solid #e1e1e1 1px;
+  /*border-bottom: solid #e1e1e1 1px;*/
   margin-top: 22px;
   padding: 25px 27px;
   box-sizing: border-box;
