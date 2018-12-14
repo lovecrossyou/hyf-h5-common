@@ -118,7 +118,7 @@ class VIPConfirmOrder extends React.Component{
       <div className={styles.order_confirm_container}>
         <AddressContainer
           goAddressList={()=>{
-            this.props.dispatch(routerRedux.push('/address/page'))
+            this.props.dispatch(routerRedux.push('/address/page?backType=web'))
           }}
           data={activeAddress}/>
         <ProductInfo data={activeProduct} />

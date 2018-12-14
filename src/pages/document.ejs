@@ -56,7 +56,9 @@
     $('#root').on('click', '.vip_right_action', function() {
       var vip_type = $(this).attr('vip_type');
       console.log('会员购买以及升级 vip_type ', vip_type);
-      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.postMessage({ data: {
+        vipProductType:vip_type
+        } });
       wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
     });
 
@@ -69,7 +71,9 @@
         vip_type = 'user_to_higher_golden_vip' ;
       }
 
-      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.postMessage({ data: {
+          vipProductType:vip_type
+        } });
       wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
     });
 
@@ -112,7 +116,7 @@
 
     // 账单明细
     $('#root').on('click', '.account_record', function() {
-      wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+      // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
     });
 
     // 用户信息 收货地址

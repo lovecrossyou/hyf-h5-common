@@ -6,6 +6,9 @@ import styles from './page.css';
 import { ActivityIndicator } from '../../components/ActivityIndicator';
 import diamond_icon from '../../assets/vip/diamiond_icon.png';
 import putong_icon from '../../assets/vip/putong_icon@2x.png'
+import DocumentTitle from 'react-document-title';
+
+import  VIPMember from './components/vipmember'
 
 const VIPHeader = ({userVipInfo})=>{
 const {userVipGrade} = userVipInfo ;
@@ -78,40 +81,41 @@ class Member extends React.Component {
         animating={loading}
       />
     );
-    return <div style={{ paddingBottom: '40px' }}>
-      <div className={styles.header_bg}>
-        <VIPHeader userVipInfo={userVipInfo}/>
-      </div>
-      <div className={styles.tips}>
-        <div className={styles.tips_title}>会员专享特权</div>
-        <div className={styles.tips_desc}>普通用户每周免费参与一期抽签抢金条，获赠1注抽签。购买会员店商品享受每期（周二、四、日22:00揭晓中签）参与0元抢金条。</div>
-        <div className={styles.tips_desc}>购买喜腾精选毛巾每期赠送抽签抢黄金，每期1注；</div>
-        <div className={styles.tips_desc}>购买喜腾订制水晶杯每期赠送抽签抢黄金，每期2注；</div>
-        <div className={styles.tips_desc}>购买喜腾订制棒球帽每期赠送抽签抢黄金，每期5注；</div>
-        <div className={styles.tips_desc}>购买雪豹茶庄茶饼每期赠送抽签抢黄金，每期10注；</div>
-        <div className={styles.tips_desc}>购买一件女士钱包每期赠送抽签抢黄金，每期15注。</div>
-      </div>
-      <div className={styles.vip}>
-        <div className={styles.vip_title}>会员专供</div>
-        <div className={styles.vip_list}>
-          {
-            products.map((p,index)=>{
-              return <ProductItem
-                key={index+'#'}
-                data={p}
-                onClick={()=>{
-                  this.props.dispatch({
-                    type:'member/setActiveProduct',
-                    payload:p
-                  })
-                  this.props.dispatch(routerRedux.push('/member/confirmOrder'))
-                }}/>
-            })
-          }
+    return (
+      <DocumentTitle title='会员店'>
+        <div style={{ paddingBottom: '40px' }}>
+          <div className={styles.header_bg}>
+            <VIPHeader userVipInfo={userVipInfo}/>
+          </div>
+          <div className={styles.tips}>
+            <div className={styles.tips_title}>会员专享特权</div>
+            <div className={styles.tips_desc}>普通用户每周免费参与一期抽签抢黄金，获赠1注抽签。                 购买会员或专供商品享受每期（周二、四、日22:00揭晓中签）参与抽签抢黄金。。</div>
+
+          </div>
+          <VIPMember/>
+          <div className={styles.vip}>
+            <div className={styles.vip_title}>会员专供</div>
+            <div className={styles.vip_list}>
+              {
+                products.map((p,index)=>{
+                  return <ProductItem
+                    key={index+'#'}
+                    data={p}
+                    onClick={()=>{
+                      this.props.dispatch({
+                        type:'member/setActiveProduct',
+                        payload:p
+                      })
+                      this.props.dispatch(routerRedux.push('/member/confirmOrder'))
+                    }}/>
+                })
+              }
+            </div>
+          </div>
+          <Tips/>
         </div>
-      </div>
-      <Tips/>
-    </div>;
+      </DocumentTitle>
+    )
   }
 }
 

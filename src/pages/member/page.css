@@ -67,7 +67,13 @@
 }
 .vip{
   /*position:relative;*/
-  margin-top:70px;
+  margin-top:10px;
+}
+
+.vip_list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .vip_title{
   font-size:36px;
@@ -236,21 +242,24 @@
   line-height: 40px;
 }
 .product{
-  width: 100%;
+  width: 95%;
   height: 218px;
-  background-color: #fff;
+  margin: 10px auto;
+  background: linear-gradient(#f4e4c0, #e1cb92); /* 标准的语法 */
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px 25px 50px 30px;
   box-sizing: border-box;
   justify-content: space-between;
-  border-bottom: solid 1px #999;
+
+  box-shadow: 10px 10px 20px #D1CFD4;
 }
 .p_img{
   width: auto;
   height: 100%;
   background-color: #999999;
+  margin-top: 50px;
 }
 .p_info{
   /*margin-left: 20px;*/
