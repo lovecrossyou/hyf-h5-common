@@ -7,33 +7,49 @@ import { ActivityIndicator } from '../../components/ActivityIndicator';
 import diamond_icon from '../../assets/vip/diamiond_icon.png';
 import putong_icon from '../../assets/vip/putong_icon@2x.png'
 import DocumentTitle from 'react-document-title';
-
 import  VIPMember from './components/vipmember'
+
+
+const VIPName = userVipInfo=>{
+  if(userVipInfo.userVipType === 'golden_user'){
+    return '黄金会员'
+  }
+  else if(userVipInfo.userVipType === 'higher_golden_user'){
+    return '铂金会员'
+  }
+  else if(userVipInfo.userVipType === 'diamond_user'){
+    return '钻石会员'
+  }
+  return '普通会员'
+
+}
 
 const VIPHeader = ({userVipInfo})=>{
 const {userVipGrade} = userVipInfo ;
+
+console.log('userVipInfo ',userVipInfo)
 const DiamondStar = [] ;
 for (let i = 0; i<userVipGrade;i++){
   DiamondStar.push(
     <img src={diamond_icon} alt="" className={styles.star_img} key={i + '#'}/>,
   )
 }
-  if(userVipGrade === 0){
-    return <div className={styles.flex_row}>
-      <div className={styles.diamond_wrapper}>
-        <img src={putong_icon} className={styles.member_diamond}/>
-        <div className={styles.member_lead}>
-          您当前是<div className={styles.member_yellow}>普通会员</div>，购买会员专供商品立享会员权益
-        </div>
-      </div>
-    </div>
-  }
+  // if(userVipGrade === 0){
+  //   return <div className={styles.flex_row}>
+  //     <div className={styles.diamond_wrapper}>
+  //       <img src={putong_icon} className={styles.member_diamond}/>
+  //       <div className={styles.member_lead}>
+  //         您当前是<div className={styles.member_yellow}>普通会员</div>，购买会员专供商品立享会员权益
+  //       </div>
+  //     </div>
+  //   </div>
+  // }
 //头部会员详情
   return <div className={styles.flex_row}>
     <div className={styles.diamond_wrapper}>
       <div className={styles.member_diamond}>{DiamondStar}</div>
       <div className={styles.member_lead}>
-        您当前是<div className={styles.member_yellow}>&nbsp;{userVipGrade}钻会员</div>，购买会员专供商品立享会员权益
+        您当前是<div className={styles.member_yellow}>&nbsp;{VIPName(userVipInfo)}</div>，购买会员专供商品立享会员权益
       </div>
     </div>
   </div>

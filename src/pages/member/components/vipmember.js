@@ -349,17 +349,6 @@ const VipUpgradeItem = ({ vip, action, selected = false, onChange }) => {
 };
 
 
-const Tips = () => {
-  return (
-    <div className={styles.answer}>
-      <div className={styles.answer_title}>疑问小解答</div>
-      <div className={styles.answer_content}>
-        <div className={styles.answer_title_text}>喜币可以干什么？</div>
-        <div>喜币可以抵用人民币，在平台购买0元抢商品哦!</div>
-      </div>
-    </div>
-  );
-};
 
 export default connect(state => ({
   store: state.member,
