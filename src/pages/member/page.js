@@ -21,7 +21,7 @@ for (let i = 0; i<userVipGrade;i++){
   if(userVipGrade === 0){
     return <div className={styles.flex_row}>
       <div className={styles.diamond_wrapper}>
-        <div className={styles.member_diamond}>{putong_icon}</div>
+        <img src={putong_icon} className={styles.member_diamond}/>
         <div className={styles.member_lead}>
           您当前是<div className={styles.member_yellow}>普通会员</div>，购买会员专供商品立享会员权益
         </div>

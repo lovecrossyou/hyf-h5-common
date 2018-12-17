@@ -10,7 +10,7 @@ export function getAccessToken() {
 
 
   //test
-  return {"app_key":"b5958b665e0b4d8cae77d28e1ad3f521","signature":"63FE2FE8D69F805D149E3D3029921508","access_token":"935e84d786ef44cfa8215ca18e6d2ddf"}
+  // return {"app_key":"b5958b665e0b4d8cae77d28e1ad3f521","signature":"63FE2FE8D69F805D149E3D3029921508","access_token":"935e84d786ef44cfa8215ca18e6d2ddf"}
   return JSON.parse(localStorage.getItem('accessToken'));
 }
 
