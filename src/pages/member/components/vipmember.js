@@ -23,7 +23,7 @@ const VipNormal = [
   {
     title: '黄金会员',
     img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
+    desc: '赠送抽签抢黄金一年，每期1注',
     price: '19.8',
     id: '1',
     type: 'user_to_golden_vip',
@@ -32,7 +32,7 @@ const VipNormal = [
   {
     title: '铂金会员',
     img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
+    desc: '赠送抽签抢黄金一年，每期2注',
     price: '29.8',
     type: 'user_to_higher_golden_vip',
     action: '立即购买',
@@ -40,7 +40,7 @@ const VipNormal = [
   {
     title: '钻石会员',
     img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
+    desc: '赠送抽签抢黄金一年，每期10注',
     price: '99.8',
     type: 'user_to_diamond_vip',
     action: '立即购买',
@@ -52,7 +52,7 @@ const GoldenVip = [
   {
     title: '黄金会员',
     img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
+    desc: '赠送抽签抢黄金一年，每期1注',
     price: '19.8',
     id: '1',
     type: 'user_to_golden_vip',
@@ -61,7 +61,7 @@ const GoldenVip = [
   {
     title: '铂金会员',
     img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
+    desc: '赠送抽签抢黄金一年，每期2注',
     price: '29.8',
     type: 'golden_to_higher_golden_vip',
     action: '立即升级',
@@ -69,7 +69,7 @@ const GoldenVip = [
   {
     title: '钻石会员',
     img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
+    desc: '赠送抽签抢黄金一年，每期10注',
     price: '99.8',
     type: 'golden_to_diamond_vip',
     action: '立即升级',
@@ -81,7 +81,7 @@ const PlatinumVip = [
   {
     title: '黄金会员',
     img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
+    desc: '赠送抽签抢黄金一年，每期1注',
     price: '19.8',
     id: '1',
     type: 'user_to_golden_vip',
@@ -91,7 +91,7 @@ const PlatinumVip = [
   {
     title: '铂金会员',
     img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
+    desc: '赠送抽签抢黄金一年，每期2注',
     price: '29.8',
     type: 'user_to_higher_golden_vip',
     action: '立即购买',
@@ -99,7 +99,7 @@ const PlatinumVip = [
   {
     title: '钻石会员',
     img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
+    desc: '赠送抽签抢黄金一年，每期2注',
     price: '99.8',
     type: 'higher_golden_to_diamond_vip',
     action: '立即升级',
@@ -111,7 +111,7 @@ const DiamondVip = [
   {
     title: '黄金会员',
     img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
+    desc: '赠送抽签抢黄金一年，每期1注',
     price: '19.8',
     id: '1',
     type: 'user_to_golden_vip',
@@ -121,7 +121,7 @@ const DiamondVip = [
   {
     title: '铂金会员',
     img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
+    desc: '赠送抽签抢黄金一年，每期2注',
     price: '29.8',
     type: 'golden_to_higher_golden_vip',
     enable: false,
@@ -130,7 +130,7 @@ const DiamondVip = [
   {
     title: '钻石会员',
     img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
+    desc: '赠送抽签抢黄金一年，每期10注',
     price: '99.8',
     type: 'user_to_diamond_vip',
     action: '立即购买',
