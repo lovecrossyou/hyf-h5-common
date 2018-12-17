@@ -252,14 +252,21 @@
   padding: 10px 25px 50px 30px;
   box-sizing: border-box;
   justify-content: space-between;
+<<<<<<< HEAD
 
   box-shadow: 10px 10px 20px #D1CFD4;
+=======
+  border-bottom: solid 1px #dedede;
+>>>>>>> 776cd23ae6e6fc632d7e1006465e83e99b56994d
 }
 .p_img{
   width: auto;
   height: 100%;
+<<<<<<< HEAD
   background-color: #999999;
   margin-top: 50px;
+=======
+>>>>>>> 776cd23ae6e6fc632d7e1006465e83e99b56994d
 }
 .p_info{
   /*margin-left: 20px;*/
@@ -330,7 +337,7 @@
   flex-direction: row;
   align-items: center;
   background-color: #fff;
-  border-bottom: solid #e1e1e1 1px;
+  /*border-bottom: solid #e1e1e1 1px;*/
   margin-top: 22px;
   padding: 25px 27px;
   box-sizing: border-box;
