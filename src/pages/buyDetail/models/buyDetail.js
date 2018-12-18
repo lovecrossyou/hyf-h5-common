@@ -10,10 +10,11 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/buyDetail/page') {
+          const id = query.id;
           setTokenFromQueryString(query);
           dispatch({
             type: 'purchaseInfo',
-            payload: {discountGameId:3061},
+            payload: {discountGameId:id},
           });
         }
         // else if(pathname === '/classify/classify_detail'){
