@@ -46,10 +46,9 @@ export default {
   },
   effects: {
     * fetch({ payload }, { call, put }) {
-      console.log('fetchUserVipInfo before', payload);
       const response = yield call(fetchUserVipInfo, payload);
+      console.log('fetchUserVipInfo response ',response);
       const products = yield call(fetchVIPProduct, payload);
-      console.log('fetchUserVipInfo ', fetchUserVipInfo);
       yield put({
         type: 'save',
         payload: response,

@@ -259,7 +259,6 @@
 .p_img{
   width: auto;
   height: 100%;
-  background-color: #999999;
   margin-top: 50px;
 }
 .p_info{
@@ -499,4 +498,9 @@
 }
 .member_yellow{
   color: #ffe400;
+}
+
+.end_time{
+  font-size: 24px;
+  color: #e1e1e1;
 }
