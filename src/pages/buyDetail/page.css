@@ -15,7 +15,7 @@
   border-bottom: 1px solid #DFDFDF;
   display: flex;
   flex-direction: row;
-  padding: 25px 35px 25px 30px;
+  padding: 25px 25px 25px 35px;
   box-sizing: border-box;
 }
 .buy_user_img{
@@ -29,7 +29,7 @@
   border-radius: 10px;
 }
 .buy_user_detail{
-  width: 500px;
+  width: 70%;
   display: flex;
   flex-direction: column;
   margin: 8px 0 0 20px;
@@ -50,7 +50,8 @@
   color: #333;
   line-height: 90px;
   flex: 1;
-  text-align: right;
+  text-align: left;
+  background-color: #fff;
 }
 .sex_icon{
   width: 28px;
