@@ -34,16 +34,7 @@ for (let i = 0; i<userVipGrade;i++){
     <img src={diamond_icon} alt="" className={styles.star_img} key={i + '#'}/>,
   )
 }
-  // if(userVipGrade === 0){
-  //   return <div className={styles.flex_row}>
-  //     <div className={styles.diamond_wrapper}>
-  //       <img src={putong_icon} className={styles.member_diamond}/>
-  //       <div className={styles.member_lead}>
-  //         您当前是<div className={styles.member_yellow}>普通会员</div>，购买会员专供商品立享会员权益
-  //       </div>
-  //     </div>
-  //   </div>
-  // }
+
 //头部会员详情
   return <div className={styles.flex_row}>
     <div className={styles.diamond_wrapper}>
@@ -51,6 +42,7 @@ for (let i = 0; i<userVipGrade;i++){
       <div className={styles.member_lead}>
         您当前是<div className={styles.member_yellow}>&nbsp;{VIPName(userVipInfo)}</div>，购买会员专供商品立享会员权益
       </div>
+      <div className={styles.end_time}>{userVipInfo.vipEndTime}</div>
     </div>
   </div>
 };

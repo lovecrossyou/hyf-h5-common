@@ -3,6 +3,7 @@ export default {
   targets:{
     ios:7
   },
+  outputPath:'../node-study/views',
   publicPath:'./',
   base:'/xitenggamenode/',
   plugins: [
