@@ -14,7 +14,7 @@
   padding: 0 30px;
   box-sizing: border-box;
 }
-.product_categor_cont{
+:global(.product_categor_cont){
   width: 48.5%;
   height: 500px;
   display: flex;

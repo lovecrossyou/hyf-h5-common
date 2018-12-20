@@ -131,6 +131,12 @@
       wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
     });
 
+    //分类商品
+    $('#root').on('click', '.product_categor_cont', function() {
+      var itemid = $(this).attr('itemid');
+      wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
+    });
+
 
 
     // 生成分享 qrCodeTips
