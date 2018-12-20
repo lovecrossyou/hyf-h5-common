@@ -36,7 +36,7 @@ class ClasifyDetail extends React.Component {
         <div className={styles.product_categor_wrapper}>
           {product_categor_list.productOfSecondCategory.map((data, index) => {
             return (
-              <div key={index} className={styles.product_categor_cont}>
+              <div className='product_categor_cont' key={index} itemID={data.discountGameId}>
                 <div className={styles.product_categor_img}>
                   <img src={data.productImageUrl} alt=""/>
                 </div>
