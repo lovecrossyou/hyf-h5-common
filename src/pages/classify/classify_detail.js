@@ -44,7 +44,7 @@ class ClasifyDetail extends React.Component {
                   <div className={styles.product_categor_name}>{data.productName}</div>
                   <div className={styles.all_price}>
                     <div className={styles.categor_original_price}>¥0.00</div>
-                    <div className={styles.product_categor_price}>¥{data.originalPrice/100}.00</div>
+                    <div className={styles.product_categor_price}>¥{data.originalPrice/100}</div>
                   </div>
                 </div>
               </div>
