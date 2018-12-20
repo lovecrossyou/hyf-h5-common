@@ -1,7 +1,8 @@
 export default {
   history: 'hash',
   targets:{
-    ios:7
+    android: 6,
+    ios: 7,
   },
   outputPath:'../node-study/views',
   publicPath:'./',
@@ -16,7 +17,6 @@ export default {
   ],
   proxy: {
     "/api": {
-      // target: "http://123.57.161.212:9939/xitenggamejar/",
       target: "https://www.xiteng.com/xitenggamejar/",
       changeOrigin: true,
       secure: false,
