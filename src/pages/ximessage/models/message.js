@@ -4,7 +4,7 @@ import { fetchMessageList } from '../service/message.js';
 export default {
   namespace: 'message',
   state: {
-      messageData:{}
+    messageData:{}
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -24,13 +24,13 @@ export default {
   },
   effects: {
     * fetch( {payload} , { call , put } ){
-       const messageData = yield call(fetchMessageList,payload);
-       yield put({
-         type:'saveMessage',
-         payload:{
-           messageData
-         }
-       })
+      const messageData = yield call(fetchMessageList,payload);
+      yield put({
+        type:'saveMessage',
+        payload:{
+          messageData
+        }
+      })
     }
   },
   reducers: {
