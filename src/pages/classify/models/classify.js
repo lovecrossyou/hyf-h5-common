@@ -7,6 +7,7 @@ export default {
     first_category_list:[],
     second_category_list:[],
     productOfSecondCategory:[],
+    needIndex:0
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -32,15 +33,19 @@ export default {
   },
   // 异步
   effects: {
-    * firstCategory({ payload, cb }, { call, put }) {
+    * firstCategory({ payload, cb }, { call, put,select }) {
       const list = yield call(fetchFirstCategory, {});
       yield put({
         type: 'saveFirstCategory',
         payload: list,
       });
 
+      const currentIndex = yield select(state=>{
+        return state.classify.needIndex
+      });
+
       //继续请求第一个分类的内容
-      const selectCategory = list[0];
+      const selectCategory = list[currentIndex];
       const second_category_list = yield call(fetchSecondCategory, {
         firstCategoryId:selectCategory.firstCategoryId
       });
@@ -80,6 +85,12 @@ export default {
       return {
         ...state,
         productOfSecondCategory:action.payload
+      }
+    },
+    setIndex(state,action){
+      return {
+        ...state,
+        needIndex:action.payload
       }
     }
   },

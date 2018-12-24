@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import styles from './classify_detail.css';
+import notGoods from '../../assets/classify/shangpin@2x.png'
 import ClassifyFilter from './components/ClassifyFilter';
 
 
@@ -28,6 +29,13 @@ class ClasifyDetail extends React.Component {
   render() {
     const product_categor_list = this.props.store ;
     console.log(product_categor_list.productOfSecondCategory);
+
+    if(product_categor_list.productOfSecondCategory.length === 0){
+      return <div className={styles.not_goods}>
+        <img src={notGoods} alt="" className={styles.not_goods_img}/>
+      </div>
+    }
+
     return (
       <div>
         {/*条件排序*/}
