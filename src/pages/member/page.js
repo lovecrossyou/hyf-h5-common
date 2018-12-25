@@ -90,7 +90,7 @@ class Member extends React.Component {
       />
     );
     return (
-      <DocumentTitle title='会员店'>
+      <DocumentTitle title='会员商店'>
         <div style={{ paddingBottom: '40px' }}>
           <div className={styles.header_bg}>
             <VIPHeader userVipInfo={userVipInfo}/>
