@@ -110,11 +110,16 @@ class Member extends React.Component {
                     key={index+'#'}
                     data={p}
                     onClick={()=>{
-                      this.props.dispatch({
-                        type:'member/setActiveProduct',
-                        payload:p
-                      })
-                      this.props.dispatch(routerRedux.push('/member/confirmOrder'))
+                      // this.props.dispatch({
+                      //   type:'member/setActiveProduct',
+                      //   payload:p
+                      // })
+                      this.props.dispatch(routerRedux.push('/member/productDetailsContainer'))
+                      // this.props.dispatch({
+                      //   type:'member/setActiveProduct',
+                      //   payload:p
+                      // })
+                      // this.props.dispatch(routerRedux.push('/member/confirmOrder'))
                     }}/>
                 })
               }

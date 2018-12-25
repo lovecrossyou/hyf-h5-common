@@ -1,0 +1,146 @@
+.product_details_carousel_wrapper{
+  width:100%;
+  background: pink;
+}
+.product_details_carousel_intro_price{
+  background: #e02f42;
+  display: flex;
+  color:#ffffff;
+  height: 96px;
+}
+.product_details_carousel_intro_price_left{
+  width:65%;
+  font-size: 30px;
+  background: #e22547;
+  padding-left:20px;
+  box-sizing: border-box;
+  line-height: 96px;
+}
+.product_details_carousel_intro_price_left big{
+  font-size: 42px;
+}
+.product_details_carousel_intro_price_right{
+  flex:1;
+  background: #d41b2d;
+  text-align: right;
+  padding-right:20px;
+  box-sizing: border-box;
+  font-size: 26px;
+  line-height: 48px;
+}
+.product_details_carousel_intro_price_right img{
+  width:16px;
+  height:24px;
+  margin-right:5px;
+}
+.product_details_carousel_intro_price_right_small{
+  font-size: 20px;
+}
+.product_details_carousel_intro{
+  height: 130px;
+  background: #ffffff;
+  line-height: 65px;
+  padding-left:20px;
+  padding-right:20px;
+  box-sizing: border-box;
+}
+.product_details_carousel_intro p:first-child{
+  font-size: 32px;
+  color:#333333;
+}
+.product_details_carousel_intro p:last-child{
+  font-size: 24px;
+  color:#fa6b41;
+}
+.product_details_carousel_intro img{
+  width: 100px;
+  margin-right:10px;
+}
+.product_details_list{
+  margin-top: 20px;
+  background: #ffffff;
+
+  padding-left:20px;
+  padding-right:20px;
+  box-sizing: border-box;
+}
+.buying_spree{
+  height:80px;
+  line-height:80px;
+  font-size: 30px;
+  color:#333333;
+  display: flex;
+  justify-content: space-between;
+  border-bottom:1px solid #e3e3e3;
+}
+.buying_spree span:last-child{
+  font-size: 24px;
+  color:#999999;
+}
+.buying_spree span:last-child img{
+  padding-left:10px;
+}
+
+.buying_spree_list{
+  height:110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+.buying_spree_list_left{
+  display: flex;
+  align-items: center;
+}
+.buying_spree_list_left_img{
+  width:70px;
+  height:70px;
+  background: pink;
+  border-radius: 5px;
+}
+.buying_spree_list_left_img img{
+  width:70px;
+  height:70px;
+}
+.buying_spree_list_left_gold{
+  margin-left:20px;
+  margin-right:20px;
+}
+.buying_spree_list_left_sex{
+  width:30px;
+  height:30px;
+  display: inline-block;
+}
+.buying_spree_list_right{
+  font-size: 28px;
+  color:#333333;
+}
+.buying_spree_list_right_time{
+  font-size: 24px;
+  color:#666666;
+  padding-right:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
