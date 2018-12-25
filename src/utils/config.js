@@ -6,5 +6,5 @@ module.exports = {
   openPages: ['/points/page','/login/page','/404','/productlist/page','/productlist/ProductDetail'],
   rootPages: ['/rank/page'],
   isMock:isMock
-}
+};
 

@@ -5,6 +5,7 @@ import Link from 'umi/link';
 function App(props) {
   return (
     <div className={styles.normal}>
+      <Link to="/ximessage/page"><h1>喜信</h1></Link>
       <Link to="/buyDetail/page"><h1>抢购详情</h1></Link>
       <br/>
       <Link to="/classify/page"><h1>分类</h1></Link>

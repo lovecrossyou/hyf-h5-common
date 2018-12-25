@@ -83,3 +83,12 @@
   width: 12px;
   height: 7px;
 }
+.not_goods{
+  width: auto;
+  height: auto;
+  margin: 40% auto;
+}
+.not_goods_img{
+  width: 162px;
+  height: 226px;
+}
