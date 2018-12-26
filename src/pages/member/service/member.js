@@ -32,3 +32,19 @@ export async function fetchVIPProduct() {
   });
 }
 
+// 会员商品详情
+export async function fetchVIPProductDetail(parmas) {
+  return request('/discountGame/vipProductDetail',{
+    method:'post',
+    body:parmas
+  });
+}
+
+
+export async function fetchVIPProductPurchaseInfo(parmas) {
+  return request('/discountGame/vipProductPurchaseInfo',{
+    method:'post',
+    body:parmas
+  });
+}
+

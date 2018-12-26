@@ -17,7 +17,8 @@ export default {
   ],
   proxy: {
     "/api": {
-      target: "https://www.xiteng.com/xitenggamejar/",
+      // target: "https://www.xiteng.com/xitenggamejar/",
+      target: "http://123.57.161.212:9939/xitenggamejar/",
       changeOrigin: true,
       secure: false,
       pathRewrite: { "^/api" : "" }
