@@ -28,7 +28,7 @@ class buyDetail extends Component {
     console.log(buy_detail_list.purchaseInfo);
 
     if(buy_detail_list.purchaseInfo.length ===0){
-      return <div>
+      return <div className={styles.not_goods}>
         <img src={xiangqing} alt="" className={styles.not_goods_img}/>
       </div>
     }

@@ -12,16 +12,9 @@ import woman from "../../assets/woman.png"
 
 class ProductDetailsContainer extends React.Component{
   state = {
-    data: ['1', '2', '3'],
     imgHeight: 206,
   };
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-      });
-    }, 100);
-  }
+
   render(){
     const {vipProductDetail,vipProductPurchaseInfo,products} = this.props.store ;
     if(vipProductDetail === null)return null;
@@ -37,10 +30,9 @@ class ProductDetailsContainer extends React.Component{
               beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
               afterChange={index => console.log('slide to', index)}
             >
-              {productShowImageUrlList.map(val => (
-                <a
-                  key={val}
-                  href="http://www.alipay.com"
+              {productShowImageUrlList.map((val,index) => (
+                <div
+                  key={index+'#'}
                   style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                 >
                   <img
@@ -54,7 +46,7 @@ class ProductDetailsContainer extends React.Component{
                       this.setState({ imgHeight: 'auto' });
                     }}
                   />
-                </a>
+                </div>
               ))}
             </Carousel>
           </WingBlank>
@@ -95,23 +87,21 @@ class ProductDetailsContainer extends React.Component{
         </div>
         <div className={styles.product_details_list}>
           <div className={styles.buying_spree}>商品详情</div>
-          <div style={{width:"100%",backgroundColor:"pink",padding:"0"}}>
+          <div style={{width:"100%",backgroundColor:"#f5f5f5"}}>
             {
               productDetailImageUrlList.map((p,index)=>{
                 return (
-                  <img src={p.productDetailImageUrl} width='100%' alt=""/>
+                  <img key={index +'#'} src={p.productDetailImageUrl} width='100%' alt=""/>
                 )
               })
             }
           </div>
         </div>
-        <div className={styles.buying_spree_btn} onClick={()=>{
-          this.props.dispatch({
-            type:'member/setActiveProduct',
-            payload:vipProductDetail
-          })
-          this.props.dispatch(routerRedux.push('/member/confirmOrder'))
-        }}>抢购按钮</div>
+        <div
+          className={styles.buying_spree_btn}
+          onClick={()=>{
+            this.props.dispatch(routerRedux.push('/member/confirmOrder'))
+        }}>立即抢购</div>
       </div>
     </DocumentTitle>
   }
