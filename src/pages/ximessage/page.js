@@ -10,9 +10,8 @@ import { routerRedux } from 'dva/router';
 function XiMessage(props){
   const {messageData} = props.store;
   if(Object.keys(messageData).length === 0) return null;
-  console.log('=========sssssssssss====',messageData);
   return(
-    <DocumentTitle title='账单明细'>
+    <DocumentTitle title='喜信'>
       <div>
         <ActivityIndicator
           animating={props.loading}

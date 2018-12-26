@@ -4,6 +4,7 @@ import { routerRedux } from 'dva/router';
 import DocumentTitle from 'react-document-title';
 import manIcon from '../../assets/man_icon.png';
 import womanIcon from '../../assets/woman_icon.png';
+import xiangqing from '../../assets/xiangqing@2x.png'
 import styles from './page.css'
 
 const Sex =({sex})=>{
@@ -25,6 +26,12 @@ class buyDetail extends Component {
   render(){
     const buy_detail_list = this.props.store ;
     console.log(buy_detail_list.purchaseInfo);
+
+    if(buy_detail_list.purchaseInfo.length ===0){
+      return <div>
+        <img src={xiangqing} alt="" className={styles.not_goods_img}/>
+      </div>
+    }
 
     return(
       <DocumentTitle title='抢购详情'>
