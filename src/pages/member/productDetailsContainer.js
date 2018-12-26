@@ -68,7 +68,7 @@ class ProductDetailsContainer extends React.Component{
             <span>抢购详情 <img src={icon_left} alt=""/></span>
           </div>
           {
-            vipProductPurchaseInfo.map((info,index)=>{
+            vipProductPurchaseInfo.slice(0,2).map((info,index)=>{
               return (
                 <div key={index+'#'} className={styles.buying_spree_list}>
                   <div className={styles.buying_spree_list_left}>
