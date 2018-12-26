@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import DocumentTitle from 'react-document-title';
-
+import { routerRedux } from 'dva/router';
 import styles from './productDetailsContainer.css';
 import { Carousel, WingBlank } from 'antd-mobile';
 import fire from "../../assets/fire.png"
@@ -23,7 +23,7 @@ class ProductDetailsContainer extends React.Component{
     }, 100);
   }
   render(){
-    const {vipProductDetail,vipProductPurchaseInfo} = this.props.store ;
+    const {vipProductDetail,vipProductPurchaseInfo,products} = this.props.store ;
     if(vipProductDetail === null)return null;
 
     const {imageUrl,price,saleMount,subtitle,vipProductId,productName,productDetailImageUrlList,productShowImageUrlList} = vipProductDetail ;
@@ -105,6 +105,13 @@ class ProductDetailsContainer extends React.Component{
             }
           </div>
         </div>
+        <div className={styles.buying_spree_btn} onClick={()=>{
+          this.props.dispatch({
+            type:'member/setActiveProduct',
+            payload:vipProductDetail
+          })
+          this.props.dispatch(routerRedux.push('/member/confirmOrder'))
+        }}>抢购按钮</div>
       </div>
     </DocumentTitle>
   }

@@ -37,6 +37,7 @@ class HotSellView extends React.Component{
     const {timeObj} = this.state ;
     if(timeObj==null)return null;
     const hotSellListItem = list.map((item, i) => {
+      // console.log(item)
       return (
         <div className='hot_sell_list_item' key={i} itemID={item.discountGameId}>
           <div className={styles.hot_sell_list_item_left}>
@@ -45,7 +46,7 @@ class HotSellView extends React.Component{
           <div className={styles.hot_sell_list_item_right}>
             <div className={styles.hot_sell_list_item_right_shopname}>{item.productName}</div>
             <div className={styles.hot_sell_list_item_right_sold}><img src={icon_shouye_honghuo}
-                                                                       alt=""/>已抢{item.currentPurchaseCount}万件
+                                                                       alt=""/>已抢{item.relatedProductSaleMount}件
             </div>
             <div className={styles.hot_sell_list_item_right_price}>
                 <span>
