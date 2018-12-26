@@ -1,4 +1,10 @@
-import { fetchPayResult, fetchUpdateToVipUser, fetchUserVipInfo, fetchVIPProduct } from '../service/member';
+import {
+  fetchPayResult,
+  fetchUpdateToVipUser,
+  fetchUserVipInfo,
+  fetchVIPProduct,
+  fetchVIPProductDetail, fetchVIPProductPurchaseInfo,
+} from '../service/member';
 import { setTokenFromQueryString } from '../../../utils/authority';
 
 export default {
@@ -10,7 +16,9 @@ export default {
     products: [],
     activeProduct:null,
     buyCount:1,
-    totalAmount:0.00
+    totalAmount:0.00,
+    vipProductDetail:null,
+    vipProductPurchaseInfo:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -31,7 +39,7 @@ export default {
             },
           });
         }
-        if (pathname === '/member/payResult') {
+        else if (pathname === '/member/payResult') {
           const payOrderNo = query.payOrderNo;
           dispatch({
             type: 'payResult',
@@ -41,10 +49,43 @@ export default {
             },
           });
         }
+        else if(pathname === '/member/productDetailsContainer'){
+          const id = query.id ;
+          dispatch({
+            type: 'vipProductDetail',
+            payload: {
+              vipProductId: id,
+            },
+          });
+
+          dispatch({
+            type: 'vipProductPurchaseInfo',
+            payload: {
+              vipProductId: id,
+            },
+          });
+        }
       });
     },
   },
   effects: {
+
+    *vipProductDetail({payload},{call,put}){
+      const response = yield call(fetchVIPProductDetail, payload);
+      yield put({
+        type:'saveProduct',
+        payload:response
+      })
+    },
+
+    *vipProductPurchaseInfo({payload},{call,put}){
+      const response = yield call(fetchVIPProductPurchaseInfo, payload);
+      yield put({
+        type:'saveProductPurchaseInfo',
+        payload:response
+      })
+    },
+
     * fetch({ payload }, { call, put }) {
       const response = yield call(fetchUserVipInfo, payload);
       console.log('fetchUserVipInfo response ',response);
@@ -110,6 +151,22 @@ export default {
         buyCount:action.payload,
         totalAmount:totalAmount/100
       }
+    },
+
+    saveProduct(state,action){
+      return {
+        ...state,
+        vipProductDetail:action.payload
+      }
+    },
+
+    saveProductPurchaseInfo(state,action){
+      return {
+        ...state,
+        vipProductPurchaseInfo:action.payload
+      }
     }
+
+    // vipProductPurchaseInfo
   },
 };
