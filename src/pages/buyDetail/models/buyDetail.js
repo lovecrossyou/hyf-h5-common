@@ -12,7 +12,6 @@ export default {
         if (pathname === '/buyDetail/page') {
           const id = query.id;
           setTokenFromQueryString(query);
-          return;
           dispatch({
             type: 'purchaseInfo',
             payload: {discountGameId:id},
