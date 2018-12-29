@@ -5,7 +5,7 @@ import { TextareaItem,Button } from 'antd-mobile';
 
 import styles from './page.css' ;
 
-const tips = '亲，一起来抽签抢金条吧！0元抢金条，完全免费！每周二、四、日22：00揭晓中签，选中双色球就送！'
+const tips = '猪年大吉，金猪送福，免费抽签送100g黄金！立即领取！';
 
 class QrCode extends React.Component {
 
