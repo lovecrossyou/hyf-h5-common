@@ -4,8 +4,8 @@ import { Modal, Button, Radio } from 'antd-mobile';
 import { routerRedux } from 'dva/router';
 import styles from './page.css';
 import { ActivityIndicator } from '../../components/ActivityIndicator';
-import diamond_icon from '../../assets/vip/diamiond_icon.png';
-import putong_icon from '../../assets/vip/putong_icon@2x.png'
+import crown_icon from '../../assets/vip/crown_icon.png';
+import putong_icon from '../../assets/vip/putong_icon@2x.png';
 import DocumentTitle from 'react-document-title';
 import  VIPMember from './components/vipmember'
 
@@ -21,27 +21,40 @@ const VIPName = userVipInfo=>{
     return '钻石会员'
   }
   return '普通会员'
+};
 
-}
+const stakeNumber = userVipInfo=>{
+  if(userVipInfo.userVipType === 'golden_user'){
+    return '赠送抽签抢黄金一年，每期1注'
+  }
+  else if(userVipInfo.userVipType === 'higher_golden_user'){
+    return '赠送抽签抢黄金一年，每期2注'
+  }
+  else if(userVipInfo.userVipType === 'diamond_user'){
+    return '赠送抽签抢黄金一年，每期10注'
+  }
+  return ''
+};
 
 const VIPHeader = ({userVipInfo})=>{
 const {userVipGrade} = userVipInfo ;
 
-console.log('userVipInfo ',userVipInfo)
+console.log('userVipInfo ',userVipInfo);
 const DiamondStar = [] ;
 for (let i = 0; i<userVipGrade;i++){
   DiamondStar.push(
-    <img src={diamond_icon} alt="" className={styles.star_img} key={i + '#'}/>,
+    <img src={crown_icon} alt="" className={styles.star_img} key={i + '#'}/>,
   )
 }
 
 //头部会员详情
   return <div className={styles.flex_row}>
     <div className={styles.diamond_wrapper}>
-      <div className={styles.member_diamond}>{DiamondStar}</div>
-      <div className={styles.member_lead}>
-        您当前是<div className={styles.member_yellow}>&nbsp;{VIPName(userVipInfo)}</div>，购买会员专供商品立享会员权益
+      <div className={styles.member_grade_show}>
+        <div className={styles.member_yellow}>&nbsp;{VIPName(userVipInfo)}</div>
+        <div className={styles.member_diamond}>{DiamondStar}</div>
       </div>
+      <div className={styles.member_give}>&nbsp;{stakeNumber(userVipInfo)}</div>
       <div className={styles.end_time}>{userVipInfo.vipEndTime}</div>
     </div>
   </div>
@@ -114,7 +127,7 @@ class Member extends React.Component {
                       this.props.dispatch({
                         type:'member/setActiveProduct',
                         payload:p
-                      })
+                      });
                       this.props.dispatch(routerRedux.push('/member/productDetailsContainer?id='+p.vipProductId))
                     }}/>
                 })
