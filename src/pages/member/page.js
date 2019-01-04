@@ -23,18 +23,18 @@ const VIPName = userVipInfo=>{
   return '普通会员'
 };
 
-const stakeNumber = userVipInfo=>{
-  if(userVipInfo.userVipType === 'golden_user'){
-    return '赠送抽签抢黄金一年，每期1注'
-  }
-  else if(userVipInfo.userVipType === 'higher_golden_user'){
-    return '赠送抽签抢黄金一年，每期2注'
-  }
-  else if(userVipInfo.userVipType === 'diamond_user'){
-    return '赠送抽签抢黄金一年，每期10注'
-  }
-  return '升级或者购买会员专供商品立享会员权益'
-};
+// const stakeNumber = userVipInfo=>{
+//   if(userVipInfo.canPurchaseCodeCount === 1){
+//     return '赠送抽签抢黄金一年，每期1注'
+//   }
+//   else if(userVipInfo.canPurchaseCodeCount === 2){
+//     return '赠送抽签抢黄金一年，每期2注'
+//   }
+//   else if(userVipInfo.canPurchaseCodeCount === 3){
+//     return '赠送抽签抢黄金一年，每期10注'
+//   }
+//   return '升级或者购买会员专供商品立享会员权益'
+// };
 
 const VIPHeader = ({userVipInfo})=>{
 const {userVipGrade} = userVipInfo ;
@@ -47,14 +47,18 @@ for (let i = 0; i<userVipGrade;i++){
   )
 }
 
+if (userVipInfo.canPurchaseCodeCount === 0){
+  return <div className={styles.member_give}>升级或者购买会员专供商品立享会员权益</div>
+}
+
 //头部会员详情
   return <div className={styles.flex_row}>
     <div className={styles.diamond_wrapper}>
       <div className={styles.member_grade_show}>
-        <div className={styles.member_yellow}>&nbsp;{VIPName(userVipInfo)}</div>
+        <div className={styles.member_yellow}>{VIPName(userVipInfo)}</div>
         <div className={styles.member_diamond}>{DiamondStar}</div>
       </div>
-      <div className={styles.member_give}>&nbsp;{stakeNumber(userVipInfo)}</div>
+      <div className={styles.member_give}>赠送抽签抢黄金一年，每期{userVipInfo.canPurchaseCodeCount}注</div>
       <div className={styles.end_time}>{userVipInfo.vipEndTime}</div>
     </div>
   </div>
