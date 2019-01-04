@@ -33,7 +33,7 @@ const stakeNumber = userVipInfo=>{
   else if(userVipInfo.userVipType === 'diamond_user'){
     return '赠送抽签抢黄金一年，每期10注'
   }
-  return ''
+  return '升级或者购买会员专供商品立享会员权益'
 };
 
 const VIPHeader = ({userVipInfo})=>{
