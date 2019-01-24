@@ -5,7 +5,7 @@ import { TextareaItem,Button } from 'antd-mobile';
 
 import styles from './page.css' ;
 
-const tips = '猪年大吉，金猪送福，免费抽签送100g黄金！立即领取！';
+const tips = '猪年大吉，金猪送福，一起来抽签抢金条吧！完全免费，祝你好运！';
 
 class QrCode extends React.Component {
 
