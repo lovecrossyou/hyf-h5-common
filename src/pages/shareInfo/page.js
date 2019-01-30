@@ -49,7 +49,7 @@ class ShareInfo extends React.Component {
             {...getFieldProps('count', {
               // initialValue: '分享内容',
             })}
-            placeholder='猪年大吉，金猪送福，免费抽签送黄金100g，立即领取！'
+            placeholder='猪年大吉，金猪送福，免费抽签送汽车，立即领取！'
             rows={5}
             count={100}
           />
@@ -60,7 +60,7 @@ class ShareInfo extends React.Component {
             {...getFieldProps('count', {
               // initialValue: '分享内容',
             })}
-            placeholder='新年运势来袭，黄金100g属于你！长按识别小程序，立即加入抢购'
+            placeholder='新年运势来袭，黄金属于你！长按识别小程序，立即加入抢购'
             rows={5}
             count={100}
           />
