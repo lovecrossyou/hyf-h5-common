@@ -1,36 +1,57 @@
 import {queryInviteUserRank , queryPurchaseRank} from "../service/rank";
-const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';
+import { setTokenFromQueryString } from '../../../utils/authority';
+const awardUrl = 'http://qnimage.xiteng.com/award_detail.png';
 
 
-const pageSize = 8 ;
+const sortByRank = (a,b)=>{
+  return parseInt(a.rank) - parseInt(b.rank) ;
+}
 
 
+const pageSize = 20 ;
 export default {
   namespace: 'rank',
   state: {
-    friendCirclePageNo: -1,
+    friendCirclePageNo: 0,
     friendCircleList:[],
-    platformPageNo: -1,
+    platformPageNo: 0,
     platformList:[],
-
-    isShow:false
+    isShow:false,
+    purchaseRankUserInfo:{
+      allPurchaseAmount:0,// 总购买份数  ,
+      rank:0,
+      userIconUrl:'' ,
+      userName:''
+    },
+    inviteRankUserInfo:{
+      friendAmount:0,// 好友人数 ,
+      rank:0,
+      userIconUrl:'' ,
+      userName:''
+    }
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/rank/page') {
+          setTokenFromQueryString(query);
           dispatch({
             type:'fetchInviteUserRank',
-            payload:{}
+          })
+
+          //标题
+          dispatch({
+            type:'global/setTitle',payload:{
+              text:"榜单"
+            }
           })
         }
-
-        if (pathname === '/rank/friendCircleInviteRank') {
+        else if (pathname === '/rank/friendCircleInviteRank'){
+          //标题
           dispatch({
-            type:'fetchInviteUserRank',
-            payload:{
-              type:'friendList'
-            },
+            type:'global/setTitle',payload:{
+              text:"朋友圈排行"
+            }
           })
         }
       });
@@ -38,89 +59,66 @@ export default {
   },
   effects: {
     *fetchPurchaseRank({ payload }, { call, put }) {
-      const data = yield call(queryPurchaseRank,payload);
+      let params = {
+        friendCirclePageNo: 0,
+        friendCirclePageSize: pageSize,
+        platformPageNo: 0,
+        platformPageSize: pageSize
+      }
+      const data = yield call(queryPurchaseRank,params);
       yield put({
         type: 'savePurchaseRank',
         payload: data
       });
     },
-    *fetchInviteUserRank({ payload ,cb}, { call, put }) {
-      const {type} = payload ;
-      let params = {}
-      if(type!=='friendList'){
-        //请求平台数据
-        params = {
-          platformPageNo: 0,
-          platformPageSize: pageSize
-        }
-      }
-      else {
-        // 请求朋友圈数据
-        params = {
-          friendCirclePageNo: 0,
-          friendCirclePageSize: pageSize,
-        }
-      }
 
+    *fetchInviteUserRank({ payload ,cb}, { call, put ,select}) {
+      let params = {
+        friendCirclePageNo: 0,
+        friendCirclePageSize: pageSize,
+        platformPageNo: 0,
+        platformPageSize: pageSize
+      }
       const data = yield call(queryInviteUserRank,params);
-      if(type!=='friendList'){
-        yield put({
-          type: 'savePlatformRank',
-          payload: data
-        });
-      }
-      else{
-        yield put({
-          type: 'saveFriendsRank',
-          payload: data
-        });
-      }
+      yield put({
+        type: 'saveInviteRank',
+        payload: data
+      });
       cb&&cb(data);
     }
   },
   reducers: {
     savePurchaseRank(state,action){
+      const {allPurchaseAmount,purchaseRankUserInfo,platformTotalCount,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,friendCirclePurchaseRankUserInfo,platformPurchaseRankUserInfo} = action.payload ;
+      return { ...state,
+        friendCircleList:friendCirclePurchaseRankUserInfo.sort(sortByRank),
+        platformList:platformPurchaseRankUserInfo.sort(sortByRank),
+        userIconUrl,
+        allRankOfFriendCircle,
+        allRankOfPlatform,
+        inviteAllUserAmount:platformTotalCount,
+        isShow:true,
+        purchaseRankUserInfo,
+        allPurchaseAmount:allPurchaseAmount
+      };
       return { ...state, datePurchaseRank:action.payload };
     },
-    saveInviteUserRank(state,action){
-      const oldDateInviteUserRank = state.dateInviteUserRank ;
-      const dateInviteUserRank = action.payload.concat(oldDateInviteUserRank);
-      return { ...state, dateInviteUserRank:dateInviteUserRank };
-    },
 
-    savePlatformRank(state,action){
-      const {friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
-      const oldPlatformList = state.platformList ;
-      const list_platform = platformInviteRankUserInfo.concat(oldPlatformList);
 
+    saveInviteRank(state,action){
+      const {inviteRankUserInfo,platformPageNo,friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
       return { ...state,
-        friendCircleList:friendCircleInviteRankUserInfo,
-        platformList:list_platform,
+        friendCircleList:friendCircleInviteRankUserInfo.sort(sortByRank),
+        platformList:platformInviteRankUserInfo.sort(sortByRank),
         userIconUrl,
         allRankOfFriendCircle,
         friendCirclePageNo,
         allRankOfPlatform,
-        inviteAllUserAmount
+        inviteAllUserAmount,
+        platformPageNo,
+        isShow:false,
+        inviteRankUserInfo
       };
-    },
-
-    saveFriendsRank(state,action){
-      const {friendCircleInviteRankUserInfo,platformInviteRankUserInfo,userIconUrl,allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount,friendCirclePageNo} = action.payload ;
-      const oldDateInviteUserRank = state.friendCircleList ;
-      const list = friendCircleInviteRankUserInfo.concat(oldDateInviteUserRank);
-      return { ...state,
-        friendCircleList:list,
-        platformList:platformInviteRankUserInfo,
-        userIconUrl,
-        allRankOfFriendCircle,
-        friendCirclePageNo,
-        allRankOfPlatform,
-        inviteAllUserAmount
-      };
-    },
-
-    purchaseRank(){
-      return { isShow:true }
     }
   },
 };

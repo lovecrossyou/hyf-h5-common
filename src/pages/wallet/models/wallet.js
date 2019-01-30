@@ -1,6 +1,6 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill
 } from '../service/wallet';
 
 import { setTokenFromQueryString } from '../../../utils/authority';
@@ -14,8 +14,9 @@ export default {
     inviteProfitXtb: null,
     // 钻石好友
     userDiamondFriends:[],
-
-    user:null
+    user:null,
+    billings:[],
+    currencyType:3
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -31,6 +32,15 @@ export default {
               text: '钱包',
             },
           });
+        }else if(pathname === '/wallet/billingDetails'){
+          dispatch({
+            type:"fetchBillings",
+            payload:{
+              currencyType: 3,
+              pageNo: 0,
+              size: 20
+            }
+          })
         }
       });
     },
@@ -60,25 +70,29 @@ export default {
         },
       });
     },
-
-    *fetchDiamondFriends({ payload ,cb}, { call, put }){
+    * fetchDiamondFriends({ payload ,cb}, { call, put }){
       const params = {
         profitUserId:payload.user.profitUserId
-      }
-
+      };
       yield put({
         type:'saveUser',
         payload:payload.user
-      })
-
+      });
       const lists = yield call(fetchUserProfitDiamondFriendInfo,params);
       yield put({
         type:'saveUserDiamondFriends',
         payload:lists
       });
       cb&&cb();
+    },
+    * fetchBillings({ payload }, { call , put }){
+      const lists = yield call(fetchBill,payload);
+      yield put({
+        type:'saveBillings',
+        payload:lists,
+        currencyType:payload.currencyType
+      });
     }
-
   },
   reducers: {
     save(state, action) {
@@ -91,18 +105,23 @@ export default {
         shareSellProfitRmb: action.payload.shareSellProfitRmb,
       };
     },
-
     saveUserDiamondFriends(state,action){
       return {
         ...state,
         userDiamondFriends:action.payload
       }
     },
-
     saveUser(state,action){
       return {
         ...state,
         user:action.payload
+      }
+    },
+    saveBillings(state,action){
+      return {
+        ...state,
+        billings:action.payload.monthBills,
+        currencyType:action.currencyType
       }
     }
   },

@@ -6,7 +6,7 @@ import icon_left from '../../assets/astro/left.jpg';
 import { Picker, List } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 import astroData from '../../utils/astroData';
-import {ActivityIndicator} from "../../components/ActivityIndicator";
+import { ActivityIndicator } from '../../components/ActivityIndicator';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -46,14 +46,14 @@ function PersonalInformation(props) {
        files = e.target.files;
      }
      props.dispatch({
-       type:'personInfo/upload',
-       payload:files[0],
-       cb:()=>{
+       type: 'personInfo/upload',
+       payload: files[0],
+       cb: () => {
          props.dispatch({
-           type:'personInfo/userInfo',
-         })
-       }
-     })
+           type: 'personInfo/userInfo',
+         });
+       },
+     });
 
    }}
  />
@@ -70,12 +70,6 @@ function PersonalInformation(props) {
             <Item arrow="horizontal" onClick={() => {
               props.dispatch(routerRedux.push('/personInfo/qrCode'));
             }}>我的二维码</Item>
-            {/*<Item arrow="horizontal" onClick={() => {*/}
-            {/*props.dispatch(routerRedux.push('/personInfo/goldenTicket'));*/}
-            {/*}}>我的黄金票</Item>*/}
-            {/*<Item arrow="horizontal" onClick={() => {*/}
-            {/*props.dispatch(routerRedux.push('/personInfo/rushTopurchase'));*/}
-            {/*}}>抢购</Item>*/}
           </List>
           <div style={{ marginTop: '20px' }}></div>
           <Picker
@@ -99,9 +93,13 @@ function PersonalInformation(props) {
             <Item extra={astroData.astroName(constellation)} arrow="horizontal" onClick={() => {
               props.dispatch(routerRedux.push('/astro/AstroItem'));
             }}>星座</Item>
-            <a className='information_addr_btn' >
+            <div
+              className={styles.information_addr_btn}
+              onClick={() => {
+                props.dispatch(routerRedux.push('/address/page'));
+              }}>
               <Item extra={address} arrow="horizontal">送货地址</Item>
-            </a>
+            </div>
           </List>
           <ActivityIndicator
             toast

@@ -52,6 +52,14 @@ class AddressList extends React.Component {
     );
   }
 
+  onClick = address=>{
+    this.props.dispatch({
+      type:'address/setActive',
+      payload:address
+    });
+    this.props.dispatch(routerRedux.goBack());
+  }
+
 
   render() {
     const store = this.props.store;
@@ -59,6 +67,8 @@ class AddressList extends React.Component {
       {
         store.list.map((address,index) => {
           return <AddressCell
+            backType={store.backType}
+            onClick={this.onClick.bind(this,address)}
             edit={this.addresseEdit}
             del={this.addressDel}
             address={address}

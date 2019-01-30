@@ -36,120 +36,85 @@ class FriendCircleInviteRank extends React.Component{
     };
   }
 
-  componentWillMount(){
-
-    this.fetchData();
-  }
-
-
-  // 加载数据
-  fetchData = ()=>{
-    this.props.dispatch({
-      type:'award/fetchInviteUserRank',
-      payload:{
-        type:'friendList'
-      },
-      cb:()=>{
-        const list = this.props.store.friendCircleList ;
-
-
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(list),
-        });
-
-        console.log('list  dataSource ',this.state.dataSource);
-
-      }
-    })
-  }
 
   onEndReached=()=>{
+    // this.props.dispatch({
+    //   type:'rank/fetchInviteUserRank',
+    //   payload:{
+    //     type:'friendList',
+    //   },
+    // })
+  }
 
+  componentWillMount(){
+    const {friendCircleList, friendCirclePageNo} = this.props.store;
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(friendCircleList)
+    });
   }
 
 
   render(){
-    const {friendCircleList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCirclePageNo} = this.props.store;
-    if(friendCircleList.length == 0)return null ;
-
+    const {isShow,friendCircleList,allPurchaseAmount,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCirclePageNo} = this.props.store;
     const separator = (sectionID, rowID) => (
       <div
         key={`${sectionID}-${rowID}`}
         style={{
-          backgroundColor: '#F5F5F9',
-          height: 8,
-          borderTop: '1px solid #ECECED',
-          borderBottom: '1px solid #ECECED',
+          backgroundColor: '#ECECED',
+          height: 1,
         }}
       />
     );
 
     const Row = (rowData, sectionID, rowID)=>{
-      console.log('rowData ',rowData);
       return (
         <div className={styles.monthly_focus_section_list_item}>
           <div className={styles.monthly_focus_section_list_tit_left}>
             <div className={styles.monthly_focus_section_list_guan}>
-              {rowData.rank}
+              <RankLabel item={rowData}/>
             </div>
             <div className={styles.monthly_focus_section_list_avatar}>
               <img src={rowData.userIconUrl} alt=""/>
             </div>
             <div className={styles.monthly_focus_section_list_name}>{rowData.userName}</div>
           </div>
-          <div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>份</div>
+          {
+            isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{rowData.allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{rowData.friendAmount}</span>人</div>)
+          }
         </div>
       )
     }
 
-
-    const friendCircleInviteRankRank = friendCircleList.map((item,i)=>{
-      return(
-        <div className={styles.monthly_focus_section_list_item} key={i}>
-          <div className={styles.monthly_focus_section_list_tit_left}>
-            <RankLabel item={item} />
-            <div className={styles.monthly_focus_section_list_avatar}>
-              <img src={item.userIconUrl} alt=""/>
-            </div>
-            <div className={styles.monthly_focus_section_list_name}>{item.userName}</div>
-          </div>
-          <div className={styles.monthly_focus_section_list_portion}><span>{item.friendAmount}</span>份</div>
-        </div>
-      )
-    });
     return <DocumentTitle title='朋友圈排行榜'>
-      <div>
+      <div className={styles.container}>
         <ActivityIndicator
-          color="white"
-          toast
           animating={this.props.loading}
         />
         <div>
-          <div className={styles.monthly_focus_section_list_item}>
+          <div className={styles.monthly_focus_section_list_item} style={{marginBottom:"20px"}}>
             <div className={styles.monthly_focus_section_list_tit_left}>
-              <div>{allRankOfPlatform}</div>
+              <div>{allRankOfFriendCircle}</div>
               <div className={styles.monthly_focus_section_list_avatar}>
                 <img src={userIconUrl} alt=""/>
               </div>
               <div className={styles.monthly_focus_section_list_name}>我</div>
             </div>
-            <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
+            {
+              isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>)
+            }
           </div>
-
-          {friendCircleInviteRankRank}
 
           <ListView
             ref={el => this.lv = el}
             dataSource={this.state.dataSource}
             style={{
-              height: '1900px',
               overflow: 'auto',
+              width:document.documentElement.clientWidth,
+              height:document.documentElement.clientHeight-210
             }}
             renderRow={Row}
             renderSeparator={separator}
-            pageSize={8}
             onScroll={() => { console.log('scroll'); }}
-            scrollRenderAheadDistance={500}
             onEndReached={this.onEndReached}
             onEndReachedThreshold={10}
           />
@@ -162,6 +127,6 @@ class FriendCircleInviteRank extends React.Component{
 export default connect(state=>{
   return {
     store: state.rank,
-    loading:state.loading.global
+    loading: state.loading.global,
   }
 })(FriendCircleInviteRank)

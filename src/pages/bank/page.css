@@ -1,0 +1,115 @@
+/*未添加银行卡*/
+.no_bank_card_container{
+  margin:300px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.no_bank_card_container>img{
+  width:130px;
+  height:92px;
+}
+.no_bank_card_container_anyone{
+  font-size: 30px;
+  color:#777777;
+  margin-top:30px;
+}
+.no_bank_card_container_rapid{
+  font-size: 24px;
+  color:#999999;
+  margin-top:16px;
+  margin-bottom:54px;
+}
+.no_bank_card_container_btn{
+  width:258px;
+  height:74px;
+  line-height:74px;
+  border-radius: 10px;
+  font-size: 28px;
+  color:#333333;
+  text-align: center;
+  border:1px solid #333333;
+}
+/*添加银行卡*/
+.add_bank_card_container .add_bank_card_container_list{
+  margin-top:50px;
+  margin-bottom:100px;
+}
+.add_bank_card_container .am-list-item-middle{
+  border-bottom:1px solid #cccccc;
+}
+
+.check_phone_container{
+  position: relative;
+}
+.check_phone{
+  position:absolute;
+  right:0;
+  top:0;
+  width:232px;
+  height:80px;
+  line-height:80px;
+  text-align: center;
+  color:#e02f42;
+  border-left:1px solid #e3e3e3;
+}
+
+.icon_bank{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.bank_wrapper{
+  height: 240px;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.bank_footer{
+  width: 100%;
+  height: 120px;
+
+  text-align: center;
+  line-height: 120px;
+
+  color: #FFFFFF;
+
+  font-size: 36px;
+}
+
+.bank_info{
+  display: flex;
+  flex-direction: row;
+}
+
+.bank_info_detail{
+  margin-left: 10px;
+
+  color: #FFFFFF;
+}
+
+.add_bank_footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+
+  text-align: center;
+  line-height: 100px;
+
+  color: #999999;
+
+  font-size: 36px;
+
+  background-color: #FFFFFF;
+}

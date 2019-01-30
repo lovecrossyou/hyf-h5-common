@@ -273,18 +273,16 @@ export default {
         if (pathname === '/lotteryselect/page') {
           setTokenFromQueryString(query);
           const totalCount = parseInt(query.totalCount);
-          // const totalCount = 3;
+          // const totalCount = 13;
           const type = query.type;
-          // const type = "fucai";
+          // const type = "3d";
 
           const nos = query.nos;
           const discountGameId = parseInt(query.discountGameId);
           const inviteGroupId = parseInt(query.inviteGroupId);
           const setCode = query.setCode;
           // const setCode = true ;
-          // console.log('lotteryselect query', query);
-          // console.log('lotteryselect inviteGroupId', inviteGroupId);
-          // console.log('lotteryselect setCode', setCode);
+
           dispatch({
             type: 'init',
             payload: {totalCount, type, discountGameId, inviteGroupId, setCode},

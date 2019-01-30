@@ -24,7 +24,7 @@ export const Stepper = ({ onChange, min=1, max, value }) => {
     <OptionCom
       onChange={()=>{
         if(value<=min)return;
-        onChange(--value);
+        onChange&&onChange(--value);
       }}
       enable={value>min}
       left={true}/>
@@ -34,7 +34,7 @@ export const Stepper = ({ onChange, min=1, max, value }) => {
     <OptionCom
       onChange={()=>{
         if(value>=max)return;
-        onChange(++value);
+        onChange&&onChange(++value);
       }}
       enable={value<max}
       left={false}/>

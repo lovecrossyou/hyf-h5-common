@@ -8,12 +8,8 @@ import { Modal, List, Toast } from 'antd-mobile';
 import {routerRedux} from 'dva/router';
 import cheng_icon from '../../assets/lottery/icon_haoma_cheng@2x.png';
 
-
-
 import { AddressCell } from './components/addressCell';
-
 import { RED_COLOR } from './models/lotteryselect';
-
 
 import styles from './page.css';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
@@ -166,8 +162,6 @@ const SelectPanelFuCai = ({ bidCompleteFlg, currentBid, balls, onClick, confirmB
   }
 
   return <div className={styles.panel_wrapper}>
-    <div className={styles.sepline}/>
-
     <div className={styles.select_panel}>
       <div className={styles.tips}>{type==='fucai'?TipsDOUBLE:Tips3D}</div>
       <div className={styles.wrapper_3d}>
@@ -267,7 +261,6 @@ class LotterySel extends React.Component {
     const restCount = store.totalCount - calcBidCount(store.selectedBids);
     const bidCmpleteFlag = restCount === 0;
     const bidType = store.type;
-    console.log('bidType ', bidType);
     return (
       <DocumentTitle title={title}>
         <div className={styles.container}>
@@ -275,16 +268,31 @@ class LotterySel extends React.Component {
             toast
             text="加载中"
             animating={isLoading}/>
-          {/*菜单面板*/}
-          <OptionPanel
-            jiXuan={() => {
-              this.props.dispatch({
-                type: 'lotteryselect/jiXuan',
-              });
-            }}
-            restCount={restCount}/>
           {/*已选号码*/}
           <div className={styles.content}>
+            {/*选号面板*/}
+            <SelectPanelFuCai
+              type={bidType}
+              confirmBids={()=>{
+                //setCode
+              }}
+              bidCompleteFlg={bidCmpleteFlag}
+              onClick={(ball) => {
+                this.props.dispatch({
+                  type: 'lotteryselect/selectBall',
+                  payload: ball,
+                });
+              }}
+              currentBid={store.currentBid}
+              balls={store.codes_panel}/>
+            {/*菜单面板*/}
+            <OptionPanel
+              jiXuan={() => {
+                this.props.dispatch({
+                  type: 'lotteryselect/jiXuan',
+                });
+              }}
+              restCount={restCount}/>
             <LotteryNos
               delClick={index => {
                 this.props.dispatch({
@@ -308,25 +316,8 @@ class LotterySel extends React.Component {
               }}
               currentBid={store.currentBid}
               selectedBids={store.selectedBids}/>
-            {/*选号面板*/}
-            <SelectPanelFuCai
-              type={bidType}
-              confirmBids={()=>{
-                //setCode
 
-
-              }}
-              bidCompleteFlg={bidCmpleteFlag}
-              onClick={(ball) => {
-                this.props.dispatch({
-                  type: 'lotteryselect/selectBall',
-                  payload: ball,
-                });
-              }}
-              currentBid={store.currentBid}
-              balls={store.codes_panel}/>
           </div>
-
           {/*弹出地址层*/}
           <Modal
             popup

@@ -37,6 +37,7 @@ class HotSellView extends React.Component{
     const {timeObj} = this.state ;
     if(timeObj==null)return null;
     const hotSellListItem = list.map((item, i) => {
+      // console.log(item)
       return (
         <div className='hot_sell_list_item' key={i} itemID={item.discountGameId}>
           <div className={styles.hot_sell_list_item_left}>
@@ -45,11 +46,11 @@ class HotSellView extends React.Component{
           <div className={styles.hot_sell_list_item_right}>
             <div className={styles.hot_sell_list_item_right_shopname}>{item.productName}</div>
             <div className={styles.hot_sell_list_item_right_sold}><img src={icon_shouye_honghuo}
-                                                                       alt=""/>已抢{item.currentPurchaseCount}万件
+                                                                       alt=""/>已抢{item.relatedProductSaleMount}件
             </div>
             <div className={styles.hot_sell_list_item_right_price}>
                 <span>
-                  <span className={styles.hot_sell_price_left_zero}>0元抢</span>
+                  <span className={styles.hot_sell_price_left_zero}>3D抢</span>
                   <span className={styles.hot_sell_price_left_rmb}>￥<big>{item.originalPrice / 100}</big></span>
                 </span>
               <span className={styles.hot_sell_price_right}>马上抢</span>
@@ -59,7 +60,7 @@ class HotSellView extends React.Component{
       );
     });
     return (
-      <DocumentTitle title='3D精选'>
+      <DocumentTitle title='3D抢购精选'>
         <div className={styles.hot_sell_container}>
           <ActivityIndicator
             color="white"
@@ -75,7 +76,7 @@ class HotSellView extends React.Component{
             </div>
           </div>
           <div className={styles.hot_sell_section}>
-            <div className={styles.hot_sell_section_tit}>3D-0元抢购精选</div>
+            <div className={styles.hot_sell_section_tit}>3D抢购精选</div>
             <div className={styles.hot_sell_list}>
               {hotSellListItem}
             </div>

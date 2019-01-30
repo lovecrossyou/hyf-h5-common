@@ -1,6 +1,6 @@
-const zeroUrl = 'http://pax4lf8m2.bkt.clouddn.com/rule_003.jpg';
-const threedUrl = 'http://pax4lf8m2.bkt.clouddn.com/threed.jpg';
-const commonUrl = 'http://pax4lf8m2.bkt.clouddn.com/rule_005.jpg';
+const zeroUrl = 'http://qnimage.xiteng.com/zearyuancq_rule.jpg';
+const threedUrl = 'http://qnimage.xiteng.com/three_d_rule.jpg';
+const commonUrl = 'http://qnimage.xiteng.com/index_all_rule.jpg';
 
 
 export default {

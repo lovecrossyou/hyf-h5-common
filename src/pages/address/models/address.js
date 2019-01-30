@@ -5,16 +5,30 @@ export default {
   namespace: 'address',
   state: {
     list: [],
-    activeAddress:null
+    activeAddress:null,
+    backType:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
         if (pathname === '/address/page') {
+          const backType = query.backType ;
+          if(backType){
+            dispatch({
+              type:'saveBackType',
+              payload:backType
+            })
+          }
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
           })
+
+          dispatch({
+            type: 'global/setTitle', payload: {
+              text: '地址列表',
+            },
+          });
         }
       });
     }
@@ -55,7 +69,14 @@ export default {
 
     setActive(state,action){
       return { ...state, activeAddress:action.payload };
+    },
 
+    saveBackType(state,action){
+      return {
+        ...state,
+        backType:action.payload
+      }
     }
+
   },
 };

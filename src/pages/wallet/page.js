@@ -50,6 +50,11 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
     dispatch(routerRedux.push('/member/page'));
   };
 
+  // 会员中心
+  function bankClick() {
+    dispatch(routerRedux.push('/bank/page'));
+  };
+
 
   if (accountInfo == null) return null;
   return (
@@ -106,8 +111,8 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
           </div>
           {/*<div className={styles.wallet_fun_count_item}>0元</div>*/}
         </div>
-        <div className='wallet_bank'>
-          <div className={styles.back_card}>
+        <div className={styles.wallet_bank}>
+          <div className={styles.back_card} onClick={bankClick}>
             <img src={me_icon_yinhangka} className={styles.my_bank_item_img}/>
             <div>银行卡</div>
           </div>
@@ -127,7 +132,9 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
             <div>星座运势</div>
           </div>
         </div>
-        <div className={styles.wallet_fun_item}>
+        <div className={styles.wallet_fun_item} onClick={() => {
+          dispatch(routerRedux.push('/wallet/billingDetails'));
+        }}>
           <div className='account_record'>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
             <div>账单明细</div>

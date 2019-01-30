@@ -1,5 +1,5 @@
 import {queryWinGameListByStageDetail , queryInviteUserRank , queryPurchaseRank} from "../service/awardDetail";
-const awardUrl = 'http://pax4lf8m2.bkt.clouddn.com/award_detail.png';
+const awardUrl = 'http://qnimage.xiteng.com/jiangpin_xiangqin_list.png';
 
 
 const pageSize = 8 ;
@@ -15,13 +15,6 @@ export default {
     datePurchaseRank:[],
     dateInviteUserRank:[],
 
-    friendCirclePageNo: -1,
-    friendCircleList:[],
-
-
-
-    platformPageNo: -1,
-    platformList:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -49,19 +42,11 @@ export default {
         }
         else if (pathname === '/awardDetail/monthlyFocus') {
           dispatch({
-            type:'fetchInviteUserRank',
+            type:'inviteUserRank',
             payload:{}
           })
         }
       });
-    },
-    inviteUserRank({ dispatch, history }){
-      dispatch({
-        type:'fetchInviteUserRank',
-        payload:{
-          isShow:false
-        }
-      })
     }
   },
   effects: {

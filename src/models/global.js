@@ -3,7 +3,7 @@ export default {
   state: {
     text: "",
     accessInfo:null,
-    loading:false
+    loading:false,
   },
 
   subscriptions: {
@@ -11,6 +11,7 @@ export default {
       return history.listen(({ pathname, query, search }) => {
         console.log('global accessInfo ',query.accessInfo);
         const accessInfo = query.accessInfo ;
+        const platform = query.platform ;
         if(accessInfo){
           dispatch({
             type:'saveAccessInfo',
@@ -20,6 +21,12 @@ export default {
         dispatch({
           type: "fetch"
         });
+        if(platform){
+          dispatch({
+            type:'savePlatform',
+            payload:platform
+          });
+        }
       });
     }
   },
@@ -40,6 +47,13 @@ export default {
         ...state,
         text: payload
       };
+    },
+
+    savePlatform(state, { payload }){
+      return {
+        ...state,
+        platform:payload
+      }
     }
   },
   effects: {

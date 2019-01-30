@@ -1,218 +1,92 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Modal, Button, Radio } from 'antd-mobile';
-
+import { routerRedux } from 'dva/router';
 import styles from './page.css';
-import diamondsImgIcon from '../../assets/icon_diamonds_vip.png';
-import godImgIcon from '../../assets/icon_goldvip@2x.png';
-import platinumImgIcon from '../../assets/icon_Platinum_vip@2x.png';
-
-import vip_putong from '../../assets/vip/icon_huiyuan_putong@2x.png';
-import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
-import vip_zuanshi from '../../assets/vip/icon_huiyuan_zuanshi@2x.png';
-import vip_gold from '../../assets/vip/icon_huiyuan_huanjin@2x.png';
+import { ActivityIndicator } from '../../components/ActivityIndicator';
+import crown_icon from '../../assets/vip/crown_icon.png';
+import putong_icon from '../../assets/vip/putong_icon@2x.png';
+import DocumentTitle from 'react-document-title';
+import  VIPMember from './components/vipmember'
 
 
-import checked_icon from '../../assets/vip/icon_huiyuan_shengji_xuanzhong@2x.png' ;
-import unchecked_icon from '../../assets/vip/icon_huiyuan_shengji@2x.png' ;
-import {ActivityIndicator} from "../../components/ActivityIndicator";
-const RadioItem = Radio.RadioItem;
-
-
-const VipNormal = [
-  {
-    title: '黄金会员',
-    img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
-    price: '19.8',
-    id: '1',
-    type: 'user_to_golden_vip',
-    action: '立即购买',
-  },
-  {
-    title: '铂金会员',
-    img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
-    price: '29.8',
-    type: 'user_to_higher_golden_vip',
-    action: '立即购买',
-  },
-  {
-    title: '钻石会员',
-    img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
-    price: '99.8',
-    type: 'user_to_diamond_vip',
-    action: '立即购买',
-  },
-];
-
-// 黄金会员
-const GoldenVip = [
-  {
-    title: '黄金会员',
-    img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
-    price: '19.8',
-    id: '1',
-    type: 'user_to_golden_vip',
-    action: '立即购买',
-  },
-  {
-    title: '铂金会员',
-    img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
-    price: '29.8',
-    type: 'golden_to_higher_golden_vip',
-    action: '立即升级',
-  },
-  {
-    title: '钻石会员',
-    img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
-    price: '99.8',
-    type: 'golden_to_diamond_vip',
-    action: '立即升级',
-  },
-];
-
-//铂金会员
-const PlatinumVip = [
-  {
-    title: '黄金会员',
-    img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
-    price: '19.8',
-    id: '1',
-    type: 'user_to_golden_vip',
-    enable: false,
-    action: '立即升级',
-  },
-  {
-    title: '铂金会员',
-    img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
-    price: '29.8',
-    type: 'user_to_higher_golden_vip',
-    action: '立即购买',
-  },
-  {
-    title: '钻石会员',
-    img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
-    price: '99.8',
-    type: 'higher_golden_to_diamond_vip',
-    action: '立即升级',
-  },
-];
-
-//钻石会员
-const DiamondVip = [
-  {
-    title: '黄金会员',
-    img: godImgIcon,
-    desc: '每期赠送1组抽签号码，奖励20喜币',
-    price: '19.8',
-    id: '1',
-    type: 'user_to_golden_vip',
-    enable: false,
-    action: '立即购买',
-  },
-  {
-    title: '铂金会员',
-    img: platinumImgIcon,
-    desc: '每期赠送2组抽签号码，奖励30喜币',
-    price: '29.8',
-    type: 'golden_to_higher_golden_vip',
-    enable: false,
-    action: '立即购买',
-  },
-  {
-    title: '钻石会员',
-    img: diamondsImgIcon,
-    desc: '每期赠送10组抽签号码，奖励100喜币',
-    price: '99.8',
-    type: 'user_to_diamond_vip',
-    action: '立即购买',
-  },
-];
-
-
-const UpgradeVip = VipNormal.slice(1, 3);
-
-const createVipModels = (vipInfo) => {
-  const { userIsVip, userVipType } = vipInfo;
-  if (userIsVip == false) return VipNormal;
-  else if (userVipType === 'golden_user') return GoldenVip;
-  else if (userVipType === 'higher_golden_user') return PlatinumVip;
-  else if (userVipType === 'diamond_user') return DiamondVip;
+const VIPName = userVipInfo=>{
+  if(userVipInfo.userVipType === 'golden_user'){
+    return '黄金会员'
+  }
+  else if(userVipInfo.userVipType === 'higher_golden_user'){
+    return '铂金会员'
+  }
+  else if(userVipInfo.userVipType === 'diamond_user'){
+    return '钻石会员'
+  }
+  return '普通会员'
 };
 
+// const stakeNumber = userVipInfo=>{
+//   if(userVipInfo.canPurchaseCodeCount === 1){
+//     return '赠送抽签抢黄金一年，每期1注'
+//   }
+//   else if(userVipInfo.canPurchaseCodeCount === 2){
+//     return '赠送抽签抢黄金一年，每期2注'
+//   }
+//   else if(userVipInfo.canPurchaseCodeCount === 3){
+//     return '赠送抽签抢黄金一年，每期10注'
+//   }
+//   return '升级或者购买会员专供商品立享会员权益'
+// };
 
-const VIPHeader = ({ vipInfo,upgradeClick }) => {
-  const { userIsVip, userVipType, vipEndTime } = vipInfo;
-  if (userIsVip === false) {
-    return (
-      <div className={styles.title}>
-        <img width='150px' height='36px' src={vip_putong} alt=""/>
-        <div className={styles.white_text}>您当前是
-          <div className={styles.inline_text}>普通会员</div>
-          ，仅可每月参与1次0元抢金砖活动
-        </div>
+const VIPHeader = ({userVipInfo})=>{
+const {userVipGrade} = userVipInfo ;
 
+console.log('userVipInfo ',userVipInfo);
+const DiamondStar = [] ;
+for (let i = 0; i<userVipGrade;i++){
+  DiamondStar.push(
+    <img src={crown_icon} alt="" className={styles.star_img} key={i + '#'}/>,
+  )
+}
+
+if (userVipInfo.canPurchaseCodeCount === 0){
+  return <div className={styles.member_give}>升级或者购买会员专供商品立享会员权益</div>
+}
+
+//头部会员详情
+  return <div className={styles.flex_row}>
+    <div className={styles.diamond_wrapper}>
+      <div className={styles.member_grade_show}>
+        <div className={styles.member_yellow}>{VIPName(userVipInfo)}</div>
+        <div className={styles.member_diamond}>{DiamondStar}</div>
       </div>
-    );
-  }
-
-  if (userVipType === 'higher_golden_user') {
-    // 铂金会员
-    return (
-      <div className={styles.title}>
-        <img width='150px' height='36px' src={vip_bojin} alt=""/>
-        <div className={styles.white_text}>您当前是
-          <div className={styles.inline_text}>铂金会员</div>
-          ，每期赠送2组抽签号码 奖励20喜币
-        </div>
-        <div className={styles.vipEndTime}>{vipEndTime}</div>
-        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
-
-      </div>
-    );
-  }
-  if (userVipType === 'golden_user') {
-    // 黄金会员
-    return (
-      <div className={styles.title}>
-        <img width='150px' height='36px' src={vip_gold} alt=""/>
-        <div className={styles.white_text}>您当前是
-          <div className={styles.inline_text}>黄金会员</div>
-          ，每期赠送1组抽签号码 奖励20喜币
-        </div>
-        <div className={styles.vipEndTime}>{vipEndTime}</div>
-        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
-
-      </div>
-    );
-  }
-
-  if (userVipType === 'diamond_user') {
-    // 钻石会员
-    return (
-      <div className={styles.title}>
-        <img width='150px' height='36px' src={vip_zuanshi} alt=""/>
-        <div className={styles.white_text}>您当前是
-          <div className={styles.inline_text}>钻石会员</div>
-          ，每期赠送10组抽签号码 奖励100喜币
-        </div>
-        <div onClick={upgradeClick} className={styles.btn_upgrade}>立即升级</div>
-
-      </div>
-    );
-  }
+      <div className={styles.member_give}>赠送抽签抢黄金一年，每期{userVipInfo.canPurchaseCodeCount}注</div>
+      <div className={styles.end_time}>{userVipInfo.vipEndTime}</div>
+    </div>
+  </div>
 };
+
+const BtnBuy = ()=>{
+  return <div className={styles.btn_buy}>
+    立即购买
+  </div>
+};
+const ProductItem = ({data,onClick})=>{
+  return <div
+    className={styles.product}
+    onClick={onClick}>
+    <img src={data.imageUrl} className={styles.p_img} alt=""/>
+    <div className={styles.p_info}>
+      <div className={styles.p_info_title}>{data.productName}</div>
+      <div className={styles.p_info_desc}>{data.subtitle}</div>
+      <div className={styles.btn_buy_wrapper}>
+        <div className={styles.p_info_price}>￥{data.price/100}</div>
+        <BtnBuy/>
+      </div>
+    </div>
+  </div>
+};
+
 
 class Member extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -221,38 +95,9 @@ class Member extends React.Component {
     };
   }
 
-  showModal = () => {
-    this.setState({
-      modal: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      modal: false,
-    });
-  };
-
-  onChange = (index) => {
-    this.setState({
-      checkedIndex: index,
-    });
-  };
-
-
-  VIPChange = (vip, index) => {
-    this.setState({
-      checkedIndex: index,
-    });
-    //保存升级的VIP类型
-    this.props.dispatch({
-      type: 'member/saveVip',
-      payload: vip,
-    });
-  };
 
   render() {
-    const { userVipInfo } = this.props.store;
+    const { userVipInfo,products } = this.props.store;
     const { loading } = this.props;
     if (userVipInfo == null) return (
       <ActivityIndicator
@@ -261,120 +106,44 @@ class Member extends React.Component {
         animating={loading}
       />
     );
-    const currentVips = createVipModels(userVipInfo);
-    return <div style={{ paddingBottom: '40px' }}>
-      <div className={styles.header_bg}>
-        <VIPHeader
-          vipInfo={userVipInfo}
-          upgradeClick={()=>{
-            this.setState({
-              modal:true
-            })
-          }}/>
-      </div>
-      <div className={styles.tips}>
-        <div className={styles.tips_title}>会员专享特权</div>
-        <div className={styles.tips_desc}>VIP会员一年内不限期数参与0元抢金砖活动，每期可参与选号抽签；每期均可发起拼团，每成功一个拼团奖励次选号抽签0元抢购金砖。</div>
-      </div>
-      <div className={styles.vip}>
-        <div className={styles.vip_title}>会员等级特权</div>
-        <div className={styles.vip_list}>
-          {currentVips.map((vip, index) => {
-            return (
-              <VipItem key={index} vip={vip}/>
-            );
-          })}
-        </div>
-      </div>
-      <Tips/>
-
-      <Modal
-        visible={this.state.modal}
-        transparent
-        maskClosable={true}
-        onClose={this.onClose}
-        style={{ width: '90%' }}
-      >
-        <div>
-          <div style={{ color: '#cc2636', fontSize: '36px' }}>我要升级</div>
-          {UpgradeVip.map((vip, index) => {
-            return (
-              <VipUpgradeItem
-                onChange={() => {
-                  this.VIPChange(vip, index);
-                }}
-                vip={vip}
-                key={index + '#'}
-                selected={this.state.checkedIndex === index}/>
-            );
-          })}
-          <div style={{ marginTop: '10px' }} className='btn_vip_upgrade'>
-            <Button type="warning" onClick={this.onClose}>确定</Button>
+    return (
+      <DocumentTitle title='会员商店'>
+        <div style={{ paddingBottom: '40px' }}>
+          <div className={styles.header_bg}>
+            <VIPHeader userVipInfo={userVipInfo}/>
           </div>
+          <div className={styles.tips}>
+            <div className={styles.tips_title}>会员专享特权</div>
+            <div className={styles.tips_desc}>普通用户每周免费参与一期抽签抢黄金，获赠1注抽签。                 购买会员或专供商品享受每期（周二、四、日22:00揭晓中签）参与抽签抢黄金。。</div>
 
-          <div style={{ color: '#999999', fontSize: '24px', paddingTop: '8px' }}>会员升级仅需在当前的会员基础上补差价</div>
-        </div>
-      </Modal>
-
-    </div>;
-  }
-
-}
-
-const VipItem = ({ vip, action }) => {
-  return (
-    <div className={[styles.vip_item]}>
-      <div className={styles.vip_item_content}>
-        <div className={styles.vip_left}>
-          <img src={vip.img} alt="" className={styles.vip_left_img}/>
-          <div className={styles.vip_left_text}>
-            <div className={styles.vip_left_text_title}>{vip.title}</div>
-            <div className={styles.vip_left_text_desc}>{vip.desc}</div>
-            <div className={styles.vip_left_text_price}>{vip.price}元/年</div>
           </div>
-        </div>
-        <div className={styles.vip_right}>
-          <div className={vip.enable !== false ? 'vip_right_action' : 'vip_right_action_disable'} onClick={action}
-               vip_type={vip.type}>{vip.action}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const VipUpgradeItem = ({ vip, action, selected = false, onChange }) => {
-  return (
-    <div className={styles.vip_item_line} onClick={onChange}>
-      <div className={styles.flex_r}>
-        <div className={styles.vip_item_content}>
-          <div className={styles.vip_left}>
-            <img src={vip.img} alt="" className={styles.vip_left_img}/>
-            <div style={{ paddingLeft: '10px' }}>
-              <div className={styles.vip_left_text_title}>{vip.title}</div>
-              <div className={styles.vip_left_text_desc}>{vip.desc}</div>
+          <VIPMember/>
+          <div className={styles.vip}>
+            <div className={styles.vip_title}>会员专供</div>
+            <div className={styles.vip_list}>
+              {
+                products.map((p,index)=>{
+                  return <ProductItem
+                    key={index+'#'}
+                    data={p}
+                    onClick={()=>{
+                      console.log('vipProductId ',p);
+                      this.props.dispatch({
+                        type:'member/setActiveProduct',
+                        payload:p
+                      });
+                      this.props.dispatch(routerRedux.push('/member/productDetailsContainer?id='+p.vipProductId))
+                    }}/>
+                })
+              }
             </div>
           </div>
         </div>
-        {
-          selected ? (<img src={checked_icon}/>) : <img src={unchecked_icon}/>
-        }
-      </div>
-    </div>
-  );
-};
+      </DocumentTitle>
+    )
+  }
+}
 
-
-const Tips = () => {
-  return (
-    <div className={styles.answer}>
-      <div className={styles.answer_title}>疑问小解答</div>
-      <div className={styles.answer_content}>
-        <div className={styles.answer_title_text}>喜币可以干什么？</div>
-        <div>喜币可以抵用人民币，在平台购买0元抢商品哦!</div>
-      </div>
-    </div>
-  );
-};
 
 export default connect(state => ({
   store: state.member,

@@ -32,11 +32,33 @@
       wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
     });
 
+    // 新版购买会员
+    $('#root').on('click', '.btn_vip_product_confirm', function() {
+
+      var state = window.g_app._store.getState();
+      var member = state.member;
+      var address = state.address;
+
+      const params = {
+        deliverAddressId:address.activeAddress.id,
+        entityVipProductType:member.activeProduct.entityVipProductType,
+        purchaseCount:member.buyCount,
+      }
+
+      console.log('params 新版购买会员 ',params)
+
+      wx.miniProgram.postMessage({ data: params });
+      wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+    });
+
+
     // 会员购买
     $('#root').on('click', '.vip_right_action', function() {
       var vip_type = $(this).attr('vip_type');
       console.log('会员购买以及升级 vip_type ', vip_type);
-      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.postMessage({ data: {
+        vipProductType:vip_type
+        } });
       wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
     });
 
@@ -49,7 +71,9 @@
         vip_type = 'user_to_higher_golden_vip' ;
       }
 
-      wx.miniProgram.postMessage({ data: vip_type });
+      wx.miniProgram.postMessage({ data: {
+          vipProductType:vip_type
+        } });
       wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
     });
 
@@ -92,7 +116,7 @@
 
     // 账单明细
     $('#root').on('click', '.account_record', function() {
-      wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+      // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
     });
 
     // 用户信息 收货地址
@@ -103,6 +127,12 @@
 
     //3d精选 点击商品
     $('#root').on('click', '.hot_sell_list_item', function() {
+      var itemid = $(this).attr('itemid');
+      wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
+    });
+
+    //分类商品
+    $('#root').on('click', '.product_categor_cont', function() {
       var itemid = $(this).attr('itemid');
       wx.miniProgram.navigateTo({ url: '/pages/product/productDetail?itemid='+itemid });
     });

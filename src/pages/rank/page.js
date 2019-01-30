@@ -11,8 +11,12 @@ import icon_gengduo from '../../assets/icon_gengduo@3x.png'
 import icon_chakan from '../../assets/icon_chakan@3x.png'
 import { routerRedux } from 'dva/router';
 
+const sortByRank = (a,b)=>{
+  return parseInt(a.rank) >=parseInt(b.rank) ;
+}
 
-//名次
+
+// 名次
 export const RankLabel = ({item})=>{
   if(item.rank===1){
     return (
@@ -44,23 +48,15 @@ export const RankLabel = ({item})=>{
 
 
 function MonthlyFocus(props) {
-  // platformList,
-  //   userIconUrl,
-  //   allRankOfFriendCircle,
-  //   friendCirclePageNo,
-  //   allRankOfPlatform,
-  //   inviteAllUserAmount
-  // friendCircleList
-  // isShow
 
-  const {isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
-  // console.log('shifouqiehuanaaaa==',isShow)
-  if(platformList.length===0)return null;
-  console.log('邀请榜单==',props.store);// 邀请榜单
-
-
-  // const {platformList,allRankOfFriendCircle , allRankOfPlatform , friendCircleInviteRankUserInfo , userIconUrl , inviteAllUserAmount , platformInviteRankUserInfo} = dateInviteUserRank;
-  //
+  const {allPurchaseAmount,purchaseRankUserInfo,isShow , platformList,userIconUrl, allRankOfFriendCircle,allRankOfPlatform,inviteAllUserAmount, friendCircleList} = props.store;
+  if(platformList.length===0)return (
+    <ActivityIndicator
+      color="white"
+      toast
+      animating={props.loading}
+    />
+  );
   // // 朋友圈排行
   const InviteUserRankContainer = friendCircleList.map((item,i)=>{
     return(
@@ -82,7 +78,7 @@ function MonthlyFocus(props) {
           </div>
           <div className={styles.monthly_focus_section_list_name}>{item.userName}</div>
         </div>
-        <div className={styles.monthly_focus_section_list_portion}><span>{item.friendAmount}</span>份</div>
+        <div className={styles.monthly_focus_section_list_portion}><span>{item.allPurchaseAmount||item.friendAmount}</span>{isShow==false?'人':'份'}</div>
       </div>
     )
   });
@@ -95,16 +91,16 @@ function MonthlyFocus(props) {
       />
       <div className={styles.monthly_focus_container}>
         <div className={styles.monthly_focus_title}>
-          <div className={isShow?styles.bdb6:""} onClick={()=>{
-            props.dispatch({
-              type:"award/purchaseRank"
-            })
-          }}>抢购榜单</div>
           <div className={isShow?"":styles.bdb6} onClick={()=>{
             props.dispatch({
-              type:"award/inviteUserRank"
+              type:"rank/fetchInviteUserRank"
             })
           }}>邀请榜单</div>
+          <div className={isShow?styles.bdb6:""} onClick={()=>{
+            props.dispatch({
+              type:"rank/fetchPurchaseRank"
+            })
+          }}>抢购榜单</div>
         </div>
         <div className={styles.monthly_focus_section}>
           <div className={styles.monthly_focus_section_list_tit_box}>
@@ -126,7 +122,7 @@ function MonthlyFocus(props) {
             </div>
           </div>
           <div className={styles.monthly_focus_section_list}>
-            <div className={styles.monthly_focus_section_list_item}>
+            <div className={styles.monthly_focus_section_list_item} style={{marginBottom:"20px"}}>
               <div className={styles.monthly_focus_section_list_tit_left}>
                 <div>{allRankOfPlatform}</div>
                 <div className={styles.monthly_focus_section_list_avatar}>
@@ -134,7 +130,9 @@ function MonthlyFocus(props) {
                 </div>
                 <div className={styles.monthly_focus_section_list_name}>我</div>
               </div>
-              <div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>
+              {
+                isShow?(<div className={styles.monthly_focus_section_list_portion}><span>{allPurchaseAmount}</span>份</div>):(<div className={styles.monthly_focus_section_list_portion}><span>{inviteAllUserAmount}</span>人</div>)
+              }
             </div>
             {PlatformInviteRankContainer}
           </div>
