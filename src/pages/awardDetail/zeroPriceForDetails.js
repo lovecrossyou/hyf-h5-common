@@ -27,7 +27,7 @@ function ZeroPriceForDetails(props) {
     <div>
       <div className={styles.price_details_container}>
         <div className={styles.price_details_head}>
-          <div className={styles.price_details_tit}>0元抢汽车第{lotteryStage}期</div>
+          <div className={styles.price_details_tit}>0元抢第{lotteryStage}期</div>
           <div className={styles.price_details_tit_intro}
                onClick={()=>{
                  props.dispatch(routerRedux.push('/awardDetail/page'))

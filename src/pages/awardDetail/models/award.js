@@ -1,5 +1,5 @@
 import {queryWinGameListByStageDetail , queryInviteUserRank , queryPurchaseRank} from "../service/awardDetail";
-const awardUrl = 'http://qnimage.xiteng.com/jiangpin_xiangqin_list.png';
+const awardUrl = 'http://qnimage.xiteng.com/photo_xiangqing@2x.jpg';
 
 
 const pageSize = 8 ;

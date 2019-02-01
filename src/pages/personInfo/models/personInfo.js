@@ -8,7 +8,7 @@ import {
   queryUserInfo,
 } from '../service/personInfo';
 import uploadFile from '../../../utils/uploader/fileUploader'
-const tips = '亲，一起来抽签抢汽车吧！0元抢汽车，完！每周二、四、日22：00揭晓中签，选中双色球就送！';
+const tips = '亲，一起来抽签抢吧！0元抢，完！每周二、四、日22：00揭晓中签，选中双色球就送！';
 
 
 export default {

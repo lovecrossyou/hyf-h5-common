@@ -46,7 +46,7 @@ if (userVipInfo.canPurchaseCodeCount === 0){
         <div className={styles.member_yellow}>{VIPName(userVipInfo)}</div>
         <div className={styles.member_diamond}>{DiamondStar}</div>
       </div>
-      <div className={styles.member_give}>赠送抽签抢汽车一年，每期{userVipInfo.canPurchaseCodeCount}注</div>
+      <div className={styles.member_give}>赠送抽签抢一年，每期{userVipInfo.canPurchaseCodeCount}注</div>
       <div className={styles.end_time}>{userVipInfo.vipEndTime}</div>
     </div>
   </div>
@@ -102,7 +102,7 @@ class Member extends React.Component {
           </div>
           <div className={styles.tips}>
             <div className={styles.tips_title}>会员专享特权</div>
-            <div className={styles.tips_desc}>普通用户每周免费参与一期抽签抢汽车，获赠1注抽签。                 购买会员或专供商品享受每期（周二、四、日22:00揭晓中签）参与抽签抢汽车。。</div>
+            <div className={styles.tips_desc}>普通用户每周免费参与一期抽签抢，获赠1注抽签。                 购买会员或专供商品享受每期（周二、四、日22:00揭晓中签）参与抽签抢。。</div>
 
           </div>
           <VIPMember/>
