@@ -32,7 +32,7 @@ function ThePriceForDetails(props) {
     <div>
       <div className={styles.price_details_container}>
         <div className={styles.price_details_head}>
-          <div className={styles.price_details_tit}>3D-0元抢购第{lotteryStage}期</div>
+          <div className={styles.price_details_tit}>3D-抽签抢购第{lotteryStage}期</div>
           <div className={styles.price_details_num}>中签人数：{winUserCount}人<span>|</span>中签注数：{winCodeCount}注</div>
         </div>
         {

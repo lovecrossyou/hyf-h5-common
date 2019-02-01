@@ -157,7 +157,7 @@ const VIPHeader = ({ vipInfo,upgradeClick }) => {
         <img width='150px' height='36px' src={vip_putong} alt=""/>
         <div className={styles.white_text}>您当前是
           <div className={styles.inline_text}>普通会员</div>
-          ，仅可每月参与1次0元抢金砖活动
+          ，仅可每月参与1次抽签抢金砖活动
         </div>
 
       </div>
