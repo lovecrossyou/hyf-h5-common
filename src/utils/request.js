@@ -35,6 +35,7 @@ export default async function request(url, options, type='json') {
     body: JSON.stringify(body),
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     method: options.method,
   };
