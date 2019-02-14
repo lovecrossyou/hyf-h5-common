@@ -24,7 +24,6 @@ export async function queryActiveInfo() {
 
   const url = 'https://www.xiteng.com/xitenggamenode/activityInfo' ;
   const opt = {
-    body: {},
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
