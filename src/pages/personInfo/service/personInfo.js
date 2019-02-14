@@ -27,6 +27,7 @@ export async function queryActiveInfo() {
     body: {},
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
   };
   const response = await fetch(url, opt);
