@@ -29,6 +29,7 @@ export async function queryActiveInfo() {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     },
+    method:'GET'
   };
   const response = await fetch(url, opt);
   return response.json();
