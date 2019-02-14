@@ -25,7 +25,9 @@ class QrCode extends React.Component {
   }
 
   render(){
-    const { qrData,userInfo } = this.props.personInfo;
+    const { qrData,userInfo,activeInfo } = this.props.personInfo;
+
+    console.log('activeInfo #### ' ,activeInfo);
     return <DocumentTitle title='我的二维码'>
       <div className={styles.qrcode}>
         <div className={styles.content}>
@@ -44,7 +46,7 @@ class QrCode extends React.Component {
               className={styles['am-textarea-control']}
               rows={3}
               editable
-              value={this.state.tips}
+              value={activeInfo.me_invite_friend.input_text}
               onChange={this.onChange.bind(this)}
             />
           </div>

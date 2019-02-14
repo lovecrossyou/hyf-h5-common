@@ -151,6 +151,12 @@ export default {
         ...state,
         qrCodeTips:action.payload
       }
-    }
+    },
+    saveActiveInfo(state,action){
+      return {
+        ...state,
+        activeInfo:action.payload
+      }
+    },
   },
 };
