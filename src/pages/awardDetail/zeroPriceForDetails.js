@@ -121,6 +121,7 @@ function ZeroPriceForDetails(props) {
 export default connect(state=>{
   return {
     store: state.award,
-    loading:state.loading.global
+    loading:state.loading.global,
+    activeInfo:state.global.activeInfo
   }
 })(ZeroPriceForDetails)

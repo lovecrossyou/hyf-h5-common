@@ -25,8 +25,8 @@ class QrCode extends React.Component {
   }
 
   render(){
-    const { qrData,userInfo,activeInfo } = this.props.personInfo;
-
+    const { qrData,userInfo } = this.props.personInfo;
+    const activeInfo = this.props.activeInfo ;
     console.log('activeInfo #### ' ,activeInfo);
     return <DocumentTitle title='我的二维码'>
       <div className={styles.qrcode}>
@@ -62,6 +62,7 @@ class QrCode extends React.Component {
 export default connect(state => {
   return {
     personInfo: state.personInfo,
+    activeInfo:state.global.activeInfo
   };
 })(QrCode);
 

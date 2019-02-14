@@ -1,9 +1,12 @@
+import { queryActiveInfo } from '../pages/personInfo/service/personInfo';
+
 export default {
   namespace: "global",
   state: {
     text: "",
     accessInfo:null,
     loading:false,
+    activeInfo:{}
   },
 
   subscriptions: {
@@ -21,6 +24,11 @@ export default {
         dispatch({
           type: "fetch"
         });
+
+        dispatch({
+          type:'fetchActiveInfo'
+        })
+
         if(platform){
           dispatch({
             type:'savePlatform',
@@ -54,11 +62,26 @@ export default {
         ...state,
         platform:payload
       }
-    }
+    },
+
+    saveActiveInfo(state,action){
+      return {
+        ...state,
+        activeInfo:action.payload
+      }
+    },
   },
   effects: {
     *setTitle({ payload }, { call, put, select }) {
       yield put({ type: "save", payload: payload });
+    },
+
+    *fetchActiveInfo({ payload, cb }, { call, put }) {
+      const activeInfo = yield call(queryActiveInfo, payload);
+      yield put({
+        type: 'saveActiveInfo',
+        payload: activeInfo,
+      });
     },
   }
 };
