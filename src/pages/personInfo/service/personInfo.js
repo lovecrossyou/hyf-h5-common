@@ -19,6 +19,19 @@ export async function queryUserInfo() {
   });
 }
 
+// 获取活动信息
+export async function queryActiveInfo() {
+
+  const url = 'https://www.xiteng.com/xitenggamenode/activityInfo' ;
+  const opt = {
+    body: {},
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+  const response = await fetch(url, opt);
+  return response.json();
+}
 
 // "constellation": "string",
 //   "sex": 0

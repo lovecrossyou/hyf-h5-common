@@ -4,7 +4,7 @@
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 import {
-  generateQRCode, modifyIcon, modifyName, queryConstellationDetail, queryModifyConstellation,
+  generateQRCode, modifyIcon, modifyName, queryActiveInfo, queryConstellationDetail, queryModifyConstellation,
   queryUserInfo,
 } from '../service/personInfo';
 import uploadFile from '../../../utils/uploader/fileUploader'
@@ -30,7 +30,8 @@ export default {
       },
     ],
     qrData: null,
-    qrCodeTips:tips
+    qrCodeTips:tips,
+    activeInfo:{}
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -41,6 +42,10 @@ export default {
             type: 'userInfo',
             payload: {},
           });
+
+          dispatch({
+            type:'fetchActiveInfo'
+          })
         }
         else if (pathname === '/personInfo/qrCode'||pathname === '/personInfo/goldenTicket') {
           // 生成二维码
@@ -116,7 +121,15 @@ export default {
        icon:res
      })
       cb&&cb();
-    }
+    },
+
+    *fetchActiveInfo({ payload, cb }, { call, put }) {
+      const activeInfo = yield call(queryActiveInfo, payload);
+      yield put({
+        type: 'saveActiveInfo',
+        payload: activeInfo,
+      });
+    },
   },
   reducers: {
     saveUserInfo(state, action) {

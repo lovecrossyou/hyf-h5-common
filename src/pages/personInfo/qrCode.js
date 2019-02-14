@@ -13,7 +13,6 @@ class QrCode extends React.Component {
     tips:tips
   }
 
-
   onChange = text=>{
     this.props.dispatch({
       type:'personInfo/saveShareTips',
