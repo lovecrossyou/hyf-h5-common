@@ -35,7 +35,7 @@ export const AddressCell = ({address,del,edit,onClick,backType=null})=>{
         <List.Item
           onClick={e => console.log(e)}
         >
-          <div className={backType==='native'? 'addr_btn' : '' } data={address.id} onClick={onClick}>
+          <div className={backType==='native'? 'addr_btn' : 'addr_btn' } data={address.id} onClick={onClick}>
             <div className={styles.right}>
               <div className={styles.linkman}>
                 <div className={styles.reciev_name}>{address.recievName}</div>
