@@ -41,7 +41,7 @@ class HotSellView extends React.Component{
       return (
         <div className='hot_sell_list_item' key={i} itemID={item.discountGameId}>
           <div className={styles.hot_sell_list_item_left}>
-            <img src={item.productImageUrl}  alt=""/>
+            <img src={item.productImageUrl} alt=""/>
           </div>
           <div className={styles.hot_sell_list_item_right}>
             <div className={styles.hot_sell_list_item_right_shopname}>{item.productName}</div>

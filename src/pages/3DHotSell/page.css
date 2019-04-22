@@ -77,7 +77,9 @@
   background: #eeeeee;
 }
 .hot_sell_list_item_left>img{
-  width:256px;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
 }
 .hot_sell_list_item_right{
   flex:1;
