@@ -9,10 +9,10 @@ import assets_icon_xibiaccount from '../../assets/assets_icon_xibiaccount@2x.png
 import me_icon_shuipiao_haoyou from '../../assets/me_icon_shuipiao_haoyou@2x.png';
 import me_icon_shuipiao_hongbao from '../../assets/me_icon_shuipiao_hongbao@2x.png';
 import me_icon_shuipiao_jiangli from '../../assets/me_icon_shuipiao_jiangli@2x.png';
-import me_icon_ticket_blue from '../../assets/me_icon_ticket_blue@2x.png';
+import me_icon_ticket_blue from '../../assets/qianbao_icon_zhangdan@2x.png';
 import me_icon_yinhangka from '../../assets/me_icon_yinhangka@2x.png';
-import icon_rmb from '../../assets/icon_rmb@2x.png';
-import assets_icon_vip from '../../assets/assets_icon_vip@2x.png';
+import icon_rmb from '../../assets/qianbao_icon_tuikuan@2x.png';
+import assets_icon_vip from '../../assets/qianbao_icon_huiyuan@2x.png';
 import assets_icon_horoscope from '../../assets/assets_icon_horoscope@2x.png';
 import styles from './page.css';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
@@ -65,7 +65,7 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
             dispatch(routerRedux.push('/wallet/rmbContainerView'));
           }}>
             <img src={assets_icon_rmbaccount}/>
-            <div className={styles.wallet_item_top_title}>人民币
+            <div className={styles.wallet_item_top_title}>零钱
             </div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.rmbAmount / 100}</div>
@@ -102,15 +102,13 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
           <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount / 100}元</div>
         </div>
 
-        <div className={styles.line}/>
-
-        <div onClick={xbCharge} className={styles.wallet_fun_item}>
-          <div className={styles.wallet_item_top}>
-            <img src={icon_rmb} className={styles.my_water_ticket_item_img}/>
-            <div>喜币充值</div>
+        <div onClick={vipClick} className='vip_center_item'>
+          <div className={styles.vip}>
+            <img src={assets_icon_vip} className={styles.my_water_ticket_item_img}/>
+            <div>会员中心</div>
           </div>
-          {/*<div className={styles.wallet_fun_count_item}>0元</div>*/}
         </div>
+
         <div className={styles.wallet_bank}>
           <div className={styles.back_card} onClick={bankClick}>
             <img src={me_icon_yinhangka} className={styles.my_bank_item_img}/>
@@ -119,25 +117,29 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
           <div className={styles.back_card_add}>+</div>
         </div>
 
-        <div onClick={vipClick} className='vip_center_item'>
-          <div className={styles.vip}>
-            <img src={assets_icon_vip} className={styles.my_water_ticket_item_img}/>
-            <div>会员中心</div>
-          </div>
-        </div>
-
-        <div onClick={astroClick} className={styles.wallet_fun_item}>
-          <div className={styles.astro}>
-            <img src={assets_icon_horoscope} className={styles.my_water_ticket_item_img}/>
-            <div>星座运势</div>
-          </div>
-        </div>
         <div className={styles.wallet_fun_item} onClick={() => {
           dispatch(routerRedux.push('/wallet/billingDetails'));
         }}>
           <div className='account_record'>
             <img src={me_icon_ticket_blue} className={styles.my_water_ticket_item_img}/>
-            <div>账单明细</div>
+            <div>账单</div>
+          </div>
+        </div>
+
+        <div className={styles.line}/>
+
+        <div className={styles.wallet_fun_item}>
+          <div className={styles.wallet_item_top}>
+            <img src={icon_rmb} className={styles.my_water_ticket_item_img}/>
+            <div className={styles.top_margin}>退款路径</div>
+          </div>
+        </div>
+
+
+        <div onClick={astroClick} className={styles.wallet_fun_item}>
+          <div className={styles.astro}>
+            <img src={assets_icon_horoscope} className={styles.my_water_ticket_item_img}/>
+            <div className={styles.top_margin}>星座运势</div>
           </div>
         </div>
       </div>
