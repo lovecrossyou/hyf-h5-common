@@ -85,6 +85,16 @@
   margin-top:20px;
 }
 
+:global(.vip_center_item){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:250px;
+  width: 33%;
+  border-bottom:1px solid #F8F8F8;
+}
+
 .wallet_fun_item{
   display: flex;
   flex-direction: column;

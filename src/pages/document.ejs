@@ -121,6 +121,13 @@
       // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
     });
 
+    // 会员中心
+    // 
+    $('#root').on('click', '.vip_center_item', function() {
+      wx.miniProgram.navigateTo({ url: '/pages/me/vip/vip-center' });
+    });
+
+
     // 用户信息 收货地址
     $('#root').on('click', '.information_addr_btn', function() {
       console.log('新建地址');

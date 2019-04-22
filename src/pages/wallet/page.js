@@ -119,7 +119,7 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
           <div className={styles.back_card_add}>+</div>
         </div>
 
-        <div onClick={vipClick} className={styles.wallet_fun_item}>
+        <div onClick={vipClick} className='vip_center_item'>
           <div className={styles.vip}>
             <img src={assets_icon_vip} className={styles.my_water_ticket_item_img}/>
             <div>会员中心</div>
