@@ -41,7 +41,7 @@ class HotSellView extends React.Component{
       return (
         <div className='hot_sell_list_item' key={i} itemID={item.discountGameId}>
           <div className={styles.hot_sell_list_item_left}>
-            <img src={item.productImageUrl} alt=""/>
+            <img src={item.productImageUrl}  alt=""/>
           </div>
           <div className={styles.hot_sell_list_item_right}>
             <div className={styles.hot_sell_list_item_right_shopname}>{item.productName}</div>
@@ -51,7 +51,7 @@ class HotSellView extends React.Component{
             <div className={styles.hot_sell_list_item_right_price}>
                 <span>
                   <span className={styles.hot_sell_price_left_zero}>1折购</span>
-                  <span className={styles.hot_sell_price_left_rmb}>￥<big>{item.originalPrice / 100}</big></span>
+                  <span className={styles.hot_sell_price_left_rmb}>￥<big>{item.originalPrice / 1000}</big></span>
                 </span>
               <span className={styles.hot_sell_price_right}>马上抢</span>
             </div>
@@ -72,7 +72,7 @@ class HotSellView extends React.Component{
             <div className={styles.hot_sell_head_main}>
               <div>揭晓中签：每天22:00</div>
               <div>距揭晓<span>{timeObj.hour}</span>:<span>{timeObj.minute}</span>:<span>{timeObj.sec}</span></div>
-              <div>选福彩3D号码，中签即免费送，不中签全额退款（也可全额购买）商品均来源于天猫。</div>
+              <div>选3D号码，中签即免费送，不中签全额退款（也可全额购买）商品均来源于天猫。</div>
             </div>
           </div>
           <div className={styles.hot_sell_section}>
