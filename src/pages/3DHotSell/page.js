@@ -50,7 +50,7 @@ class HotSellView extends React.Component{
             </div>
             <div className={styles.hot_sell_list_item_right_price}>
                 <span>
-                  <span className={styles.hot_sell_price_left_zero}>3D抢</span>
+                  <span className={styles.hot_sell_price_left_zero}>1折购</span>
                   <span className={styles.hot_sell_price_left_rmb}>￥<big>{item.originalPrice / 100}</big></span>
                 </span>
               <span className={styles.hot_sell_price_right}>马上抢</span>
@@ -60,7 +60,7 @@ class HotSellView extends React.Component{
       );
     });
     return (
-      <DocumentTitle title='3D抢购精选'>
+      <DocumentTitle title='精选好物'>
         <div className={styles.hot_sell_container}>
           <ActivityIndicator
             color="white"
@@ -76,7 +76,7 @@ class HotSellView extends React.Component{
             </div>
           </div>
           <div className={styles.hot_sell_section}>
-            <div className={styles.hot_sell_section_tit}>3D抢购精选</div>
+            <div className={styles.hot_sell_section_tit}>精选好物</div>
             <div className={styles.hot_sell_list}>
               {hotSellListItem}
             </div>
