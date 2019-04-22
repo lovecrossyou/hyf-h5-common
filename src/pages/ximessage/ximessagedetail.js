@@ -22,7 +22,7 @@ function XiMessageDetail(props){
     </div>
   });
   return(
-    <DocumentTitle title='账单明细'>
+    <DocumentTitle title='喜信'>
       <div>
         <ActivityIndicator
           animating={props.loading}
