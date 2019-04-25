@@ -60,7 +60,7 @@ class HotSellView extends React.Component{
       );
     });
     return (
-      <DocumentTitle title='精选好物'>
+      <DocumentTitle title='热销榜单'>
         <div className={styles.hot_sell_container}>
           <ActivityIndicator
             color="white"
@@ -76,7 +76,7 @@ class HotSellView extends React.Component{
             </div>
           </div>
           <div className={styles.hot_sell_section}>
-            <div className={styles.hot_sell_section_tit}>精选好物</div>
+            <div className={styles.hot_sell_section_tit}>热销榜单</div>
             <div className={styles.hot_sell_list}>
               {hotSellListItem}
             </div>
