@@ -1,6 +1,6 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill,fetchBankCardList,fetchWithdraw
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo, fetchBill, fetchBankCardList, fetchWithdraw
 } from '../service/wallet';
 
 
@@ -14,17 +14,17 @@ export default {
     userProfitAllFriendInfo: null,
     inviteProfitXtb: null,
     // 钻石好友
-    userDiamondFriends:[],
-    user:null,
-    billings:[],
-    bankList:[],
-    currencyType:3,
-    withdrawOption:[]
+    userDiamondFriends: [],
+    user: null,
+    billings: [],
+    bankList: [],
+    currencyType: 3,
+    withdrawOption: []
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView'||pathname === '/wallet/withdrawDeposits') {
+        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView' || pathname === '/wallet/withdrawDeposits') {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
@@ -35,10 +35,10 @@ export default {
               text: '钱包',
             },
           });
-        }else if(pathname === '/wallet/billingDetails'){
+        } else if (pathname === '/wallet/billingDetails') {
           dispatch({
-            type:"fetchBillings",
-            payload:{
+            type: "fetchBillings",
+            payload: {
               currencyType: 3,
               pageNo: 0,
               size: 20
@@ -59,7 +59,6 @@ export default {
       //请求当前用户的银行卡, 列表,默认 获取第一张银行卡
       const bankList = yield call(fetchBankCardList, payload);
 
-      const withdrawOption = yield call(fetchWithdraw, payload);
 
       yield put({
         type: 'save', payload: {
@@ -68,8 +67,8 @@ export default {
           userProfitAllFriendInfo,
           inviteProfitXtb,
           shareSellProfitRmb,
-          bankList:bankList.content,
-          withdrawOption
+          bankList: bankList.content,
+          // withdrawOption
         },
       });
     },
@@ -80,29 +79,36 @@ export default {
         },
       });
     },
-    * fetchDiamondFriends({ payload ,cb}, { call, put }){
+    * fetchDiamondFriends({ payload, cb }, { call, put }) {
       const params = {
-        profitUserId:payload.user.profitUserId
+        profitUserId: payload.user.profitUserId
       };
       yield put({
-        type:'saveUser',
-        payload:payload.user
+        type: 'saveUser',
+        payload: payload.user
       });
-      const lists = yield call(fetchUserProfitDiamondFriendInfo,params);
+      const lists = yield call(fetchUserProfitDiamondFriendInfo, params);
       yield put({
-        type:'saveUserDiamondFriends',
-        payload:lists
+        type: 'saveUserDiamondFriends',
+        payload: lists
       });
-      cb&&cb();
+      cb && cb();
     },
-    * fetchBillings({ payload }, { call , put }){
-      const lists = yield call(fetchBill,payload);
+    * fetchBillings({ payload }, { call, put }) {
+      const lists = yield call(fetchBill, payload);
       yield put({
-        type:'saveBillings',
-        payload:lists,
-        currencyType:payload.currencyType
+        type: 'saveBillings',
+        payload: lists,
+        currencyType: payload.currencyType
       });
+    },
+
+    //提现
+    * fetchWithDraw({ payload,cb }, { call, put }) {
+      const res = yield call(fetchWithdraw, payload);
+      cb&&cb(res);
     }
+
   },
   reducers: {
     save(state, action) {
@@ -113,27 +119,27 @@ export default {
         userProfitAllFriendInfo: action.payload.userProfitAllFriendInfo,
         inviteProfitXtb: action.payload.inviteProfitXtb,
         shareSellProfitRmb: action.payload.shareSellProfitRmb,
-        bankList:action.payload.bankList,
-        withdrawOption:action.payload.withdrawOption,
+        bankList: action.payload.bankList,
+        withdrawOption: action.payload.withdrawOption,
       };
     },
-    saveUserDiamondFriends(state,action){
+    saveUserDiamondFriends(state, action) {
       return {
         ...state,
-        userDiamondFriends:action.payload
+        userDiamondFriends: action.payload
       }
     },
-    saveUser(state,action){
+    saveUser(state, action) {
       return {
         ...state,
-        user:action.payload
+        user: action.payload
       }
     },
-    saveBillings(state,action){
+    saveBillings(state, action) {
       return {
         ...state,
-        billings:action.payload.monthBills,
-        currencyType:action.currencyType
+        billings: action.payload.monthBills,
+        currencyType: action.currencyType
       }
     }
   },
