@@ -105,43 +105,6 @@
           wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
         });
 
-
-        // 确认选号后 返回
-        $('#root').on('click', '.lottery_btn_confirm', function () {
-          var state = window.g_app._store.getState();
-          var dispatch = window.g_app._store.dispatch;
-
-          var lotteryselect = state.lotteryselect;
-          var selectedBids = lotteryselect.selectedBids;
-          var setCode = lotteryselect.setCode;
-
-          if (window.__wxjs_environment) {
-            // 小程序环境
-            if (setCode === 'true') {
-              dispatch({
-                type: 'lotteryselect/confirm_fucai',
-                cb: ({ discountGameId, groupId }) => {
-                  if (discountGameId && groupId) {
-                    let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId + '&justBuy=true';
-                    wx.miniProgram.redirectTo({ url: url });
-                  }
-                  else {
-                    wx.miniProgram.navigateBack();
-                  }
-                },
-              });
-            } else {
-              wx.miniProgram.postMessage({ data: selectedBids });
-              wx.miniProgram.navigateBack();
-            }
-          }
-          else {
-            // 非小程序环境
-            window.postMessage(JSON.stringify(selectedBids));
-          }
-        });
-
-
         // 账单明细
         $('#root').on('click', '.account_record', function () {
           // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
