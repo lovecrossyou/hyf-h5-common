@@ -3,6 +3,7 @@ import DocumentTitle from 'react-document-title';
 import { connect } from 'dva';
 import styles from './page.css';
 import {ActivityIndicator} from "../../components/ActivityIndicator";
+import rmbimg from '../../assets/renminbi.png';
 
 function BillingDetails(props){
   const { billings , currencyType,accountInfo } = props.store;
@@ -24,6 +25,7 @@ function BillingDetails(props){
               <div>{dayBills.time}</div>
               <div className={styles.billilng_details_section_item_data_specific_second}>{dayBills.description}</div>
             </div>
+              <img src={rmbimg} alt=""/>
           </div>
         })
       }

@@ -3,9 +3,9 @@ import { connect } from 'dva';
 import { Modal, Button, ActivityIndicator, Radio } from 'antd-mobile';
 
 import styles from './page.css';
-import diamondsImgIcon from '../../assets/icon_diamonds-vip@2x.png';
+// import diamondsImgIcon from '../../assets/icon_diamonds-vip@2x.png';
 import godImgIcon from '../../assets/icon_goldvip@2x.png';
-import platinumImgIcon from '../../assets/icon_Platinum-vip@2x.png';
+// import platinumImgIcon from '../../assets/icon_Platinum-vip@2x.png';
 
 import vip_putong from '../../assets/vip/icon_huiyuan_putong@2x.png';
 import vip_bojin from '../../assets/vip/icon_huiyuan_bojin@2x.png';
@@ -17,8 +17,8 @@ const RadioItem = Radio.RadioItem;
 
 const vips = [
   { title: '黄金会员', img: godImgIcon, desc: '每期赠送1组抽签号码，奖励20喜币', price: '19.8', id: '1',type:'user_to_golden_vip' },
-  { title: '铂金会员', img: platinumImgIcon, desc: '每期赠送2组抽签号码，奖励30喜币', price: '29.8',type:'user_to_higher_golden_vip' },
-  { title: '钻石会员', img: diamondsImgIcon, desc: '每期赠送10组抽签号码，奖励100喜币', price: '99.8',type:'user_to_diamond_vip' },
+  // { title: '铂金会员', img: platinumImgIcon, desc: '每期赠送2组抽签号码，奖励30喜币', price: '29.8',type:'user_to_higher_golden_vip' },
+  // { title: '钻石会员', img: diamondsImgIcon, desc: '每期赠送10组抽签号码，奖励100喜币', price: '99.8',type:'user_to_diamond_vip' },
 ];
 
 
