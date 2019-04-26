@@ -288,4 +288,79 @@
   height: 116px;
   background-color: #fff;
   margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.bank_img img{
+  width: 85px;
+  height: 85px;
+}
+.bank_name{
+  color: #333333;
+  font-size: 32px;
+  flex: 1;
+  margin-left: 15px;
+}
+.next_icon img{
+  width: 19px;
+  height: 30px;
+}
+.withdraw_deposit_wrapper{
+  width: 100%;
+  border-bottom: 1px solid rgba(227, 227, 227, 1);
+}
+.withdraw_deposit_sum{
+  width: 100%;
+  height: 140px;
+  border-bottom: 1px solid rgba(227, 227, 227, 1);
+  padding: 0 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+.left_text{
+  color: #333333;
+  font-size: 32px;
+}
+.withdraw_deposit_sum input{
+  border: none;
+  color: #333333;
+  font-size: 32px;
+}
+.all_withdraw_deposit{
+  width: 100%;
+  height: 80px;
+  padding: 0 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+.withdraw_num{
+  color: #999999;
+  font-size: 24px;
+}
+.all_text{
+  color: #CC2636;
+  font-size: 24px;
+}
+.withdraw_deposit_btn button{
+  width: 85%;
+  height: 88px;
+  background-color: #CC2636;
+  color: #fff;
+  text-align: center;
+  line-height: 88px;
+  border-radius: 10px;
+  border: none;
+  margin: 200px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

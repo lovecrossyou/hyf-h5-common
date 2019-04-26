@@ -1,6 +1,6 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill,fetchBankCardList
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill,fetchBankCardList,fetchWithdraw
 } from '../service/wallet';
 
 
@@ -18,7 +18,8 @@ export default {
     user:null,
     billings:[],
     bankList:[],
-    currencyType:3
+    currencyType:3,
+    withdrawOption:[]
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -58,6 +59,8 @@ export default {
       //请求当前用户的银行卡, 列表,默认 获取第一张银行卡
       const bankList = yield call(fetchBankCardList, payload);
 
+      const withdrawOption = yield call(fetchWithdraw, payload);
+
       yield put({
         type: 'save', payload: {
           accountInfo,
@@ -65,7 +68,8 @@ export default {
           userProfitAllFriendInfo,
           inviteProfitXtb,
           shareSellProfitRmb,
-          bankList
+          bankList:bankList.content,
+          withdrawOption
         },
       });
     },
@@ -110,6 +114,7 @@ export default {
         inviteProfitXtb: action.payload.inviteProfitXtb,
         shareSellProfitRmb: action.payload.shareSellProfitRmb,
         bankList:action.payload.bankList,
+        withdrawOption:action.payload.withdrawOption,
       };
     },
     saveUserDiamondFriends(state,action){

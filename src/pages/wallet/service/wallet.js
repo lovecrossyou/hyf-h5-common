@@ -72,6 +72,19 @@ export async function fetchBankCardList() {
   });
 }
 
+// 提现
+export async function fetchWithdraw(params) {
+  return request('/discountGame/withdraw',{
+    method:'post',
+    body:{
+      bankCardId:11111111111,
+      mount:11,
+      payPassword:"111111",
+      type:"refundRmbWithDraw "
+    }
+  });
+}
+
 
 
 
