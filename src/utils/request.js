@@ -29,12 +29,11 @@ const BaseUrl = (url) => {
 export default async function request(url, options, type='json') {
   const accessInfo = getAccessToken();
   const body = Object.assign(options.body || {}, {accessInfo: accessInfo});
-  console.log('request ', url);
-  console.log('request payload ', body);
   let opt = {
     body: JSON.stringify(body),
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     method: options.method,
   };

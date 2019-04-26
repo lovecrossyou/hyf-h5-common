@@ -486,21 +486,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
   margin-top: 36px;
   font-size: 30px;
   color: #fff;
+}
+.member_grade_show{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .member_lead{
   display: flex;
   flex-direction: row;
 }
 .member_yellow{
-  color: #ffe400;
+  color: #fff;
+  font-size: 34px;
 }
 
 .end_time{
   font-size: 24px;
-  color: #e1e1e1;
+  color: #F9C906;
+  margin-top: 15px;
+}
+
+.member_give{
+  color: #FAECEB;
+  font-size: 28px;
+  margin-top: 22px;
 }

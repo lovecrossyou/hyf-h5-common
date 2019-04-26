@@ -17,15 +17,6 @@ export default {
             payload: {discountGameId:id},
           });
         }
-        // else if(pathname === '/classify/classify_detail'){
-        //   const {categoryId} = query ;
-        //   dispatch({
-        //     type: 'productOfSecondCategory',
-        //     payload: {
-        //       secondCategoryId:categoryId
-        //     },
-        //   });
-        // }
       });
     },
   },

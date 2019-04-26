@@ -25,6 +25,9 @@
   color:#fff;
   font-size:26px;
 }
+.top_margin{
+  margin-top: 10px;
+}
 .back_card{
   display:flex;
   flex-direction: column;
@@ -81,8 +84,19 @@
   display:flex;
   flex-direction: row;
   flex-wrap:wrap;
-  height:684px;
+  width: 100%;
+  height:755px;
   margin-top:20px;
+}
+
+:global(.vip_center_item){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:250px;
+  width: 33%;
+  border-bottom:1px solid #F8F8F8;
 }
 
 .wallet_fun_item{
@@ -139,8 +153,8 @@
   height:40px;
 }
 .my_water_ticket_item_img{
-  width:38px;
-  height:38px;
+  width:50px;
+  height:50px;
 }
 .my_bank_item_img{
   width:36px;
@@ -263,4 +277,15 @@
 }
 .billilng_details_section_item_data_specific>.billilng_details_section_item_data_specific_second{
   font-size: 22px;
+}
+/*提现*/
+.withdraw_deposit_wrapper{
+  width: 100%;
+  background-color: #F5F5F5;
+}
+.choose_bank{
+  width: 100%;
+  height: 116px;
+  background-color: #fff;
+  margin: 20px 0;
 }

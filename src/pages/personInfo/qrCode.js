@@ -5,14 +5,13 @@ import { TextareaItem,Button } from 'antd-mobile';
 
 import styles from './page.css' ;
 
-const tips = '亲，一起来抽签抢金条吧！0元抢金条，完全免费！每周二、四、日22：00揭晓中签，选中双色球就送！'
+const tips = '猪年大吉，金猪送福，一起来参加3D抢购！中签即送，公开透明，立即抢！'
 
 class QrCode extends React.Component {
 
   state = {
     tips:tips
   }
-
 
   onChange = text=>{
     this.props.dispatch({
@@ -27,6 +26,8 @@ class QrCode extends React.Component {
 
   render(){
     const { qrData,userInfo } = this.props.personInfo;
+    const activeInfo = this.props.activeInfo ;
+    console.log('activeInfo #### ' ,activeInfo);
     return <DocumentTitle title='我的二维码'>
       <div className={styles.qrcode}>
         <div className={styles.content}>
@@ -45,7 +46,7 @@ class QrCode extends React.Component {
               className={styles['am-textarea-control']}
               rows={3}
               editable
-              value={this.state.tips}
+              value={activeInfo.me_invite_friend.input_text}
               onChange={this.onChange.bind(this)}
             />
           </div>
@@ -61,6 +62,7 @@ class QrCode extends React.Component {
 export default connect(state => {
   return {
     personInfo: state.personInfo,
+    activeInfo:state.global.activeInfo
   };
 })(QrCode);
 
