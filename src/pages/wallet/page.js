@@ -102,7 +102,7 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
           <div className={styles.wallet_fun_count_item}>{userProfitInfo.shareSellProfitRmbAmount / 100}元</div>
         </div>
 
-        <div onClick={vipClick} className='vip_center_item'>
+        <div className='vip_center_item'>
           <div className={styles.vip}>
             <img src={assets_icon_vip} className={styles.my_water_ticket_item_img}/>
             <div>会员中心</div>
