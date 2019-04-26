@@ -106,6 +106,7 @@ class Member extends React.Component {
             <div className={styles.vip_list}>
               {
                 products.map((p,index)=>{
+
                   return <ProductItem
                     key={index+'#'}
                     data={p}
@@ -115,6 +116,7 @@ class Member extends React.Component {
                       //   type:'member/setActiveProduct',
                       //   payload:p
                       // })
+
                       this.props.dispatch(routerRedux.push('/member/productDetailsContainer?id='+p.vipProductId))
                       // this.props.dispatch({
                       //   type:'member/setActiveProduct',
