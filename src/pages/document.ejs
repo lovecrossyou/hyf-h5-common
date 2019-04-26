@@ -23,20 +23,18 @@
 
   document.addEventListener('UniAppJSBridgeReady', function () {
 
-    document.querySelector('.vip_center_item').addEventListener('click', function (evt) {
+    $('#root').on('click', '.vip_center_item', function () {
+      console.log('vip_center_item#####')
       uni.navigateTo({
         url: '/pages/me/vip/vip-center'
       });
-      // var target = evt.target;  
-      // if (target.tagName === 'BUTTON') {  
-      //     var action = target.getAttribute('data-action');  
-      //     if(action === 'navigateTo') {  
-      //         uni.navigateTo({  
-      //             url: '/pages/component/button/button'  
-      //         });  
-      //     }  
-      // }  
     });
+
+    // document.querySelector('.vip_center_item').addEventListener('click', function (evt) {
+    //   uni.navigateTo({
+    //     url: '/pages/me/vip/vip-center'
+    //   });
+    // });
 
   });
 
