@@ -22,177 +22,176 @@
 <script>
 
   document.addEventListener('UniAppJSBridgeReady', function () {
-    document.addEventListener('UniAppJSBridgeReady', function () {
-      uni.getEnv(function (res) {
-        if (res.plus) {
+    uni.getEnv(function (res) {
+      if (res.plus) {
 
-          $('#root').on('click', '.vip_center_item', function () {
-            uni.navigateTo({
-              url: '/pages/me/vip/vip-center'
-            });
+        $('#root').on('click', '.vip_center_item', function () {
+          uni.navigateTo({
+            url: '/pages/me/vip/vip-center'
           });
+        });
 
-          $('#root').parent().on('click', '.addr_btn', function () {
-            var addr_id = JSON.parse($(this).attr('data'));
-            uni.postMessage({
-              data: {
-                data: addr_id
-              }
-            });
-            uni.navigateBack();
-          });
-        } else if (res.miniprogram) {
-
-
-          //银行卡列表
-          $('#root').on('click', '.wallet_bank', function () {
-            console.log('银行卡列表');
-            wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
-
-          });
-
-          //提现
-          $('#root').on('click', '.rmbMainContainer_btn', function () {
-            console.log('提现');
-            wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
-          });
-
-          // 新版购买会员
-          $('#root').on('click', '.btn_vip_product_confirm', function () {
-
-            var state = window.g_app._store.getState();
-            var member = state.member;
-            var address = state.address;
-
-            const params = {
-              deliverAddressId: address.activeAddress.id,
-              entityVipProductType: member.activeProduct.entityVipProductType,
-              purchaseCount: member.buyCount,
-            }
-
-            console.log('params 新版购买会员 ', params)
-
-            wx.miniProgram.postMessage({ data: params });
-            wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-          });
-
-
-          // 会员购买
-          $('#root').on('click', '.vip_right_action', function () {
-            var vip_type = $(this).attr('vip_type');
-            console.log('会员购买以及升级 vip_type ', vip_type);
-            wx.miniProgram.postMessage({
-              data: {
-                vipProductType: vip_type
-              }
-            });
-            wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-          });
-
-          // 会员升级
-          $('#root').parent().on('click', '.btn_vip_upgrade', function () {
-            var state = window.g_app._store.getState();
-            var upgradeVIP = state.member.upgradeVIP;
-            var vip_type = upgradeVIP.type;
-            if (vip_type == null) {
-              vip_type = 'user_to_higher_golden_vip';
-            }
-
-            wx.miniProgram.postMessage({
-              data: {
-                vipProductType: vip_type
-              }
-            });
-            wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
-          });
-
-
-          // 确认选号后 返回
-          $('#root').on('click', '.lottery_btn_confirm', function () {
-            var state = window.g_app._store.getState();
-            var dispatch = window.g_app._store.dispatch;
-
-            var lotteryselect = state.lotteryselect;
-            var selectedBids = lotteryselect.selectedBids;
-            var setCode = lotteryselect.setCode;
-
-            if (window.__wxjs_environment) {
-              // 小程序环境
-              if (setCode === 'true') {
-                dispatch({
-                  type: 'lotteryselect/confirm_fucai',
-                  cb: ({ discountGameId, groupId }) => {
-                    if (discountGameId && groupId) {
-                      let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId + '&justBuy=true';
-                      wx.miniProgram.redirectTo({ url: url });
-                    }
-                    else {
-                      wx.miniProgram.navigateBack();
-                    }
-                  },
-                });
-              } else {
-                wx.miniProgram.postMessage({ data: selectedBids });
-                wx.miniProgram.navigateBack();
-              }
-            }
-            else {
-              // 非小程序环境
-              window.postMessage(JSON.stringify(selectedBids));
+        $('#root').parent().on('click', '.addr_btn', function () {
+          var addr_id = JSON.parse($(this).attr('data'));
+          uni.postMessage({
+            data: {
+              data: addr_id
             }
           });
+          uni.navigateBack();
+        });
+      } else if (res.miniprogram) {
 
 
-          // 账单明细
-          $('#root').on('click', '.account_record', function () {
-            // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+        //银行卡列表
+        $('#root').on('click', '.wallet_bank', function () {
+          console.log('银行卡列表');
+          wx.miniProgram.navigateTo({ url: '/pages/account/bindbank-list' });
+
+        });
+
+        //提现
+        $('#root').on('click', '.rmbMainContainer_btn', function () {
+          console.log('提现');
+          wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
+        });
+
+        // 新版购买会员
+        $('#root').on('click', '.btn_vip_product_confirm', function () {
+
+          var state = window.g_app._store.getState();
+          var member = state.member;
+          var address = state.address;
+
+          const params = {
+            deliverAddressId: address.activeAddress.id,
+            entityVipProductType: member.activeProduct.entityVipProductType,
+            purchaseCount: member.buyCount,
+          }
+
+          console.log('params 新版购买会员 ', params)
+
+          wx.miniProgram.postMessage({ data: params });
+          wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+        });
+
+
+        // 会员购买
+        $('#root').on('click', '.vip_right_action', function () {
+          var vip_type = $(this).attr('vip_type');
+          console.log('会员购买以及升级 vip_type ', vip_type);
+          wx.miniProgram.postMessage({
+            data: {
+              vipProductType: vip_type
+            }
           });
+          wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+        });
 
-          // 会员中心
-          // 
-          $('#root').on('click', '.vip_center_item', function () {
-            wx.miniProgram.navigateTo({ url: '/pages/me/vip/vip-center' });
+        // 会员升级
+        $('#root').parent().on('click', '.btn_vip_upgrade', function () {
+          var state = window.g_app._store.getState();
+          var upgradeVIP = state.member.upgradeVIP;
+          var vip_type = upgradeVIP.type;
+          if (vip_type == null) {
+            vip_type = 'user_to_higher_golden_vip';
+          }
+
+          wx.miniProgram.postMessage({
+            data: {
+              vipProductType: vip_type
+            }
           });
+          wx.miniProgram.redirectTo({ url: '/pages/vip/emptyPage' });
+        });
 
 
-          // 用户信息 收货地址
-          $('#root').on('click', '.information_addr_btn', function () {
-            console.log('新建地址');
-            wx.miniProgram.navigateTo({ url: '/pages/me/address/address' });
-          });
+        // 确认选号后 返回
+        $('#root').on('click', '.lottery_btn_confirm', function () {
+          var state = window.g_app._store.getState();
+          var dispatch = window.g_app._store.dispatch;
 
-          //3d精选 点击商品
-          $('#root').on('click', '.hot_sell_list_item', function () {
-            var itemid = $(this).attr('itemid');
-            wx.miniProgram.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
-          });
+          var lotteryselect = state.lotteryselect;
+          var selectedBids = lotteryselect.selectedBids;
+          var setCode = lotteryselect.setCode;
 
-          //分类商品
-          $('#root').on('click', '.product_categor_cont', function () {
-            var itemid = $(this).attr('itemid');
-            wx.miniProgram.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
-          });
+          if (window.__wxjs_environment) {
+            // 小程序环境
+            if (setCode === 'true') {
+              dispatch({
+                type: 'lotteryselect/confirm_fucai',
+                cb: ({ discountGameId, groupId }) => {
+                  if (discountGameId && groupId) {
+                    let url = '/pages/pindan/zeropindan?' + 'discountGameId=' + discountGameId + '&inviteGroupId=' + groupId + '&justBuy=true';
+                    wx.miniProgram.redirectTo({ url: url });
+                  }
+                  else {
+                    wx.miniProgram.navigateBack();
+                  }
+                },
+              });
+            } else {
+              wx.miniProgram.postMessage({ data: selectedBids });
+              wx.miniProgram.navigateBack();
+            }
+          }
+          else {
+            // 非小程序环境
+            window.postMessage(JSON.stringify(selectedBids));
+          }
+        });
 
-          // 生成分享 qrCodeTips
-          $('#root').parent().on('click', '.btn_qrcode_share', function () {
-            var state = window.g_app._store.getState();
-            var personInfo = state.personInfo;
-            var qrCodeTips = personInfo.qrCodeTips;
-            // wx.miniProgram.postMessage({ data: qrCodeTips });
-            wx.miniProgram.navigateTo({ url: '/pages/QR-code/code-share?qrCodeTips=' + qrCodeTips });
-          });
+
+        // 账单明细
+        $('#root').on('click', '.account_record', function () {
+          // wx.miniProgram.navigateTo({ url: '/pages/account/account-list' });
+        });
+
+        // 会员中心
+        // 
+        $('#root').on('click', '.vip_center_item', function () {
+          wx.miniProgram.navigateTo({ url: '/pages/me/vip/vip-center' });
+        });
 
 
-          // 选择收货地址 addr_btn
-          $('#root').parent().on('click', '.addr_btn', function () {
-            var addr_id = JSON.parse($(this).attr('data'));
-            wx.miniProgram.postMessage({ data: addr_id });
-            wx.miniProgram.navigateBack();
-          });
-        }
-      });
+        // 用户信息 收货地址
+        $('#root').on('click', '.information_addr_btn', function () {
+          console.log('新建地址');
+          wx.miniProgram.navigateTo({ url: '/pages/me/address/address' });
+        });
+
+        //3d精选 点击商品
+        $('#root').on('click', '.hot_sell_list_item', function () {
+          var itemid = $(this).attr('itemid');
+          wx.miniProgram.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
+        });
+
+        //分类商品
+        $('#root').on('click', '.product_categor_cont', function () {
+          var itemid = $(this).attr('itemid');
+          wx.miniProgram.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
+        });
+
+        // 生成分享 qrCodeTips
+        $('#root').parent().on('click', '.btn_qrcode_share', function () {
+          var state = window.g_app._store.getState();
+          var personInfo = state.personInfo;
+          var qrCodeTips = personInfo.qrCodeTips;
+          // wx.miniProgram.postMessage({ data: qrCodeTips });
+          wx.miniProgram.navigateTo({ url: '/pages/QR-code/code-share?qrCodeTips=' + qrCodeTips });
+        });
+
+
+        // 选择收货地址 addr_btn
+        $('#root').parent().on('click', '.addr_btn', function () {
+          var addr_id = JSON.parse($(this).attr('data'));
+          wx.miniProgram.postMessage({ data: addr_id });
+          wx.miniProgram.navigateBack();
+        });
+      }
     });
   });
+
 
 </script>
 
