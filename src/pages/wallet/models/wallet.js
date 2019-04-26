@@ -1,7 +1,8 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo,fetchBill,fetchBankCardList
 } from '../service/wallet';
+
 
 import { setTokenFromQueryString } from '../../../utils/authority';
 
@@ -16,12 +17,13 @@ export default {
     userDiamondFriends:[],
     user:null,
     billings:[],
+    bankList:[],
     currencyType:3
   },
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView') {
+        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView'||pathname === '/wallet/withdrawDeposits') {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',
@@ -53,13 +55,17 @@ export default {
       const inviteProfitXtb = yield call(fetchInviteProfitXtb, payload);
       const shareSellProfitRmb = yield call(fetchShareSellProfitRmb, payload);
 
+      //请求当前用户的银行卡, 列表,默认 获取第一张银行卡
+      const bankList = yield call(fetchBankCardList, payload);
+
       yield put({
         type: 'save', payload: {
           accountInfo,
           userProfitInfo,
           userProfitAllFriendInfo,
           inviteProfitXtb,
-          shareSellProfitRmb
+          shareSellProfitRmb,
+          bankList
         },
       });
     },
@@ -103,6 +109,7 @@ export default {
         userProfitAllFriendInfo: action.payload.userProfitAllFriendInfo,
         inviteProfitXtb: action.payload.inviteProfitXtb,
         shareSellProfitRmb: action.payload.shareSellProfitRmb,
+        bankList:action.payload.bankList,
       };
     },
     saveUserDiamondFriends(state,action){
