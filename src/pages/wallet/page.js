@@ -2,6 +2,8 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
+import router from "umi/router";
+
 import { Toast } from 'antd-mobile';
 import DocumentTitle from 'react-document-title';
 
@@ -63,7 +65,7 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top} onClick={() => {
-            dispatch(routerRedux.push('/wallet/rmbContainerView'));
+            router.push('/wallet/rmbContainerView');
           }}>
             <img src={assets_icon_rmbaccount}/>
             <div className={styles.wallet_item_top_title}>零钱
