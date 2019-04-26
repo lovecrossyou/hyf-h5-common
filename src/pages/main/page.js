@@ -36,6 +36,7 @@ function App(props) {
       <br/>
       <Link to="/awardDetail/thePrizeForDetails"><h1>奖品详情</h1></Link>
       <br/>
+      <Link to="/wallet/withdrawDeposits"><h1>提现</h1></Link>
     </div>
   );
 }
