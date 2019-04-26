@@ -3,6 +3,8 @@ import { connect } from 'dva';
 import styles from './page.css';
 import { Button } from 'antd-mobile';
 import { routerRedux } from 'dva/router';
+import router from "umi/router";
+
 import rmbimg from '../../assets/renminbi.png';
 
 function RmbContainerView (props) {
@@ -15,7 +17,7 @@ function RmbContainerView (props) {
           <div className={styles.rmbMainContainer_price_gold}>￥<big>{rmbAmount/100}</big></div>
           <div className={styles.rmbMainContainer_price}>可提现:<span>￥{canWithdrawRmb/100}</span></div>
         </div>
-        <div className='rmbMainContainer_btn' onClick={() => { routerRedux.push('/wallet/withdrawDeposits')}}>
+        <div className='rmbMainContainer_btn' onClick={() => { router.push('/wallet/withdrawDeposits')}}>
           <Button>提现</Button>
         </div>
         <div className={styles.rmbFooter}>
