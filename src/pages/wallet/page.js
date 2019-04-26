@@ -47,7 +47,7 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
 
   // 会员中心
   function vipClick() {
-    dispatch(routerRedux.push('/member/page'));
+    dispatch(routerRedux.push('/pages/me/vip/vip-center'));
   };
 
   // 会员中心
