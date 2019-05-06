@@ -45,6 +45,10 @@ const BankInfo = ({ bank, goWithdraw, mount, mountChange }) => {
         <div className={styles.next_icon}><img src="http://qnimage.xiteng.com/right_icon@2x.png" alt="" /></div>
       </div>
       <WithdrawOperation mountChange={mountChange} mount={mount} goWithdraw={goWithdraw} />
+
+      <div className='forgetPassword_btn'>
+        忘记支付/提现密码?
+      </div>
     </div>
 
   );
@@ -67,7 +71,7 @@ class withdrawDeposits extends React.Component {
         type: "refundRmbWithDraw"
       },
       cb:res=>{
-        console.log('res#### ',res );
+        // console.log('res#### ',res );
         Toast.info("提现申请已提交", 2);
       }
     })

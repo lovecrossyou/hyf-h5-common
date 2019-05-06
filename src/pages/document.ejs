@@ -63,6 +63,12 @@
         //   wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
         // });
 
+
+        // 忘记支付/提现密码
+         $('#root').on('click', '.forgetPassword_btn', function () {
+          wx.miniProgram.navigateTo({ url: '/pages/me/common/forgetPassword' });
+        });
+
         // 新版购买会员
         $('#root').on('click', '.btn_vip_product_confirm', function () {
 

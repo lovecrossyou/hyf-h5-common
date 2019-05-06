@@ -140,6 +140,13 @@
   color:#333;
 }
 
+:global(.forgetPassword_btn){
+  position: fixed;
+  bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
 .my_friend_item_img{
   width:50px;
   height:38px;
