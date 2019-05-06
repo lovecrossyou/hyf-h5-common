@@ -61,5 +61,25 @@ export async function fetchBill(params) {
   });
 }
 
+// 用户绑定的银行卡列表
+export async function fetchBankCardList() {
+  return request('/client/bankCard/bankCardList',{
+    method:'post',
+    body:{
+      pageNo: 0,
+      size: 6
+    }
+  });
+}
+
+// 提现
+export async function fetchWithdraw(params) {
+  return request('/discountGame/withdraw',{
+    method:'post',
+    body:params
+  });
+}
+
+
 
 

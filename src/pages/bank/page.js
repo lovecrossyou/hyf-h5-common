@@ -6,13 +6,13 @@ import { ActivityIndicator } from '../../components/ActivityIndicator';
 import { Button, WingBlank, WhiteSpace } from 'antd-mobile';
 import icon_bank from '../../assets/bank.png';
 import { routerRedux } from 'dva/router';
+import router from "umi/router";
 
 
-const BankItem = ({ data }) => {
-  console.log('data ', data);
+const BankItem = ({ data ,onClick}) => {
   return (<WingBlank>
     <WhiteSpace/>
-    <div className={styles.bank_wrapper} style={{ backgroundColor: data.bgColor }}>
+    <div className={styles.bank_wrapper} style={{ backgroundColor: data.bgColor }} onClick={onClick}>
       <div className={styles.bank_info}>
         <img src={data.big_icon} alt="" className={styles.icon_bank}/>
         <div className={styles.bank_info_detail}>
@@ -49,7 +49,14 @@ function BankView(props) {
 
         {
           bankCardList.map((bank, index) => {
-            return <BankItem data={bank} key={'#' + index}/>;
+            return <BankItem data={bank} key={'#' + index} onClick={()=>{
+              console.log('xxxxx ',bank );
+              props.dispatch({
+                type:'bank/setActiveBank',
+                payload:bank
+              })
+              router.goBack();
+            }}/>;
           })
         }
         {

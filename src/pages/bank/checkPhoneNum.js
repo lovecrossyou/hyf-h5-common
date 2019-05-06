@@ -11,7 +11,7 @@ import { routerRedux } from 'dva/router';
 import { List, InputItem, Toast , WingBlank} from 'antd-mobile';
 import { createForm } from 'rc-form';
 
-const COUNT = 5;
+const COUNT = 60;
 class CheckPhoneNumView extends React.Component{
 
   state={

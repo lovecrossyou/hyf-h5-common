@@ -7,7 +7,8 @@ export default {
   state: {
     bankNameList : [],
     bankInfo : {},
-    bankCardList:[]
+    bankCardList:[],
+    activeBank:null
   },
   subscriptions: {
     setup({ dispatch, history }) {
@@ -46,7 +47,7 @@ export default {
 
     * addBank({payload,cb},{call,put}){
       const res = yield  call(fetchAddBankCard,payload);
-      cb&&cb();
+      cb&&cb(res);
     }
 
   },
@@ -78,6 +79,13 @@ export default {
       return {
         ...state,
         bankCardList:action.payload
+      }
+    },
+
+    setActiveBank(state,action){
+      return {
+        ...state,
+        activeBank:action.payload
       }
     }
   },
