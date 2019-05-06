@@ -21,7 +21,7 @@ class WithdrawOperation extends React.Component {
       <div className={styles.withdraw_deposit_wrapper}>
         <div className={styles.withdraw_deposit_sum}>
           <div className={styles.left_text}>提现金额：</div>
-          <InputItem type="number" defaultValue={this.props.mount} placeholder="填写提现金额" onChange={this.onChange.bind(this)} />
+          <InputItem type="text" defaultValue={this.props.mount} placeholder="填写提现金额" onChange={this.onChange.bind(this)} />
         </div>
         {/* <div className={styles.all_withdraw_deposit}>
           <div className={styles.withdraw_num}>可提现余额xx元，</div>
