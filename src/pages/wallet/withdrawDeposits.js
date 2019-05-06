@@ -68,7 +68,7 @@ class withdrawDeposits extends React.Component {
       },
       cb:res=>{
         console.log('res#### ',res );
-        Toast.info(res.message, 1);
+        Toast.info("提现申请已提交", 2);
       }
     })
   }
