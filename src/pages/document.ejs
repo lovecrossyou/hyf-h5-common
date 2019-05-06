@@ -31,6 +31,7 @@
           });
         });
 
+        // 点击地址返回
         $('#root').parent().on('click', '.addr_btn', function () {
           var addr_id = JSON.parse($(this).attr('data'));
           uni.postMessage({
@@ -40,9 +41,15 @@
           });
           uni.navigateBack();
         });
+
+         //3d精选 点击商品
+         $('#root').on('click', '.hot_sell_list_item', function () {
+          var itemid = $(this).attr('itemid');
+          uni.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
+        });
+
+
       } else if (res.miniprogram) {
-
-
         //银行卡列表
         $('#root').on('click', '.wallet_bank', function () {
           console.log('银行卡列表');
@@ -55,6 +62,12 @@
         //   console.log('提现');
         //   wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
         // });
+
+
+        // 忘记支付/提现密码
+         $('#root').on('click', '.forgetPassword_btn', function () {
+          wx.miniProgram.navigateTo({ url: '/pages/me/common/forgetPassword' });
+        });
 
         // 新版购买会员
         $('#root').on('click', '.btn_vip_product_confirm', function () {

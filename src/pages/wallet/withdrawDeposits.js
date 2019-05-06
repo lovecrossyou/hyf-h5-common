@@ -21,7 +21,7 @@ class WithdrawOperation extends React.Component {
       <div className={styles.withdraw_deposit_wrapper}>
         <div className={styles.withdraw_deposit_sum}>
           <div className={styles.left_text}>提现金额：</div>
-          <InputItem type="number" defaultValue={this.props.mount} placeholder="填写提现金额" onChange={this.onChange.bind(this)} />
+          <InputItem type="text" defaultValue={this.props.mount} placeholder="填写提现金额" onChange={this.onChange.bind(this)} />
         </div>
         {/* <div className={styles.all_withdraw_deposit}>
           <div className={styles.withdraw_num}>可提现余额xx元，</div>
@@ -45,6 +45,10 @@ const BankInfo = ({ bank, goWithdraw, mount, mountChange }) => {
         <div className={styles.next_icon}><img src="http://qnimage.xiteng.com/right_icon@2x.png" alt="" /></div>
       </div>
       <WithdrawOperation mountChange={mountChange} mount={mount} goWithdraw={goWithdraw} />
+
+      <div className='forgetPassword_btn'>
+        忘记支付/提现密码?
+      </div>
     </div>
 
   );
@@ -62,13 +66,13 @@ class withdrawDeposits extends React.Component {
       type: "wallet/fetchWithDraw",
       payload: {
         bankCardId: activeBank.bankId,
-        mount: this.state.mount,
+        mount: parseFloat(this.state.mount)*100,
         payPassword: pwd,
         type: "refundRmbWithDraw"
       },
       cb:res=>{
-        console.log('res#### ',res );
-        Toast.info(res.message, 1);
+        // console.log('res#### ',res );
+        Toast.info("提现申请已提交", 2);
       }
     })
   }
