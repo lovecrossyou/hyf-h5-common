@@ -62,7 +62,7 @@ class withdrawDeposits extends React.Component {
       type: "wallet/fetchWithDraw",
       payload: {
         bankCardId: activeBank.bankId,
-        mount: this.state.mount,
+        mount: parseFloat(this.state.mount)*100,
         payPassword: pwd,
         type: "refundRmbWithDraw"
       },
