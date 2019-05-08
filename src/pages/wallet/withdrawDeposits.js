@@ -71,8 +71,12 @@ class withdrawDeposits extends React.Component {
         type: "refundRmbWithDraw"
       },
       cb:res=>{
-        // console.log('res#### ',res );
-        Toast.info("提现申请已提交", 2);
+        if(res.status === 500){
+          Toast.info(res.message, 2);
+        }
+        else{
+          Toast.info("提现申请已提交", 2);
+        }
       }
     })
   }
