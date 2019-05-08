@@ -256,7 +256,7 @@
 .billilng_details_section_head{
   height:74px;
   line-height:74px;
-  border-bottom:1px solid #cccccc;
+  border:1px solid #cccccc;
   display: flex;
   justify-content: space-between;
   padding-left:20px;
@@ -264,17 +264,8 @@
 }
 .billilng_details_section_item{
   background: #ffffff;
-  border-bottom:1px solid #cccccc;
-  padding:28px 20px 28px 128px;
-  position: relative;
-}
-.billilng_details_section_item img{
-  position: absolute;
-  left:34px;
-  top:25px;
-  width:70px;
-  height:70px;
-  border-radius: 50%;
+  border:1px solid #cccccc;
+  padding:28px 20px;
 }
 .billilng_details_section_item_data{
   display: flex;
@@ -380,8 +371,6 @@
   flex-direction: row;
   justify-content: center;
 }
-.mr10{
-  margin-right:10px;}
 .withdraw_channel_wrapper{
   width: 100%;
   background-color: #F5F5F5;

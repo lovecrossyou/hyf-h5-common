@@ -380,8 +380,10 @@
   flex-direction: row;
   justify-content: center;
 }
+<<<<<<< HEAD
 .mr10{
-  margin-right:10px;}
+  margin-right:10px;
+=======
 .withdraw_channel_wrapper{
   width: 100%;
   background-color: #F5F5F5;
@@ -439,4 +441,5 @@
   font-size: 30px;
   text-align: center;
   line-height: 80px;
+>>>>>>> f620bb7beddf50f626a887c1954d6c582dfbb986
 }

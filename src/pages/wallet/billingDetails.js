@@ -2,7 +2,8 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { connect } from 'dva';
 import styles from './page.css';
-import { ActivityIndicator } from "../../components/ActivityIndicator";
+import {ActivityIndicator} from "../../components/ActivityIndicator";
+import rmbimg from '../../assets/renminbi.png';
 
 function BillingDetails(props) {
   const { billings, currencyType, accountInfo } = props.store;
@@ -17,13 +18,14 @@ function BillingDetails(props) {
         item.dayBills.map((dayBills, j) => {
           return <div className={styles.billilng_details_section_item} key={j}>
             <div className={styles.billilng_details_section_item_data}>
-              <div>{dayBills.date}</div>
+              <div>{dayBills.description}</div>
               <div className={styles.billilng_details_section_item_data_second}>{currencyType == 3 ? (dayBills.amount / 100) : (dayBills.amount)}</div>
             </div>
             <div className={styles.billilng_details_section_item_data_specific}>
-              <div>{dayBills.time}</div>
-              <div className={styles.billilng_details_section_item_data_specific_second}>{dayBills.description}</div>
+              <div><span className={styles.mr10}>{dayBills.date}</span><span>{dayBills.time}</span></div>
+              <div></div>
             </div>
+              <img src={rmbimg} alt=""/>
           </div>
         })
       }
