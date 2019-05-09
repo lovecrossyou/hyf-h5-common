@@ -1,6 +1,6 @@
 import {
   fetchAccountInfo, fetchShareSellProfitRmb, fetchInviteProfitXtb, fetchUserProfitAllFriendInfo,
-  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo, fetchBill, fetchBankCardList, fetchWithdraw
+  fetchUserProfitInfo, fetchUserProfitDiamondFriendInfo, fetchBill, fetchBankCardList, fetchWithdraw,checkSetPayPassword
 } from '../service/wallet';
 
 
@@ -107,8 +107,12 @@ export default {
     * fetchWithDraw({ payload,cb }, { call, put }) {
       const res = yield call(fetchWithdraw, payload);
       cb&&cb(res);
+    },
+    //检测设置支付密码
+    * checkSetPayPassword({ payload,cb }, { call, put }) {
+      const res = yield call(checkSetPayPassword, payload);
+      cb&&cb(res);
     }
-
   },
   reducers: {
     save(state, action) {

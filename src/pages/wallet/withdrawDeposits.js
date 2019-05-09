@@ -60,6 +60,22 @@ class withdrawDeposits extends React.Component {
     mount: ''
   }
 
+
+  componentDidMount(){
+    this.props.dispatch({
+      type: "wallet/checkSetPayPassword",
+      payload: {},
+      cb:res=>{
+        if(res === false){
+          Toast.info('忘记支付/提现密码?', 4);
+        }
+        else{
+          Toast.info(res.message, 2);
+        }
+      }
+    })
+  }
+
   withDraw(pwd) {
     const activeBank = this.props.activeBank;
     this.props.dispatch({
@@ -84,11 +100,16 @@ class withdrawDeposits extends React.Component {
   render() {
     const activeBank = this.props.activeBank;
     if (activeBank === null) {
-      return <div
+      return <div>
+        <div
         className={styles.choose_bank}
         onClick={() => {
           router.push('/bank/page');
         }}>+ 添加银行卡</div>
+        <div className='forgetPassword_btn'>
+        忘记支付/提现密码?
+      </div>
+      </div>  
     }
     else {
       return <BankInfo

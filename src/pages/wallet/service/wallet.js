@@ -80,6 +80,14 @@ export async function fetchWithdraw(params) {
   });
 }
 
+///checkSetPayPassword 检测是否设置了支付密码
+export async function checkSetPayPassword() {
+  return request('/client/bankCard/checkSetPayPassword',{
+    method:'post',
+    body:{}
+  });
+}
+
 
 
 
