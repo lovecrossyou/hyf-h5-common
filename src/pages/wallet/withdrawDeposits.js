@@ -74,7 +74,7 @@ class withdrawDeposits extends React.Component {
         if(res === false){
           Toast.info('需要设置提现密码', 4);
         }
-        this.setState({setPayPwd:false});
+        this.setState({setPayPwd:res});
       }
     })
   }
