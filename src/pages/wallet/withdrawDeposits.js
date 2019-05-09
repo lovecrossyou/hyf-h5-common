@@ -12,7 +12,6 @@ const prompt = Modal.prompt;
 
 class WithdrawOperation extends React.Component {
   onChange(data) {
-    console.log(data);
     this.props.mountChange(data);
   }
 
@@ -68,9 +67,6 @@ class withdrawDeposits extends React.Component {
       cb:res=>{
         if(res === false){
           Toast.info('忘记支付/提现密码?', 4);
-        }
-        else{
-          Toast.info(res.message, 2);
         }
       }
     })

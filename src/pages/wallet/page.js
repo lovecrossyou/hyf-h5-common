@@ -65,10 +65,10 @@ const ContentPage = ({ inviteProfitXtb,accountInfo, userProfitAllFriendInfo, use
       <div className={styles.wallet_header}>
         <div className={styles.wallet_item}>
           <div className={styles.wallet_item_top} onClick={() => {
-            router.push('/wallet/rmbContainerView');
+            router.push('/wallet/withdrawChannel');
           }}>
             <img src={assets_icon_rmbaccount}/>
-            <div className={styles.wallet_item_top_title}>零钱
+            <div className={styles.wallet_item_top_title}>零钱(提现)
             </div>
           </div>
           <div className={styles.wallet_money_count}>{accountInfo.rmbAmount / 100}</div>
