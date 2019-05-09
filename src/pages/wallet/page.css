@@ -380,6 +380,22 @@
   flex-direction: row;
   justify-content: center;
 }
+
+:global(.withdraw_setpwd_btn){
+  width: 85%;
+  height: 88px;
+  background-color: #CC2636;
+  color: #fff;
+  text-align: center;
+  line-height: 88px;
+  border-radius: 10px;
+  border: none;
+  margin: 200px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .mr10{
   margin-right:10px;}
 .withdraw_channel_wrapper{

@@ -26,14 +26,18 @@ class WithdrawOperation extends React.Component {
           <div className={styles.withdraw_num}>可提现余额xx元，</div>
           <div className={styles.all_text}>全部提现</div>
         </div> */}
-        <div className={styles.withdraw_deposit_btn} onClick={this.props.goWithdraw}><button>提现</button></div>
+        {/* setPayPwd */}
+        
+        {
+          this.props.setPayPwd? (<div className={styles.withdraw_deposit_btn} onClick={this.props.goWithdraw}><button>提现</button></div>):(<div className='withdraw_setpwd_btn'>提现</div>)
+        }
       </div>
     )
   }
 }
 
 
-const BankInfo = ({ bank, goWithdraw, mount, mountChange }) => {
+const BankInfo = ({ bank, goWithdraw, mount, mountChange,setPayPwd }) => {
   return (
     <div>
       <div className={styles.choose_bank} onClick={() => {
@@ -43,7 +47,8 @@ const BankInfo = ({ bank, goWithdraw, mount, mountChange }) => {
         <div className={styles.bank_name}>{bank.bankName}( {bank.endCardCode} )</div>
         <div className={styles.next_icon}><img src="http://qnimage.xiteng.com/right_icon@2x.png" alt="" /></div>
       </div>
-      <WithdrawOperation mountChange={mountChange} mount={mount} goWithdraw={goWithdraw} />
+      <WithdrawOperation setPayPwd={setPayPwd} mountChange={mountChange} mount={mount} goWithdraw={goWithdraw} />
+
 
       <div className='forgetPassword_btn'>
         忘记支付/提现密码?
@@ -56,7 +61,8 @@ const BankInfo = ({ bank, goWithdraw, mount, mountChange }) => {
 class withdrawDeposits extends React.Component {
 
   state = {
-    mount: ''
+    mount: '',
+    setPayPwd:true
   }
 
 
@@ -66,8 +72,9 @@ class withdrawDeposits extends React.Component {
       payload: {},
       cb:res=>{
         if(res === false){
-          Toast.info('忘记支付/提现密码?', 4);
+          Toast.info('需要设置提现密码', 4);
         }
+        this.setState({setPayPwd:false});
       }
     })
   }
@@ -112,6 +119,7 @@ class withdrawDeposits extends React.Component {
         mountChange={mount => {
           this.setState({ mount });
         }}
+        setPayPwd={this.state.setPayPwd}
         mount={this.state.mount}
         bank={activeBank}
         goWithdraw={() => {
