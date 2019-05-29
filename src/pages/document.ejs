@@ -57,11 +57,10 @@
 
         });
 
-        //提现
-        // $('#root').on('click', '.rmbMainContainer_btn', function () {
-        //   console.log('提现');
-        //   wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
-        // });
+        //(我 - 提现 - 退款 - 订单列表)
+        $('#root').on('click', '.refund_area_global', function () {
+          wx.miniProgram.navigateTo({ url: '/pages/me/myOrder/refundOrderList' });
+        });
 
 
         // 忘记支付/提现密码

@@ -422,7 +422,7 @@
   height: 54px;
 }
 .left_content_area{
-  width: 46%;
+  width: 54%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -444,6 +444,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+}
+
+:global(.refund_area_global){
+  width: 100%;
+  height: 140px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 29px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 27px;
+  position: relative;
 }
 .next_icon{
   width: 18px;

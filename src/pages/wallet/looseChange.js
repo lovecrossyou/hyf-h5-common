@@ -11,6 +11,8 @@ import router from 'umi/router';
 class looseChange extends React.Component {
 
   render() {
+    const { profitMount } = this.props.store.accountInfo;
+
     return (
       <div className={styles.loose_change_wrapper}>
         <div className={styles.top_area}>
@@ -18,7 +20,7 @@ class looseChange extends React.Component {
           <div className={styles.money_text}>金额</div>
           <div className={styles.amount_num}>
             <div className={styles.rmb_symbol}>¥</div>
-            <div className={styles.money_sum}>88.00</div>
+            <div className={styles.money_sum}>{profitMount/100}</div>
           </div>
         </div>
         {/*选择银行卡*/}
