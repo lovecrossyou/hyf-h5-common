@@ -12,8 +12,8 @@ import router from 'umi/router';
 class WithdrawChannel extends React.Component {
 
   render() {
+    if(!this.props.store.accountInfo)return null;
     const { refundMount, profitMount,xtbTotalAmount } = this.props.store.accountInfo;
-    console.log('this.props.store ## ', this.props.store);
     return (
       <div className={styles.withdraw_channel_wrapper}>
         <div className='refund_area_global'>
