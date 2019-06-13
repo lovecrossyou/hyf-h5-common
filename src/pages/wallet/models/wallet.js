@@ -24,7 +24,7 @@ export default {
   subscriptions: {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, query }) => {
-        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView' || pathname === '/wallet/withdrawDeposits') {
+        if (pathname === '/wallet/page' || pathname === '/wallet/rmbContainerView' || pathname === '/wallet/withdrawDeposits'|| pathname === '/wallet/withdrawChannel') {
           setTokenFromQueryString(query);
           dispatch({
             type: 'fetch',

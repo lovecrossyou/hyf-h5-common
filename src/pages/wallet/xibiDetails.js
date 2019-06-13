@@ -11,13 +11,15 @@ import router from 'umi/router';
 class looseChange extends React.Component {
 
   render() {
+    const { xtbTotalAmount } = this.props.store.accountInfo;
+
     return (
       <div className={styles.loose_change_wrapper}>
         <div className={styles.top_area}>
           <img src="http://qnimage.xiteng.com/assets_icon_xibi%20@2x.png" className={styles.rmb_icon}/>
           <div className={styles.money_text}>喜币</div>
           <div className={styles.amount_num}>
-            <div className={styles.money_sum}>88.00</div>
+            <div className={styles.money_sum}>{xtbTotalAmount}</div>
           </div>
         </div>
 

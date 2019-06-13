@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /**
  *日期: 2019/5/6
  *作者: xiannvrong
@@ -11,10 +12,11 @@ import router from 'umi/router';
 class WithdrawChannel extends React.Component {
 
   render() {
-    const { refundMount } = this.props.store.accountInfo;
+    if(!this.props.store.accountInfo)return null;
+    const { refundMount, profitMount,xtbTotalAmount } = this.props.store.accountInfo;
     return (
       <div className={styles.withdraw_channel_wrapper}>
-        <div className={styles.refund_area}>
+        <div className='refund_area_global'>
           <div className={styles.left_content_area}>
             <img src="http://qnimage.xiteng.com/qianbao_btn_tuikuan@2x.png" className={styles.tui_icon}/>
             <div className={styles.refund_text}>退款</div>
@@ -32,7 +34,7 @@ class WithdrawChannel extends React.Component {
             <div className={styles.refund_text}>零钱</div>
           </div>
           <div className={styles.right_content_area}>
-            <div className={styles.money_num}>¥10.98</div>
+            <div className={styles.money_num}>¥{profitMount/100}</div>
             <img src="http://qnimage.xiteng.com/nav_btn_back@2x.png" className={styles.next_icon}/>
           </div>
         </div>
@@ -44,7 +46,7 @@ class WithdrawChannel extends React.Component {
           <div className={styles.right_content_area}>
             <div className={styles.money_num}>
               <img src="http://qnimage.xiteng.com/assets_icon_xibi%20@2x%281%29.png" className={styles.xibi_icon}/>
-              1014.98
+              {xtbTotalAmount}
             </div>
             <img src="http://qnimage.xiteng.com/nav_btn_back@2x.png" className={styles.next_icon}/>
           </div>
