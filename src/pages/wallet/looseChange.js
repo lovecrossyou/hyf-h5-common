@@ -31,6 +31,18 @@ class looseChange extends React.Component {
             <img src="http://qnimage.xiteng.com/nav_btn_back@2x.png" className={styles.next_icon}/>
           </div>
         </div>
+
+        <div className={styles.go_choose_bank} onClick={() => {router.push('/wallet/billingDetails')}}>
+          <div className={styles.bank_left}>
+            <img src="http://qnimage.xiteng.com/lingqian_icon_yinhangka@2x.png" className={styles.bank_icon}/>
+            <div className={styles.bank_text}>账单</div>
+          </div>
+          <div className={styles.bank_right}>
+            <img src="http://qnimage.xiteng.com/nav_btn_back@2x.png" className={styles.next_icon}/>
+          </div>
+        </div>
+
+
         <div className={styles.withdraw_btn}>
           <button>提现</button>
         </div>
