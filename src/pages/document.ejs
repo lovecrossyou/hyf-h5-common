@@ -42,8 +42,8 @@
           uni.navigateBack();
         });
 
-         //3d精选 点击商品
-         $('#root').on('click', '.hot_sell_list_item', function () {
+        //3d精选 点击商品
+        $('#root').on('click', '.hot_sell_list_item', function () {
           var itemid = $(this).attr('itemid');
           uni.navigateTo({ url: '/pages/details/productDetails?productId=' + itemid });
         });
@@ -63,9 +63,14 @@
         //   wx.miniProgram.navigateTo({ url: '/pages/wallet/withdraw' });
         // });
 
+        //(我 - 提现 - 退款 - 订单列表)
+        $('#root').on('click', '.refund_area_global', function () {
+          wx.miniProgram.navigateTo({ url: '/pages/me/myOrder/refundOrderList' });
+        });
+
 
         // 忘记支付/提现密码
-         $('#root').on('click', '.forgetPassword_btn', function () {
+        $('#root').on('click', '.forgetPassword_btn', function () {
           wx.miniProgram.navigateTo({ url: '/pages/me/common/forgetPassword' });
         });
 
